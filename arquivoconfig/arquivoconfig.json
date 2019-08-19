@@ -1,14 +1,14 @@
 {
 	"nomeapi": {
-		"nome-entity": [{
-			"atributo": {
+		"nome-entity": {
+			"atributos": [{
 				"nome": "x",
 				"tipo": "y",
 				"get": "yes or no",
 				"set": "yes or no",
 				"id": "yes or no",
 				"generatedValue": "yes or no"
-			}
-		}]
+			}]
+		}
 	}
 }
