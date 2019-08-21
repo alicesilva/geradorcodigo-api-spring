@@ -1,0 +1,41 @@
+grammar org.xtext.tcc.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/tcc/mydsl/MyDsl"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'{' api=Api '}';
+
+Api:
+	nameApi = APIName ':{' attributes = Attribute '}'
+;
+
+APIName:
+	id = ID
+;
+
+Attribute:
+	'atributos:''['
+				'{'
+					'nome:' attributeName = AttributeName ','
+					 'tipo:' attributeType = AttributeType ','
+					 'metodoGet:' decisionGet = Bool ','
+					 'metodoSet:' decisionSet = Bool ','
+					 'id:' decisionID = Bool
+				  '}'
+				']' 
+;
+
+AttributeName:
+	id = ID
+;
+
+AttributeType:
+	id = 'String' | id = 'Int' | id = 'Double' | id = 'Boolean'
+;
+
+Bool:
+	'Yes' | 'No'
+;
