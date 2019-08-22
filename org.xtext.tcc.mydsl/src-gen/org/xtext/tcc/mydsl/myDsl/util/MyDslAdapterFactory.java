@@ -111,6 +111,11 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createAttributeTypeAdapter();
       }
       @Override
+      public Adapter caseBool(Bool object)
+      {
+        return createBoolAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -233,6 +238,21 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAttributeTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.Bool <em>Bool</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tcc.mydsl.myDsl.Bool
+   * @generated
+   */
+  public Adapter createBoolAdapter()
   {
     return null;
   }

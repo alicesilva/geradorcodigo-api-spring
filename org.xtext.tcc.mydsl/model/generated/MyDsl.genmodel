@@ -22,15 +22,18 @@
     <genClasses ecoreClass="MyDsl.ecore#//Attribute">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Attribute/attributeName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Attribute/attributeType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Attribute/decisionGet"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Attribute/decisionSet"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Attribute/decisionID"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Attribute/decisionGet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Attribute/decisionSet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Attribute/decisionID"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//AttributeName">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//AttributeName/id"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//AttributeType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//AttributeType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//AttributeType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Bool">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Bool/decision"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

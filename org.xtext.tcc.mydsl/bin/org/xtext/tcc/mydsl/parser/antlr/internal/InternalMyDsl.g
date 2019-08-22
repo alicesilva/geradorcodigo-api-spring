@@ -378,9 +378,9 @@ ruleAttribute returns [EObject current=null]
 		{
 			newLeafNode(otherlv_14, grammarAccess.getAttributeAccess().getCommaKeyword_14());
 		}
-		otherlv_15='id:'
+		otherlv_15='idChavePrimaria:'
 		{
-			newLeafNode(otherlv_15, grammarAccess.getAttributeAccess().getIdKeyword_15());
+			newLeafNode(otherlv_15, grammarAccess.getAttributeAccess().getIdChavePrimariaKeyword_15());
 		}
 		(
 			(
@@ -465,60 +465,60 @@ ruleAttributeType returns [EObject current=null]
 	(
 		(
 			(
-				lv_id_0_0='String'
+				lv_type_0_0='String'
 				{
-					newLeafNode(lv_id_0_0, grammarAccess.getAttributeTypeAccess().getIdStringKeyword_0_0());
+					newLeafNode(lv_type_0_0, grammarAccess.getAttributeTypeAccess().getTypeStringKeyword_0_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAttributeTypeRule());
 					}
-					setWithLastConsumed($current, "id", lv_id_0_0, "String");
+					setWithLastConsumed($current, "type", lv_type_0_0, "String");
 				}
 			)
 		)
 		    |
 		(
 			(
-				lv_id_1_0='Int'
+				lv_type_1_0='Int'
 				{
-					newLeafNode(lv_id_1_0, grammarAccess.getAttributeTypeAccess().getIdIntKeyword_1_0());
+					newLeafNode(lv_type_1_0, grammarAccess.getAttributeTypeAccess().getTypeIntKeyword_1_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAttributeTypeRule());
 					}
-					setWithLastConsumed($current, "id", lv_id_1_0, "Int");
+					setWithLastConsumed($current, "type", lv_type_1_0, "Int");
 				}
 			)
 		)
 		    |
 		(
 			(
-				lv_id_2_0='Double'
+				lv_type_2_0='Double'
 				{
-					newLeafNode(lv_id_2_0, grammarAccess.getAttributeTypeAccess().getIdDoubleKeyword_2_0());
+					newLeafNode(lv_type_2_0, grammarAccess.getAttributeTypeAccess().getTypeDoubleKeyword_2_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAttributeTypeRule());
 					}
-					setWithLastConsumed($current, "id", lv_id_2_0, "Double");
+					setWithLastConsumed($current, "type", lv_type_2_0, "Double");
 				}
 			)
 		)
 		    |
 		(
 			(
-				lv_id_3_0='Boolean'
+				lv_type_3_0='Boolean'
 				{
-					newLeafNode(lv_id_3_0, grammarAccess.getAttributeTypeAccess().getIdBooleanKeyword_3_0());
+					newLeafNode(lv_type_3_0, grammarAccess.getAttributeTypeAccess().getTypeBooleanKeyword_3_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAttributeTypeRule());
 					}
-					setWithLastConsumed($current, "id", lv_id_3_0, "Boolean");
+					setWithLastConsumed($current, "type", lv_type_3_0, "Boolean");
 				}
 			)
 		)
@@ -526,14 +526,14 @@ ruleAttributeType returns [EObject current=null]
 ;
 
 // Entry rule entryRuleBool
-entryRuleBool returns [String current=null]:
+entryRuleBool returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getBoolRule()); }
 	iv_ruleBool=ruleBool
-	{ $current=$iv_ruleBool.current.getText(); }
+	{ $current=$iv_ruleBool.current; }
 	EOF;
 
 // Rule Bool
-ruleBool returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleBool returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -541,17 +541,35 @@ ruleBool returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 	leaveRule();
 }:
 	(
-		kw='Yes'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getBoolAccess().getYesKeyword_0());
-		}
+		(
+			(
+				lv_decision_0_0='Yes'
+				{
+					newLeafNode(lv_decision_0_0, grammarAccess.getBoolAccess().getDecisionYesKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBoolRule());
+					}
+					setWithLastConsumed($current, "decision", lv_decision_0_0, "Yes");
+				}
+			)
+		)
 		    |
-		kw='No'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getBoolAccess().getNoKeyword_1());
-		}
+		(
+			(
+				lv_decision_1_0='No'
+				{
+					newLeafNode(lv_decision_1_0, grammarAccess.getBoolAccess().getDecisionNoKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBoolRule());
+					}
+					setWithLastConsumed($current, "decision", lv_decision_1_0, "No");
+				}
+			)
+		)
 	)
 ;
 

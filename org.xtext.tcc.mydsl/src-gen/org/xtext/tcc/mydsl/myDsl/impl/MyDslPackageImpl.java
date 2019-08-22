@@ -15,6 +15,7 @@ import org.xtext.tcc.mydsl.myDsl.Api;
 import org.xtext.tcc.mydsl.myDsl.Attribute;
 import org.xtext.tcc.mydsl.myDsl.AttributeName;
 import org.xtext.tcc.mydsl.myDsl.AttributeType;
+import org.xtext.tcc.mydsl.myDsl.Bool;
 import org.xtext.tcc.mydsl.myDsl.Greeting;
 import org.xtext.tcc.mydsl.myDsl.Model;
 import org.xtext.tcc.mydsl.myDsl.MyDslFactory;
@@ -76,6 +77,13 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   private EClass attributeTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass boolEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -278,9 +286,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EAttribute getAttribute_DecisionGet()
+  public EReference getAttribute_DecisionGet()
   {
-    return (EAttribute)attributeEClass.getEStructuralFeatures().get(2);
+    return (EReference)attributeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -289,9 +297,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EAttribute getAttribute_DecisionSet()
+  public EReference getAttribute_DecisionSet()
   {
-    return (EAttribute)attributeEClass.getEStructuralFeatures().get(3);
+    return (EReference)attributeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -300,9 +308,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EAttribute getAttribute_DecisionID()
+  public EReference getAttribute_DecisionID()
   {
-    return (EAttribute)attributeEClass.getEStructuralFeatures().get(4);
+    return (EReference)attributeEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -344,9 +352,31 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EAttribute getAttributeType_Id()
+  public EAttribute getAttributeType_Type()
   {
     return (EAttribute)attributeTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getBool()
+  {
+    return boolEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBool_Decision()
+  {
+    return (EAttribute)boolEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -396,15 +426,18 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     attributeEClass = createEClass(ATTRIBUTE);
     createEReference(attributeEClass, ATTRIBUTE__ATTRIBUTE_NAME);
     createEReference(attributeEClass, ATTRIBUTE__ATTRIBUTE_TYPE);
-    createEAttribute(attributeEClass, ATTRIBUTE__DECISION_GET);
-    createEAttribute(attributeEClass, ATTRIBUTE__DECISION_SET);
-    createEAttribute(attributeEClass, ATTRIBUTE__DECISION_ID);
+    createEReference(attributeEClass, ATTRIBUTE__DECISION_GET);
+    createEReference(attributeEClass, ATTRIBUTE__DECISION_SET);
+    createEReference(attributeEClass, ATTRIBUTE__DECISION_ID);
 
     attributeNameEClass = createEClass(ATTRIBUTE_NAME);
     createEAttribute(attributeNameEClass, ATTRIBUTE_NAME__ID);
 
     attributeTypeEClass = createEClass(ATTRIBUTE_TYPE);
-    createEAttribute(attributeTypeEClass, ATTRIBUTE_TYPE__ID);
+    createEAttribute(attributeTypeEClass, ATTRIBUTE_TYPE__TYPE);
+
+    boolEClass = createEClass(BOOL);
+    createEAttribute(boolEClass, BOOL__DECISION);
   }
 
   /**
@@ -454,15 +487,18 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAttribute_AttributeName(), this.getAttributeName(), null, "attributeName", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAttribute_AttributeType(), this.getAttributeType(), null, "attributeType", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAttribute_DecisionGet(), ecorePackage.getEString(), "decisionGet", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAttribute_DecisionSet(), ecorePackage.getEString(), "decisionSet", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAttribute_DecisionID(), ecorePackage.getEString(), "decisionID", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttribute_DecisionGet(), this.getBool(), null, "decisionGet", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttribute_DecisionSet(), this.getBool(), null, "decisionSet", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttribute_DecisionID(), this.getBool(), null, "decisionID", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeNameEClass, AttributeName.class, "AttributeName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAttributeName_Id(), ecorePackage.getEString(), "id", null, 0, 1, AttributeName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeTypeEClass, AttributeType.class, "AttributeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAttributeType_Id(), ecorePackage.getEString(), "id", null, 0, 1, AttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttributeType_Type(), ecorePackage.getEString(), "type", null, 0, 1, AttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(boolEClass, Bool.class, "Bool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBool_Decision(), ecorePackage.getEString(), "decision", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

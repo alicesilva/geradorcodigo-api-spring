@@ -23,7 +23,7 @@ Attribute:
 					 'tipo:' attributeType = AttributeType ','
 					 'metodoGet:' decisionGet = Bool ','
 					 'metodoSet:' decisionSet = Bool ','
-					 'id:' decisionID = Bool
+					 'idChavePrimaria:' decisionID = Bool
 				  '}'
 				']' 
 ;
@@ -33,9 +33,9 @@ AttributeName:
 ;
 
 AttributeType:
-	id = 'String' | id = 'Int' | id = 'Double' | id = 'Boolean'
+	type = 'String' | type = 'Int' | type = 'Double' | type = 'Boolean'
 ;
 
 Bool:
-	'Yes' | 'No'
+	decision = 'Yes' | decision = 'No'
 ;

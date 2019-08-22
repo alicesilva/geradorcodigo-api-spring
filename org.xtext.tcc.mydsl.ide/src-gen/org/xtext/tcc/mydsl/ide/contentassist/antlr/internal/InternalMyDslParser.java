@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMyDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Yes'", "'No'", "'{'", "'}'", "':{'", "'atributos:'", "'['", "'nome:'", "','", "'tipo:'", "'metodoGet:'", "'metodoSet:'", "'id:'", "']'", "'String'", "'Int'", "'Double'", "'Boolean'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'{'", "'}'", "':{'", "'atributos:'", "'['", "'nome:'", "','", "'tipo:'", "'metodoGet:'", "'metodoSet:'", "'idChavePrimaria:'", "']'", "'String'", "'Int'", "'Double'", "'Boolean'", "'Yes'", "'No'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -136,7 +136,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==13) ) {
+                if ( (LA1_0==11) ) {
                     alt1=1;
                 }
 
@@ -721,31 +721,31 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeType__Alternatives"
-    // InternalMyDsl.g:252:1: rule__AttributeType__Alternatives : ( ( ( rule__AttributeType__IdAssignment_0 ) ) | ( ( rule__AttributeType__IdAssignment_1 ) ) | ( ( rule__AttributeType__IdAssignment_2 ) ) | ( ( rule__AttributeType__IdAssignment_3 ) ) );
+    // InternalMyDsl.g:252:1: rule__AttributeType__Alternatives : ( ( ( rule__AttributeType__TypeAssignment_0 ) ) | ( ( rule__AttributeType__TypeAssignment_1 ) ) | ( ( rule__AttributeType__TypeAssignment_2 ) ) | ( ( rule__AttributeType__TypeAssignment_3 ) ) );
     public final void rule__AttributeType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyDsl.g:256:1: ( ( ( rule__AttributeType__IdAssignment_0 ) ) | ( ( rule__AttributeType__IdAssignment_1 ) ) | ( ( rule__AttributeType__IdAssignment_2 ) ) | ( ( rule__AttributeType__IdAssignment_3 ) ) )
+            // InternalMyDsl.g:256:1: ( ( ( rule__AttributeType__TypeAssignment_0 ) ) | ( ( rule__AttributeType__TypeAssignment_1 ) ) | ( ( rule__AttributeType__TypeAssignment_2 ) ) | ( ( rule__AttributeType__TypeAssignment_3 ) ) )
             int alt2=4;
             switch ( input.LA(1) ) {
-            case 25:
+            case 23:
                 {
                 alt2=1;
                 }
                 break;
-            case 26:
+            case 24:
                 {
                 alt2=2;
                 }
                 break;
-            case 27:
+            case 25:
                 {
                 alt2=3;
                 }
                 break;
-            case 28:
+            case 26:
                 {
                 alt2=4;
                 }
@@ -759,24 +759,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
 
             switch (alt2) {
                 case 1 :
-                    // InternalMyDsl.g:257:2: ( ( rule__AttributeType__IdAssignment_0 ) )
+                    // InternalMyDsl.g:257:2: ( ( rule__AttributeType__TypeAssignment_0 ) )
                     {
-                    // InternalMyDsl.g:257:2: ( ( rule__AttributeType__IdAssignment_0 ) )
-                    // InternalMyDsl.g:258:3: ( rule__AttributeType__IdAssignment_0 )
+                    // InternalMyDsl.g:257:2: ( ( rule__AttributeType__TypeAssignment_0 ) )
+                    // InternalMyDsl.g:258:3: ( rule__AttributeType__TypeAssignment_0 )
                     {
-                     before(grammarAccess.getAttributeTypeAccess().getIdAssignment_0()); 
-                    // InternalMyDsl.g:259:3: ( rule__AttributeType__IdAssignment_0 )
-                    // InternalMyDsl.g:259:4: rule__AttributeType__IdAssignment_0
+                     before(grammarAccess.getAttributeTypeAccess().getTypeAssignment_0()); 
+                    // InternalMyDsl.g:259:3: ( rule__AttributeType__TypeAssignment_0 )
+                    // InternalMyDsl.g:259:4: rule__AttributeType__TypeAssignment_0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AttributeType__IdAssignment_0();
+                    rule__AttributeType__TypeAssignment_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAttributeTypeAccess().getIdAssignment_0()); 
+                     after(grammarAccess.getAttributeTypeAccess().getTypeAssignment_0()); 
 
                     }
 
@@ -784,24 +784,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalMyDsl.g:263:2: ( ( rule__AttributeType__IdAssignment_1 ) )
+                    // InternalMyDsl.g:263:2: ( ( rule__AttributeType__TypeAssignment_1 ) )
                     {
-                    // InternalMyDsl.g:263:2: ( ( rule__AttributeType__IdAssignment_1 ) )
-                    // InternalMyDsl.g:264:3: ( rule__AttributeType__IdAssignment_1 )
+                    // InternalMyDsl.g:263:2: ( ( rule__AttributeType__TypeAssignment_1 ) )
+                    // InternalMyDsl.g:264:3: ( rule__AttributeType__TypeAssignment_1 )
                     {
-                     before(grammarAccess.getAttributeTypeAccess().getIdAssignment_1()); 
-                    // InternalMyDsl.g:265:3: ( rule__AttributeType__IdAssignment_1 )
-                    // InternalMyDsl.g:265:4: rule__AttributeType__IdAssignment_1
+                     before(grammarAccess.getAttributeTypeAccess().getTypeAssignment_1()); 
+                    // InternalMyDsl.g:265:3: ( rule__AttributeType__TypeAssignment_1 )
+                    // InternalMyDsl.g:265:4: rule__AttributeType__TypeAssignment_1
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AttributeType__IdAssignment_1();
+                    rule__AttributeType__TypeAssignment_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAttributeTypeAccess().getIdAssignment_1()); 
+                     after(grammarAccess.getAttributeTypeAccess().getTypeAssignment_1()); 
 
                     }
 
@@ -809,24 +809,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalMyDsl.g:269:2: ( ( rule__AttributeType__IdAssignment_2 ) )
+                    // InternalMyDsl.g:269:2: ( ( rule__AttributeType__TypeAssignment_2 ) )
                     {
-                    // InternalMyDsl.g:269:2: ( ( rule__AttributeType__IdAssignment_2 ) )
-                    // InternalMyDsl.g:270:3: ( rule__AttributeType__IdAssignment_2 )
+                    // InternalMyDsl.g:269:2: ( ( rule__AttributeType__TypeAssignment_2 ) )
+                    // InternalMyDsl.g:270:3: ( rule__AttributeType__TypeAssignment_2 )
                     {
-                     before(grammarAccess.getAttributeTypeAccess().getIdAssignment_2()); 
-                    // InternalMyDsl.g:271:3: ( rule__AttributeType__IdAssignment_2 )
-                    // InternalMyDsl.g:271:4: rule__AttributeType__IdAssignment_2
+                     before(grammarAccess.getAttributeTypeAccess().getTypeAssignment_2()); 
+                    // InternalMyDsl.g:271:3: ( rule__AttributeType__TypeAssignment_2 )
+                    // InternalMyDsl.g:271:4: rule__AttributeType__TypeAssignment_2
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AttributeType__IdAssignment_2();
+                    rule__AttributeType__TypeAssignment_2();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAttributeTypeAccess().getIdAssignment_2()); 
+                     after(grammarAccess.getAttributeTypeAccess().getTypeAssignment_2()); 
 
                     }
 
@@ -834,24 +834,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalMyDsl.g:275:2: ( ( rule__AttributeType__IdAssignment_3 ) )
+                    // InternalMyDsl.g:275:2: ( ( rule__AttributeType__TypeAssignment_3 ) )
                     {
-                    // InternalMyDsl.g:275:2: ( ( rule__AttributeType__IdAssignment_3 ) )
-                    // InternalMyDsl.g:276:3: ( rule__AttributeType__IdAssignment_3 )
+                    // InternalMyDsl.g:275:2: ( ( rule__AttributeType__TypeAssignment_3 ) )
+                    // InternalMyDsl.g:276:3: ( rule__AttributeType__TypeAssignment_3 )
                     {
-                     before(grammarAccess.getAttributeTypeAccess().getIdAssignment_3()); 
-                    // InternalMyDsl.g:277:3: ( rule__AttributeType__IdAssignment_3 )
-                    // InternalMyDsl.g:277:4: rule__AttributeType__IdAssignment_3
+                     before(grammarAccess.getAttributeTypeAccess().getTypeAssignment_3()); 
+                    // InternalMyDsl.g:277:3: ( rule__AttributeType__TypeAssignment_3 )
+                    // InternalMyDsl.g:277:4: rule__AttributeType__TypeAssignment_3
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AttributeType__IdAssignment_3();
+                    rule__AttributeType__TypeAssignment_3();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAttributeTypeAccess().getIdAssignment_3()); 
+                     after(grammarAccess.getAttributeTypeAccess().getTypeAssignment_3()); 
 
                     }
 
@@ -876,20 +876,20 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Bool__Alternatives"
-    // InternalMyDsl.g:285:1: rule__Bool__Alternatives : ( ( 'Yes' ) | ( 'No' ) );
+    // InternalMyDsl.g:285:1: rule__Bool__Alternatives : ( ( ( rule__Bool__DecisionAssignment_0 ) ) | ( ( rule__Bool__DecisionAssignment_1 ) ) );
     public final void rule__Bool__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyDsl.g:289:1: ( ( 'Yes' ) | ( 'No' ) )
+            // InternalMyDsl.g:289:1: ( ( ( rule__Bool__DecisionAssignment_0 ) ) | ( ( rule__Bool__DecisionAssignment_1 ) ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==11) ) {
+            if ( (LA3_0==27) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==12) ) {
+            else if ( (LA3_0==28) ) {
                 alt3=2;
             }
             else {
@@ -900,14 +900,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalMyDsl.g:290:2: ( 'Yes' )
+                    // InternalMyDsl.g:290:2: ( ( rule__Bool__DecisionAssignment_0 ) )
                     {
-                    // InternalMyDsl.g:290:2: ( 'Yes' )
-                    // InternalMyDsl.g:291:3: 'Yes'
+                    // InternalMyDsl.g:290:2: ( ( rule__Bool__DecisionAssignment_0 ) )
+                    // InternalMyDsl.g:291:3: ( rule__Bool__DecisionAssignment_0 )
                     {
-                     before(grammarAccess.getBoolAccess().getYesKeyword_0()); 
-                    match(input,11,FOLLOW_2); 
-                     after(grammarAccess.getBoolAccess().getYesKeyword_0()); 
+                     before(grammarAccess.getBoolAccess().getDecisionAssignment_0()); 
+                    // InternalMyDsl.g:292:3: ( rule__Bool__DecisionAssignment_0 )
+                    // InternalMyDsl.g:292:4: rule__Bool__DecisionAssignment_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Bool__DecisionAssignment_0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getBoolAccess().getDecisionAssignment_0()); 
 
                     }
 
@@ -915,14 +925,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalMyDsl.g:296:2: ( 'No' )
+                    // InternalMyDsl.g:296:2: ( ( rule__Bool__DecisionAssignment_1 ) )
                     {
-                    // InternalMyDsl.g:296:2: ( 'No' )
-                    // InternalMyDsl.g:297:3: 'No'
+                    // InternalMyDsl.g:296:2: ( ( rule__Bool__DecisionAssignment_1 ) )
+                    // InternalMyDsl.g:297:3: ( rule__Bool__DecisionAssignment_1 )
                     {
-                     before(grammarAccess.getBoolAccess().getNoKeyword_1()); 
-                    match(input,12,FOLLOW_2); 
-                     after(grammarAccess.getBoolAccess().getNoKeyword_1()); 
+                     before(grammarAccess.getBoolAccess().getDecisionAssignment_1()); 
+                    // InternalMyDsl.g:298:3: ( rule__Bool__DecisionAssignment_1 )
+                    // InternalMyDsl.g:298:4: rule__Bool__DecisionAssignment_1
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Bool__DecisionAssignment_1();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getBoolAccess().getDecisionAssignment_1()); 
 
                     }
 
@@ -998,7 +1018,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:324:2: '{'
             {
              before(grammarAccess.getGreetingAccess().getLeftCurlyBracketKeyword_0()); 
-            match(input,13,FOLLOW_2); 
+            match(input,11,FOLLOW_2); 
              after(grammarAccess.getGreetingAccess().getLeftCurlyBracketKeyword_0()); 
 
             }
@@ -1153,7 +1173,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:377:2: '}'
             {
              before(grammarAccess.getGreetingAccess().getRightCurlyBracketKeyword_2()); 
-            match(input,14,FOLLOW_2); 
+            match(input,12,FOLLOW_2); 
              after(grammarAccess.getGreetingAccess().getRightCurlyBracketKeyword_2()); 
 
             }
@@ -1313,7 +1333,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:432:2: ':{'
             {
              before(grammarAccess.getApiAccess().getColonLeftCurlyBracketKeyword_1()); 
-            match(input,15,FOLLOW_2); 
+            match(input,13,FOLLOW_2); 
              after(grammarAccess.getApiAccess().getColonLeftCurlyBracketKeyword_1()); 
 
             }
@@ -1468,7 +1488,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:485:2: '}'
             {
              before(grammarAccess.getApiAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,14,FOLLOW_2); 
+            match(input,12,FOLLOW_2); 
              after(grammarAccess.getApiAccess().getRightCurlyBracketKeyword_3()); 
 
             }
@@ -1543,7 +1563,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:513:2: 'atributos:'
             {
              before(grammarAccess.getAttributeAccess().getAtributosKeyword_0()); 
-            match(input,16,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getAtributosKeyword_0()); 
 
             }
@@ -1618,7 +1638,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:540:2: '['
             {
              before(grammarAccess.getAttributeAccess().getLeftSquareBracketKeyword_1()); 
-            match(input,17,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getLeftSquareBracketKeyword_1()); 
 
             }
@@ -1693,7 +1713,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:567:2: '{'
             {
              before(grammarAccess.getAttributeAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,13,FOLLOW_2); 
+            match(input,11,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -1768,7 +1788,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:594:2: 'nome:'
             {
              before(grammarAccess.getAttributeAccess().getNomeKeyword_3()); 
-            match(input,18,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getNomeKeyword_3()); 
 
             }
@@ -1928,7 +1948,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:648:2: ','
             {
              before(grammarAccess.getAttributeAccess().getCommaKeyword_5()); 
-            match(input,19,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getCommaKeyword_5()); 
 
             }
@@ -2003,7 +2023,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:675:2: 'tipo:'
             {
              before(grammarAccess.getAttributeAccess().getTipoKeyword_6()); 
-            match(input,20,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getTipoKeyword_6()); 
 
             }
@@ -2163,7 +2183,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:729:2: ','
             {
              before(grammarAccess.getAttributeAccess().getCommaKeyword_8()); 
-            match(input,19,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getCommaKeyword_8()); 
 
             }
@@ -2238,7 +2258,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:756:2: 'metodoGet:'
             {
              before(grammarAccess.getAttributeAccess().getMetodoGetKeyword_9()); 
-            match(input,21,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getMetodoGetKeyword_9()); 
 
             }
@@ -2398,7 +2418,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:810:2: ','
             {
              before(grammarAccess.getAttributeAccess().getCommaKeyword_11()); 
-            match(input,19,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getCommaKeyword_11()); 
 
             }
@@ -2473,7 +2493,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:837:2: 'metodoSet:'
             {
              before(grammarAccess.getAttributeAccess().getMetodoSetKeyword_12()); 
-            match(input,22,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getMetodoSetKeyword_12()); 
 
             }
@@ -2633,7 +2653,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:891:2: ','
             {
              before(grammarAccess.getAttributeAccess().getCommaKeyword_14()); 
-            match(input,19,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getCommaKeyword_14()); 
 
             }
@@ -2695,21 +2715,21 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group__15__Impl"
-    // InternalMyDsl.g:912:1: rule__Attribute__Group__15__Impl : ( 'id:' ) ;
+    // InternalMyDsl.g:912:1: rule__Attribute__Group__15__Impl : ( 'idChavePrimaria:' ) ;
     public final void rule__Attribute__Group__15__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyDsl.g:916:1: ( ( 'id:' ) )
-            // InternalMyDsl.g:917:1: ( 'id:' )
+            // InternalMyDsl.g:916:1: ( ( 'idChavePrimaria:' ) )
+            // InternalMyDsl.g:917:1: ( 'idChavePrimaria:' )
             {
-            // InternalMyDsl.g:917:1: ( 'id:' )
-            // InternalMyDsl.g:918:2: 'id:'
+            // InternalMyDsl.g:917:1: ( 'idChavePrimaria:' )
+            // InternalMyDsl.g:918:2: 'idChavePrimaria:'
             {
-             before(grammarAccess.getAttributeAccess().getIdKeyword_15()); 
-            match(input,23,FOLLOW_2); 
-             after(grammarAccess.getAttributeAccess().getIdKeyword_15()); 
+             before(grammarAccess.getAttributeAccess().getIdChavePrimariaKeyword_15()); 
+            match(input,21,FOLLOW_2); 
+             after(grammarAccess.getAttributeAccess().getIdChavePrimariaKeyword_15()); 
 
             }
 
@@ -2868,7 +2888,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:972:2: '}'
             {
              before(grammarAccess.getAttributeAccess().getRightCurlyBracketKeyword_17()); 
-            match(input,14,FOLLOW_2); 
+            match(input,12,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getRightCurlyBracketKeyword_17()); 
 
             }
@@ -2938,7 +2958,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:998:2: ']'
             {
              before(grammarAccess.getAttributeAccess().getRightSquareBracketKeyword_18()); 
-            match(input,24,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getRightSquareBracketKeyword_18()); 
 
             }
@@ -3404,9 +3424,9 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__AttributeName__IdAssignment"
 
 
-    // $ANTLR start "rule__AttributeType__IdAssignment_0"
-    // InternalMyDsl.g:1173:1: rule__AttributeType__IdAssignment_0 : ( ( 'String' ) ) ;
-    public final void rule__AttributeType__IdAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__AttributeType__TypeAssignment_0"
+    // InternalMyDsl.g:1173:1: rule__AttributeType__TypeAssignment_0 : ( ( 'String' ) ) ;
+    public final void rule__AttributeType__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3417,17 +3437,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:1178:2: ( ( 'String' ) )
             // InternalMyDsl.g:1179:3: ( 'String' )
             {
-             before(grammarAccess.getAttributeTypeAccess().getIdStringKeyword_0_0()); 
+             before(grammarAccess.getAttributeTypeAccess().getTypeStringKeyword_0_0()); 
             // InternalMyDsl.g:1180:3: ( 'String' )
             // InternalMyDsl.g:1181:4: 'String'
             {
-             before(grammarAccess.getAttributeTypeAccess().getIdStringKeyword_0_0()); 
-            match(input,25,FOLLOW_2); 
-             after(grammarAccess.getAttributeTypeAccess().getIdStringKeyword_0_0()); 
+             before(grammarAccess.getAttributeTypeAccess().getTypeStringKeyword_0_0()); 
+            match(input,23,FOLLOW_2); 
+             after(grammarAccess.getAttributeTypeAccess().getTypeStringKeyword_0_0()); 
 
             }
 
-             after(grammarAccess.getAttributeTypeAccess().getIdStringKeyword_0_0()); 
+             after(grammarAccess.getAttributeTypeAccess().getTypeStringKeyword_0_0()); 
 
             }
 
@@ -3446,12 +3466,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AttributeType__IdAssignment_0"
+    // $ANTLR end "rule__AttributeType__TypeAssignment_0"
 
 
-    // $ANTLR start "rule__AttributeType__IdAssignment_1"
-    // InternalMyDsl.g:1192:1: rule__AttributeType__IdAssignment_1 : ( ( 'Int' ) ) ;
-    public final void rule__AttributeType__IdAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__AttributeType__TypeAssignment_1"
+    // InternalMyDsl.g:1192:1: rule__AttributeType__TypeAssignment_1 : ( ( 'Int' ) ) ;
+    public final void rule__AttributeType__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3462,17 +3482,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:1197:2: ( ( 'Int' ) )
             // InternalMyDsl.g:1198:3: ( 'Int' )
             {
-             before(grammarAccess.getAttributeTypeAccess().getIdIntKeyword_1_0()); 
+             before(grammarAccess.getAttributeTypeAccess().getTypeIntKeyword_1_0()); 
             // InternalMyDsl.g:1199:3: ( 'Int' )
             // InternalMyDsl.g:1200:4: 'Int'
             {
-             before(grammarAccess.getAttributeTypeAccess().getIdIntKeyword_1_0()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getAttributeTypeAccess().getIdIntKeyword_1_0()); 
+             before(grammarAccess.getAttributeTypeAccess().getTypeIntKeyword_1_0()); 
+            match(input,24,FOLLOW_2); 
+             after(grammarAccess.getAttributeTypeAccess().getTypeIntKeyword_1_0()); 
 
             }
 
-             after(grammarAccess.getAttributeTypeAccess().getIdIntKeyword_1_0()); 
+             after(grammarAccess.getAttributeTypeAccess().getTypeIntKeyword_1_0()); 
 
             }
 
@@ -3491,12 +3511,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AttributeType__IdAssignment_1"
+    // $ANTLR end "rule__AttributeType__TypeAssignment_1"
 
 
-    // $ANTLR start "rule__AttributeType__IdAssignment_2"
-    // InternalMyDsl.g:1211:1: rule__AttributeType__IdAssignment_2 : ( ( 'Double' ) ) ;
-    public final void rule__AttributeType__IdAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__AttributeType__TypeAssignment_2"
+    // InternalMyDsl.g:1211:1: rule__AttributeType__TypeAssignment_2 : ( ( 'Double' ) ) ;
+    public final void rule__AttributeType__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3507,17 +3527,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:1216:2: ( ( 'Double' ) )
             // InternalMyDsl.g:1217:3: ( 'Double' )
             {
-             before(grammarAccess.getAttributeTypeAccess().getIdDoubleKeyword_2_0()); 
+             before(grammarAccess.getAttributeTypeAccess().getTypeDoubleKeyword_2_0()); 
             // InternalMyDsl.g:1218:3: ( 'Double' )
             // InternalMyDsl.g:1219:4: 'Double'
             {
-             before(grammarAccess.getAttributeTypeAccess().getIdDoubleKeyword_2_0()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getAttributeTypeAccess().getIdDoubleKeyword_2_0()); 
+             before(grammarAccess.getAttributeTypeAccess().getTypeDoubleKeyword_2_0()); 
+            match(input,25,FOLLOW_2); 
+             after(grammarAccess.getAttributeTypeAccess().getTypeDoubleKeyword_2_0()); 
 
             }
 
-             after(grammarAccess.getAttributeTypeAccess().getIdDoubleKeyword_2_0()); 
+             after(grammarAccess.getAttributeTypeAccess().getTypeDoubleKeyword_2_0()); 
 
             }
 
@@ -3536,12 +3556,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AttributeType__IdAssignment_2"
+    // $ANTLR end "rule__AttributeType__TypeAssignment_2"
 
 
-    // $ANTLR start "rule__AttributeType__IdAssignment_3"
-    // InternalMyDsl.g:1230:1: rule__AttributeType__IdAssignment_3 : ( ( 'Boolean' ) ) ;
-    public final void rule__AttributeType__IdAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__AttributeType__TypeAssignment_3"
+    // InternalMyDsl.g:1230:1: rule__AttributeType__TypeAssignment_3 : ( ( 'Boolean' ) ) ;
+    public final void rule__AttributeType__TypeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3552,17 +3572,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:1235:2: ( ( 'Boolean' ) )
             // InternalMyDsl.g:1236:3: ( 'Boolean' )
             {
-             before(grammarAccess.getAttributeTypeAccess().getIdBooleanKeyword_3_0()); 
+             before(grammarAccess.getAttributeTypeAccess().getTypeBooleanKeyword_3_0()); 
             // InternalMyDsl.g:1237:3: ( 'Boolean' )
             // InternalMyDsl.g:1238:4: 'Boolean'
             {
-             before(grammarAccess.getAttributeTypeAccess().getIdBooleanKeyword_3_0()); 
-            match(input,28,FOLLOW_2); 
-             after(grammarAccess.getAttributeTypeAccess().getIdBooleanKeyword_3_0()); 
+             before(grammarAccess.getAttributeTypeAccess().getTypeBooleanKeyword_3_0()); 
+            match(input,26,FOLLOW_2); 
+             after(grammarAccess.getAttributeTypeAccess().getTypeBooleanKeyword_3_0()); 
 
             }
 
-             after(grammarAccess.getAttributeTypeAccess().getIdBooleanKeyword_3_0()); 
+             after(grammarAccess.getAttributeTypeAccess().getTypeBooleanKeyword_3_0()); 
 
             }
 
@@ -3581,7 +3601,97 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AttributeType__IdAssignment_3"
+    // $ANTLR end "rule__AttributeType__TypeAssignment_3"
+
+
+    // $ANTLR start "rule__Bool__DecisionAssignment_0"
+    // InternalMyDsl.g:1249:1: rule__Bool__DecisionAssignment_0 : ( ( 'Yes' ) ) ;
+    public final void rule__Bool__DecisionAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMyDsl.g:1253:1: ( ( ( 'Yes' ) ) )
+            // InternalMyDsl.g:1254:2: ( ( 'Yes' ) )
+            {
+            // InternalMyDsl.g:1254:2: ( ( 'Yes' ) )
+            // InternalMyDsl.g:1255:3: ( 'Yes' )
+            {
+             before(grammarAccess.getBoolAccess().getDecisionYesKeyword_0_0()); 
+            // InternalMyDsl.g:1256:3: ( 'Yes' )
+            // InternalMyDsl.g:1257:4: 'Yes'
+            {
+             before(grammarAccess.getBoolAccess().getDecisionYesKeyword_0_0()); 
+            match(input,27,FOLLOW_2); 
+             after(grammarAccess.getBoolAccess().getDecisionYesKeyword_0_0()); 
+
+            }
+
+             after(grammarAccess.getBoolAccess().getDecisionYesKeyword_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Bool__DecisionAssignment_0"
+
+
+    // $ANTLR start "rule__Bool__DecisionAssignment_1"
+    // InternalMyDsl.g:1268:1: rule__Bool__DecisionAssignment_1 : ( ( 'No' ) ) ;
+    public final void rule__Bool__DecisionAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMyDsl.g:1272:1: ( ( ( 'No' ) ) )
+            // InternalMyDsl.g:1273:2: ( ( 'No' ) )
+            {
+            // InternalMyDsl.g:1273:2: ( ( 'No' ) )
+            // InternalMyDsl.g:1274:3: ( 'No' )
+            {
+             before(grammarAccess.getBoolAccess().getDecisionNoKeyword_1_0()); 
+            // InternalMyDsl.g:1275:3: ( 'No' )
+            // InternalMyDsl.g:1276:4: 'No'
+            {
+             before(grammarAccess.getBoolAccess().getDecisionNoKeyword_1_0()); 
+            match(input,28,FOLLOW_2); 
+             after(grammarAccess.getBoolAccess().getDecisionNoKeyword_1_0()); 
+
+            }
+
+             after(grammarAccess.getBoolAccess().getDecisionNoKeyword_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Bool__DecisionAssignment_1"
 
     // Delegated rules
 
@@ -3590,21 +3700,21 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000802L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x000000001E000000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000007800000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000018000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000400000L});
 
 }

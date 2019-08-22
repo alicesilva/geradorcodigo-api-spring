@@ -19,6 +19,7 @@ import org.xtext.tcc.mydsl.myDsl.Api;
 import org.xtext.tcc.mydsl.myDsl.Attribute;
 import org.xtext.tcc.mydsl.myDsl.AttributeName;
 import org.xtext.tcc.mydsl.myDsl.AttributeType;
+import org.xtext.tcc.mydsl.myDsl.Bool;
 import org.xtext.tcc.mydsl.myDsl.Greeting;
 import org.xtext.tcc.mydsl.myDsl.Model;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
@@ -52,6 +53,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case MyDslPackage.ATTRIBUTE_TYPE:
 				sequence_AttributeType(context, (AttributeType) semanticObject); 
+				return; 
+			case MyDslPackage.BOOL:
+				sequence_Bool(context, (Bool) semanticObject); 
 				return; 
 			case MyDslPackage.GREETING:
 				sequence_Greeting(context, (Greeting) semanticObject); 
@@ -126,7 +130,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     AttributeType returns AttributeType
 	 *
 	 * Constraint:
-	 *     (id='String' | id='Int' | id='Double' | id='Boolean')
+	 *     (type='String' | type='Int' | type='Double' | type='Boolean')
 	 */
 	protected void sequence_AttributeType(ISerializationContext context, AttributeType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -160,6 +164,18 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		feeder.accept(grammarAccess.getAttributeAccess().getDecisionSetBoolParserRuleCall_13_0(), semanticObject.getDecisionSet());
 		feeder.accept(grammarAccess.getAttributeAccess().getDecisionIDBoolParserRuleCall_16_0(), semanticObject.getDecisionID());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Bool returns Bool
+	 *
+	 * Constraint:
+	 *     (decision='Yes' | decision='No')
+	 */
+	protected void sequence_Bool(ISerializationContext context, Bool semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

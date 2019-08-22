@@ -72,6 +72,7 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.ATTRIBUTE: return createAttribute();
       case MyDslPackage.ATTRIBUTE_NAME: return createAttributeName();
       case MyDslPackage.ATTRIBUTE_TYPE: return createAttributeType();
+      case MyDslPackage.BOOL: return createBool();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -159,6 +160,18 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     AttributeTypeImpl attributeType = new AttributeTypeImpl();
     return attributeType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Bool createBool()
+  {
+    BoolImpl bool = new BoolImpl();
+    return bool;
   }
 
   /**

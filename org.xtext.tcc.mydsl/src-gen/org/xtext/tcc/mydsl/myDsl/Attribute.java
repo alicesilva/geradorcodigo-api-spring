@@ -72,69 +72,69 @@ public interface Attribute extends EObject
   void setAttributeType(AttributeType value);
 
   /**
-   * Returns the value of the '<em><b>Decision Get</b></em>' attribute.
+   * Returns the value of the '<em><b>Decision Get</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Decision Get</em>' attribute.
-   * @see #setDecisionGet(String)
+   * @return the value of the '<em>Decision Get</em>' containment reference.
+   * @see #setDecisionGet(Bool)
    * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAttribute_DecisionGet()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getDecisionGet();
+  Bool getDecisionGet();
 
   /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionGet <em>Decision Get</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionGet <em>Decision Get</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Decision Get</em>' attribute.
+   * @param value the new value of the '<em>Decision Get</em>' containment reference.
    * @see #getDecisionGet()
    * @generated
    */
-  void setDecisionGet(String value);
+  void setDecisionGet(Bool value);
 
   /**
-   * Returns the value of the '<em><b>Decision Set</b></em>' attribute.
+   * Returns the value of the '<em><b>Decision Set</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Decision Set</em>' attribute.
-   * @see #setDecisionSet(String)
+   * @return the value of the '<em>Decision Set</em>' containment reference.
+   * @see #setDecisionSet(Bool)
    * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAttribute_DecisionSet()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getDecisionSet();
+  Bool getDecisionSet();
 
   /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionSet <em>Decision Set</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionSet <em>Decision Set</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Decision Set</em>' attribute.
+   * @param value the new value of the '<em>Decision Set</em>' containment reference.
    * @see #getDecisionSet()
    * @generated
    */
-  void setDecisionSet(String value);
+  void setDecisionSet(Bool value);
 
   /**
-   * Returns the value of the '<em><b>Decision ID</b></em>' attribute.
+   * Returns the value of the '<em><b>Decision ID</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Decision ID</em>' attribute.
-   * @see #setDecisionID(String)
+   * @return the value of the '<em>Decision ID</em>' containment reference.
+   * @see #setDecisionID(Bool)
    * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAttribute_DecisionID()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getDecisionID();
+  Bool getDecisionID();
 
   /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionID <em>Decision ID</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionID <em>Decision ID</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Decision ID</em>' attribute.
+   * @param value the new value of the '<em>Decision ID</em>' containment reference.
    * @see #getDecisionID()
    * @generated
    */
-  void setDecisionID(String value);
+  void setDecisionID(Bool value);
 
 } // Attribute

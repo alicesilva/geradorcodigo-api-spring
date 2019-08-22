@@ -9,7 +9,7 @@
 '['=15
 ']'=22
 'atributos:'=14
-'id:'=21
+'idChavePrimaria:'=21
 'metodoGet:'=19
 'metodoSet:'=20
 'nome:'=16

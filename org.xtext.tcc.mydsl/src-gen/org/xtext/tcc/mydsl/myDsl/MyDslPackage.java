@@ -207,7 +207,7 @@ public interface MyDslPackage extends EPackage
   int ATTRIBUTE__ATTRIBUTE_TYPE = 1;
 
   /**
-   * The feature id for the '<em><b>Decision Get</b></em>' attribute.
+   * The feature id for the '<em><b>Decision Get</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -216,7 +216,7 @@ public interface MyDslPackage extends EPackage
   int ATTRIBUTE__DECISION_GET = 2;
 
   /**
-   * The feature id for the '<em><b>Decision Set</b></em>' attribute.
+   * The feature id for the '<em><b>Decision Set</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -225,7 +225,7 @@ public interface MyDslPackage extends EPackage
   int ATTRIBUTE__DECISION_SET = 3;
 
   /**
-   * The feature id for the '<em><b>Decision ID</b></em>' attribute.
+   * The feature id for the '<em><b>Decision ID</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -281,13 +281,13 @@ public interface MyDslPackage extends EPackage
   int ATTRIBUTE_TYPE = 6;
 
   /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_TYPE__ID = 0;
+  int ATTRIBUTE_TYPE__TYPE = 0;
 
   /**
    * The number of structural features of the '<em>Attribute Type</em>' class.
@@ -297,6 +297,34 @@ public interface MyDslPackage extends EPackage
    * @ordered
    */
   int ATTRIBUTE_TYPE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.BoolImpl <em>Bool</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tcc.mydsl.myDsl.impl.BoolImpl
+   * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getBool()
+   * @generated
+   */
+  int BOOL = 7;
+
+  /**
+   * The feature id for the '<em><b>Decision</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOL__DECISION = 0;
+
+  /**
+   * The number of structural features of the '<em>Bool</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOL_FEATURE_COUNT = 1;
 
 
   /**
@@ -427,37 +455,37 @@ public interface MyDslPackage extends EPackage
   EReference getAttribute_AttributeType();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionGet <em>Decision Get</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionGet <em>Decision Get</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Decision Get</em>'.
+   * @return the meta object for the containment reference '<em>Decision Get</em>'.
    * @see org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionGet()
    * @see #getAttribute()
    * @generated
    */
-  EAttribute getAttribute_DecisionGet();
+  EReference getAttribute_DecisionGet();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionSet <em>Decision Set</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionSet <em>Decision Set</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Decision Set</em>'.
+   * @return the meta object for the containment reference '<em>Decision Set</em>'.
    * @see org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionSet()
    * @see #getAttribute()
    * @generated
    */
-  EAttribute getAttribute_DecisionSet();
+  EReference getAttribute_DecisionSet();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionID <em>Decision ID</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionID <em>Decision ID</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Decision ID</em>'.
+   * @return the meta object for the containment reference '<em>Decision ID</em>'.
    * @see org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionID()
    * @see #getAttribute()
    * @generated
    */
-  EAttribute getAttribute_DecisionID();
+  EReference getAttribute_DecisionID();
 
   /**
    * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.AttributeName <em>Attribute Name</em>}'.
@@ -491,15 +519,36 @@ public interface MyDslPackage extends EPackage
   EClass getAttributeType();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AttributeType#getId <em>Id</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AttributeType#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.AttributeType#getId()
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.AttributeType#getType()
    * @see #getAttributeType()
    * @generated
    */
-  EAttribute getAttributeType_Id();
+  EAttribute getAttributeType_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.Bool <em>Bool</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Bool</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Bool
+   * @generated
+   */
+  EClass getBool();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.Bool#getDecision <em>Decision</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Decision</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Bool#getDecision()
+   * @see #getBool()
+   * @generated
+   */
+  EAttribute getBool_Decision();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -631,28 +680,28 @@ public interface MyDslPackage extends EPackage
     EReference ATTRIBUTE__ATTRIBUTE_TYPE = eINSTANCE.getAttribute_AttributeType();
 
     /**
-     * The meta object literal for the '<em><b>Decision Get</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Decision Get</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATTRIBUTE__DECISION_GET = eINSTANCE.getAttribute_DecisionGet();
+    EReference ATTRIBUTE__DECISION_GET = eINSTANCE.getAttribute_DecisionGet();
 
     /**
-     * The meta object literal for the '<em><b>Decision Set</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Decision Set</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATTRIBUTE__DECISION_SET = eINSTANCE.getAttribute_DecisionSet();
+    EReference ATTRIBUTE__DECISION_SET = eINSTANCE.getAttribute_DecisionSet();
 
     /**
-     * The meta object literal for the '<em><b>Decision ID</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Decision ID</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATTRIBUTE__DECISION_ID = eINSTANCE.getAttribute_DecisionID();
+    EReference ATTRIBUTE__DECISION_ID = eINSTANCE.getAttribute_DecisionID();
 
     /**
      * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.AttributeNameImpl <em>Attribute Name</em>}' class.
@@ -683,12 +732,30 @@ public interface MyDslPackage extends EPackage
     EClass ATTRIBUTE_TYPE = eINSTANCE.getAttributeType();
 
     /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATTRIBUTE_TYPE__ID = eINSTANCE.getAttributeType_Id();
+    EAttribute ATTRIBUTE_TYPE__TYPE = eINSTANCE.getAttributeType_Type();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.BoolImpl <em>Bool</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tcc.mydsl.myDsl.impl.BoolImpl
+     * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getBool()
+     * @generated
+     */
+    EClass BOOL = eINSTANCE.getBool();
+
+    /**
+     * The meta object literal for the '<em><b>Decision</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BOOL__DECISION = eINSTANCE.getBool_Decision();
 
   }
 

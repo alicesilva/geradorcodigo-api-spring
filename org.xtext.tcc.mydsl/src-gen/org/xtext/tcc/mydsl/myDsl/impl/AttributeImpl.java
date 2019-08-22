@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.xtext.tcc.mydsl.myDsl.Attribute;
 import org.xtext.tcc.mydsl.myDsl.AttributeName;
 import org.xtext.tcc.mydsl.myDsl.AttributeType;
+import org.xtext.tcc.mydsl.myDsl.Bool;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
 
 /**
@@ -57,64 +58,34 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   protected AttributeType attributeType;
 
   /**
-   * The default value of the '{@link #getDecisionGet() <em>Decision Get</em>}' attribute.
+   * The cached value of the '{@link #getDecisionGet() <em>Decision Get</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDecisionGet()
    * @generated
    * @ordered
    */
-  protected static final String DECISION_GET_EDEFAULT = null;
+  protected Bool decisionGet;
 
   /**
-   * The cached value of the '{@link #getDecisionGet() <em>Decision Get</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDecisionGet()
-   * @generated
-   * @ordered
-   */
-  protected String decisionGet = DECISION_GET_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getDecisionSet() <em>Decision Set</em>}' attribute.
+   * The cached value of the '{@link #getDecisionSet() <em>Decision Set</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDecisionSet()
    * @generated
    * @ordered
    */
-  protected static final String DECISION_SET_EDEFAULT = null;
+  protected Bool decisionSet;
 
   /**
-   * The cached value of the '{@link #getDecisionSet() <em>Decision Set</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDecisionSet()
-   * @generated
-   * @ordered
-   */
-  protected String decisionSet = DECISION_SET_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getDecisionID() <em>Decision ID</em>}' attribute.
+   * The cached value of the '{@link #getDecisionID() <em>Decision ID</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDecisionID()
    * @generated
    * @ordered
    */
-  protected static final String DECISION_ID_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDecisionID() <em>Decision ID</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDecisionID()
-   * @generated
-   * @ordered
-   */
-  protected String decisionID = DECISION_ID_EDEFAULT;
+  protected Bool decisionID;
 
   /**
    * <!-- begin-user-doc -->
@@ -243,7 +214,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * @generated
    */
   @Override
-  public String getDecisionGet()
+  public Bool getDecisionGet()
   {
     return decisionGet;
   }
@@ -253,13 +224,16 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setDecisionGet(String newDecisionGet)
+  public NotificationChain basicSetDecisionGet(Bool newDecisionGet, NotificationChain msgs)
   {
-    String oldDecisionGet = decisionGet;
+    Bool oldDecisionGet = decisionGet;
     decisionGet = newDecisionGet;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATTRIBUTE__DECISION_GET, oldDecisionGet, decisionGet));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.ATTRIBUTE__DECISION_GET, oldDecisionGet, newDecisionGet);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -268,7 +242,29 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * @generated
    */
   @Override
-  public String getDecisionSet()
+  public void setDecisionGet(Bool newDecisionGet)
+  {
+    if (newDecisionGet != decisionGet)
+    {
+      NotificationChain msgs = null;
+      if (decisionGet != null)
+        msgs = ((InternalEObject)decisionGet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATTRIBUTE__DECISION_GET, null, msgs);
+      if (newDecisionGet != null)
+        msgs = ((InternalEObject)newDecisionGet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATTRIBUTE__DECISION_GET, null, msgs);
+      msgs = basicSetDecisionGet(newDecisionGet, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATTRIBUTE__DECISION_GET, newDecisionGet, newDecisionGet));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Bool getDecisionSet()
   {
     return decisionSet;
   }
@@ -278,13 +274,16 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setDecisionSet(String newDecisionSet)
+  public NotificationChain basicSetDecisionSet(Bool newDecisionSet, NotificationChain msgs)
   {
-    String oldDecisionSet = decisionSet;
+    Bool oldDecisionSet = decisionSet;
     decisionSet = newDecisionSet;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATTRIBUTE__DECISION_SET, oldDecisionSet, decisionSet));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.ATTRIBUTE__DECISION_SET, oldDecisionSet, newDecisionSet);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -293,7 +292,29 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * @generated
    */
   @Override
-  public String getDecisionID()
+  public void setDecisionSet(Bool newDecisionSet)
+  {
+    if (newDecisionSet != decisionSet)
+    {
+      NotificationChain msgs = null;
+      if (decisionSet != null)
+        msgs = ((InternalEObject)decisionSet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATTRIBUTE__DECISION_SET, null, msgs);
+      if (newDecisionSet != null)
+        msgs = ((InternalEObject)newDecisionSet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATTRIBUTE__DECISION_SET, null, msgs);
+      msgs = basicSetDecisionSet(newDecisionSet, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATTRIBUTE__DECISION_SET, newDecisionSet, newDecisionSet));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Bool getDecisionID()
   {
     return decisionID;
   }
@@ -303,13 +324,38 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setDecisionID(String newDecisionID)
+  public NotificationChain basicSetDecisionID(Bool newDecisionID, NotificationChain msgs)
   {
-    String oldDecisionID = decisionID;
+    Bool oldDecisionID = decisionID;
     decisionID = newDecisionID;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATTRIBUTE__DECISION_ID, oldDecisionID, decisionID));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.ATTRIBUTE__DECISION_ID, oldDecisionID, newDecisionID);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDecisionID(Bool newDecisionID)
+  {
+    if (newDecisionID != decisionID)
+    {
+      NotificationChain msgs = null;
+      if (decisionID != null)
+        msgs = ((InternalEObject)decisionID).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATTRIBUTE__DECISION_ID, null, msgs);
+      if (newDecisionID != null)
+        msgs = ((InternalEObject)newDecisionID).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATTRIBUTE__DECISION_ID, null, msgs);
+      msgs = basicSetDecisionID(newDecisionID, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATTRIBUTE__DECISION_ID, newDecisionID, newDecisionID));
   }
 
   /**
@@ -326,6 +372,12 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
         return basicSetAttributeName(null, msgs);
       case MyDslPackage.ATTRIBUTE__ATTRIBUTE_TYPE:
         return basicSetAttributeType(null, msgs);
+      case MyDslPackage.ATTRIBUTE__DECISION_GET:
+        return basicSetDecisionGet(null, msgs);
+      case MyDslPackage.ATTRIBUTE__DECISION_SET:
+        return basicSetDecisionSet(null, msgs);
+      case MyDslPackage.ATTRIBUTE__DECISION_ID:
+        return basicSetDecisionID(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -371,13 +423,13 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
         setAttributeType((AttributeType)newValue);
         return;
       case MyDslPackage.ATTRIBUTE__DECISION_GET:
-        setDecisionGet((String)newValue);
+        setDecisionGet((Bool)newValue);
         return;
       case MyDslPackage.ATTRIBUTE__DECISION_SET:
-        setDecisionSet((String)newValue);
+        setDecisionSet((Bool)newValue);
         return;
       case MyDslPackage.ATTRIBUTE__DECISION_ID:
-        setDecisionID((String)newValue);
+        setDecisionID((Bool)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -400,13 +452,13 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
         setAttributeType((AttributeType)null);
         return;
       case MyDslPackage.ATTRIBUTE__DECISION_GET:
-        setDecisionGet(DECISION_GET_EDEFAULT);
+        setDecisionGet((Bool)null);
         return;
       case MyDslPackage.ATTRIBUTE__DECISION_SET:
-        setDecisionSet(DECISION_SET_EDEFAULT);
+        setDecisionSet((Bool)null);
         return;
       case MyDslPackage.ATTRIBUTE__DECISION_ID:
-        setDecisionID(DECISION_ID_EDEFAULT);
+        setDecisionID((Bool)null);
         return;
     }
     super.eUnset(featureID);
@@ -427,34 +479,13 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
       case MyDslPackage.ATTRIBUTE__ATTRIBUTE_TYPE:
         return attributeType != null;
       case MyDslPackage.ATTRIBUTE__DECISION_GET:
-        return DECISION_GET_EDEFAULT == null ? decisionGet != null : !DECISION_GET_EDEFAULT.equals(decisionGet);
+        return decisionGet != null;
       case MyDslPackage.ATTRIBUTE__DECISION_SET:
-        return DECISION_SET_EDEFAULT == null ? decisionSet != null : !DECISION_SET_EDEFAULT.equals(decisionSet);
+        return decisionSet != null;
       case MyDslPackage.ATTRIBUTE__DECISION_ID:
-        return DECISION_ID_EDEFAULT == null ? decisionID != null : !DECISION_ID_EDEFAULT.equals(decisionID);
+        return decisionID != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (decisionGet: ");
-    result.append(decisionGet);
-    result.append(", decisionSet: ");
-    result.append(decisionSet);
-    result.append(", decisionID: ");
-    result.append(decisionID);
-    result.append(')');
-    return result.toString();
   }
 
 } //AttributeImpl

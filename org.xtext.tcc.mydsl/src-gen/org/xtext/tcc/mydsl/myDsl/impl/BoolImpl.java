@@ -10,50 +10,50 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.tcc.mydsl.myDsl.AttributeType;
+import org.xtext.tcc.mydsl.myDsl.Bool;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Attribute Type</b></em>'.
+ * An implementation of the model object '<em><b>Bool</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AttributeTypeImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.BoolImpl#getDecision <em>Decision</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements AttributeType
+public class BoolImpl extends MinimalEObjectImpl.Container implements Bool
 {
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The default value of the '{@link #getDecision() <em>Decision</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getDecision()
    * @generated
    * @ordered
    */
-  protected static final String TYPE_EDEFAULT = null;
+  protected static final String DECISION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The cached value of the '{@link #getDecision() <em>Decision</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getDecision()
    * @generated
    * @ordered
    */
-  protected String type = TYPE_EDEFAULT;
+  protected String decision = DECISION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected AttributeTypeImpl()
+  protected BoolImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.ATTRIBUTE_TYPE;
+    return MyDslPackage.Literals.BOOL;
   }
 
   /**
@@ -75,9 +75,9 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
    * @generated
    */
   @Override
-  public String getType()
+  public String getDecision()
   {
-    return type;
+    return decision;
   }
 
   /**
@@ -86,12 +86,12 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
    * @generated
    */
   @Override
-  public void setType(String newType)
+  public void setDecision(String newDecision)
   {
-    String oldType = type;
-    type = newType;
+    String oldDecision = decision;
+    decision = newDecision;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATTRIBUTE_TYPE__TYPE, oldType, type));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.BOOL__DECISION, oldDecision, decision));
   }
 
   /**
@@ -104,8 +104,8 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
-      case MyDslPackage.ATTRIBUTE_TYPE__TYPE:
-        return getType();
+      case MyDslPackage.BOOL__DECISION:
+        return getDecision();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
-      case MyDslPackage.ATTRIBUTE_TYPE__TYPE:
-        setType((String)newValue);
+      case MyDslPackage.BOOL__DECISION:
+        setDecision((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
-      case MyDslPackage.ATTRIBUTE_TYPE__TYPE:
-        setType(TYPE_EDEFAULT);
+      case MyDslPackage.BOOL__DECISION:
+        setDecision(DECISION_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
-      case MyDslPackage.ATTRIBUTE_TYPE__TYPE:
-        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+      case MyDslPackage.BOOL__DECISION:
+        return DECISION_EDEFAULT == null ? decision != null : !DECISION_EDEFAULT.equals(decision);
     }
     return super.eIsSet(featureID);
   }
@@ -171,10 +171,10 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (type: ");
-    result.append(type);
+    result.append(" (decision: ");
+    result.append(decision);
     result.append(')');
     return result.toString();
   }
 
-} //AttributeTypeImpl
+} //BoolImpl

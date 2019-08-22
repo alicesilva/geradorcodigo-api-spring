@@ -136,7 +136,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cDecisionSetAssignment_13 = (Assignment)cGroup.eContents().get(13);
 		private final RuleCall cDecisionSetBoolParserRuleCall_13_0 = (RuleCall)cDecisionSetAssignment_13.eContents().get(0);
 		private final Keyword cCommaKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Keyword cIdKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Keyword cIdChavePrimariaKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		private final Assignment cDecisionIDAssignment_16 = (Assignment)cGroup.eContents().get(16);
 		private final RuleCall cDecisionIDBoolParserRuleCall_16_0 = (RuleCall)cDecisionIDAssignment_16.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
@@ -149,13 +149,13 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	'tipo:' attributeType=AttributeType ','
 		//	'metodoGet:' decisionGet=Bool ','
 		//	'metodoSet:' decisionSet=Bool ','
-		//	'id:' decisionID=Bool
+		//	'idChavePrimaria:' decisionID=Bool
 		//	'}'
 		//	']';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'atributos:' '[' '{' 'nome:' attributeName=AttributeName ',' 'tipo:' attributeType=AttributeType ',' 'metodoGet:'
-		//decisionGet=Bool ',' 'metodoSet:' decisionSet=Bool ',' 'id:' decisionID=Bool '}' ']'
+		//decisionGet=Bool ',' 'metodoSet:' decisionSet=Bool ',' 'idChavePrimaria:' decisionID=Bool '}' ']'
 		public Group getGroup() { return cGroup; }
 		
 		//'atributos:'
@@ -215,8 +215,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//','
 		public Keyword getCommaKeyword_14() { return cCommaKeyword_14; }
 		
-		//'id:'
-		public Keyword getIdKeyword_15() { return cIdKeyword_15; }
+		//'idChavePrimaria:'
+		public Keyword getIdChavePrimariaKeyword_15() { return cIdChavePrimariaKeyword_15; }
 		
 		//decisionID=Bool
 		public Assignment getDecisionIDAssignment_16() { return cDecisionIDAssignment_16; }
@@ -248,64 +248,72 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class AttributeTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.AttributeType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cIdAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final Keyword cIdStringKeyword_0_0 = (Keyword)cIdAssignment_0.eContents().get(0);
-		private final Assignment cIdAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final Keyword cIdIntKeyword_1_0 = (Keyword)cIdAssignment_1.eContents().get(0);
-		private final Assignment cIdAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final Keyword cIdDoubleKeyword_2_0 = (Keyword)cIdAssignment_2.eContents().get(0);
-		private final Assignment cIdAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final Keyword cIdBooleanKeyword_3_0 = (Keyword)cIdAssignment_3.eContents().get(0);
+		private final Assignment cTypeAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final Keyword cTypeStringKeyword_0_0 = (Keyword)cTypeAssignment_0.eContents().get(0);
+		private final Assignment cTypeAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Keyword cTypeIntKeyword_1_0 = (Keyword)cTypeAssignment_1.eContents().get(0);
+		private final Assignment cTypeAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final Keyword cTypeDoubleKeyword_2_0 = (Keyword)cTypeAssignment_2.eContents().get(0);
+		private final Assignment cTypeAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final Keyword cTypeBooleanKeyword_3_0 = (Keyword)cTypeAssignment_3.eContents().get(0);
 		
 		//AttributeType:
-		//	id='String' | id='Int' | id='Double' | id='Boolean';
+		//	type='String' | type='Int' | type='Double' | type='Boolean';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//id='String' | id='Int' | id='Double' | id='Boolean'
+		//type='String' | type='Int' | type='Double' | type='Boolean'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//id='String'
-		public Assignment getIdAssignment_0() { return cIdAssignment_0; }
+		//type='String'
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
 		
 		//'String'
-		public Keyword getIdStringKeyword_0_0() { return cIdStringKeyword_0_0; }
+		public Keyword getTypeStringKeyword_0_0() { return cTypeStringKeyword_0_0; }
 		
-		//id='Int'
-		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
+		//type='Int'
+		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
 		
 		//'Int'
-		public Keyword getIdIntKeyword_1_0() { return cIdIntKeyword_1_0; }
+		public Keyword getTypeIntKeyword_1_0() { return cTypeIntKeyword_1_0; }
 		
-		//id='Double'
-		public Assignment getIdAssignment_2() { return cIdAssignment_2; }
+		//type='Double'
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 		
 		//'Double'
-		public Keyword getIdDoubleKeyword_2_0() { return cIdDoubleKeyword_2_0; }
+		public Keyword getTypeDoubleKeyword_2_0() { return cTypeDoubleKeyword_2_0; }
 		
-		//id='Boolean'
-		public Assignment getIdAssignment_3() { return cIdAssignment_3; }
+		//type='Boolean'
+		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
 		
 		//'Boolean'
-		public Keyword getIdBooleanKeyword_3_0() { return cIdBooleanKeyword_3_0; }
+		public Keyword getTypeBooleanKeyword_3_0() { return cTypeBooleanKeyword_3_0; }
 	}
 	public class BoolElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.Bool");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cYesKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cNoKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Assignment cDecisionAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final Keyword cDecisionYesKeyword_0_0 = (Keyword)cDecisionAssignment_0.eContents().get(0);
+		private final Assignment cDecisionAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Keyword cDecisionNoKeyword_1_0 = (Keyword)cDecisionAssignment_1.eContents().get(0);
 		
 		//Bool:
-		//	'Yes' | 'No';
+		//	decision='Yes' | decision='No';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Yes' | 'No'
+		//decision='Yes' | decision='No'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//decision='Yes'
+		public Assignment getDecisionAssignment_0() { return cDecisionAssignment_0; }
+		
 		//'Yes'
-		public Keyword getYesKeyword_0() { return cYesKeyword_0; }
+		public Keyword getDecisionYesKeyword_0_0() { return cDecisionYesKeyword_0_0; }
+		
+		//decision='No'
+		public Assignment getDecisionAssignment_1() { return cDecisionAssignment_1; }
 		
 		//'No'
-		public Keyword getNoKeyword_1() { return cNoKeyword_1; }
+		public Keyword getDecisionNoKeyword_1_0() { return cDecisionNoKeyword_1_0; }
 	}
 	
 	
@@ -411,7 +419,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'tipo:' attributeType=AttributeType ','
 	//	'metodoGet:' decisionGet=Bool ','
 	//	'metodoSet:' decisionSet=Bool ','
-	//	'id:' decisionID=Bool
+	//	'idChavePrimaria:' decisionID=Bool
 	//	'}'
 	//	']';
 	public AttributeElements getAttributeAccess() {
@@ -433,7 +441,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AttributeType:
-	//	id='String' | id='Int' | id='Double' | id='Boolean';
+	//	type='String' | type='Int' | type='Double' | type='Boolean';
 	public AttributeTypeElements getAttributeTypeAccess() {
 		return pAttributeType;
 	}
@@ -443,7 +451,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Bool:
-	//	'Yes' | 'No';
+	//	decision='Yes' | decision='No';
 	public BoolElements getBoolAccess() {
 		return pBool;
 	}

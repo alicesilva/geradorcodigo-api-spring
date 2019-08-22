@@ -47,10 +47,12 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAttributeAccess().getDecisionSetAssignment_13(), "rule__Attribute__DecisionSetAssignment_13");
 			builder.put(grammarAccess.getAttributeAccess().getDecisionIDAssignment_16(), "rule__Attribute__DecisionIDAssignment_16");
 			builder.put(grammarAccess.getAttributeNameAccess().getIdAssignment(), "rule__AttributeName__IdAssignment");
-			builder.put(grammarAccess.getAttributeTypeAccess().getIdAssignment_0(), "rule__AttributeType__IdAssignment_0");
-			builder.put(grammarAccess.getAttributeTypeAccess().getIdAssignment_1(), "rule__AttributeType__IdAssignment_1");
-			builder.put(grammarAccess.getAttributeTypeAccess().getIdAssignment_2(), "rule__AttributeType__IdAssignment_2");
-			builder.put(grammarAccess.getAttributeTypeAccess().getIdAssignment_3(), "rule__AttributeType__IdAssignment_3");
+			builder.put(grammarAccess.getAttributeTypeAccess().getTypeAssignment_0(), "rule__AttributeType__TypeAssignment_0");
+			builder.put(grammarAccess.getAttributeTypeAccess().getTypeAssignment_1(), "rule__AttributeType__TypeAssignment_1");
+			builder.put(grammarAccess.getAttributeTypeAccess().getTypeAssignment_2(), "rule__AttributeType__TypeAssignment_2");
+			builder.put(grammarAccess.getAttributeTypeAccess().getTypeAssignment_3(), "rule__AttributeType__TypeAssignment_3");
+			builder.put(grammarAccess.getBoolAccess().getDecisionAssignment_0(), "rule__Bool__DecisionAssignment_0");
+			builder.put(grammarAccess.getBoolAccess().getDecisionAssignment_1(), "rule__Bool__DecisionAssignment_1");
 		}
 	}
 	
