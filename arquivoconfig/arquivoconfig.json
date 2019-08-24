@@ -1,13 +1,57 @@
 {
 	"nomeapi": {
-		"nome-entidade": {
-			"atributos": [{
-				"nome": "x",
-				"tipo": "y",
-				"get": "yes or no",
-				"set": "yes or no",
-				"idChavePrimaria": "yes or no",
-			}]
+		"entidades": [
+			{
+				"nome-entidade": {
+					"atributos": [
+						{
+							"nome": "x",
+							"tipo": "y",
+							"nullable": "sim ou nao"
+						}
+					],
+					"chavePrimaria": "id ou algum atributo definido"
+				}
+			}
+		],
+		"relacionamentos": {
+			"Um-Para-Muitos": [
+				{
+					"entidade-A": "x",
+					"entidade-B": "y",
+					"qual delas representa o lado 'muitos'": "x ou y",
+					"cascade": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", //colocar info sobre isso
+					"tipo do conjunto": "set ou list",
+					"nome do atributo para o conjunto": "l"
+				}
+			],
+			"Muitos para muitos": [
+				{
+					"unidirecional": [
+						{
+							"entidade dono do relacionamento": "x",
+							"cascade": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", //colocar info sobre isso
+							"nome da tabela": "y",
+							"nome da coluna 1": "z",
+							"nome da coluna 2": "w",
+							"tipo do conjunto": "list ou set",
+							"nome do atributo para o conjunto": "l"
+						}
+					],
+					"bidirecional": [
+						{
+							"entidade dono do relacionamento": "x",
+							"cascade": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", //colocar info sobre isso
+							"nome da tabela": "y",
+							"nome da coluna 1": "z",
+							"nome da coluna 2": "w",
+							"tipo do conjunto": "list ou set",
+							"nome do atributo para o conjunto": "l",
+							"nome da entidade dominado": "j"
+						}
+					]
+				}
+			]
 		}
 	}
 }
