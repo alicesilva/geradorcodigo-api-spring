@@ -6,8 +6,7 @@
 					"atributos": [
 						{
 							"nome": "x",
-							"tipo": "y",
-							"nullable": "sim ou nao"
+							"tipo": "y"
 						}
 					],
 					"chavePrimaria": "id ou algum atributo definido"
@@ -15,39 +14,39 @@
 			}
 		],
 		"relacionamentos": {
-			"Um-Para-Muitos": [
+			"Um para Muitos - 1:N": [
 				{
 					"entidade-A": "x",
 					"entidade-B": "y",
-					"qual delas representa o lado 'muitos'": "x ou y",
-					"cascade": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", //colocar info sobre isso
+					"qual delas representa o lado N?": "x ou y",
+					"operação em cascata": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", //colocar info sobre isso
 					"tipo do conjunto": "set ou list",
-					"nome do atributo para o conjunto": "l"
+					"nome do atributo para o conjunto": "j"
 				}
 			],
-			"Muitos para muitos": [
+			"Muitos para muitos - N:N": [
 				{
 					"unidirecional": [
 						{
-							"entidade dono do relacionamento": "x",
-							"cascade": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", //colocar info sobre isso
-							"nome da tabela": "y",
-							"nome da coluna 1": "z",
-							"nome da coluna 2": "w",
+							"entidade dominante do relacionamento": "x",
+							"operação em cascata": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", //colocar info sobre isso
+							"nome da tabela - JoinTable": "y",
+							"nome da coluna 1 da tabela- JoinColumn": "z",
+							"nome da coluna 2 da tabela- JoinColumn": "w",
 							"tipo do conjunto": "list ou set",
-							"nome do atributo para o conjunto": "l"
+							"nome do atributo para o conjunto": "j"
 						}
 					],
 					"bidirecional": [
 						{
-							"entidade dono do relacionamento": "x",
-							"cascade": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", //colocar info sobre isso
-							"nome da tabela": "y",
-							"nome da coluna 1": "z",
-							"nome da coluna 2": "w",
+							"entidade dominante do relacionamento": "x",
+							"operação em cascata": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", //colocar info sobre isso
+							"nome da tabela - JoinTable": "y",
+							"nome da coluna 1 da tabela- JoinColumn": "z",
+							"nome da coluna 2 da tabela- JoinColumn": "w",
 							"tipo do conjunto": "list ou set",
-							"nome do atributo para o conjunto": "l",
-							"nome da entidade dominado": "j"
+							"nome do atributo para o conjunto": "j",
+							"nome da entidade dominada": "k"
 						}
 					]
 				}
