@@ -1,56 +1,36 @@
 {
-	"nomeapi": {
-		"entidades": [
-			{
-				"nome-entidade": {
-					"atributos": [
-						{
-							"nome": "x",
-							"tipo": "y"
-						}
-					],
-					"chavePrimaria": "id ou algum atributo definido"
-				}
-			}
-		],
-		"relacionamentos": {
-			"Um para Muitos - 1:N": [
+	"nomeapi": [
+		{
+			"entidade-1": [
 				{
-					"entidade-A": "x",
-					"entidade-B": "y",
-					"qual delas representa o lado N?": "x ou y",
+					"nome": "x",
+					"tipo": "y",
+					"associação": "@OneToOne, @OneToMany, @ManyToOne, @Many-to-Many ou nada",
 					"operação em cascata": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", //colocar info sobre isso
-					"tipo do conjunto": "set ou list",
-					"nome do atributo para o conjunto": "j"
+					"mappedBy": "",
+					"@Column - nome": "",
+					"@JoinTable - nome": "", // apenas para relacionamento many to many
+					"joinColumns - nome": "", // apenas para relacionamento many to many
+					"inverseJoinColumns - nome": "" // apenas para relacionamento many to many
 				}
 			],
-			"Muitos para muitos - N:N": [
+			"chavePrimaria": "id ou algum atributo definido",
+		},
+		{
+			"entidade-2": [
 				{
-					"unidirecional": [
-						{
-							"entidade dominante do relacionamento": "x",
-							"operação em cascata": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", //colocar info sobre isso
-							"nome da tabela - JoinTable": "y",
-							"nome da coluna 1 da tabela- JoinColumn": "z",
-							"nome da coluna 2 da tabela- JoinColumn": "w",
-							"tipo do conjunto": "list ou set",
-							"nome do atributo para o conjunto": "j"
-						}
-					],
-					"bidirecional": [
-						{
-							"entidade dominante do relacionamento": "x",
-							"operação em cascata": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", //colocar info sobre isso
-							"nome da tabela - JoinTable": "y",
-							"nome da coluna 1 da tabela- JoinColumn": "z",
-							"nome da coluna 2 da tabela- JoinColumn": "w",
-							"tipo do conjunto": "list ou set",
-							"nome do atributo para o conjunto": "j",
-							"nome da entidade dominada": "k"
-						}
-					]
+					"nome": "x",
+					"tipo": "y",
+					"associação": "@OneToOne, @OneToMany, @ManyToOne, @Many-to-Many ou nada",
+					"operação em cascata": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", //colocar info sobre isso
+					"mappedBy": "",
+					"@Column - nome": "",
+					"@JoinTable - nome": "", // apenas para relacionamento many to many
+					"joinColumns - nome": "", // apenas para relacionamento many to many
+					"inverseJoinColumns - nome": "" // apenas para relacionamento many to many
 				}
-			]
+			],
+			"chavePrimaria": "id ou algum atributo definido"
 		}
-	}
+	]
 }
