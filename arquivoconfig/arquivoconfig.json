@@ -6,15 +6,24 @@
 					"nome": "x",
 					"tipo": "y",
 					"associação": "@OneToOne, @OneToMany, @ManyToOne, @Many-to-Many ou nada",
-					"operação em cascata": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", //colocar info sobre isso
+					"operação em cascata": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", 
 					"mappedBy": "",
-					"@Column - nome": "",
+					"@JoinTable - nome": "", // apenas para relacionamento many to many
+					"joinColumns - nome": "", // apenas para relacionamento many to many
+					"inverseJoinColumns - nome": "" // apenas para relacionamento many to many
+				},
+				{
+					"nome": "x",
+					"tipo": "y",
+					"associação": "@OneToOne, @OneToMany, @ManyToOne, @Many-to-Many ou nada",
+					"operação em cascata": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", 
+					"mappedBy": "",
 					"@JoinTable - nome": "", // apenas para relacionamento many to many
 					"joinColumns - nome": "", // apenas para relacionamento many to many
 					"inverseJoinColumns - nome": "" // apenas para relacionamento many to many
 				}
 			],
-			"chavePrimaria": "id ou algum atributo definido",
+			"chavePrimaria": "id ou algum atributo definido"
 		},
 		{
 			"entidade-2": [
@@ -22,9 +31,8 @@
 					"nome": "x",
 					"tipo": "y",
 					"associação": "@OneToOne, @OneToMany, @ManyToOne, @Many-to-Many ou nada",
-					"operação em cascata": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", //colocar info sobre isso
+					"operação em cascata": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE",
 					"mappedBy": "",
-					"@Column - nome": "",
 					"@JoinTable - nome": "", // apenas para relacionamento many to many
 					"joinColumns - nome": "", // apenas para relacionamento many to many
 					"inverseJoinColumns - nome": "" // apenas para relacionamento many to many
