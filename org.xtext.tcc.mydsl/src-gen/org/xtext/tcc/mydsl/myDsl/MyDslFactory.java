@@ -51,49 +51,94 @@ public interface MyDslFactory extends EFactory
   Api createApi();
 
   /**
-   * Returns a new object of class '<em>API Name</em>'.
+   * Returns a new object of class '<em>Api Nome</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>API Name</em>'.
+   * @return a new object of class '<em>Api Nome</em>'.
    * @generated
    */
-  APIName createAPIName();
+  ApiNome createApiNome();
 
   /**
-   * Returns a new object of class '<em>Attribute</em>'.
+   * Returns a new object of class '<em>Entidade</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Attribute</em>'.
+   * @return a new object of class '<em>Entidade</em>'.
    * @generated
    */
-  Attribute createAttribute();
+  Entidade createEntidade();
 
   /**
-   * Returns a new object of class '<em>Attribute Name</em>'.
+   * Returns a new object of class '<em>Entidade Nome</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Attribute Name</em>'.
+   * @return a new object of class '<em>Entidade Nome</em>'.
    * @generated
    */
-  AttributeName createAttributeName();
+  EntidadeNome createEntidadeNome();
 
   /**
-   * Returns a new object of class '<em>Attribute Type</em>'.
+   * Returns a new object of class '<em>Atributo</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Attribute Type</em>'.
+   * @return a new object of class '<em>Atributo</em>'.
    * @generated
    */
-  AttributeType createAttributeType();
+  Atributo createAtributo();
 
   /**
-   * Returns a new object of class '<em>Bool</em>'.
+   * Returns a new object of class '<em>Coluna Nome</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Bool</em>'.
+   * @return a new object of class '<em>Coluna Nome</em>'.
    * @generated
    */
-  Bool createBool();
+  ColunaNome createColunaNome();
+
+  /**
+   * Returns a new object of class '<em>Tabela Nome</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tabela Nome</em>'.
+   * @generated
+   */
+  TabelaNome createTabelaNome();
+
+  /**
+   * Returns a new object of class '<em>Operacao</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operacao</em>'.
+   * @generated
+   */
+  Operacao createOperacao();
+
+  /**
+   * Returns a new object of class '<em>Associacao Nome</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Associacao Nome</em>'.
+   * @generated
+   */
+  AssociacaoNome createAssociacaoNome();
+
+  /**
+   * Returns a new object of class '<em>Atributo Nome</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Atributo Nome</em>'.
+   * @generated
+   */
+  AtributoNome createAtributoNome();
+
+  /**
+   * Returns a new object of class '<em>Atributo Tipo</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Atributo Tipo</em>'.
+   * @generated
+   */
+  AtributoTipo createAtributoTipo();
 
   /**
    * Returns the package supported by this factory.

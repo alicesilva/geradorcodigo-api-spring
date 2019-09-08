@@ -9,33 +9,54 @@ Greeting:
 	'{' api=Api '}';
 
 Api:
-	nameApi = APIName ':{' attributes = Attribute '}'
+	nomeApi = ApiNome ':' '[' entidades += (Entidade)+']'
 ;
 
-APIName:
+
+ApiNome:
 	id = ID
 ;
 
-Attribute:
-	'atributos:''['
-				'{'
-					'nome:' attributeName = AttributeName ','
-					 'tipo:' attributeType = AttributeType ','
-					 'metodoGet:' decisionGet = Bool ','
-					 'metodoSet:' decisionSet = Bool ','
-					 'idChavePrimaria:' decisionID = Bool
-				  '}'
-				']' 
+Entidade:
+	'{' nomeEntidade = EntidadeNome ':' '[' atributo += (Atributo)+']''}' 
 ;
 
-AttributeName:
+EntidadeNome:
+	id = ID
+;
+Atributo:
+	'{' 
+		'nome-atributo:' atributoNome = AtributoNome ','
+		'tipo:' atributoTipo = AtributoTipo ','
+		'associação:' associacaoNome = AssociacaoNome ','
+		'operação em cascata:' operacao = Operacao ','
+	    'mappedBy:' nomeEntidade = EntidadeNome ','
+		'JoinTable - nome:' tabelaNome = TabelaNome ','
+		'joinColumns - nome:' colunaNome = ColunaNome ','
+		'inverseJoinColumns - nome:'  colunaNomeInverse = ColunaNome
+	'}'
+;
+
+ColunaNome:
 	id = ID
 ;
 
-AttributeType:
-	type = 'String' | type = 'Int' | type = 'Double' | type = 'Boolean'
+TabelaNome:
+	id = ID
 ;
 
-Bool:
-	decision = 'Yes' | decision = 'No'
+Operacao:
+	id = ID
+;
+
+AssociacaoNome:
+	id = ID
+;
+
+AtributoNome:
+	id = ID
+;
+
+AtributoTipo:
+	id = ID
 ;

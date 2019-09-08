@@ -91,29 +91,54 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createApiAdapter();
       }
       @Override
-      public Adapter caseAPIName(APIName object)
+      public Adapter caseApiNome(ApiNome object)
       {
-        return createAPINameAdapter();
+        return createApiNomeAdapter();
       }
       @Override
-      public Adapter caseAttribute(Attribute object)
+      public Adapter caseEntidade(Entidade object)
       {
-        return createAttributeAdapter();
+        return createEntidadeAdapter();
       }
       @Override
-      public Adapter caseAttributeName(AttributeName object)
+      public Adapter caseEntidadeNome(EntidadeNome object)
       {
-        return createAttributeNameAdapter();
+        return createEntidadeNomeAdapter();
       }
       @Override
-      public Adapter caseAttributeType(AttributeType object)
+      public Adapter caseAtributo(Atributo object)
       {
-        return createAttributeTypeAdapter();
+        return createAtributoAdapter();
       }
       @Override
-      public Adapter caseBool(Bool object)
+      public Adapter caseColunaNome(ColunaNome object)
       {
-        return createBoolAdapter();
+        return createColunaNomeAdapter();
+      }
+      @Override
+      public Adapter caseTabelaNome(TabelaNome object)
+      {
+        return createTabelaNomeAdapter();
+      }
+      @Override
+      public Adapter caseOperacao(Operacao object)
+      {
+        return createOperacaoAdapter();
+      }
+      @Override
+      public Adapter caseAssociacaoNome(AssociacaoNome object)
+      {
+        return createAssociacaoNomeAdapter();
+      }
+      @Override
+      public Adapter caseAtributoNome(AtributoNome object)
+      {
+        return createAtributoNomeAdapter();
+      }
+      @Override
+      public Adapter caseAtributoTipo(AtributoTipo object)
+      {
+        return createAtributoTipoAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -183,76 +208,151 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.APIName <em>API Name</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.ApiNome <em>Api Nome</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.tcc.mydsl.myDsl.APIName
+   * @see org.xtext.tcc.mydsl.myDsl.ApiNome
    * @generated
    */
-  public Adapter createAPINameAdapter()
+  public Adapter createApiNomeAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.Attribute <em>Attribute</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.Entidade <em>Entidade</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.tcc.mydsl.myDsl.Attribute
+   * @see org.xtext.tcc.mydsl.myDsl.Entidade
    * @generated
    */
-  public Adapter createAttributeAdapter()
+  public Adapter createEntidadeAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.AttributeName <em>Attribute Name</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.EntidadeNome <em>Entidade Nome</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.tcc.mydsl.myDsl.AttributeName
+   * @see org.xtext.tcc.mydsl.myDsl.EntidadeNome
    * @generated
    */
-  public Adapter createAttributeNameAdapter()
+  public Adapter createEntidadeNomeAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.AttributeType <em>Attribute Type</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.Atributo <em>Atributo</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.tcc.mydsl.myDsl.AttributeType
+   * @see org.xtext.tcc.mydsl.myDsl.Atributo
    * @generated
    */
-  public Adapter createAttributeTypeAdapter()
+  public Adapter createAtributoAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.Bool <em>Bool</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.ColunaNome <em>Coluna Nome</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.tcc.mydsl.myDsl.Bool
+   * @see org.xtext.tcc.mydsl.myDsl.ColunaNome
    * @generated
    */
-  public Adapter createBoolAdapter()
+  public Adapter createColunaNomeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.TabelaNome <em>Tabela Nome</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tcc.mydsl.myDsl.TabelaNome
+   * @generated
+   */
+  public Adapter createTabelaNomeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.Operacao <em>Operacao</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tcc.mydsl.myDsl.Operacao
+   * @generated
+   */
+  public Adapter createOperacaoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.AssociacaoNome <em>Associacao Nome</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tcc.mydsl.myDsl.AssociacaoNome
+   * @generated
+   */
+  public Adapter createAssociacaoNomeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.AtributoNome <em>Atributo Nome</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tcc.mydsl.myDsl.AtributoNome
+   * @generated
+   */
+  public Adapter createAtributoNomeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo <em>Atributo Tipo</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tcc.mydsl.myDsl.AtributoTipo
+   * @generated
+   */
+  public Adapter createAtributoTipoAdapter()
   {
     return null;
   }

@@ -3,8 +3,12 @@
  */
 package org.xtext.tcc.mydsl.myDsl.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -12,9 +16,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.tcc.mydsl.myDsl.APIName;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.xtext.tcc.mydsl.myDsl.Api;
-import org.xtext.tcc.mydsl.myDsl.Attribute;
+import org.xtext.tcc.mydsl.myDsl.ApiNome;
+import org.xtext.tcc.mydsl.myDsl.Entidade;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
 
 /**
@@ -25,8 +32,8 @@ import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.ApiImpl#getNameApi <em>Name Api</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.ApiImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.ApiImpl#getNomeApi <em>Nome Api</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.ApiImpl#getEntidades <em>Entidades</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,24 +41,24 @@ import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
 public class ApiImpl extends MinimalEObjectImpl.Container implements Api
 {
   /**
-   * The cached value of the '{@link #getNameApi() <em>Name Api</em>}' containment reference.
+   * The cached value of the '{@link #getNomeApi() <em>Nome Api</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNameApi()
+   * @see #getNomeApi()
    * @generated
    * @ordered
    */
-  protected APIName nameApi;
+  protected ApiNome nomeApi;
 
   /**
-   * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference.
+   * The cached value of the '{@link #getEntidades() <em>Entidades</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAttributes()
+   * @see #getEntidades()
    * @generated
    * @ordered
    */
-  protected Attribute attributes;
+  protected EList<Entidade> entidades;
 
   /**
    * <!-- begin-user-doc -->
@@ -80,9 +87,9 @@ public class ApiImpl extends MinimalEObjectImpl.Container implements Api
    * @generated
    */
   @Override
-  public APIName getNameApi()
+  public ApiNome getNomeApi()
   {
-    return nameApi;
+    return nomeApi;
   }
 
   /**
@@ -90,13 +97,13 @@ public class ApiImpl extends MinimalEObjectImpl.Container implements Api
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetNameApi(APIName newNameApi, NotificationChain msgs)
+  public NotificationChain basicSetNomeApi(ApiNome newNomeApi, NotificationChain msgs)
   {
-    APIName oldNameApi = nameApi;
-    nameApi = newNameApi;
+    ApiNome oldNomeApi = nomeApi;
+    nomeApi = newNomeApi;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.API__NAME_API, oldNameApi, newNameApi);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.API__NOME_API, oldNomeApi, newNomeApi);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -108,20 +115,20 @@ public class ApiImpl extends MinimalEObjectImpl.Container implements Api
    * @generated
    */
   @Override
-  public void setNameApi(APIName newNameApi)
+  public void setNomeApi(ApiNome newNomeApi)
   {
-    if (newNameApi != nameApi)
+    if (newNomeApi != nomeApi)
     {
       NotificationChain msgs = null;
-      if (nameApi != null)
-        msgs = ((InternalEObject)nameApi).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.API__NAME_API, null, msgs);
-      if (newNameApi != null)
-        msgs = ((InternalEObject)newNameApi).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.API__NAME_API, null, msgs);
-      msgs = basicSetNameApi(newNameApi, msgs);
+      if (nomeApi != null)
+        msgs = ((InternalEObject)nomeApi).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.API__NOME_API, null, msgs);
+      if (newNomeApi != null)
+        msgs = ((InternalEObject)newNomeApi).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.API__NOME_API, null, msgs);
+      msgs = basicSetNomeApi(newNomeApi, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.API__NAME_API, newNameApi, newNameApi));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.API__NOME_API, newNomeApi, newNomeApi));
   }
 
   /**
@@ -130,48 +137,13 @@ public class ApiImpl extends MinimalEObjectImpl.Container implements Api
    * @generated
    */
   @Override
-  public Attribute getAttributes()
+  public EList<Entidade> getEntidades()
   {
-    return attributes;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAttributes(Attribute newAttributes, NotificationChain msgs)
-  {
-    Attribute oldAttributes = attributes;
-    attributes = newAttributes;
-    if (eNotificationRequired())
+    if (entidades == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.API__ATTRIBUTES, oldAttributes, newAttributes);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      entidades = new EObjectContainmentEList<Entidade>(Entidade.class, this, MyDslPackage.API__ENTIDADES);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setAttributes(Attribute newAttributes)
-  {
-    if (newAttributes != attributes)
-    {
-      NotificationChain msgs = null;
-      if (attributes != null)
-        msgs = ((InternalEObject)attributes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.API__ATTRIBUTES, null, msgs);
-      if (newAttributes != null)
-        msgs = ((InternalEObject)newAttributes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.API__ATTRIBUTES, null, msgs);
-      msgs = basicSetAttributes(newAttributes, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.API__ATTRIBUTES, newAttributes, newAttributes));
+    return entidades;
   }
 
   /**
@@ -184,10 +156,10 @@ public class ApiImpl extends MinimalEObjectImpl.Container implements Api
   {
     switch (featureID)
     {
-      case MyDslPackage.API__NAME_API:
-        return basicSetNameApi(null, msgs);
-      case MyDslPackage.API__ATTRIBUTES:
-        return basicSetAttributes(null, msgs);
+      case MyDslPackage.API__NOME_API:
+        return basicSetNomeApi(null, msgs);
+      case MyDslPackage.API__ENTIDADES:
+        return ((InternalEList<?>)getEntidades()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -202,10 +174,10 @@ public class ApiImpl extends MinimalEObjectImpl.Container implements Api
   {
     switch (featureID)
     {
-      case MyDslPackage.API__NAME_API:
-        return getNameApi();
-      case MyDslPackage.API__ATTRIBUTES:
-        return getAttributes();
+      case MyDslPackage.API__NOME_API:
+        return getNomeApi();
+      case MyDslPackage.API__ENTIDADES:
+        return getEntidades();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -215,16 +187,18 @@ public class ApiImpl extends MinimalEObjectImpl.Container implements Api
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MyDslPackage.API__NAME_API:
-        setNameApi((APIName)newValue);
+      case MyDslPackage.API__NOME_API:
+        setNomeApi((ApiNome)newValue);
         return;
-      case MyDslPackage.API__ATTRIBUTES:
-        setAttributes((Attribute)newValue);
+      case MyDslPackage.API__ENTIDADES:
+        getEntidades().clear();
+        getEntidades().addAll((Collection<? extends Entidade>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -240,11 +214,11 @@ public class ApiImpl extends MinimalEObjectImpl.Container implements Api
   {
     switch (featureID)
     {
-      case MyDslPackage.API__NAME_API:
-        setNameApi((APIName)null);
+      case MyDslPackage.API__NOME_API:
+        setNomeApi((ApiNome)null);
         return;
-      case MyDslPackage.API__ATTRIBUTES:
-        setAttributes((Attribute)null);
+      case MyDslPackage.API__ENTIDADES:
+        getEntidades().clear();
         return;
     }
     super.eUnset(featureID);
@@ -260,10 +234,10 @@ public class ApiImpl extends MinimalEObjectImpl.Container implements Api
   {
     switch (featureID)
     {
-      case MyDslPackage.API__NAME_API:
-        return nameApi != null;
-      case MyDslPackage.API__ATTRIBUTES:
-        return attributes != null;
+      case MyDslPackage.API__NOME_API:
+        return nomeApi != null;
+      case MyDslPackage.API__ENTIDADES:
+        return entidades != null && !entidades.isEmpty();
     }
     return super.eIsSet(featureID);
   }

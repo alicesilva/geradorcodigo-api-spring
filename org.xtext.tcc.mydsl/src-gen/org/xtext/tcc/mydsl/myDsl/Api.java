@@ -3,6 +3,8 @@
  */
 package org.xtext.tcc.mydsl.myDsl;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,8 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.Api#getNameApi <em>Name Api</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.Api#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.Api#getNomeApi <em>Nome Api</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.Api#getEntidades <em>Entidades</em>}</li>
  * </ul>
  *
  * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getApi()
@@ -25,47 +27,37 @@ import org.eclipse.emf.ecore.EObject;
 public interface Api extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name Api</b></em>' containment reference.
+   * Returns the value of the '<em><b>Nome Api</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name Api</em>' containment reference.
-   * @see #setNameApi(APIName)
-   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getApi_NameApi()
+   * @return the value of the '<em>Nome Api</em>' containment reference.
+   * @see #setNomeApi(ApiNome)
+   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getApi_NomeApi()
    * @model containment="true"
    * @generated
    */
-  APIName getNameApi();
+  ApiNome getNomeApi();
 
   /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Api#getNameApi <em>Name Api</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Api#getNomeApi <em>Nome Api</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name Api</em>' containment reference.
-   * @see #getNameApi()
+   * @param value the new value of the '<em>Nome Api</em>' containment reference.
+   * @see #getNomeApi()
    * @generated
    */
-  void setNameApi(APIName value);
+  void setNomeApi(ApiNome value);
 
   /**
-   * Returns the value of the '<em><b>Attributes</b></em>' containment reference.
+   * Returns the value of the '<em><b>Entidades</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.tcc.mydsl.myDsl.Entidade}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Attributes</em>' containment reference.
-   * @see #setAttributes(Attribute)
-   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getApi_Attributes()
+   * @return the value of the '<em>Entidades</em>' containment reference list.
+   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getApi_Entidades()
    * @model containment="true"
    * @generated
    */
-  Attribute getAttributes();
-
-  /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Api#getAttributes <em>Attributes</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Attributes</em>' containment reference.
-   * @see #getAttributes()
-   * @generated
-   */
-  void setAttributes(Attribute value);
+  EList<Entidade> getEntidades();
 
 } // Api

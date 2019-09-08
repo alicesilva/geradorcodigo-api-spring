@@ -9,11 +9,12 @@ Greeting:
 	'{' api=Api '}';
 
 Api:
-	nomeApi = ApiNome '[' entidades += (Entidade)+']'
-	;
+	nomeApi = ApiNome ':' '[' entidades += (Entidade)+']'
+;
+
 
 ApiNome:
-	id = ID ':'
+	id = ID
 ;
 
 Entidade:
@@ -25,13 +26,13 @@ EntidadeNome:
 ;
 Atributo:
 	'{' 
-		'nomeAtributo:' atributoNome = AtributoNome
-		'tipo:' atributoTipo = AtributoTipo
-		'associação:' associacaoNome = AssociacaoNome
-		'operação em cascata:' operacao = Operacao
-	    'mappedBy:' nomeEntidade = EntidadeNome
-		'@JoinTable - nome:' tabelaNome = TabelaNome
-		'joinColumns - nome:' colunaNome = ColunaNome
+		'nome-atributo:' atributoNome = AtributoNome ','
+		'tipo:' atributoTipo = AtributoTipo ','
+		'associação:' associacaoNome = AssociacaoNome ','
+		'operação em cascata:' operacao = Operacao ','
+	    'mappedBy:' nomeEntidade = EntidadeNome ','
+		'JoinTable - nome:' tabelaNome = TabelaNome ','
+		'joinColumns - nome:' colunaNome = ColunaNome ','
 		'inverseJoinColumns - nome:'  colunaNomeInverse = ColunaNome
 	'}'
 ;

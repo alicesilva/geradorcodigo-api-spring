@@ -18,7 +18,7 @@
 					"associação": "@OneToOne, @OneToMany, @ManyToOne, @Many-to-Many ou nada",
 					"operação em cascata": "ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE", 
 					"mappedBy": "",
-					"@JoinTable - nome": "", // apenas para relacionamento many to many
+					"@JoinTable - nome da tabela de junção": "", // apenas para relacionamento many to many
 					"joinColumns - nome": "", // apenas para relacionamento many to many
 					"inverseJoinColumns - nome": "" // apenas para relacionamento many to many
 				}

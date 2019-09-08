@@ -94,38 +94,73 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.API_NAME:
+      case MyDslPackage.API_NOME:
       {
-        APIName apiName = (APIName)theEObject;
-        T result = caseAPIName(apiName);
+        ApiNome apiNome = (ApiNome)theEObject;
+        T result = caseApiNome(apiNome);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.ATTRIBUTE:
+      case MyDslPackage.ENTIDADE:
       {
-        Attribute attribute = (Attribute)theEObject;
-        T result = caseAttribute(attribute);
+        Entidade entidade = (Entidade)theEObject;
+        T result = caseEntidade(entidade);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.ATTRIBUTE_NAME:
+      case MyDslPackage.ENTIDADE_NOME:
       {
-        AttributeName attributeName = (AttributeName)theEObject;
-        T result = caseAttributeName(attributeName);
+        EntidadeNome entidadeNome = (EntidadeNome)theEObject;
+        T result = caseEntidadeNome(entidadeNome);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.ATTRIBUTE_TYPE:
+      case MyDslPackage.ATRIBUTO:
       {
-        AttributeType attributeType = (AttributeType)theEObject;
-        T result = caseAttributeType(attributeType);
+        Atributo atributo = (Atributo)theEObject;
+        T result = caseAtributo(atributo);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.BOOL:
+      case MyDslPackage.COLUNA_NOME:
       {
-        Bool bool = (Bool)theEObject;
-        T result = caseBool(bool);
+        ColunaNome colunaNome = (ColunaNome)theEObject;
+        T result = caseColunaNome(colunaNome);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.TABELA_NOME:
+      {
+        TabelaNome tabelaNome = (TabelaNome)theEObject;
+        T result = caseTabelaNome(tabelaNome);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.OPERACAO:
+      {
+        Operacao operacao = (Operacao)theEObject;
+        T result = caseOperacao(operacao);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.ASSOCIACAO_NOME:
+      {
+        AssociacaoNome associacaoNome = (AssociacaoNome)theEObject;
+        T result = caseAssociacaoNome(associacaoNome);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.ATRIBUTO_NOME:
+      {
+        AtributoNome atributoNome = (AtributoNome)theEObject;
+        T result = caseAtributoNome(atributoNome);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.ATRIBUTO_TIPO:
+      {
+        AtributoTipo atributoTipo = (AtributoTipo)theEObject;
+        T result = caseAtributoTipo(atributoTipo);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -182,81 +217,161 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>API Name</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Api Nome</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>API Name</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Api Nome</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAPIName(APIName object)
+  public T caseApiNome(ApiNome object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Entidade</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Entidade</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAttribute(Attribute object)
+  public T caseEntidade(Entidade object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Attribute Name</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Entidade Nome</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Attribute Name</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Entidade Nome</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAttributeName(AttributeName object)
+  public T caseEntidadeNome(EntidadeNome object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Attribute Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Atributo</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Attribute Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Atributo</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAttributeType(AttributeType object)
+  public T caseAtributo(Atributo object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Bool</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Coluna Nome</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Bool</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Coluna Nome</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBool(Bool object)
+  public T caseColunaNome(ColunaNome object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Tabela Nome</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tabela Nome</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTabelaNome(TabelaNome object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Operacao</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Operacao</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOperacao(Operacao object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Associacao Nome</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Associacao Nome</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAssociacaoNome(AssociacaoNome object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Atributo Nome</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Atributo Nome</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAtributoNome(AtributoNome object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Atributo Tipo</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Atributo Tipo</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAtributoTipo(AtributoTipo object)
   {
     return null;
   }

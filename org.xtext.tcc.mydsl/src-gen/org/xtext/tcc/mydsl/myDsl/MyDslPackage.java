@@ -124,22 +124,22 @@ public interface MyDslPackage extends EPackage
   int API = 2;
 
   /**
-   * The feature id for the '<em><b>Name Api</b></em>' containment reference.
+   * The feature id for the '<em><b>Nome Api</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int API__NAME_API = 0;
+  int API__NOME_API = 0;
 
   /**
-   * The feature id for the '<em><b>Attributes</b></em>' containment reference.
+   * The feature id for the '<em><b>Entidades</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int API__ATTRIBUTES = 1;
+  int API__ENTIDADES = 1;
 
   /**
    * The number of structural features of the '<em>Api</em>' class.
@@ -151,14 +151,14 @@ public interface MyDslPackage extends EPackage
   int API_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.APINameImpl <em>API Name</em>}' class.
+   * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.ApiNomeImpl <em>Api Nome</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.tcc.mydsl.myDsl.impl.APINameImpl
-   * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getAPIName()
+   * @see org.xtext.tcc.mydsl.myDsl.impl.ApiNomeImpl
+   * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getApiNome()
    * @generated
    */
-  int API_NAME = 3;
+  int API_NOME = 3;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -167,90 +167,63 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int API_NAME__ID = 0;
+  int API_NOME__ID = 0;
 
   /**
-   * The number of structural features of the '<em>API Name</em>' class.
+   * The number of structural features of the '<em>Api Nome</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int API_NAME_FEATURE_COUNT = 1;
+  int API_NOME_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.AttributeImpl <em>Attribute</em>}' class.
+   * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.EntidadeImpl <em>Entidade</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.tcc.mydsl.myDsl.impl.AttributeImpl
-   * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getAttribute()
+   * @see org.xtext.tcc.mydsl.myDsl.impl.EntidadeImpl
+   * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getEntidade()
    * @generated
    */
-  int ATTRIBUTE = 4;
+  int ENTIDADE = 4;
 
   /**
-   * The feature id for the '<em><b>Attribute Name</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATTRIBUTE__ATTRIBUTE_NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Attribute Type</b></em>' containment reference.
+   * The feature id for the '<em><b>Nome Entidade</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE__ATTRIBUTE_TYPE = 1;
+  int ENTIDADE__NOME_ENTIDADE = 0;
 
   /**
-   * The feature id for the '<em><b>Decision Get</b></em>' containment reference.
+   * The feature id for the '<em><b>Atributo</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE__DECISION_GET = 2;
+  int ENTIDADE__ATRIBUTO = 1;
 
   /**
-   * The feature id for the '<em><b>Decision Set</b></em>' containment reference.
+   * The number of structural features of the '<em>Entidade</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE__DECISION_SET = 3;
+  int ENTIDADE_FEATURE_COUNT = 2;
 
   /**
-   * The feature id for the '<em><b>Decision ID</b></em>' containment reference.
+   * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.EntidadeNomeImpl <em>Entidade Nome</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATTRIBUTE__DECISION_ID = 4;
-
-  /**
-   * The number of structural features of the '<em>Attribute</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATTRIBUTE_FEATURE_COUNT = 5;
-
-  /**
-   * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.AttributeNameImpl <em>Attribute Name</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.tcc.mydsl.myDsl.impl.AttributeNameImpl
-   * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getAttributeName()
+   * @see org.xtext.tcc.mydsl.myDsl.impl.EntidadeNomeImpl
+   * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getEntidadeNome()
    * @generated
    */
-  int ATTRIBUTE_NAME = 5;
+  int ENTIDADE_NOME = 5;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -259,72 +232,275 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_NAME__ID = 0;
+  int ENTIDADE_NOME__ID = 0;
 
   /**
-   * The number of structural features of the '<em>Attribute Name</em>' class.
+   * The number of structural features of the '<em>Entidade Nome</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_NAME_FEATURE_COUNT = 1;
+  int ENTIDADE_NOME_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.AttributeTypeImpl <em>Attribute Type</em>}' class.
+   * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl <em>Atributo</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.tcc.mydsl.myDsl.impl.AttributeTypeImpl
-   * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getAttributeType()
+   * @see org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl
+   * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getAtributo()
    * @generated
    */
-  int ATTRIBUTE_TYPE = 6;
+  int ATRIBUTO = 6;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATTRIBUTE_TYPE__TYPE = 0;
-
-  /**
-   * The number of structural features of the '<em>Attribute Type</em>' class.
+   * The feature id for the '<em><b>Atributo Nome</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_TYPE_FEATURE_COUNT = 1;
+  int ATRIBUTO__ATRIBUTO_NOME = 0;
 
   /**
-   * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.BoolImpl <em>Bool</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.tcc.mydsl.myDsl.impl.BoolImpl
-   * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getBool()
-   * @generated
-   */
-  int BOOL = 7;
-
-  /**
-   * The feature id for the '<em><b>Decision</b></em>' attribute.
+   * The feature id for the '<em><b>Atributo Tipo</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOL__DECISION = 0;
+  int ATRIBUTO__ATRIBUTO_TIPO = 1;
 
   /**
-   * The number of structural features of the '<em>Bool</em>' class.
+   * The feature id for the '<em><b>Associacao Nome</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOOL_FEATURE_COUNT = 1;
+  int ATRIBUTO__ASSOCIACAO_NOME = 2;
+
+  /**
+   * The feature id for the '<em><b>Operacao</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATRIBUTO__OPERACAO = 3;
+
+  /**
+   * The feature id for the '<em><b>Nome Entidade</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATRIBUTO__NOME_ENTIDADE = 4;
+
+  /**
+   * The feature id for the '<em><b>Tabela Nome</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATRIBUTO__TABELA_NOME = 5;
+
+  /**
+   * The feature id for the '<em><b>Coluna Nome</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATRIBUTO__COLUNA_NOME = 6;
+
+  /**
+   * The feature id for the '<em><b>Coluna Nome Inverse</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATRIBUTO__COLUNA_NOME_INVERSE = 7;
+
+  /**
+   * The number of structural features of the '<em>Atributo</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATRIBUTO_FEATURE_COUNT = 8;
+
+  /**
+   * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.ColunaNomeImpl <em>Coluna Nome</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tcc.mydsl.myDsl.impl.ColunaNomeImpl
+   * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getColunaNome()
+   * @generated
+   */
+  int COLUNA_NOME = 7;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUNA_NOME__ID = 0;
+
+  /**
+   * The number of structural features of the '<em>Coluna Nome</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COLUNA_NOME_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.TabelaNomeImpl <em>Tabela Nome</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tcc.mydsl.myDsl.impl.TabelaNomeImpl
+   * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getTabelaNome()
+   * @generated
+   */
+  int TABELA_NOME = 8;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABELA_NOME__ID = 0;
+
+  /**
+   * The number of structural features of the '<em>Tabela Nome</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABELA_NOME_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.OperacaoImpl <em>Operacao</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tcc.mydsl.myDsl.impl.OperacaoImpl
+   * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getOperacao()
+   * @generated
+   */
+  int OPERACAO = 9;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERACAO__ID = 0;
+
+  /**
+   * The number of structural features of the '<em>Operacao</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERACAO_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.AssociacaoNomeImpl <em>Associacao Nome</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tcc.mydsl.myDsl.impl.AssociacaoNomeImpl
+   * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getAssociacaoNome()
+   * @generated
+   */
+  int ASSOCIACAO_NOME = 10;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIACAO_NOME__ID = 0;
+
+  /**
+   * The number of structural features of the '<em>Associacao Nome</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIACAO_NOME_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoNomeImpl <em>Atributo Nome</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tcc.mydsl.myDsl.impl.AtributoNomeImpl
+   * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getAtributoNome()
+   * @generated
+   */
+  int ATRIBUTO_NOME = 11;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATRIBUTO_NOME__ID = 0;
+
+  /**
+   * The number of structural features of the '<em>Atributo Nome</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATRIBUTO_NOME_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoTipoImpl <em>Atributo Tipo</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tcc.mydsl.myDsl.impl.AtributoTipoImpl
+   * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getAtributoTipo()
+   * @generated
+   */
+  int ATRIBUTO_TIPO = 12;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATRIBUTO_TIPO__ID = 0;
+
+  /**
+   * The number of structural features of the '<em>Atributo Tipo</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATRIBUTO_TIPO_FEATURE_COUNT = 1;
 
 
   /**
@@ -380,175 +556,324 @@ public interface MyDslPackage extends EPackage
   EClass getApi();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Api#getNameApi <em>Name Api</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Api#getNomeApi <em>Nome Api</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name Api</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.Api#getNameApi()
+   * @return the meta object for the containment reference '<em>Nome Api</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Api#getNomeApi()
    * @see #getApi()
    * @generated
    */
-  EReference getApi_NameApi();
+  EReference getApi_NomeApi();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Api#getAttributes <em>Attributes</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.tcc.mydsl.myDsl.Api#getEntidades <em>Entidades</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Attributes</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.Api#getAttributes()
+   * @return the meta object for the containment reference list '<em>Entidades</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Api#getEntidades()
    * @see #getApi()
    * @generated
    */
-  EReference getApi_Attributes();
+  EReference getApi_Entidades();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.APIName <em>API Name</em>}'.
+   * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.ApiNome <em>Api Nome</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>API Name</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.APIName
+   * @return the meta object for class '<em>Api Nome</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.ApiNome
    * @generated
    */
-  EClass getAPIName();
+  EClass getApiNome();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.APIName#getId <em>Id</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.APIName#getId()
-   * @see #getAPIName()
-   * @generated
-   */
-  EAttribute getAPIName_Id();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.Attribute <em>Attribute</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Attribute</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.Attribute
-   * @generated
-   */
-  EClass getAttribute();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getAttributeName <em>Attribute Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Attribute Name</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.Attribute#getAttributeName()
-   * @see #getAttribute()
-   * @generated
-   */
-  EReference getAttribute_AttributeName();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getAttributeType <em>Attribute Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Attribute Type</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.Attribute#getAttributeType()
-   * @see #getAttribute()
-   * @generated
-   */
-  EReference getAttribute_AttributeType();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionGet <em>Decision Get</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Decision Get</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionGet()
-   * @see #getAttribute()
-   * @generated
-   */
-  EReference getAttribute_DecisionGet();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionSet <em>Decision Set</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Decision Set</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionSet()
-   * @see #getAttribute()
-   * @generated
-   */
-  EReference getAttribute_DecisionSet();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionID <em>Decision ID</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Decision ID</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.Attribute#getDecisionID()
-   * @see #getAttribute()
-   * @generated
-   */
-  EReference getAttribute_DecisionID();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.AttributeName <em>Attribute Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Attribute Name</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.AttributeName
-   * @generated
-   */
-  EClass getAttributeName();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AttributeName#getId <em>Id</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.ApiNome#getId <em>Id</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Id</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.AttributeName#getId()
-   * @see #getAttributeName()
+   * @see org.xtext.tcc.mydsl.myDsl.ApiNome#getId()
+   * @see #getApiNome()
    * @generated
    */
-  EAttribute getAttributeName_Id();
+  EAttribute getApiNome_Id();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.AttributeType <em>Attribute Type</em>}'.
+   * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.Entidade <em>Entidade</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Attribute Type</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.AttributeType
+   * @return the meta object for class '<em>Entidade</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Entidade
    * @generated
    */
-  EClass getAttributeType();
+  EClass getEntidade();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AttributeType#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Entidade#getNomeEntidade <em>Nome Entidade</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.AttributeType#getType()
-   * @see #getAttributeType()
+   * @return the meta object for the containment reference '<em>Nome Entidade</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Entidade#getNomeEntidade()
+   * @see #getEntidade()
    * @generated
    */
-  EAttribute getAttributeType_Type();
+  EReference getEntidade_NomeEntidade();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.Bool <em>Bool</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.tcc.mydsl.myDsl.Entidade#getAtributo <em>Atributo</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Bool</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.Bool
+   * @return the meta object for the containment reference list '<em>Atributo</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Entidade#getAtributo()
+   * @see #getEntidade()
    * @generated
    */
-  EClass getBool();
+  EReference getEntidade_Atributo();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.Bool#getDecision <em>Decision</em>}'.
+   * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.EntidadeNome <em>Entidade Nome</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Decision</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.Bool#getDecision()
-   * @see #getBool()
+   * @return the meta object for class '<em>Entidade Nome</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.EntidadeNome
    * @generated
    */
-  EAttribute getBool_Decision();
+  EClass getEntidadeNome();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.EntidadeNome#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.EntidadeNome#getId()
+   * @see #getEntidadeNome()
+   * @generated
+   */
+  EAttribute getEntidadeNome_Id();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.Atributo <em>Atributo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Atributo</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Atributo
+   * @generated
+   */
+  EClass getAtributo();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getAtributoNome <em>Atributo Nome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Atributo Nome</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Atributo#getAtributoNome()
+   * @see #getAtributo()
+   * @generated
+   */
+  EReference getAtributo_AtributoNome();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getAtributoTipo <em>Atributo Tipo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Atributo Tipo</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Atributo#getAtributoTipo()
+   * @see #getAtributo()
+   * @generated
+   */
+  EReference getAtributo_AtributoTipo();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getAssociacaoNome <em>Associacao Nome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Associacao Nome</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Atributo#getAssociacaoNome()
+   * @see #getAtributo()
+   * @generated
+   */
+  EReference getAtributo_AssociacaoNome();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getOperacao <em>Operacao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operacao</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Atributo#getOperacao()
+   * @see #getAtributo()
+   * @generated
+   */
+  EReference getAtributo_Operacao();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getNomeEntidade <em>Nome Entidade</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Nome Entidade</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Atributo#getNomeEntidade()
+   * @see #getAtributo()
+   * @generated
+   */
+  EReference getAtributo_NomeEntidade();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getTabelaNome <em>Tabela Nome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Tabela Nome</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Atributo#getTabelaNome()
+   * @see #getAtributo()
+   * @generated
+   */
+  EReference getAtributo_TabelaNome();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getColunaNome <em>Coluna Nome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Coluna Nome</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Atributo#getColunaNome()
+   * @see #getAtributo()
+   * @generated
+   */
+  EReference getAtributo_ColunaNome();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getColunaNomeInverse <em>Coluna Nome Inverse</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Coluna Nome Inverse</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Atributo#getColunaNomeInverse()
+   * @see #getAtributo()
+   * @generated
+   */
+  EReference getAtributo_ColunaNomeInverse();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.ColunaNome <em>Coluna Nome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Coluna Nome</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.ColunaNome
+   * @generated
+   */
+  EClass getColunaNome();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.ColunaNome#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.ColunaNome#getId()
+   * @see #getColunaNome()
+   * @generated
+   */
+  EAttribute getColunaNome_Id();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.TabelaNome <em>Tabela Nome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Tabela Nome</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.TabelaNome
+   * @generated
+   */
+  EClass getTabelaNome();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.TabelaNome#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.TabelaNome#getId()
+   * @see #getTabelaNome()
+   * @generated
+   */
+  EAttribute getTabelaNome_Id();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.Operacao <em>Operacao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Operacao</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Operacao
+   * @generated
+   */
+  EClass getOperacao();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.Operacao#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Operacao#getId()
+   * @see #getOperacao()
+   * @generated
+   */
+  EAttribute getOperacao_Id();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.AssociacaoNome <em>Associacao Nome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Associacao Nome</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.AssociacaoNome
+   * @generated
+   */
+  EClass getAssociacaoNome();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AssociacaoNome#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.AssociacaoNome#getId()
+   * @see #getAssociacaoNome()
+   * @generated
+   */
+  EAttribute getAssociacaoNome_Id();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.AtributoNome <em>Atributo Nome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Atributo Nome</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.AtributoNome
+   * @generated
+   */
+  EClass getAtributoNome();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AtributoNome#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.AtributoNome#getId()
+   * @see #getAtributoNome()
+   * @generated
+   */
+  EAttribute getAtributoNome_Id();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo <em>Atributo Tipo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Atributo Tipo</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.AtributoTipo
+   * @generated
+   */
+  EClass getAtributoTipo();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.AtributoTipo#getId()
+   * @see #getAtributoTipo()
+   * @generated
+   */
+  EAttribute getAtributoTipo_Id();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -620,98 +945,30 @@ public interface MyDslPackage extends EPackage
     EClass API = eINSTANCE.getApi();
 
     /**
-     * The meta object literal for the '<em><b>Name Api</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Nome Api</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference API__NAME_API = eINSTANCE.getApi_NameApi();
+    EReference API__NOME_API = eINSTANCE.getApi_NomeApi();
 
     /**
-     * The meta object literal for the '<em><b>Attributes</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Entidades</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference API__ATTRIBUTES = eINSTANCE.getApi_Attributes();
+    EReference API__ENTIDADES = eINSTANCE.getApi_Entidades();
 
     /**
-     * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.APINameImpl <em>API Name</em>}' class.
+     * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.ApiNomeImpl <em>Api Nome</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.tcc.mydsl.myDsl.impl.APINameImpl
-     * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getAPIName()
+     * @see org.xtext.tcc.mydsl.myDsl.impl.ApiNomeImpl
+     * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getApiNome()
      * @generated
      */
-    EClass API_NAME = eINSTANCE.getAPIName();
-
-    /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute API_NAME__ID = eINSTANCE.getAPIName_Id();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.AttributeImpl <em>Attribute</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.tcc.mydsl.myDsl.impl.AttributeImpl
-     * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getAttribute()
-     * @generated
-     */
-    EClass ATTRIBUTE = eINSTANCE.getAttribute();
-
-    /**
-     * The meta object literal for the '<em><b>Attribute Name</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ATTRIBUTE__ATTRIBUTE_NAME = eINSTANCE.getAttribute_AttributeName();
-
-    /**
-     * The meta object literal for the '<em><b>Attribute Type</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ATTRIBUTE__ATTRIBUTE_TYPE = eINSTANCE.getAttribute_AttributeType();
-
-    /**
-     * The meta object literal for the '<em><b>Decision Get</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ATTRIBUTE__DECISION_GET = eINSTANCE.getAttribute_DecisionGet();
-
-    /**
-     * The meta object literal for the '<em><b>Decision Set</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ATTRIBUTE__DECISION_SET = eINSTANCE.getAttribute_DecisionSet();
-
-    /**
-     * The meta object literal for the '<em><b>Decision ID</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ATTRIBUTE__DECISION_ID = eINSTANCE.getAttribute_DecisionID();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.AttributeNameImpl <em>Attribute Name</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.tcc.mydsl.myDsl.impl.AttributeNameImpl
-     * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getAttributeName()
-     * @generated
-     */
-    EClass ATTRIBUTE_NAME = eINSTANCE.getAttributeName();
+    EClass API_NOME = eINSTANCE.getApiNome();
 
     /**
      * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
@@ -719,43 +976,233 @@ public interface MyDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATTRIBUTE_NAME__ID = eINSTANCE.getAttributeName_Id();
+    EAttribute API_NOME__ID = eINSTANCE.getApiNome_Id();
 
     /**
-     * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.AttributeTypeImpl <em>Attribute Type</em>}' class.
+     * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.EntidadeImpl <em>Entidade</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.tcc.mydsl.myDsl.impl.AttributeTypeImpl
-     * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getAttributeType()
+     * @see org.xtext.tcc.mydsl.myDsl.impl.EntidadeImpl
+     * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getEntidade()
      * @generated
      */
-    EClass ATTRIBUTE_TYPE = eINSTANCE.getAttributeType();
+    EClass ENTIDADE = eINSTANCE.getEntidade();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ATTRIBUTE_TYPE__TYPE = eINSTANCE.getAttributeType_Type();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.BoolImpl <em>Bool</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.tcc.mydsl.myDsl.impl.BoolImpl
-     * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getBool()
-     * @generated
-     */
-    EClass BOOL = eINSTANCE.getBool();
-
-    /**
-     * The meta object literal for the '<em><b>Decision</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Nome Entidade</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BOOL__DECISION = eINSTANCE.getBool_Decision();
+    EReference ENTIDADE__NOME_ENTIDADE = eINSTANCE.getEntidade_NomeEntidade();
+
+    /**
+     * The meta object literal for the '<em><b>Atributo</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTIDADE__ATRIBUTO = eINSTANCE.getEntidade_Atributo();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.EntidadeNomeImpl <em>Entidade Nome</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tcc.mydsl.myDsl.impl.EntidadeNomeImpl
+     * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getEntidadeNome()
+     * @generated
+     */
+    EClass ENTIDADE_NOME = eINSTANCE.getEntidadeNome();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENTIDADE_NOME__ID = eINSTANCE.getEntidadeNome_Id();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl <em>Atributo</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl
+     * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getAtributo()
+     * @generated
+     */
+    EClass ATRIBUTO = eINSTANCE.getAtributo();
+
+    /**
+     * The meta object literal for the '<em><b>Atributo Nome</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATRIBUTO__ATRIBUTO_NOME = eINSTANCE.getAtributo_AtributoNome();
+
+    /**
+     * The meta object literal for the '<em><b>Atributo Tipo</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATRIBUTO__ATRIBUTO_TIPO = eINSTANCE.getAtributo_AtributoTipo();
+
+    /**
+     * The meta object literal for the '<em><b>Associacao Nome</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATRIBUTO__ASSOCIACAO_NOME = eINSTANCE.getAtributo_AssociacaoNome();
+
+    /**
+     * The meta object literal for the '<em><b>Operacao</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATRIBUTO__OPERACAO = eINSTANCE.getAtributo_Operacao();
+
+    /**
+     * The meta object literal for the '<em><b>Nome Entidade</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATRIBUTO__NOME_ENTIDADE = eINSTANCE.getAtributo_NomeEntidade();
+
+    /**
+     * The meta object literal for the '<em><b>Tabela Nome</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATRIBUTO__TABELA_NOME = eINSTANCE.getAtributo_TabelaNome();
+
+    /**
+     * The meta object literal for the '<em><b>Coluna Nome</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATRIBUTO__COLUNA_NOME = eINSTANCE.getAtributo_ColunaNome();
+
+    /**
+     * The meta object literal for the '<em><b>Coluna Nome Inverse</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATRIBUTO__COLUNA_NOME_INVERSE = eINSTANCE.getAtributo_ColunaNomeInverse();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.ColunaNomeImpl <em>Coluna Nome</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tcc.mydsl.myDsl.impl.ColunaNomeImpl
+     * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getColunaNome()
+     * @generated
+     */
+    EClass COLUNA_NOME = eINSTANCE.getColunaNome();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COLUNA_NOME__ID = eINSTANCE.getColunaNome_Id();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.TabelaNomeImpl <em>Tabela Nome</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tcc.mydsl.myDsl.impl.TabelaNomeImpl
+     * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getTabelaNome()
+     * @generated
+     */
+    EClass TABELA_NOME = eINSTANCE.getTabelaNome();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TABELA_NOME__ID = eINSTANCE.getTabelaNome_Id();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.OperacaoImpl <em>Operacao</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tcc.mydsl.myDsl.impl.OperacaoImpl
+     * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getOperacao()
+     * @generated
+     */
+    EClass OPERACAO = eINSTANCE.getOperacao();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OPERACAO__ID = eINSTANCE.getOperacao_Id();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.AssociacaoNomeImpl <em>Associacao Nome</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tcc.mydsl.myDsl.impl.AssociacaoNomeImpl
+     * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getAssociacaoNome()
+     * @generated
+     */
+    EClass ASSOCIACAO_NOME = eINSTANCE.getAssociacaoNome();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASSOCIACAO_NOME__ID = eINSTANCE.getAssociacaoNome_Id();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoNomeImpl <em>Atributo Nome</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tcc.mydsl.myDsl.impl.AtributoNomeImpl
+     * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getAtributoNome()
+     * @generated
+     */
+    EClass ATRIBUTO_NOME = eINSTANCE.getAtributoNome();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATRIBUTO_NOME__ID = eINSTANCE.getAtributoNome_Id();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoTipoImpl <em>Atributo Tipo</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tcc.mydsl.myDsl.impl.AtributoTipoImpl
+     * @see org.xtext.tcc.mydsl.myDsl.impl.MyDslPackageImpl#getAtributoTipo()
+     * @generated
+     */
+    EClass ATRIBUTO_TIPO = eINSTANCE.getAtributoTipo();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATRIBUTO_TIPO__ID = eINSTANCE.getAtributoTipo_Id();
 
   }
 

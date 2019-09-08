@@ -68,11 +68,16 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.MODEL: return createModel();
       case MyDslPackage.GREETING: return createGreeting();
       case MyDslPackage.API: return createApi();
-      case MyDslPackage.API_NAME: return createAPIName();
-      case MyDslPackage.ATTRIBUTE: return createAttribute();
-      case MyDslPackage.ATTRIBUTE_NAME: return createAttributeName();
-      case MyDslPackage.ATTRIBUTE_TYPE: return createAttributeType();
-      case MyDslPackage.BOOL: return createBool();
+      case MyDslPackage.API_NOME: return createApiNome();
+      case MyDslPackage.ENTIDADE: return createEntidade();
+      case MyDslPackage.ENTIDADE_NOME: return createEntidadeNome();
+      case MyDslPackage.ATRIBUTO: return createAtributo();
+      case MyDslPackage.COLUNA_NOME: return createColunaNome();
+      case MyDslPackage.TABELA_NOME: return createTabelaNome();
+      case MyDslPackage.OPERACAO: return createOperacao();
+      case MyDslPackage.ASSOCIACAO_NOME: return createAssociacaoNome();
+      case MyDslPackage.ATRIBUTO_NOME: return createAtributoNome();
+      case MyDslPackage.ATRIBUTO_TIPO: return createAtributoTipo();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -120,10 +125,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * @generated
    */
   @Override
-  public APIName createAPIName()
+  public ApiNome createApiNome()
   {
-    APINameImpl apiName = new APINameImpl();
-    return apiName;
+    ApiNomeImpl apiNome = new ApiNomeImpl();
+    return apiNome;
   }
 
   /**
@@ -132,10 +137,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * @generated
    */
   @Override
-  public Attribute createAttribute()
+  public Entidade createEntidade()
   {
-    AttributeImpl attribute = new AttributeImpl();
-    return attribute;
+    EntidadeImpl entidade = new EntidadeImpl();
+    return entidade;
   }
 
   /**
@@ -144,10 +149,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * @generated
    */
   @Override
-  public AttributeName createAttributeName()
+  public EntidadeNome createEntidadeNome()
   {
-    AttributeNameImpl attributeName = new AttributeNameImpl();
-    return attributeName;
+    EntidadeNomeImpl entidadeNome = new EntidadeNomeImpl();
+    return entidadeNome;
   }
 
   /**
@@ -156,10 +161,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * @generated
    */
   @Override
-  public AttributeType createAttributeType()
+  public Atributo createAtributo()
   {
-    AttributeTypeImpl attributeType = new AttributeTypeImpl();
-    return attributeType;
+    AtributoImpl atributo = new AtributoImpl();
+    return atributo;
   }
 
   /**
@@ -168,10 +173,70 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * @generated
    */
   @Override
-  public Bool createBool()
+  public ColunaNome createColunaNome()
   {
-    BoolImpl bool = new BoolImpl();
-    return bool;
+    ColunaNomeImpl colunaNome = new ColunaNomeImpl();
+    return colunaNome;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TabelaNome createTabelaNome()
+  {
+    TabelaNomeImpl tabelaNome = new TabelaNomeImpl();
+    return tabelaNome;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Operacao createOperacao()
+  {
+    OperacaoImpl operacao = new OperacaoImpl();
+    return operacao;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AssociacaoNome createAssociacaoNome()
+  {
+    AssociacaoNomeImpl associacaoNome = new AssociacaoNomeImpl();
+    return associacaoNome;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AtributoNome createAtributoNome()
+  {
+    AtributoNomeImpl atributoNome = new AtributoNomeImpl();
+    return atributoNome;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AtributoTipo createAtributoTipo()
+  {
+    AtributoTipoImpl atributoTipo = new AtributoTipoImpl();
+    return atributoTipo;
   }
 
   /**

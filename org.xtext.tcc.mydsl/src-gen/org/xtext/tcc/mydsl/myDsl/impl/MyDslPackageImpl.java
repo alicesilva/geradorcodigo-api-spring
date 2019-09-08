@@ -10,16 +10,21 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.xtext.tcc.mydsl.myDsl.APIName;
 import org.xtext.tcc.mydsl.myDsl.Api;
-import org.xtext.tcc.mydsl.myDsl.Attribute;
-import org.xtext.tcc.mydsl.myDsl.AttributeName;
-import org.xtext.tcc.mydsl.myDsl.AttributeType;
-import org.xtext.tcc.mydsl.myDsl.Bool;
+import org.xtext.tcc.mydsl.myDsl.ApiNome;
+import org.xtext.tcc.mydsl.myDsl.AssociacaoNome;
+import org.xtext.tcc.mydsl.myDsl.Atributo;
+import org.xtext.tcc.mydsl.myDsl.AtributoNome;
+import org.xtext.tcc.mydsl.myDsl.AtributoTipo;
+import org.xtext.tcc.mydsl.myDsl.ColunaNome;
+import org.xtext.tcc.mydsl.myDsl.Entidade;
+import org.xtext.tcc.mydsl.myDsl.EntidadeNome;
 import org.xtext.tcc.mydsl.myDsl.Greeting;
 import org.xtext.tcc.mydsl.myDsl.Model;
 import org.xtext.tcc.mydsl.myDsl.MyDslFactory;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
+import org.xtext.tcc.mydsl.myDsl.Operacao;
+import org.xtext.tcc.mydsl.myDsl.TabelaNome;
 
 /**
  * <!-- begin-user-doc -->
@@ -55,35 +60,70 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass apiNameEClass = null;
+  private EClass apiNomeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass attributeEClass = null;
+  private EClass entidadeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass attributeNameEClass = null;
+  private EClass entidadeNomeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass attributeTypeEClass = null;
+  private EClass atributoEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass boolEClass = null;
+  private EClass colunaNomeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass tabelaNomeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass operacaoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass associacaoNomeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass atributoNomeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass atributoTipoEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -209,7 +249,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EReference getApi_NameApi()
+  public EReference getApi_NomeApi()
   {
     return (EReference)apiEClass.getEStructuralFeatures().get(0);
   }
@@ -220,7 +260,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EReference getApi_Attributes()
+  public EReference getApi_Entidades()
   {
     return (EReference)apiEClass.getEStructuralFeatures().get(1);
   }
@@ -231,9 +271,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EClass getAPIName()
+  public EClass getApiNome()
   {
-    return apiNameEClass;
+    return apiNomeEClass;
   }
 
   /**
@@ -242,9 +282,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EAttribute getAPIName_Id()
+  public EAttribute getApiNome_Id()
   {
-    return (EAttribute)apiNameEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)apiNomeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -253,9 +293,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EClass getAttribute()
+  public EClass getEntidade()
   {
-    return attributeEClass;
+    return entidadeEClass;
   }
 
   /**
@@ -264,9 +304,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EReference getAttribute_AttributeName()
+  public EReference getEntidade_NomeEntidade()
   {
-    return (EReference)attributeEClass.getEStructuralFeatures().get(0);
+    return (EReference)entidadeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -275,9 +315,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EReference getAttribute_AttributeType()
+  public EReference getEntidade_Atributo()
   {
-    return (EReference)attributeEClass.getEStructuralFeatures().get(1);
+    return (EReference)entidadeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -286,9 +326,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EReference getAttribute_DecisionGet()
+  public EClass getEntidadeNome()
   {
-    return (EReference)attributeEClass.getEStructuralFeatures().get(2);
+    return entidadeNomeEClass;
   }
 
   /**
@@ -297,9 +337,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EReference getAttribute_DecisionSet()
+  public EAttribute getEntidadeNome_Id()
   {
-    return (EReference)attributeEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)entidadeNomeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -308,9 +348,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EReference getAttribute_DecisionID()
+  public EClass getAtributo()
   {
-    return (EReference)attributeEClass.getEStructuralFeatures().get(4);
+    return atributoEClass;
   }
 
   /**
@@ -319,9 +359,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EClass getAttributeName()
+  public EReference getAtributo_AtributoNome()
   {
-    return attributeNameEClass;
+    return (EReference)atributoEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -330,9 +370,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EAttribute getAttributeName_Id()
+  public EReference getAtributo_AtributoTipo()
   {
-    return (EAttribute)attributeNameEClass.getEStructuralFeatures().get(0);
+    return (EReference)atributoEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -341,9 +381,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EClass getAttributeType()
+  public EReference getAtributo_AssociacaoNome()
   {
-    return attributeTypeEClass;
+    return (EReference)atributoEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -352,9 +392,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EAttribute getAttributeType_Type()
+  public EReference getAtributo_Operacao()
   {
-    return (EAttribute)attributeTypeEClass.getEStructuralFeatures().get(0);
+    return (EReference)atributoEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -363,9 +403,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EClass getBool()
+  public EReference getAtributo_NomeEntidade()
   {
-    return boolEClass;
+    return (EReference)atributoEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -374,9 +414,163 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EAttribute getBool_Decision()
+  public EReference getAtributo_TabelaNome()
   {
-    return (EAttribute)boolEClass.getEStructuralFeatures().get(0);
+    return (EReference)atributoEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAtributo_ColunaNome()
+  {
+    return (EReference)atributoEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAtributo_ColunaNomeInverse()
+  {
+    return (EReference)atributoEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getColunaNome()
+  {
+    return colunaNomeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getColunaNome_Id()
+  {
+    return (EAttribute)colunaNomeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTabelaNome()
+  {
+    return tabelaNomeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTabelaNome_Id()
+  {
+    return (EAttribute)tabelaNomeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getOperacao()
+  {
+    return operacaoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getOperacao_Id()
+  {
+    return (EAttribute)operacaoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAssociacaoNome()
+  {
+    return associacaoNomeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAssociacaoNome_Id()
+  {
+    return (EAttribute)associacaoNomeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAtributoNome()
+  {
+    return atributoNomeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAtributoNome_Id()
+  {
+    return (EAttribute)atributoNomeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAtributoTipo()
+  {
+    return atributoTipoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAtributoTipo_Id()
+  {
+    return (EAttribute)atributoTipoEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -417,27 +611,46 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEReference(greetingEClass, GREETING__API);
 
     apiEClass = createEClass(API);
-    createEReference(apiEClass, API__NAME_API);
-    createEReference(apiEClass, API__ATTRIBUTES);
+    createEReference(apiEClass, API__NOME_API);
+    createEReference(apiEClass, API__ENTIDADES);
 
-    apiNameEClass = createEClass(API_NAME);
-    createEAttribute(apiNameEClass, API_NAME__ID);
+    apiNomeEClass = createEClass(API_NOME);
+    createEAttribute(apiNomeEClass, API_NOME__ID);
 
-    attributeEClass = createEClass(ATTRIBUTE);
-    createEReference(attributeEClass, ATTRIBUTE__ATTRIBUTE_NAME);
-    createEReference(attributeEClass, ATTRIBUTE__ATTRIBUTE_TYPE);
-    createEReference(attributeEClass, ATTRIBUTE__DECISION_GET);
-    createEReference(attributeEClass, ATTRIBUTE__DECISION_SET);
-    createEReference(attributeEClass, ATTRIBUTE__DECISION_ID);
+    entidadeEClass = createEClass(ENTIDADE);
+    createEReference(entidadeEClass, ENTIDADE__NOME_ENTIDADE);
+    createEReference(entidadeEClass, ENTIDADE__ATRIBUTO);
 
-    attributeNameEClass = createEClass(ATTRIBUTE_NAME);
-    createEAttribute(attributeNameEClass, ATTRIBUTE_NAME__ID);
+    entidadeNomeEClass = createEClass(ENTIDADE_NOME);
+    createEAttribute(entidadeNomeEClass, ENTIDADE_NOME__ID);
 
-    attributeTypeEClass = createEClass(ATTRIBUTE_TYPE);
-    createEAttribute(attributeTypeEClass, ATTRIBUTE_TYPE__TYPE);
+    atributoEClass = createEClass(ATRIBUTO);
+    createEReference(atributoEClass, ATRIBUTO__ATRIBUTO_NOME);
+    createEReference(atributoEClass, ATRIBUTO__ATRIBUTO_TIPO);
+    createEReference(atributoEClass, ATRIBUTO__ASSOCIACAO_NOME);
+    createEReference(atributoEClass, ATRIBUTO__OPERACAO);
+    createEReference(atributoEClass, ATRIBUTO__NOME_ENTIDADE);
+    createEReference(atributoEClass, ATRIBUTO__TABELA_NOME);
+    createEReference(atributoEClass, ATRIBUTO__COLUNA_NOME);
+    createEReference(atributoEClass, ATRIBUTO__COLUNA_NOME_INVERSE);
 
-    boolEClass = createEClass(BOOL);
-    createEAttribute(boolEClass, BOOL__DECISION);
+    colunaNomeEClass = createEClass(COLUNA_NOME);
+    createEAttribute(colunaNomeEClass, COLUNA_NOME__ID);
+
+    tabelaNomeEClass = createEClass(TABELA_NOME);
+    createEAttribute(tabelaNomeEClass, TABELA_NOME__ID);
+
+    operacaoEClass = createEClass(OPERACAO);
+    createEAttribute(operacaoEClass, OPERACAO__ID);
+
+    associacaoNomeEClass = createEClass(ASSOCIACAO_NOME);
+    createEAttribute(associacaoNomeEClass, ASSOCIACAO_NOME__ID);
+
+    atributoNomeEClass = createEClass(ATRIBUTO_NOME);
+    createEAttribute(atributoNomeEClass, ATRIBUTO_NOME__ID);
+
+    atributoTipoEClass = createEClass(ATRIBUTO_TIPO);
+    createEAttribute(atributoTipoEClass, ATRIBUTO_TIPO__ID);
   }
 
   /**
@@ -478,27 +691,46 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEReference(getGreeting_Api(), this.getApi(), null, "api", null, 0, 1, Greeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(apiEClass, Api.class, "Api", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getApi_NameApi(), this.getAPIName(), null, "nameApi", null, 0, 1, Api.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getApi_Attributes(), this.getAttribute(), null, "attributes", null, 0, 1, Api.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getApi_NomeApi(), this.getApiNome(), null, "nomeApi", null, 0, 1, Api.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getApi_Entidades(), this.getEntidade(), null, "entidades", null, 0, -1, Api.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(apiNameEClass, APIName.class, "APIName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAPIName_Id(), ecorePackage.getEString(), "id", null, 0, 1, APIName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(apiNomeEClass, ApiNome.class, "ApiNome", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getApiNome_Id(), ecorePackage.getEString(), "id", null, 0, 1, ApiNome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAttribute_AttributeName(), this.getAttributeName(), null, "attributeName", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttribute_AttributeType(), this.getAttributeType(), null, "attributeType", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttribute_DecisionGet(), this.getBool(), null, "decisionGet", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttribute_DecisionSet(), this.getBool(), null, "decisionSet", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttribute_DecisionID(), this.getBool(), null, "decisionID", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(entidadeEClass, Entidade.class, "Entidade", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEntidade_NomeEntidade(), this.getEntidadeNome(), null, "nomeEntidade", null, 0, 1, Entidade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntidade_Atributo(), this.getAtributo(), null, "atributo", null, 0, -1, Entidade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(attributeNameEClass, AttributeName.class, "AttributeName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAttributeName_Id(), ecorePackage.getEString(), "id", null, 0, 1, AttributeName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(entidadeNomeEClass, EntidadeNome.class, "EntidadeNome", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEntidadeNome_Id(), ecorePackage.getEString(), "id", null, 0, 1, EntidadeNome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(attributeTypeEClass, AttributeType.class, "AttributeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAttributeType_Type(), ecorePackage.getEString(), "type", null, 0, 1, AttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(atributoEClass, Atributo.class, "Atributo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAtributo_AtributoNome(), this.getAtributoNome(), null, "atributoNome", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtributo_AtributoTipo(), this.getAtributoTipo(), null, "atributoTipo", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtributo_AssociacaoNome(), this.getAssociacaoNome(), null, "associacaoNome", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtributo_Operacao(), this.getOperacao(), null, "operacao", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtributo_NomeEntidade(), this.getEntidadeNome(), null, "nomeEntidade", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtributo_TabelaNome(), this.getTabelaNome(), null, "tabelaNome", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtributo_ColunaNome(), this.getColunaNome(), null, "colunaNome", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtributo_ColunaNomeInverse(), this.getColunaNome(), null, "colunaNomeInverse", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(boolEClass, Bool.class, "Bool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBool_Decision(), ecorePackage.getEString(), "decision", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(colunaNomeEClass, ColunaNome.class, "ColunaNome", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getColunaNome_Id(), ecorePackage.getEString(), "id", null, 0, 1, ColunaNome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tabelaNomeEClass, TabelaNome.class, "TabelaNome", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTabelaNome_Id(), ecorePackage.getEString(), "id", null, 0, 1, TabelaNome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(operacaoEClass, Operacao.class, "Operacao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOperacao_Id(), ecorePackage.getEString(), "id", null, 0, 1, Operacao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(associacaoNomeEClass, AssociacaoNome.class, "AssociacaoNome", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAssociacaoNome_Id(), ecorePackage.getEString(), "id", null, 0, 1, AssociacaoNome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(atributoNomeEClass, AtributoNome.class, "AtributoNome", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAtributoNome_Id(), ecorePackage.getEString(), "id", null, 0, 1, AtributoNome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(atributoTipoEClass, AtributoTipo.class, "AtributoTipo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAtributoTipo_Id(), ecorePackage.getEString(), "id", null, 0, 1, AtributoTipo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
