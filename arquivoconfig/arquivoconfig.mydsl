@@ -1,34 +1,36 @@
 {
-	<inserir nome da api>: 
-		{
+	<inserir nome da api>: {
 			<inserir nome da entidade>:
 				{
 					nome-atributo: <inserir nome do atributo>,
 					tipo: <inserir tipo do atributo - string, int, double, list, set ou algum tipo definido>,
-					associação: <inserir @OneToOne, @OneToMany, @ManyToOne, @Many-to-Many>,
-					operação em cascata: <inserir ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE>, 
+					associação: <inserir @OneToOne, @OneToMany, @ManyToOne, @ManyToMany>,
+					operação em cascata: <inserir ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE>,
+					optional: <inserir true ou false. indica, quando existir, se o relacionamento many to one é obrigatório> 
 					joinTable - nome: <inserir nome da tabela de juncao se existir relacionamento ManyToMany>, 
 					joinColumns - nome: <inserir nome da coluna da tabela de juncao>, 
 					inverseJoinColumns - nome: <inserir nome da coluna da tabela de juncao>
 				},
-				{
+        {
 					nome-atributo: <inserir nome do atributo>,
-					tipo: <inserir tipo do atributo - string, int, double, >,
-					associação: <inserir @OneToOne, @OneToMany, @ManyToOne, @Many-to-Many>,
-					operação em cascata: <inserir ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE>, 
+					tipo: <inserir tipo do atributo - string, int, double, list, set ou algum tipo definido>,
+					associação: <inserir @OneToOne, @OneToMany, @ManyToOne, @ManyToMany>,
+					operação em cascata: <inserir ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE>,
+					optional: <inserir true ou false. indica, quando existir, se o relacionamento many to one é obrigatório> 
 					joinTable - nome: <inserir nome da tabela de juncao se existir relacionamento ManyToMany>, 
 					joinColumns - nome: <inserir nome da coluna da tabela de juncao>, 
 					inverseJoinColumns - nome: <inserir nome da coluna da tabela de juncao>
 				},
-		        chavePrimaria: <id ou algum atributo definido anteriormente>
+		    chavePrimaria: <id ou algum atributo definido anteriormente>
 		},
 		{
 			<inserir nome da entidade>:
 				{
 					nome-atributo: <inserir nome do atributo>,
 					tipo: <inserir tipo do atributo - string, int, double, list, set ou algum tipo definido>,
-					associação: <inserir @OneToOne, @OneToMany, @ManyToOne, @Many-to-Many>,
-					operação em cascata: <inserir ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE>, 
+					associação: <inserir @OneToOne, @OneToMany, @ManyToOne, @ManyToMany>,
+					operação em cascata: <inserir ALL, DETACH, MERGE, PERSIST, REFRESH, REMOVE>,
+					optional: <inserir true ou false. indica, quando existir, se o relacionamento many to one é obrigatório> 
 					joinTable - nome: <inserir nome da tabela de juncao se existir relacionamento ManyToMany>, 
 					joinColumns - nome: <inserir nome da coluna da tabela de juncao>, 
 					inverseJoinColumns - nome: <inserir nome da coluna da tabela de juncao>
