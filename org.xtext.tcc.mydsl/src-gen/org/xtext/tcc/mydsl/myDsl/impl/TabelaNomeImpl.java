@@ -21,7 +21,7 @@ import org.xtext.tcc.mydsl.myDsl.TabelaNome;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.TabelaNomeImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.TabelaNomeImpl#getTabelaNome <em>Tabela Nome</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +29,24 @@ import org.xtext.tcc.mydsl.myDsl.TabelaNome;
 public class TabelaNomeImpl extends MinimalEObjectImpl.Container implements TabelaNome
 {
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The default value of the '{@link #getTabelaNome() <em>Tabela Nome</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getTabelaNome()
    * @generated
    * @ordered
    */
-  protected static final String ID_EDEFAULT = null;
+  protected static final String TABELA_NOME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The cached value of the '{@link #getTabelaNome() <em>Tabela Nome</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getTabelaNome()
    * @generated
    * @ordered
    */
-  protected String id = ID_EDEFAULT;
+  protected String tabelaNome = TABELA_NOME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,9 +75,9 @@ public class TabelaNomeImpl extends MinimalEObjectImpl.Container implements Tabe
    * @generated
    */
   @Override
-  public String getId()
+  public String getTabelaNome()
   {
-    return id;
+    return tabelaNome;
   }
 
   /**
@@ -86,12 +86,12 @@ public class TabelaNomeImpl extends MinimalEObjectImpl.Container implements Tabe
    * @generated
    */
   @Override
-  public void setId(String newId)
+  public void setTabelaNome(String newTabelaNome)
   {
-    String oldId = id;
-    id = newId;
+    String oldTabelaNome = tabelaNome;
+    tabelaNome = newTabelaNome;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.TABELA_NOME__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.TABELA_NOME__TABELA_NOME, oldTabelaNome, tabelaNome));
   }
 
   /**
@@ -104,8 +104,8 @@ public class TabelaNomeImpl extends MinimalEObjectImpl.Container implements Tabe
   {
     switch (featureID)
     {
-      case MyDslPackage.TABELA_NOME__ID:
-        return getId();
+      case MyDslPackage.TABELA_NOME__TABELA_NOME:
+        return getTabelaNome();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class TabelaNomeImpl extends MinimalEObjectImpl.Container implements Tabe
   {
     switch (featureID)
     {
-      case MyDslPackage.TABELA_NOME__ID:
-        setId((String)newValue);
+      case MyDslPackage.TABELA_NOME__TABELA_NOME:
+        setTabelaNome((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class TabelaNomeImpl extends MinimalEObjectImpl.Container implements Tabe
   {
     switch (featureID)
     {
-      case MyDslPackage.TABELA_NOME__ID:
-        setId(ID_EDEFAULT);
+      case MyDslPackage.TABELA_NOME__TABELA_NOME:
+        setTabelaNome(TABELA_NOME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class TabelaNomeImpl extends MinimalEObjectImpl.Container implements Tabe
   {
     switch (featureID)
     {
-      case MyDslPackage.TABELA_NOME__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+      case MyDslPackage.TABELA_NOME__TABELA_NOME:
+        return TABELA_NOME_EDEFAULT == null ? tabelaNome != null : !TABELA_NOME_EDEFAULT.equals(tabelaNome);
     }
     return super.eIsSet(featureID);
   }
@@ -171,8 +171,8 @@ public class TabelaNomeImpl extends MinimalEObjectImpl.Container implements Tabe
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (id: ");
-    result.append(id);
+    result.append(" (tabelaNome: ");
+    result.append(tabelaNome);
     result.append(')');
     return result.toString();
   }

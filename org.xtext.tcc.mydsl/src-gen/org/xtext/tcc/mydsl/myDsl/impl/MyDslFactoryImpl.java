@@ -75,9 +75,11 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.COLUNA_NOME: return createColunaNome();
       case MyDslPackage.TABELA_NOME: return createTabelaNome();
       case MyDslPackage.OPERACAO: return createOperacao();
-      case MyDslPackage.ASSOCIACAO_NOME: return createAssociacaoNome();
+      case MyDslPackage.ASSOCIACAO: return createAssociacao();
       case MyDslPackage.ATRIBUTO_NOME: return createAtributoNome();
       case MyDslPackage.ATRIBUTO_TIPO: return createAtributoTipo();
+      case MyDslPackage.OPTIONAL: return createOptional();
+      case MyDslPackage.CHAVE_PRIMARIA: return createChavePrimaria();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -209,10 +211,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * @generated
    */
   @Override
-  public AssociacaoNome createAssociacaoNome()
+  public Associacao createAssociacao()
   {
-    AssociacaoNomeImpl associacaoNome = new AssociacaoNomeImpl();
-    return associacaoNome;
+    AssociacaoImpl associacao = new AssociacaoImpl();
+    return associacao;
   }
 
   /**
@@ -237,6 +239,30 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     AtributoTipoImpl atributoTipo = new AtributoTipoImpl();
     return atributoTipo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Optional createOptional()
+  {
+    OptionalImpl optional = new OptionalImpl();
+    return optional;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ChavePrimaria createChavePrimaria()
+  {
+    ChavePrimariaImpl chavePrimaria = new ChavePrimariaImpl();
+    return chavePrimaria;
   }
 
   /**

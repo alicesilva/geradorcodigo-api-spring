@@ -7,21 +7,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Associacao Nome</b></em>'.
+ * A representation of the model object '<em><b>Chave Primaria</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.AssociacaoNome#getId <em>Id</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.ChavePrimaria#getId <em>Id</em>}</li>
  * </ul>
  *
- * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAssociacaoNome()
+ * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getChavePrimaria()
  * @model
  * @generated
  */
-public interface AssociacaoNome extends EObject
+public interface ChavePrimaria extends EObject
 {
   /**
    * Returns the value of the '<em><b>Id</b></em>' attribute.
@@ -29,14 +29,14 @@ public interface AssociacaoNome extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Id</em>' attribute.
    * @see #setId(String)
-   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAssociacaoNome_Id()
+   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getChavePrimaria_Id()
    * @model
    * @generated
    */
   String getId();
 
   /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.AssociacaoNome#getId <em>Id</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.ChavePrimaria#getId <em>Id</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Id</em>' attribute.
@@ -45,4 +45,4 @@ public interface AssociacaoNome extends EObject
    */
   void setId(String value);
 
-} // AssociacaoNome
+} // ChavePrimaria

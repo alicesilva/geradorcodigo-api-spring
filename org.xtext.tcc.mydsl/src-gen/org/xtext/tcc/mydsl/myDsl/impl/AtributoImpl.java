@@ -12,14 +12,15 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.tcc.mydsl.myDsl.AssociacaoNome;
+import org.xtext.tcc.mydsl.myDsl.Associacao;
 import org.xtext.tcc.mydsl.myDsl.Atributo;
 import org.xtext.tcc.mydsl.myDsl.AtributoNome;
 import org.xtext.tcc.mydsl.myDsl.AtributoTipo;
+import org.xtext.tcc.mydsl.myDsl.ChavePrimaria;
 import org.xtext.tcc.mydsl.myDsl.ColunaNome;
-import org.xtext.tcc.mydsl.myDsl.EntidadeNome;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
 import org.xtext.tcc.mydsl.myDsl.Operacao;
+import org.xtext.tcc.mydsl.myDsl.Optional;
 import org.xtext.tcc.mydsl.myDsl.TabelaNome;
 
 /**
@@ -32,12 +33,13 @@ import org.xtext.tcc.mydsl.myDsl.TabelaNome;
  * <ul>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getAtributoNome <em>Atributo Nome</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getAtributoTipo <em>Atributo Tipo</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getAssociacaoNome <em>Associacao Nome</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getAssociacao <em>Associacao</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getOperacao <em>Operacao</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getNomeEntidade <em>Nome Entidade</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getOptional <em>Optional</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getTabelaNome <em>Tabela Nome</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getColunaNome <em>Coluna Nome</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getColunaNomeInverse <em>Coluna Nome Inverse</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getChavePrimaria <em>Chave Primaria</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,14 +67,14 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
   protected AtributoTipo atributoTipo;
 
   /**
-   * The cached value of the '{@link #getAssociacaoNome() <em>Associacao Nome</em>}' containment reference.
+   * The cached value of the '{@link #getAssociacao() <em>Associacao</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAssociacaoNome()
+   * @see #getAssociacao()
    * @generated
    * @ordered
    */
-  protected AssociacaoNome associacaoNome;
+  protected Associacao associacao;
 
   /**
    * The cached value of the '{@link #getOperacao() <em>Operacao</em>}' containment reference.
@@ -85,14 +87,14 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
   protected Operacao operacao;
 
   /**
-   * The cached value of the '{@link #getNomeEntidade() <em>Nome Entidade</em>}' containment reference.
+   * The cached value of the '{@link #getOptional() <em>Optional</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNomeEntidade()
+   * @see #getOptional()
    * @generated
    * @ordered
    */
-  protected EntidadeNome nomeEntidade;
+  protected Optional optional;
 
   /**
    * The cached value of the '{@link #getTabelaNome() <em>Tabela Nome</em>}' containment reference.
@@ -123,6 +125,16 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
    * @ordered
    */
   protected ColunaNome colunaNomeInverse;
+
+  /**
+   * The cached value of the '{@link #getChavePrimaria() <em>Chave Primaria</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getChavePrimaria()
+   * @generated
+   * @ordered
+   */
+  protected ChavePrimaria chavePrimaria;
 
   /**
    * <!-- begin-user-doc -->
@@ -251,9 +263,9 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
    * @generated
    */
   @Override
-  public AssociacaoNome getAssociacaoNome()
+  public Associacao getAssociacao()
   {
-    return associacaoNome;
+    return associacao;
   }
 
   /**
@@ -261,13 +273,13 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetAssociacaoNome(AssociacaoNome newAssociacaoNome, NotificationChain msgs)
+  public NotificationChain basicSetAssociacao(Associacao newAssociacao, NotificationChain msgs)
   {
-    AssociacaoNome oldAssociacaoNome = associacaoNome;
-    associacaoNome = newAssociacaoNome;
+    Associacao oldAssociacao = associacao;
+    associacao = newAssociacao;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__ASSOCIACAO_NOME, oldAssociacaoNome, newAssociacaoNome);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__ASSOCIACAO, oldAssociacao, newAssociacao);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -279,20 +291,20 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
    * @generated
    */
   @Override
-  public void setAssociacaoNome(AssociacaoNome newAssociacaoNome)
+  public void setAssociacao(Associacao newAssociacao)
   {
-    if (newAssociacaoNome != associacaoNome)
+    if (newAssociacao != associacao)
     {
       NotificationChain msgs = null;
-      if (associacaoNome != null)
-        msgs = ((InternalEObject)associacaoNome).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__ASSOCIACAO_NOME, null, msgs);
-      if (newAssociacaoNome != null)
-        msgs = ((InternalEObject)newAssociacaoNome).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__ASSOCIACAO_NOME, null, msgs);
-      msgs = basicSetAssociacaoNome(newAssociacaoNome, msgs);
+      if (associacao != null)
+        msgs = ((InternalEObject)associacao).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__ASSOCIACAO, null, msgs);
+      if (newAssociacao != null)
+        msgs = ((InternalEObject)newAssociacao).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__ASSOCIACAO, null, msgs);
+      msgs = basicSetAssociacao(newAssociacao, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__ASSOCIACAO_NOME, newAssociacaoNome, newAssociacaoNome));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__ASSOCIACAO, newAssociacao, newAssociacao));
   }
 
   /**
@@ -351,9 +363,9 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
    * @generated
    */
   @Override
-  public EntidadeNome getNomeEntidade()
+  public Optional getOptional()
   {
-    return nomeEntidade;
+    return optional;
   }
 
   /**
@@ -361,13 +373,13 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetNomeEntidade(EntidadeNome newNomeEntidade, NotificationChain msgs)
+  public NotificationChain basicSetOptional(Optional newOptional, NotificationChain msgs)
   {
-    EntidadeNome oldNomeEntidade = nomeEntidade;
-    nomeEntidade = newNomeEntidade;
+    Optional oldOptional = optional;
+    optional = newOptional;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__NOME_ENTIDADE, oldNomeEntidade, newNomeEntidade);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__OPTIONAL, oldOptional, newOptional);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -379,20 +391,20 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
    * @generated
    */
   @Override
-  public void setNomeEntidade(EntidadeNome newNomeEntidade)
+  public void setOptional(Optional newOptional)
   {
-    if (newNomeEntidade != nomeEntidade)
+    if (newOptional != optional)
     {
       NotificationChain msgs = null;
-      if (nomeEntidade != null)
-        msgs = ((InternalEObject)nomeEntidade).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__NOME_ENTIDADE, null, msgs);
-      if (newNomeEntidade != null)
-        msgs = ((InternalEObject)newNomeEntidade).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__NOME_ENTIDADE, null, msgs);
-      msgs = basicSetNomeEntidade(newNomeEntidade, msgs);
+      if (optional != null)
+        msgs = ((InternalEObject)optional).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__OPTIONAL, null, msgs);
+      if (newOptional != null)
+        msgs = ((InternalEObject)newOptional).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__OPTIONAL, null, msgs);
+      msgs = basicSetOptional(newOptional, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__NOME_ENTIDADE, newNomeEntidade, newNomeEntidade));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__OPTIONAL, newOptional, newOptional));
   }
 
   /**
@@ -551,6 +563,56 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
    * @generated
    */
   @Override
+  public ChavePrimaria getChavePrimaria()
+  {
+    return chavePrimaria;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetChavePrimaria(ChavePrimaria newChavePrimaria, NotificationChain msgs)
+  {
+    ChavePrimaria oldChavePrimaria = chavePrimaria;
+    chavePrimaria = newChavePrimaria;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__CHAVE_PRIMARIA, oldChavePrimaria, newChavePrimaria);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setChavePrimaria(ChavePrimaria newChavePrimaria)
+  {
+    if (newChavePrimaria != chavePrimaria)
+    {
+      NotificationChain msgs = null;
+      if (chavePrimaria != null)
+        msgs = ((InternalEObject)chavePrimaria).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__CHAVE_PRIMARIA, null, msgs);
+      if (newChavePrimaria != null)
+        msgs = ((InternalEObject)newChavePrimaria).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__CHAVE_PRIMARIA, null, msgs);
+      msgs = basicSetChavePrimaria(newChavePrimaria, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__CHAVE_PRIMARIA, newChavePrimaria, newChavePrimaria));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -559,18 +621,20 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
         return basicSetAtributoNome(null, msgs);
       case MyDslPackage.ATRIBUTO__ATRIBUTO_TIPO:
         return basicSetAtributoTipo(null, msgs);
-      case MyDslPackage.ATRIBUTO__ASSOCIACAO_NOME:
-        return basicSetAssociacaoNome(null, msgs);
+      case MyDslPackage.ATRIBUTO__ASSOCIACAO:
+        return basicSetAssociacao(null, msgs);
       case MyDslPackage.ATRIBUTO__OPERACAO:
         return basicSetOperacao(null, msgs);
-      case MyDslPackage.ATRIBUTO__NOME_ENTIDADE:
-        return basicSetNomeEntidade(null, msgs);
+      case MyDslPackage.ATRIBUTO__OPTIONAL:
+        return basicSetOptional(null, msgs);
       case MyDslPackage.ATRIBUTO__TABELA_NOME:
         return basicSetTabelaNome(null, msgs);
       case MyDslPackage.ATRIBUTO__COLUNA_NOME:
         return basicSetColunaNome(null, msgs);
       case MyDslPackage.ATRIBUTO__COLUNA_NOME_INVERSE:
         return basicSetColunaNomeInverse(null, msgs);
+      case MyDslPackage.ATRIBUTO__CHAVE_PRIMARIA:
+        return basicSetChavePrimaria(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -589,18 +653,20 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
         return getAtributoNome();
       case MyDslPackage.ATRIBUTO__ATRIBUTO_TIPO:
         return getAtributoTipo();
-      case MyDslPackage.ATRIBUTO__ASSOCIACAO_NOME:
-        return getAssociacaoNome();
+      case MyDslPackage.ATRIBUTO__ASSOCIACAO:
+        return getAssociacao();
       case MyDslPackage.ATRIBUTO__OPERACAO:
         return getOperacao();
-      case MyDslPackage.ATRIBUTO__NOME_ENTIDADE:
-        return getNomeEntidade();
+      case MyDslPackage.ATRIBUTO__OPTIONAL:
+        return getOptional();
       case MyDslPackage.ATRIBUTO__TABELA_NOME:
         return getTabelaNome();
       case MyDslPackage.ATRIBUTO__COLUNA_NOME:
         return getColunaNome();
       case MyDslPackage.ATRIBUTO__COLUNA_NOME_INVERSE:
         return getColunaNomeInverse();
+      case MyDslPackage.ATRIBUTO__CHAVE_PRIMARIA:
+        return getChavePrimaria();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -621,14 +687,14 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
       case MyDslPackage.ATRIBUTO__ATRIBUTO_TIPO:
         setAtributoTipo((AtributoTipo)newValue);
         return;
-      case MyDslPackage.ATRIBUTO__ASSOCIACAO_NOME:
-        setAssociacaoNome((AssociacaoNome)newValue);
+      case MyDslPackage.ATRIBUTO__ASSOCIACAO:
+        setAssociacao((Associacao)newValue);
         return;
       case MyDslPackage.ATRIBUTO__OPERACAO:
         setOperacao((Operacao)newValue);
         return;
-      case MyDslPackage.ATRIBUTO__NOME_ENTIDADE:
-        setNomeEntidade((EntidadeNome)newValue);
+      case MyDslPackage.ATRIBUTO__OPTIONAL:
+        setOptional((Optional)newValue);
         return;
       case MyDslPackage.ATRIBUTO__TABELA_NOME:
         setTabelaNome((TabelaNome)newValue);
@@ -638,6 +704,9 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
         return;
       case MyDslPackage.ATRIBUTO__COLUNA_NOME_INVERSE:
         setColunaNomeInverse((ColunaNome)newValue);
+        return;
+      case MyDslPackage.ATRIBUTO__CHAVE_PRIMARIA:
+        setChavePrimaria((ChavePrimaria)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -659,14 +728,14 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
       case MyDslPackage.ATRIBUTO__ATRIBUTO_TIPO:
         setAtributoTipo((AtributoTipo)null);
         return;
-      case MyDslPackage.ATRIBUTO__ASSOCIACAO_NOME:
-        setAssociacaoNome((AssociacaoNome)null);
+      case MyDslPackage.ATRIBUTO__ASSOCIACAO:
+        setAssociacao((Associacao)null);
         return;
       case MyDslPackage.ATRIBUTO__OPERACAO:
         setOperacao((Operacao)null);
         return;
-      case MyDslPackage.ATRIBUTO__NOME_ENTIDADE:
-        setNomeEntidade((EntidadeNome)null);
+      case MyDslPackage.ATRIBUTO__OPTIONAL:
+        setOptional((Optional)null);
         return;
       case MyDslPackage.ATRIBUTO__TABELA_NOME:
         setTabelaNome((TabelaNome)null);
@@ -676,6 +745,9 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
         return;
       case MyDslPackage.ATRIBUTO__COLUNA_NOME_INVERSE:
         setColunaNomeInverse((ColunaNome)null);
+        return;
+      case MyDslPackage.ATRIBUTO__CHAVE_PRIMARIA:
+        setChavePrimaria((ChavePrimaria)null);
         return;
     }
     super.eUnset(featureID);
@@ -695,18 +767,20 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
         return atributoNome != null;
       case MyDslPackage.ATRIBUTO__ATRIBUTO_TIPO:
         return atributoTipo != null;
-      case MyDslPackage.ATRIBUTO__ASSOCIACAO_NOME:
-        return associacaoNome != null;
+      case MyDslPackage.ATRIBUTO__ASSOCIACAO:
+        return associacao != null;
       case MyDslPackage.ATRIBUTO__OPERACAO:
         return operacao != null;
-      case MyDslPackage.ATRIBUTO__NOME_ENTIDADE:
-        return nomeEntidade != null;
+      case MyDslPackage.ATRIBUTO__OPTIONAL:
+        return optional != null;
       case MyDslPackage.ATRIBUTO__TABELA_NOME:
         return tabelaNome != null;
       case MyDslPackage.ATRIBUTO__COLUNA_NOME:
         return colunaNome != null;
       case MyDslPackage.ATRIBUTO__COLUNA_NOME_INVERSE:
         return colunaNomeInverse != null;
+      case MyDslPackage.ATRIBUTO__CHAVE_PRIMARIA:
+        return chavePrimaria != null;
     }
     return super.eIsSet(featureID);
   }

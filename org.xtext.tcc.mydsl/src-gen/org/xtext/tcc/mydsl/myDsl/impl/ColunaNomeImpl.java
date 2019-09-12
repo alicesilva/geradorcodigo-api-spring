@@ -21,7 +21,7 @@ import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.ColunaNomeImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.ColunaNomeImpl#getColunaNome <em>Coluna Nome</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +29,24 @@ import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
 public class ColunaNomeImpl extends MinimalEObjectImpl.Container implements ColunaNome
 {
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The default value of the '{@link #getColunaNome() <em>Coluna Nome</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getColunaNome()
    * @generated
    * @ordered
    */
-  protected static final String ID_EDEFAULT = null;
+  protected static final String COLUNA_NOME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The cached value of the '{@link #getColunaNome() <em>Coluna Nome</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getColunaNome()
    * @generated
    * @ordered
    */
-  protected String id = ID_EDEFAULT;
+  protected String colunaNome = COLUNA_NOME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,9 +75,9 @@ public class ColunaNomeImpl extends MinimalEObjectImpl.Container implements Colu
    * @generated
    */
   @Override
-  public String getId()
+  public String getColunaNome()
   {
-    return id;
+    return colunaNome;
   }
 
   /**
@@ -86,12 +86,12 @@ public class ColunaNomeImpl extends MinimalEObjectImpl.Container implements Colu
    * @generated
    */
   @Override
-  public void setId(String newId)
+  public void setColunaNome(String newColunaNome)
   {
-    String oldId = id;
-    id = newId;
+    String oldColunaNome = colunaNome;
+    colunaNome = newColunaNome;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.COLUNA_NOME__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.COLUNA_NOME__COLUNA_NOME, oldColunaNome, colunaNome));
   }
 
   /**
@@ -104,8 +104,8 @@ public class ColunaNomeImpl extends MinimalEObjectImpl.Container implements Colu
   {
     switch (featureID)
     {
-      case MyDslPackage.COLUNA_NOME__ID:
-        return getId();
+      case MyDslPackage.COLUNA_NOME__COLUNA_NOME:
+        return getColunaNome();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class ColunaNomeImpl extends MinimalEObjectImpl.Container implements Colu
   {
     switch (featureID)
     {
-      case MyDslPackage.COLUNA_NOME__ID:
-        setId((String)newValue);
+      case MyDslPackage.COLUNA_NOME__COLUNA_NOME:
+        setColunaNome((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class ColunaNomeImpl extends MinimalEObjectImpl.Container implements Colu
   {
     switch (featureID)
     {
-      case MyDslPackage.COLUNA_NOME__ID:
-        setId(ID_EDEFAULT);
+      case MyDslPackage.COLUNA_NOME__COLUNA_NOME:
+        setColunaNome(COLUNA_NOME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class ColunaNomeImpl extends MinimalEObjectImpl.Container implements Colu
   {
     switch (featureID)
     {
-      case MyDslPackage.COLUNA_NOME__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+      case MyDslPackage.COLUNA_NOME__COLUNA_NOME:
+        return COLUNA_NOME_EDEFAULT == null ? colunaNome != null : !COLUNA_NOME_EDEFAULT.equals(colunaNome);
     }
     return super.eIsSet(featureID);
   }
@@ -171,8 +171,8 @@ public class ColunaNomeImpl extends MinimalEObjectImpl.Container implements Colu
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (id: ");
-    result.append(id);
+    result.append(" (colunaNome: ");
+    result.append(colunaNome);
     result.append(')');
     return result.toString();
   }

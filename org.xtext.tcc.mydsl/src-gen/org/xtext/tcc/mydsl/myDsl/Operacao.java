@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.Operacao#getId <em>Id</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.Operacao#getOpCascada <em>Op Cascada</em>}</li>
  * </ul>
  *
  * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getOperacao()
@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface Operacao extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Id</b></em>' attribute.
+   * Returns the value of the '<em><b>Op Cascada</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' attribute.
-   * @see #setId(String)
-   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getOperacao_Id()
+   * @return the value of the '<em>Op Cascada</em>' attribute.
+   * @see #setOpCascada(String)
+   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getOperacao_OpCascada()
    * @model
    * @generated
    */
-  String getId();
+  String getOpCascada();
 
   /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Operacao#getId <em>Id</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Operacao#getOpCascada <em>Op Cascada</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' attribute.
-   * @see #getId()
+   * @param value the new value of the '<em>Op Cascada</em>' attribute.
+   * @see #getOpCascada()
    * @generated
    */
-  void setId(String value);
+  void setOpCascada(String value);
 
 } // Operacao

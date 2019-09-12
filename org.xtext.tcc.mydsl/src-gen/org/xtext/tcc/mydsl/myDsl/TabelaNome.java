@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.TabelaNome#getId <em>Id</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.TabelaNome#getTabelaNome <em>Tabela Nome</em>}</li>
  * </ul>
  *
  * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getTabelaNome()
@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface TabelaNome extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Id</b></em>' attribute.
+   * Returns the value of the '<em><b>Tabela Nome</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' attribute.
-   * @see #setId(String)
-   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getTabelaNome_Id()
+   * @return the value of the '<em>Tabela Nome</em>' attribute.
+   * @see #setTabelaNome(String)
+   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getTabelaNome_TabelaNome()
    * @model
    * @generated
    */
-  String getId();
+  String getTabelaNome();
 
   /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.TabelaNome#getId <em>Id</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.TabelaNome#getTabelaNome <em>Tabela Nome</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' attribute.
-   * @see #getId()
+   * @param value the new value of the '<em>Tabela Nome</em>' attribute.
+   * @see #getTabelaNome()
    * @generated
    */
-  void setId(String value);
+  void setTabelaNome(String value);
 
 } // TabelaNome

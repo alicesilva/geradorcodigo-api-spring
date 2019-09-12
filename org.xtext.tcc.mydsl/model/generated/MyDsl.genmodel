@@ -29,30 +29,37 @@
     <genClasses ecoreClass="MyDsl.ecore#//Atributo">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/atributoNome"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/atributoTipo"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/associacaoNome"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/associacao"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/operacao"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/nomeEntidade"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/optional"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/tabelaNome"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/colunaNome"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/colunaNomeInverse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/chavePrimaria"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//ColunaNome">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//ColunaNome/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//ColunaNome/colunaNome"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//TabelaNome">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//TabelaNome/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//TabelaNome/tabelaNome"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Operacao">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Operacao/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Operacao/opCascada"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//AssociacaoNome">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//AssociacaoNome/id"/>
+    <genClasses ecoreClass="MyDsl.ecore#//Associacao">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Associacao/associacao"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//AtributoNome">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//AtributoNome/id"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//AtributoTipo">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//AtributoTipo/id"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Optional">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Optional/optional"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//ChavePrimaria">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//ChavePrimaria/id"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

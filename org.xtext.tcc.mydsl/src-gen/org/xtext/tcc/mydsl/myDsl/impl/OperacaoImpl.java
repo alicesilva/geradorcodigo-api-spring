@@ -21,7 +21,7 @@ import org.xtext.tcc.mydsl.myDsl.Operacao;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.OperacaoImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.OperacaoImpl#getOpCascada <em>Op Cascada</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +29,24 @@ import org.xtext.tcc.mydsl.myDsl.Operacao;
 public class OperacaoImpl extends MinimalEObjectImpl.Container implements Operacao
 {
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The default value of the '{@link #getOpCascada() <em>Op Cascada</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getOpCascada()
    * @generated
    * @ordered
    */
-  protected static final String ID_EDEFAULT = null;
+  protected static final String OP_CASCADA_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The cached value of the '{@link #getOpCascada() <em>Op Cascada</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getOpCascada()
    * @generated
    * @ordered
    */
-  protected String id = ID_EDEFAULT;
+  protected String opCascada = OP_CASCADA_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,9 +75,9 @@ public class OperacaoImpl extends MinimalEObjectImpl.Container implements Operac
    * @generated
    */
   @Override
-  public String getId()
+  public String getOpCascada()
   {
-    return id;
+    return opCascada;
   }
 
   /**
@@ -86,12 +86,12 @@ public class OperacaoImpl extends MinimalEObjectImpl.Container implements Operac
    * @generated
    */
   @Override
-  public void setId(String newId)
+  public void setOpCascada(String newOpCascada)
   {
-    String oldId = id;
-    id = newId;
+    String oldOpCascada = opCascada;
+    opCascada = newOpCascada;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.OPERACAO__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.OPERACAO__OP_CASCADA, oldOpCascada, opCascada));
   }
 
   /**
@@ -104,8 +104,8 @@ public class OperacaoImpl extends MinimalEObjectImpl.Container implements Operac
   {
     switch (featureID)
     {
-      case MyDslPackage.OPERACAO__ID:
-        return getId();
+      case MyDslPackage.OPERACAO__OP_CASCADA:
+        return getOpCascada();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class OperacaoImpl extends MinimalEObjectImpl.Container implements Operac
   {
     switch (featureID)
     {
-      case MyDslPackage.OPERACAO__ID:
-        setId((String)newValue);
+      case MyDslPackage.OPERACAO__OP_CASCADA:
+        setOpCascada((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class OperacaoImpl extends MinimalEObjectImpl.Container implements Operac
   {
     switch (featureID)
     {
-      case MyDslPackage.OPERACAO__ID:
-        setId(ID_EDEFAULT);
+      case MyDslPackage.OPERACAO__OP_CASCADA:
+        setOpCascada(OP_CASCADA_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class OperacaoImpl extends MinimalEObjectImpl.Container implements Operac
   {
     switch (featureID)
     {
-      case MyDslPackage.OPERACAO__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+      case MyDslPackage.OPERACAO__OP_CASCADA:
+        return OP_CASCADA_EDEFAULT == null ? opCascada != null : !OP_CASCADA_EDEFAULT.equals(opCascada);
     }
     return super.eIsSet(featureID);
   }
@@ -171,8 +171,8 @@ public class OperacaoImpl extends MinimalEObjectImpl.Container implements Operac
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (id: ");
-    result.append(id);
+    result.append(" (opCascada: ");
+    result.append(opCascada);
     result.append(')');
     return result.toString();
   }

@@ -9,7 +9,7 @@ Greeting:
 	'{' api=Api '}';
 
 Api:
-	nomeApi = ApiNome ':' '[' entidades += (Entidade)+']'
+	nomeApi = ApiNome ':' entidades += (Entidade)+
 ;
 
 
@@ -18,7 +18,7 @@ ApiNome:
 ;
 
 Entidade:
-	'{' nomeEntidade = EntidadeNome ':' '[' atributo += (Atributo)+']''}' 
+	'{' nomeEntidade = EntidadeNome ':' atributo += (Atributo)+ '}' 
 ;
 
 EntidadeNome:
@@ -27,30 +27,34 @@ EntidadeNome:
 Atributo:
 	'{' 
 		'nome-atributo:' atributoNome = AtributoNome ','
-		'tipo:' atributoTipo = AtributoTipo ','
-		'associação:' associacaoNome = AssociacaoNome ','
+		'tipo-atributo:' atributoTipo = AtributoTipo ','
+		'associação:' associacao = Associacao ','
 		'operação em cascata:' operacao = Operacao ','
-	    'mappedBy:' nomeEntidade = EntidadeNome ','
-		'JoinTable - nome:' tabelaNome = TabelaNome ','
-		'joinColumns - nome:' colunaNome = ColunaNome ','
-		'inverseJoinColumns - nome:'  colunaNomeInverse = ColunaNome
+	    'optional:' optional = Optional ','
+		'joinTable-nome:' tabelaNome = TabelaNome ','
+		'joinColumns-nome:' colunaNome = ColunaNome ','
+		'inverseJoinColumns-nome:' colunaNomeInverse = ColunaNome
 	'}'
+	'chave-primaria:' chavePrimaria = ChavePrimaria
 ;
 
 ColunaNome:
-	id = ID
+	colunaNome = ID | colunaNome = ANY_OTHER
 ;
 
 TabelaNome:
-	id = ID
+	tabelaNome = ID | tabelaNome = ANY_OTHER
 ;
 
 Operacao:
-	id = ID
+	opCascada = "ALL"| opCascada = "DETACH"| 
+	opCascada = "MERGE"| opCascada = "PERSIST"| opCascada = "REFRESH"| 
+	opCascada = "REMOVE" | opCascada = ANY_OTHER
 ;
 
-AssociacaoNome:
-	id = ID
+Associacao:
+	associacao = "OneToOne" | associacao = "OneToMany" |
+	associacao = "ManyToOne" | associacao = "ManyToMany" | associacao = ANY_OTHER
 ;
 
 AtributoNome:
@@ -58,5 +62,13 @@ AtributoNome:
 ;
 
 AtributoTipo:
+	id = ID
+;
+
+Optional:
+	optional = 'true' | optional = 'false' | optional = ANY_OTHER
+;
+
+ChavePrimaria:
 	id = ID
 ;

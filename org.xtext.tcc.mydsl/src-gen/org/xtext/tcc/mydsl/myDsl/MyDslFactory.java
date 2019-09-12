@@ -114,13 +114,13 @@ public interface MyDslFactory extends EFactory
   Operacao createOperacao();
 
   /**
-   * Returns a new object of class '<em>Associacao Nome</em>'.
+   * Returns a new object of class '<em>Associacao</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Associacao Nome</em>'.
+   * @return a new object of class '<em>Associacao</em>'.
    * @generated
    */
-  AssociacaoNome createAssociacaoNome();
+  Associacao createAssociacao();
 
   /**
    * Returns a new object of class '<em>Atributo Nome</em>'.
@@ -139,6 +139,24 @@ public interface MyDslFactory extends EFactory
    * @generated
    */
   AtributoTipo createAtributoTipo();
+
+  /**
+   * Returns a new object of class '<em>Optional</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Optional</em>'.
+   * @generated
+   */
+  Optional createOptional();
+
+  /**
+   * Returns a new object of class '<em>Chave Primaria</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Chave Primaria</em>'.
+   * @generated
+   */
+  ChavePrimaria createChavePrimaria();
 
   /**
    * Returns the package supported by this factory.

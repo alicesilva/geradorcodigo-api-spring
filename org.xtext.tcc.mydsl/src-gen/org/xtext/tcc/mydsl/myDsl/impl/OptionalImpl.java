@@ -10,50 +10,50 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.tcc.mydsl.myDsl.AssociacaoNome;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
+import org.xtext.tcc.mydsl.myDsl.Optional;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Associacao Nome</b></em>'.
+ * An implementation of the model object '<em><b>Optional</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AssociacaoNomeImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.OptionalImpl#getOptional <em>Optional</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AssociacaoNomeImpl extends MinimalEObjectImpl.Container implements AssociacaoNome
+public class OptionalImpl extends MinimalEObjectImpl.Container implements Optional
 {
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The default value of the '{@link #getOptional() <em>Optional</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getOptional()
    * @generated
    * @ordered
    */
-  protected static final String ID_EDEFAULT = null;
+  protected static final String OPTIONAL_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The cached value of the '{@link #getOptional() <em>Optional</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getOptional()
    * @generated
    * @ordered
    */
-  protected String id = ID_EDEFAULT;
+  protected String optional = OPTIONAL_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected AssociacaoNomeImpl()
+  protected OptionalImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class AssociacaoNomeImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.ASSOCIACAO_NOME;
+    return MyDslPackage.Literals.OPTIONAL;
   }
 
   /**
@@ -75,9 +75,9 @@ public class AssociacaoNomeImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public String getId()
+  public String getOptional()
   {
-    return id;
+    return optional;
   }
 
   /**
@@ -86,12 +86,12 @@ public class AssociacaoNomeImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public void setId(String newId)
+  public void setOptional(String newOptional)
   {
-    String oldId = id;
-    id = newId;
+    String oldOptional = optional;
+    optional = newOptional;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ASSOCIACAO_NOME__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.OPTIONAL__OPTIONAL, oldOptional, optional));
   }
 
   /**
@@ -104,8 +104,8 @@ public class AssociacaoNomeImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case MyDslPackage.ASSOCIACAO_NOME__ID:
-        return getId();
+      case MyDslPackage.OPTIONAL__OPTIONAL:
+        return getOptional();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class AssociacaoNomeImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case MyDslPackage.ASSOCIACAO_NOME__ID:
-        setId((String)newValue);
+      case MyDslPackage.OPTIONAL__OPTIONAL:
+        setOptional((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class AssociacaoNomeImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case MyDslPackage.ASSOCIACAO_NOME__ID:
-        setId(ID_EDEFAULT);
+      case MyDslPackage.OPTIONAL__OPTIONAL:
+        setOptional(OPTIONAL_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class AssociacaoNomeImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case MyDslPackage.ASSOCIACAO_NOME__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+      case MyDslPackage.OPTIONAL__OPTIONAL:
+        return OPTIONAL_EDEFAULT == null ? optional != null : !OPTIONAL_EDEFAULT.equals(optional);
     }
     return super.eIsSet(featureID);
   }
@@ -171,10 +171,10 @@ public class AssociacaoNomeImpl extends MinimalEObjectImpl.Container implements 
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (id: ");
-    result.append(id);
+    result.append(" (optional: ");
+    result.append(optional);
     result.append(')');
     return result.toString();
   }
 
-} //AssociacaoNomeImpl
+} //OptionalImpl

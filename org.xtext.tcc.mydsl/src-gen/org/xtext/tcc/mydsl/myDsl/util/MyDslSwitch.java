@@ -143,10 +143,10 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.ASSOCIACAO_NOME:
+      case MyDslPackage.ASSOCIACAO:
       {
-        AssociacaoNome associacaoNome = (AssociacaoNome)theEObject;
-        T result = caseAssociacaoNome(associacaoNome);
+        Associacao associacao = (Associacao)theEObject;
+        T result = caseAssociacao(associacao);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -161,6 +161,20 @@ public class MyDslSwitch<T> extends Switch<T>
       {
         AtributoTipo atributoTipo = (AtributoTipo)theEObject;
         T result = caseAtributoTipo(atributoTipo);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.OPTIONAL:
+      {
+        Optional optional = (Optional)theEObject;
+        T result = caseOptional(optional);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.CHAVE_PRIMARIA:
+      {
+        ChavePrimaria chavePrimaria = (ChavePrimaria)theEObject;
+        T result = caseChavePrimaria(chavePrimaria);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -329,17 +343,17 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Associacao Nome</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Associacao</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Associacao Nome</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Associacao</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAssociacaoNome(AssociacaoNome object)
+  public T caseAssociacao(Associacao object)
   {
     return null;
   }
@@ -372,6 +386,38 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAtributoTipo(AtributoTipo object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Optional</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Optional</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOptional(Optional object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Chave Primaria</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Chave Primaria</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseChavePrimaria(ChavePrimaria object)
   {
     return null;
   }
