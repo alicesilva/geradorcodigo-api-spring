@@ -3,7 +3,10 @@
  */
 package org.xtext.tcc.mydsl.validation;
 
+import org.eclipse.xtext.validation.Check;
+import org.xtext.tcc.mydsl.myDsl.Entidade;
 import org.xtext.tcc.mydsl.validation.AbstractMyDslValidator;
+import org.xtext.tcc.mydsl.validation.EntidadeValidator;
 
 /**
  * This class contains custom validation rules.
@@ -12,4 +15,15 @@ import org.xtext.tcc.mydsl.validation.AbstractMyDslValidator;
  */
 @SuppressWarnings("all")
 public class MyDslValidator extends AbstractMyDslValidator {
+  private EntidadeValidator entidadeValidator = new EntidadeValidator();
+  
+  @Check
+  public void checkEntidadesIguais(final Entidade e) {
+    org.xtext.tcc.mydsl.validation.Exception _checkChavePrimaria = this.entidadeValidator.checkChavePrimaria(e);
+    boolean _tripleNotEquals = (_checkChavePrimaria != null);
+    if (_tripleNotEquals) {
+      org.xtext.tcc.mydsl.validation.Exception erro = this.entidadeValidator.checkChavePrimaria(e);
+      this.error(erro.erro, erro.feature);
+    }
+  }
 }

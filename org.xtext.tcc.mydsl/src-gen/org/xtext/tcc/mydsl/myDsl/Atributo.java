@@ -18,11 +18,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.Atributo#getAtributoTipo <em>Atributo Tipo</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.Atributo#getAssociacao <em>Associacao</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.Atributo#getOperacao <em>Operacao</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.Atributo#getOptional <em>Optional</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.Atributo#getTabelaNome <em>Tabela Nome</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.Atributo#getColunaNome <em>Coluna Nome</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.Atributo#getColunaNomeInverse <em>Coluna Nome Inverse</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.Atributo#getChavePrimaria <em>Chave Primaria</em>}</li>
  * </ul>
  *
  * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributo()
@@ -120,28 +118,6 @@ public interface Atributo extends EObject
   void setOperacao(Operacao value);
 
   /**
-   * Returns the value of the '<em><b>Optional</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Optional</em>' containment reference.
-   * @see #setOptional(Optional)
-   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributo_Optional()
-   * @model containment="true"
-   * @generated
-   */
-  Optional getOptional();
-
-  /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getOptional <em>Optional</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Optional</em>' containment reference.
-   * @see #getOptional()
-   * @generated
-   */
-  void setOptional(Optional value);
-
-  /**
    * Returns the value of the '<em><b>Tabela Nome</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -206,27 +182,5 @@ public interface Atributo extends EObject
    * @generated
    */
   void setColunaNomeInverse(ColunaNome value);
-
-  /**
-   * Returns the value of the '<em><b>Chave Primaria</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Chave Primaria</em>' containment reference.
-   * @see #setChavePrimaria(ChavePrimaria)
-   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributo_ChavePrimaria()
-   * @model containment="true"
-   * @generated
-   */
-  ChavePrimaria getChavePrimaria();
-
-  /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getChavePrimaria <em>Chave Primaria</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Chave Primaria</em>' containment reference.
-   * @see #getChavePrimaria()
-   * @generated
-   */
-  void setChavePrimaria(ChavePrimaria value);
 
 } // Atributo

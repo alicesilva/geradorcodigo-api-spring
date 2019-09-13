@@ -3,6 +3,10 @@
  */
 package org.xtext.tcc.mydsl.validation
 
+import org.eclipse.xtext.validation.Check
+import org.xtext.tcc.mydsl.myDsl.EntidadeNome
+import org.xtext.tcc.mydsl.myDsl.Api
+import org.xtext.tcc.mydsl.myDsl.Entidade
 
 /**
  * This class contains custom validation rules. 
@@ -10,6 +14,8 @@ package org.xtext.tcc.mydsl.validation
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class MyDslValidator extends AbstractMyDslValidator {
+	
+	EntidadeValidator entidadeValidator = new EntidadeValidator();
 	
 //	public static val INVALID_NAME = 'invalidName'
 //
@@ -21,5 +27,13 @@ class MyDslValidator extends AbstractMyDslValidator {
 //					INVALID_NAME)
 //		}
 //	}
+
+	@Check
+	def checkEntidadesIguais(Entidade e){
+		if(entidadeValidator.checkChavePrimaria(e) !== null){
+			var Exception erro = entidadeValidator.checkChavePrimaria(e);
+			error(erro.erro, erro.feature)
+		}
+	}
 	
 }

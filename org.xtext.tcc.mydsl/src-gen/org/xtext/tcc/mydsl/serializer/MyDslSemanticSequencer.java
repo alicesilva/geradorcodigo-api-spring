@@ -161,16 +161,26 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     AtributoTipo returns AtributoTipo
 	 *
 	 * Constraint:
-	 *     id=ID
+	 *     (
+	 *         tipo='Boolean' | 
+	 *         tipo='Byte' | 
+	 *         tipo='Short' | 
+	 *         tipo='Character' | 
+	 *         tipo='Integer' | 
+	 *         tipo='Long' | 
+	 *         tipo='Float' | 
+	 *         tipo='Double' | 
+	 *         tipo='Time' | 
+	 *         tipo='Timestamp' | 
+	 *         tipo='Date' | 
+	 *         tipo='ENUM' | 
+	 *         tipo='ArrayList' | 
+	 *         tipo='HashSet' | 
+	 *         tipo=ID
+	 *     )
 	 */
 	protected void sequence_AtributoTipo(ISerializationContext context, AtributoTipo semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO_TIPO__ID) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO_TIPO__ID));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtributoTipoAccess().getIdIDTerminalRuleCall_0(), semanticObject.getId());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -184,11 +194,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         atributoTipo=AtributoTipo 
 	 *         associacao=Associacao 
 	 *         operacao=Operacao 
-	 *         optional=Optional 
 	 *         tabelaNome=TabelaNome 
 	 *         colunaNome=ColunaNome 
-	 *         colunaNomeInverse=ColunaNome 
-	 *         chavePrimaria=ChavePrimaria
+	 *         colunaNomeInverse=ColunaNome
 	 *     )
 	 */
 	protected void sequence_Atributo(ISerializationContext context, Atributo semanticObject) {
@@ -201,27 +209,21 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO__ASSOCIACAO));
 			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO__OPERACAO) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO__OPERACAO));
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO__OPTIONAL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO__OPTIONAL));
 			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO__TABELA_NOME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO__TABELA_NOME));
 			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO__COLUNA_NOME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO__COLUNA_NOME));
 			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO__COLUNA_NOME_INVERSE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO__COLUNA_NOME_INVERSE));
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO__CHAVE_PRIMARIA) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO__CHAVE_PRIMARIA));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtributoAccess().getAtributoNomeAtributoNomeParserRuleCall_2_0(), semanticObject.getAtributoNome());
-		feeder.accept(grammarAccess.getAtributoAccess().getAtributoTipoAtributoTipoParserRuleCall_5_0(), semanticObject.getAtributoTipo());
-		feeder.accept(grammarAccess.getAtributoAccess().getAssociacaoAssociacaoParserRuleCall_8_0(), semanticObject.getAssociacao());
-		feeder.accept(grammarAccess.getAtributoAccess().getOperacaoOperacaoParserRuleCall_11_0(), semanticObject.getOperacao());
-		feeder.accept(grammarAccess.getAtributoAccess().getOptionalOptionalParserRuleCall_14_0(), semanticObject.getOptional());
-		feeder.accept(grammarAccess.getAtributoAccess().getTabelaNomeTabelaNomeParserRuleCall_17_0(), semanticObject.getTabelaNome());
-		feeder.accept(grammarAccess.getAtributoAccess().getColunaNomeColunaNomeParserRuleCall_20_0(), semanticObject.getColunaNome());
-		feeder.accept(grammarAccess.getAtributoAccess().getColunaNomeInverseColunaNomeParserRuleCall_23_0(), semanticObject.getColunaNomeInverse());
-		feeder.accept(grammarAccess.getAtributoAccess().getChavePrimariaChavePrimariaParserRuleCall_26_0(), semanticObject.getChavePrimaria());
+		feeder.accept(grammarAccess.getAtributoAccess().getAtributoNomeAtributoNomeParserRuleCall_3_0(), semanticObject.getAtributoNome());
+		feeder.accept(grammarAccess.getAtributoAccess().getAtributoTipoAtributoTipoParserRuleCall_7_0(), semanticObject.getAtributoTipo());
+		feeder.accept(grammarAccess.getAtributoAccess().getAssociacaoAssociacaoParserRuleCall_11_0(), semanticObject.getAssociacao());
+		feeder.accept(grammarAccess.getAtributoAccess().getOperacaoOperacaoParserRuleCall_15_0(), semanticObject.getOperacao());
+		feeder.accept(grammarAccess.getAtributoAccess().getTabelaNomeTabelaNomeParserRuleCall_19_0(), semanticObject.getTabelaNome());
+		feeder.accept(grammarAccess.getAtributoAccess().getColunaNomeColunaNomeParserRuleCall_23_0(), semanticObject.getColunaNome());
+		feeder.accept(grammarAccess.getAtributoAccess().getColunaNomeInverseColunaNomeParserRuleCall_27_0(), semanticObject.getColunaNomeInverse());
 		feeder.finish();
 	}
 	
@@ -279,7 +281,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Entidade returns Entidade
 	 *
 	 * Constraint:
-	 *     (nomeEntidade=EntidadeNome atributo+=Atributo+)
+	 *     (nomeEntidades=EntidadeNome atributos+=Atributo+ chavePrimaria=ChavePrimaria)
 	 */
 	protected void sequence_Entidade(ISerializationContext context, Entidade semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getId <em>Id</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipo <em>Tipo</em>}</li>
  * </ul>
  *
  * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributoTipo()
@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface AtributoTipo extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Id</b></em>' attribute.
+   * Returns the value of the '<em><b>Tipo</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' attribute.
-   * @see #setId(String)
-   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributoTipo_Id()
+   * @return the value of the '<em>Tipo</em>' attribute.
+   * @see #setTipo(String)
+   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributoTipo_Tipo()
    * @model
    * @generated
    */
-  String getId();
+  String getTipo();
 
   /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getId <em>Id</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipo <em>Tipo</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' attribute.
-   * @see #getId()
+   * @param value the new value of the '<em>Tipo</em>' attribute.
+   * @see #getTipo()
    * @generated
    */
-  void setId(String value);
+  void setTipo(String value);
 
 } // AtributoTipo

@@ -320,7 +320,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EReference getEntidade_NomeEntidade()
+  public EReference getEntidade_NomeEntidades()
   {
     return (EReference)entidadeEClass.getEStructuralFeatures().get(0);
   }
@@ -331,9 +331,20 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EReference getEntidade_Atributo()
+  public EReference getEntidade_Atributos()
   {
     return (EReference)entidadeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEntidade_ChavePrimaria()
+  {
+    return (EReference)entidadeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -419,7 +430,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EReference getAtributo_Optional()
+  public EReference getAtributo_TabelaNome()
   {
     return (EReference)atributoEClass.getEStructuralFeatures().get(4);
   }
@@ -430,7 +441,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EReference getAtributo_TabelaNome()
+  public EReference getAtributo_ColunaNome()
   {
     return (EReference)atributoEClass.getEStructuralFeatures().get(5);
   }
@@ -441,31 +452,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EReference getAtributo_ColunaNome()
-  {
-    return (EReference)atributoEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getAtributo_ColunaNomeInverse()
   {
-    return (EReference)atributoEClass.getEStructuralFeatures().get(7);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getAtributo_ChavePrimaria()
-  {
-    return (EReference)atributoEClass.getEStructuralFeatures().get(8);
+    return (EReference)atributoEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -595,7 +584,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EAttribute getAtributoTipo_Id()
+  public EAttribute getAtributoTipo_Tipo()
   {
     return (EAttribute)atributoTipoEClass.getEStructuralFeatures().get(0);
   }
@@ -689,8 +678,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEAttribute(apiNomeEClass, API_NOME__ID);
 
     entidadeEClass = createEClass(ENTIDADE);
-    createEReference(entidadeEClass, ENTIDADE__NOME_ENTIDADE);
-    createEReference(entidadeEClass, ENTIDADE__ATRIBUTO);
+    createEReference(entidadeEClass, ENTIDADE__NOME_ENTIDADES);
+    createEReference(entidadeEClass, ENTIDADE__ATRIBUTOS);
+    createEReference(entidadeEClass, ENTIDADE__CHAVE_PRIMARIA);
 
     entidadeNomeEClass = createEClass(ENTIDADE_NOME);
     createEAttribute(entidadeNomeEClass, ENTIDADE_NOME__ID);
@@ -700,11 +690,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEReference(atributoEClass, ATRIBUTO__ATRIBUTO_TIPO);
     createEReference(atributoEClass, ATRIBUTO__ASSOCIACAO);
     createEReference(atributoEClass, ATRIBUTO__OPERACAO);
-    createEReference(atributoEClass, ATRIBUTO__OPTIONAL);
     createEReference(atributoEClass, ATRIBUTO__TABELA_NOME);
     createEReference(atributoEClass, ATRIBUTO__COLUNA_NOME);
     createEReference(atributoEClass, ATRIBUTO__COLUNA_NOME_INVERSE);
-    createEReference(atributoEClass, ATRIBUTO__CHAVE_PRIMARIA);
 
     colunaNomeEClass = createEClass(COLUNA_NOME);
     createEAttribute(colunaNomeEClass, COLUNA_NOME__COLUNA_NOME);
@@ -722,7 +710,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEAttribute(atributoNomeEClass, ATRIBUTO_NOME__ID);
 
     atributoTipoEClass = createEClass(ATRIBUTO_TIPO);
-    createEAttribute(atributoTipoEClass, ATRIBUTO_TIPO__ID);
+    createEAttribute(atributoTipoEClass, ATRIBUTO_TIPO__TIPO);
 
     optionalEClass = createEClass(OPTIONAL);
     createEAttribute(optionalEClass, OPTIONAL__OPTIONAL);
@@ -776,8 +764,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEAttribute(getApiNome_Id(), ecorePackage.getEString(), "id", null, 0, 1, ApiNome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entidadeEClass, Entidade.class, "Entidade", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEntidade_NomeEntidade(), this.getEntidadeNome(), null, "nomeEntidade", null, 0, 1, Entidade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntidade_Atributo(), this.getAtributo(), null, "atributo", null, 0, -1, Entidade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntidade_NomeEntidades(), this.getEntidadeNome(), null, "nomeEntidades", null, 0, 1, Entidade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntidade_Atributos(), this.getAtributo(), null, "atributos", null, 0, -1, Entidade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntidade_ChavePrimaria(), this.getChavePrimaria(), null, "chavePrimaria", null, 0, 1, Entidade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entidadeNomeEClass, EntidadeNome.class, "EntidadeNome", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEntidadeNome_Id(), ecorePackage.getEString(), "id", null, 0, 1, EntidadeNome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -787,11 +776,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEReference(getAtributo_AtributoTipo(), this.getAtributoTipo(), null, "atributoTipo", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAtributo_Associacao(), this.getAssociacao(), null, "associacao", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAtributo_Operacao(), this.getOperacao(), null, "operacao", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAtributo_Optional(), this.getOptional(), null, "optional", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAtributo_TabelaNome(), this.getTabelaNome(), null, "tabelaNome", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAtributo_ColunaNome(), this.getColunaNome(), null, "colunaNome", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAtributo_ColunaNomeInverse(), this.getColunaNome(), null, "colunaNomeInverse", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAtributo_ChavePrimaria(), this.getChavePrimaria(), null, "chavePrimaria", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(colunaNomeEClass, ColunaNome.class, "ColunaNome", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getColunaNome_ColunaNome(), ecorePackage.getEString(), "colunaNome", null, 0, 1, ColunaNome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -809,7 +796,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEAttribute(getAtributoNome_Id(), ecorePackage.getEString(), "id", null, 0, 1, AtributoNome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(atributoTipoEClass, AtributoTipo.class, "AtributoTipo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAtributoTipo_Id(), ecorePackage.getEString(), "id", null, 0, 1, AtributoTipo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAtributoTipo_Tipo(), ecorePackage.getEString(), "tipo", null, 0, 1, AtributoTipo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(optionalEClass, Optional.class, "Optional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getOptional_Optional(), ecorePackage.getEString(), "optional", null, 0, 1, Optional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

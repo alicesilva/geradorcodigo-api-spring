@@ -189,22 +189,31 @@ public interface MyDslPackage extends EPackage
   int ENTIDADE = 4;
 
   /**
-   * The feature id for the '<em><b>Nome Entidade</b></em>' containment reference.
+   * The feature id for the '<em><b>Nome Entidades</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTIDADE__NOME_ENTIDADE = 0;
+  int ENTIDADE__NOME_ENTIDADES = 0;
 
   /**
-   * The feature id for the '<em><b>Atributo</b></em>' containment reference list.
+   * The feature id for the '<em><b>Atributos</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTIDADE__ATRIBUTO = 1;
+  int ENTIDADE__ATRIBUTOS = 1;
+
+  /**
+   * The feature id for the '<em><b>Chave Primaria</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTIDADE__CHAVE_PRIMARIA = 2;
 
   /**
    * The number of structural features of the '<em>Entidade</em>' class.
@@ -213,7 +222,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENTIDADE_FEATURE_COUNT = 2;
+  int ENTIDADE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.EntidadeNomeImpl <em>Entidade Nome</em>}' class.
@@ -290,22 +299,13 @@ public interface MyDslPackage extends EPackage
   int ATRIBUTO__OPERACAO = 3;
 
   /**
-   * The feature id for the '<em><b>Optional</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATRIBUTO__OPTIONAL = 4;
-
-  /**
    * The feature id for the '<em><b>Tabela Nome</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATRIBUTO__TABELA_NOME = 5;
+  int ATRIBUTO__TABELA_NOME = 4;
 
   /**
    * The feature id for the '<em><b>Coluna Nome</b></em>' containment reference.
@@ -314,7 +314,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATRIBUTO__COLUNA_NOME = 6;
+  int ATRIBUTO__COLUNA_NOME = 5;
 
   /**
    * The feature id for the '<em><b>Coluna Nome Inverse</b></em>' containment reference.
@@ -323,16 +323,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATRIBUTO__COLUNA_NOME_INVERSE = 7;
-
-  /**
-   * The feature id for the '<em><b>Chave Primaria</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATRIBUTO__CHAVE_PRIMARIA = 8;
+  int ATRIBUTO__COLUNA_NOME_INVERSE = 6;
 
   /**
    * The number of structural features of the '<em>Atributo</em>' class.
@@ -341,7 +332,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATRIBUTO_FEATURE_COUNT = 9;
+  int ATRIBUTO_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.ColunaNomeImpl <em>Coluna Nome</em>}' class.
@@ -494,13 +485,13 @@ public interface MyDslPackage extends EPackage
   int ATRIBUTO_TIPO = 12;
 
   /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * The feature id for the '<em><b>Tipo</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATRIBUTO_TIPO__ID = 0;
+  int ATRIBUTO_TIPO__TIPO = 0;
 
   /**
    * The number of structural features of the '<em>Atributo Tipo</em>' class.
@@ -674,26 +665,37 @@ public interface MyDslPackage extends EPackage
   EClass getEntidade();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Entidade#getNomeEntidade <em>Nome Entidade</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Entidade#getNomeEntidades <em>Nome Entidades</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Nome Entidade</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.Entidade#getNomeEntidade()
+   * @return the meta object for the containment reference '<em>Nome Entidades</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Entidade#getNomeEntidades()
    * @see #getEntidade()
    * @generated
    */
-  EReference getEntidade_NomeEntidade();
+  EReference getEntidade_NomeEntidades();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.tcc.mydsl.myDsl.Entidade#getAtributo <em>Atributo</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.tcc.mydsl.myDsl.Entidade#getAtributos <em>Atributos</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Atributo</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.Entidade#getAtributo()
+   * @return the meta object for the containment reference list '<em>Atributos</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Entidade#getAtributos()
    * @see #getEntidade()
    * @generated
    */
-  EReference getEntidade_Atributo();
+  EReference getEntidade_Atributos();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Entidade#getChavePrimaria <em>Chave Primaria</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Chave Primaria</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.Entidade#getChavePrimaria()
+   * @see #getEntidade()
+   * @generated
+   */
+  EReference getEntidade_ChavePrimaria();
 
   /**
    * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.EntidadeNome <em>Entidade Nome</em>}'.
@@ -771,17 +773,6 @@ public interface MyDslPackage extends EPackage
   EReference getAtributo_Operacao();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getOptional <em>Optional</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Optional</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.Atributo#getOptional()
-   * @see #getAtributo()
-   * @generated
-   */
-  EReference getAtributo_Optional();
-
-  /**
    * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getTabelaNome <em>Tabela Nome</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -813,17 +804,6 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EReference getAtributo_ColunaNomeInverse();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getChavePrimaria <em>Chave Primaria</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Chave Primaria</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.Atributo#getChavePrimaria()
-   * @see #getAtributo()
-   * @generated
-   */
-  EReference getAtributo_ChavePrimaria();
 
   /**
    * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.ColunaNome <em>Coluna Nome</em>}'.
@@ -941,15 +921,15 @@ public interface MyDslPackage extends EPackage
   EClass getAtributoTipo();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getId <em>Id</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipo <em>Tipo</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.AtributoTipo#getId()
+   * @return the meta object for the attribute '<em>Tipo</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipo()
    * @see #getAtributoTipo()
    * @generated
    */
-  EAttribute getAtributoTipo_Id();
+  EAttribute getAtributoTipo_Tipo();
 
   /**
    * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.Optional <em>Optional</em>}'.
@@ -1107,20 +1087,28 @@ public interface MyDslPackage extends EPackage
     EClass ENTIDADE = eINSTANCE.getEntidade();
 
     /**
-     * The meta object literal for the '<em><b>Nome Entidade</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Nome Entidades</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ENTIDADE__NOME_ENTIDADE = eINSTANCE.getEntidade_NomeEntidade();
+    EReference ENTIDADE__NOME_ENTIDADES = eINSTANCE.getEntidade_NomeEntidades();
 
     /**
-     * The meta object literal for the '<em><b>Atributo</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Atributos</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ENTIDADE__ATRIBUTO = eINSTANCE.getEntidade_Atributo();
+    EReference ENTIDADE__ATRIBUTOS = eINSTANCE.getEntidade_Atributos();
+
+    /**
+     * The meta object literal for the '<em><b>Chave Primaria</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTIDADE__CHAVE_PRIMARIA = eINSTANCE.getEntidade_ChavePrimaria();
 
     /**
      * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.EntidadeNomeImpl <em>Entidade Nome</em>}' class.
@@ -1183,14 +1171,6 @@ public interface MyDslPackage extends EPackage
     EReference ATRIBUTO__OPERACAO = eINSTANCE.getAtributo_Operacao();
 
     /**
-     * The meta object literal for the '<em><b>Optional</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ATRIBUTO__OPTIONAL = eINSTANCE.getAtributo_Optional();
-
-    /**
      * The meta object literal for the '<em><b>Tabela Nome</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1213,14 +1193,6 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EReference ATRIBUTO__COLUNA_NOME_INVERSE = eINSTANCE.getAtributo_ColunaNomeInverse();
-
-    /**
-     * The meta object literal for the '<em><b>Chave Primaria</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ATRIBUTO__CHAVE_PRIMARIA = eINSTANCE.getAtributo_ChavePrimaria();
 
     /**
      * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.ColunaNomeImpl <em>Coluna Nome</em>}' class.
@@ -1323,12 +1295,12 @@ public interface MyDslPackage extends EPackage
     EClass ATRIBUTO_TIPO = eINSTANCE.getAtributoTipo();
 
     /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Tipo</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATRIBUTO_TIPO__ID = eINSTANCE.getAtributoTipo_Id();
+    EAttribute ATRIBUTO_TIPO__TIPO = eINSTANCE.getAtributoTipo_Tipo();
 
     /**
      * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.OptionalImpl <em>Optional</em>}' class.

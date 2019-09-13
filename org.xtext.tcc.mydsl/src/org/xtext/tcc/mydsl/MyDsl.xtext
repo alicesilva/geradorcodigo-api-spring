@@ -9,7 +9,8 @@ Greeting:
 	'{' api=Api '}';
 
 Api:
-	nomeApi = ApiNome ':' entidades += (Entidade)+
+	'"Nome da Api"' ':' nomeApi = ApiNome ','
+	'"Entidades"' ':' '[' entidades += (Entidade)+ ']'
 ;
 
 
@@ -18,7 +19,11 @@ ApiNome:
 ;
 
 Entidade:
-	'{' nomeEntidade = EntidadeNome ':' atributo += (Atributo)+ '}' 
+	'{' 
+		'"Nome"' ':' nomeEntidades = EntidadeNome ','
+		'"Atributos"' ':' '[' atributos += (Atributo)+ ']' ','
+		'"Chave Primaria"' ':' chavePrimaria = ChavePrimaria
+	'}'
 ;
 
 EntidadeNome:
@@ -26,16 +31,14 @@ EntidadeNome:
 ;
 Atributo:
 	'{' 
-		'nome-atributo:' atributoNome = AtributoNome ','
-		'tipo-atributo:' atributoTipo = AtributoTipo ','
-		'associação:' associacao = Associacao ','
-		'operação em cascata:' operacao = Operacao ','
-	    'optional:' optional = Optional ','
-		'joinTable-nome:' tabelaNome = TabelaNome ','
-		'joinColumns-nome:' colunaNome = ColunaNome ','
-		'inverseJoinColumns-nome:' colunaNomeInverse = ColunaNome
+		'"nome-atributo"' ':' atributoNome = AtributoNome ','
+		'"tipo-atributo"' ':' atributoTipo = AtributoTipo ','
+		'"associação"' ':' associacao = Associacao ','
+		'"operação em cascata"' ':' operacao = Operacao ','
+		'"joinTable-nome"' ':' tabelaNome = TabelaNome ','
+		'"joinColumns-nome"' ':' colunaNome = ColunaNome ','
+		'"inverseJoinColumns-nome"' ':' colunaNomeInverse = ColunaNome
 	'}'
-	'chave-primaria:' chavePrimaria = ChavePrimaria
 ;
 
 ColunaNome:
@@ -62,8 +65,11 @@ AtributoNome:
 ;
 
 AtributoTipo:
-	id = ID
-;
+	 tipo = "Boolean" | tipo = "Byte" | tipo = "Short" |
+	 tipo = "Character" | tipo = "Integer" | tipo = "Long" |
+	 tipo = "Float"| tipo = "Double" | tipo = "Time" | tipo = "Timestamp" |
+	 tipo = "Date" | tipo = "ENUM" | tipo = "ArrayList" | tipo = "HashSet" |
+	 tipo = ID;
 
 Optional:
 	optional = 'true' | optional = 'false' | optional = ANY_OTHER
