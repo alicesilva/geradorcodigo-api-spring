@@ -485,13 +485,22 @@ public interface MyDslPackage extends EPackage
   int ATRIBUTO_TIPO = 12;
 
   /**
-   * The feature id for the '<em><b>Tipo</b></em>' attribute.
+   * The feature id for the '<em><b>Tipo P</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATRIBUTO_TIPO__TIPO = 0;
+  int ATRIBUTO_TIPO__TIPO_P = 0;
+
+  /**
+   * The feature id for the '<em><b>Tipo E</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATRIBUTO_TIPO__TIPO_E = 1;
 
   /**
    * The number of structural features of the '<em>Atributo Tipo</em>' class.
@@ -500,7 +509,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATRIBUTO_TIPO_FEATURE_COUNT = 1;
+  int ATRIBUTO_TIPO_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.OptionalImpl <em>Optional</em>}' class.
@@ -921,15 +930,26 @@ public interface MyDslPackage extends EPackage
   EClass getAtributoTipo();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipo <em>Tipo</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoP <em>Tipo P</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Tipo</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipo()
+   * @return the meta object for the attribute '<em>Tipo P</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoP()
    * @see #getAtributoTipo()
    * @generated
    */
-  EAttribute getAtributoTipo_Tipo();
+  EAttribute getAtributoTipo_TipoP();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoE <em>Tipo E</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Tipo E</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoE()
+   * @see #getAtributoTipo()
+   * @generated
+   */
+  EAttribute getAtributoTipo_TipoE();
 
   /**
    * Returns the meta object for class '{@link org.xtext.tcc.mydsl.myDsl.Optional <em>Optional</em>}'.
@@ -1295,12 +1315,20 @@ public interface MyDslPackage extends EPackage
     EClass ATRIBUTO_TIPO = eINSTANCE.getAtributoTipo();
 
     /**
-     * The meta object literal for the '<em><b>Tipo</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Tipo P</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATRIBUTO_TIPO__TIPO = eINSTANCE.getAtributoTipo_Tipo();
+    EAttribute ATRIBUTO_TIPO__TIPO_P = eINSTANCE.getAtributoTipo_TipoP();
+
+    /**
+     * The meta object literal for the '<em><b>Tipo E</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATRIBUTO_TIPO__TIPO_E = eINSTANCE.getAtributoTipo_TipoE();
 
     /**
      * The meta object literal for the '{@link org.xtext.tcc.mydsl.myDsl.impl.OptionalImpl <em>Optional</em>}' class.

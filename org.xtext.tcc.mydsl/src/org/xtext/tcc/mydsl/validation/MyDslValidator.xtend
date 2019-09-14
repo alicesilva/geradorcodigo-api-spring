@@ -29,9 +29,25 @@ class MyDslValidator extends AbstractMyDslValidator {
 //	}
 
 	@Check
-	def checkEntidadesIguais(Entidade e){
+	def checkEntidadesIguais(Api api){
+		if(entidadeValidator.checkNomeEntidades(api) !== null){
+			var Exception erro = entidadeValidator.checkNomeEntidades(api);
+			error(erro.erro, erro.feature)
+		}
+	}
+
+	@Check
+	def checkChavePrimaria(Entidade e){
 		if(entidadeValidator.checkChavePrimaria(e) !== null){
 			var Exception erro = entidadeValidator.checkChavePrimaria(e);
+			error(erro.erro, erro.feature)
+		}
+	}
+	
+	@Check
+	def checkTipoAtributos(Api api){
+		if(entidadeValidator.checkTipoAtributo(api) !== null){
+			var Exception erro = entidadeValidator.checkTipoAtributo(api);
 			error(erro.erro, erro.feature)
 		}
 	}

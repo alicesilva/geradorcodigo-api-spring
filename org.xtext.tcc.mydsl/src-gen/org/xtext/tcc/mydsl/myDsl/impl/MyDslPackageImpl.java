@@ -584,9 +584,20 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EAttribute getAtributoTipo_Tipo()
+  public EAttribute getAtributoTipo_TipoP()
   {
     return (EAttribute)atributoTipoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAtributoTipo_TipoE()
+  {
+    return (EAttribute)atributoTipoEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -710,7 +721,8 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEAttribute(atributoNomeEClass, ATRIBUTO_NOME__ID);
 
     atributoTipoEClass = createEClass(ATRIBUTO_TIPO);
-    createEAttribute(atributoTipoEClass, ATRIBUTO_TIPO__TIPO);
+    createEAttribute(atributoTipoEClass, ATRIBUTO_TIPO__TIPO_P);
+    createEAttribute(atributoTipoEClass, ATRIBUTO_TIPO__TIPO_E);
 
     optionalEClass = createEClass(OPTIONAL);
     createEAttribute(optionalEClass, OPTIONAL__OPTIONAL);
@@ -796,7 +808,8 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEAttribute(getAtributoNome_Id(), ecorePackage.getEString(), "id", null, 0, 1, AtributoNome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(atributoTipoEClass, AtributoTipo.class, "AtributoTipo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAtributoTipo_Tipo(), ecorePackage.getEString(), "tipo", null, 0, 1, AtributoTipo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAtributoTipo_TipoP(), ecorePackage.getEString(), "tipoP", null, 0, 1, AtributoTipo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAtributoTipo_TipoE(), ecorePackage.getEString(), "tipoE", null, 0, 1, AtributoTipo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(optionalEClass, Optional.class, "Optional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getOptional_Optional(), ecorePackage.getEString(), "optional", null, 0, 1, Optional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

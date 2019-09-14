@@ -162,21 +162,21 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
-	 *         tipo='Boolean' | 
-	 *         tipo='Byte' | 
-	 *         tipo='Short' | 
-	 *         tipo='Character' | 
-	 *         tipo='Integer' | 
-	 *         tipo='Long' | 
-	 *         tipo='Float' | 
-	 *         tipo='Double' | 
-	 *         tipo='Time' | 
-	 *         tipo='Timestamp' | 
-	 *         tipo='Date' | 
-	 *         tipo='ENUM' | 
-	 *         tipo='ArrayList' | 
-	 *         tipo='HashSet' | 
-	 *         tipo=ID
+	 *         tipoP='Boolean' | 
+	 *         tipoP='Byte' | 
+	 *         tipoP='Short' | 
+	 *         tipoP='Character' | 
+	 *         tipoP='Integer' | 
+	 *         tipoP='Long' | 
+	 *         tipoP='Float' | 
+	 *         tipoP='Double' | 
+	 *         tipoP='Time' | 
+	 *         tipoP='Timestamp' | 
+	 *         tipoP='Date' | 
+	 *         tipoP='ENUM' | 
+	 *         tipoP='ArrayList' | 
+	 *         tipoP='HashSet' | 
+	 *         tipoE=ID
 	 *     )
 	 */
 	protected void sequence_AtributoTipo(ISerializationContext context, AtributoTipo semanticObject) {

@@ -52,7 +52,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//AtributoNome/id"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//AtributoTipo">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//AtributoTipo/tipo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//AtributoTipo/tipoP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//AtributoTipo/tipoE"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Optional">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Optional/optional"/>

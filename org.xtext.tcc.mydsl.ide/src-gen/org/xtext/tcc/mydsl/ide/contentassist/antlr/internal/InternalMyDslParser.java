@@ -1819,13 +1819,13 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtributoTipo__Alternatives"
-    // InternalMyDsl.g:534:1: rule__AtributoTipo__Alternatives : ( ( ( rule__AtributoTipo__TipoAssignment_0 ) ) | ( ( rule__AtributoTipo__TipoAssignment_1 ) ) | ( ( rule__AtributoTipo__TipoAssignment_2 ) ) | ( ( rule__AtributoTipo__TipoAssignment_3 ) ) | ( ( rule__AtributoTipo__TipoAssignment_4 ) ) | ( ( rule__AtributoTipo__TipoAssignment_5 ) ) | ( ( rule__AtributoTipo__TipoAssignment_6 ) ) | ( ( rule__AtributoTipo__TipoAssignment_7 ) ) | ( ( rule__AtributoTipo__TipoAssignment_8 ) ) | ( ( rule__AtributoTipo__TipoAssignment_9 ) ) | ( ( rule__AtributoTipo__TipoAssignment_10 ) ) | ( ( rule__AtributoTipo__TipoAssignment_11 ) ) | ( ( rule__AtributoTipo__TipoAssignment_12 ) ) | ( ( rule__AtributoTipo__TipoAssignment_13 ) ) | ( ( rule__AtributoTipo__TipoAssignment_14 ) ) );
+    // InternalMyDsl.g:534:1: rule__AtributoTipo__Alternatives : ( ( ( rule__AtributoTipo__TipoPAssignment_0 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_1 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_2 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_3 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_4 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_5 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_6 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_7 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_8 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_9 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_10 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_11 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_12 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_13 ) ) | ( ( rule__AtributoTipo__TipoEAssignment_14 ) ) );
     public final void rule__AtributoTipo__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyDsl.g:538:1: ( ( ( rule__AtributoTipo__TipoAssignment_0 ) ) | ( ( rule__AtributoTipo__TipoAssignment_1 ) ) | ( ( rule__AtributoTipo__TipoAssignment_2 ) ) | ( ( rule__AtributoTipo__TipoAssignment_3 ) ) | ( ( rule__AtributoTipo__TipoAssignment_4 ) ) | ( ( rule__AtributoTipo__TipoAssignment_5 ) ) | ( ( rule__AtributoTipo__TipoAssignment_6 ) ) | ( ( rule__AtributoTipo__TipoAssignment_7 ) ) | ( ( rule__AtributoTipo__TipoAssignment_8 ) ) | ( ( rule__AtributoTipo__TipoAssignment_9 ) ) | ( ( rule__AtributoTipo__TipoAssignment_10 ) ) | ( ( rule__AtributoTipo__TipoAssignment_11 ) ) | ( ( rule__AtributoTipo__TipoAssignment_12 ) ) | ( ( rule__AtributoTipo__TipoAssignment_13 ) ) | ( ( rule__AtributoTipo__TipoAssignment_14 ) ) )
+            // InternalMyDsl.g:538:1: ( ( ( rule__AtributoTipo__TipoPAssignment_0 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_1 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_2 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_3 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_4 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_5 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_6 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_7 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_8 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_9 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_10 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_11 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_12 ) ) | ( ( rule__AtributoTipo__TipoPAssignment_13 ) ) | ( ( rule__AtributoTipo__TipoEAssignment_14 ) ) )
             int alt6=15;
             switch ( input.LA(1) ) {
             case 39:
@@ -1912,24 +1912,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
 
             switch (alt6) {
                 case 1 :
-                    // InternalMyDsl.g:539:2: ( ( rule__AtributoTipo__TipoAssignment_0 ) )
+                    // InternalMyDsl.g:539:2: ( ( rule__AtributoTipo__TipoPAssignment_0 ) )
                     {
-                    // InternalMyDsl.g:539:2: ( ( rule__AtributoTipo__TipoAssignment_0 ) )
-                    // InternalMyDsl.g:540:3: ( rule__AtributoTipo__TipoAssignment_0 )
+                    // InternalMyDsl.g:539:2: ( ( rule__AtributoTipo__TipoPAssignment_0 ) )
+                    // InternalMyDsl.g:540:3: ( rule__AtributoTipo__TipoPAssignment_0 )
                     {
-                     before(grammarAccess.getAtributoTipoAccess().getTipoAssignment_0()); 
-                    // InternalMyDsl.g:541:3: ( rule__AtributoTipo__TipoAssignment_0 )
-                    // InternalMyDsl.g:541:4: rule__AtributoTipo__TipoAssignment_0
+                     before(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_0()); 
+                    // InternalMyDsl.g:541:3: ( rule__AtributoTipo__TipoPAssignment_0 )
+                    // InternalMyDsl.g:541:4: rule__AtributoTipo__TipoPAssignment_0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AtributoTipo__TipoAssignment_0();
+                    rule__AtributoTipo__TipoPAssignment_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAtributoTipoAccess().getTipoAssignment_0()); 
+                     after(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_0()); 
 
                     }
 
@@ -1937,24 +1937,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalMyDsl.g:545:2: ( ( rule__AtributoTipo__TipoAssignment_1 ) )
+                    // InternalMyDsl.g:545:2: ( ( rule__AtributoTipo__TipoPAssignment_1 ) )
                     {
-                    // InternalMyDsl.g:545:2: ( ( rule__AtributoTipo__TipoAssignment_1 ) )
-                    // InternalMyDsl.g:546:3: ( rule__AtributoTipo__TipoAssignment_1 )
+                    // InternalMyDsl.g:545:2: ( ( rule__AtributoTipo__TipoPAssignment_1 ) )
+                    // InternalMyDsl.g:546:3: ( rule__AtributoTipo__TipoPAssignment_1 )
                     {
-                     before(grammarAccess.getAtributoTipoAccess().getTipoAssignment_1()); 
-                    // InternalMyDsl.g:547:3: ( rule__AtributoTipo__TipoAssignment_1 )
-                    // InternalMyDsl.g:547:4: rule__AtributoTipo__TipoAssignment_1
+                     before(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_1()); 
+                    // InternalMyDsl.g:547:3: ( rule__AtributoTipo__TipoPAssignment_1 )
+                    // InternalMyDsl.g:547:4: rule__AtributoTipo__TipoPAssignment_1
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AtributoTipo__TipoAssignment_1();
+                    rule__AtributoTipo__TipoPAssignment_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAtributoTipoAccess().getTipoAssignment_1()); 
+                     after(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_1()); 
 
                     }
 
@@ -1962,24 +1962,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalMyDsl.g:551:2: ( ( rule__AtributoTipo__TipoAssignment_2 ) )
+                    // InternalMyDsl.g:551:2: ( ( rule__AtributoTipo__TipoPAssignment_2 ) )
                     {
-                    // InternalMyDsl.g:551:2: ( ( rule__AtributoTipo__TipoAssignment_2 ) )
-                    // InternalMyDsl.g:552:3: ( rule__AtributoTipo__TipoAssignment_2 )
+                    // InternalMyDsl.g:551:2: ( ( rule__AtributoTipo__TipoPAssignment_2 ) )
+                    // InternalMyDsl.g:552:3: ( rule__AtributoTipo__TipoPAssignment_2 )
                     {
-                     before(grammarAccess.getAtributoTipoAccess().getTipoAssignment_2()); 
-                    // InternalMyDsl.g:553:3: ( rule__AtributoTipo__TipoAssignment_2 )
-                    // InternalMyDsl.g:553:4: rule__AtributoTipo__TipoAssignment_2
+                     before(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_2()); 
+                    // InternalMyDsl.g:553:3: ( rule__AtributoTipo__TipoPAssignment_2 )
+                    // InternalMyDsl.g:553:4: rule__AtributoTipo__TipoPAssignment_2
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AtributoTipo__TipoAssignment_2();
+                    rule__AtributoTipo__TipoPAssignment_2();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAtributoTipoAccess().getTipoAssignment_2()); 
+                     after(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_2()); 
 
                     }
 
@@ -1987,24 +1987,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalMyDsl.g:557:2: ( ( rule__AtributoTipo__TipoAssignment_3 ) )
+                    // InternalMyDsl.g:557:2: ( ( rule__AtributoTipo__TipoPAssignment_3 ) )
                     {
-                    // InternalMyDsl.g:557:2: ( ( rule__AtributoTipo__TipoAssignment_3 ) )
-                    // InternalMyDsl.g:558:3: ( rule__AtributoTipo__TipoAssignment_3 )
+                    // InternalMyDsl.g:557:2: ( ( rule__AtributoTipo__TipoPAssignment_3 ) )
+                    // InternalMyDsl.g:558:3: ( rule__AtributoTipo__TipoPAssignment_3 )
                     {
-                     before(grammarAccess.getAtributoTipoAccess().getTipoAssignment_3()); 
-                    // InternalMyDsl.g:559:3: ( rule__AtributoTipo__TipoAssignment_3 )
-                    // InternalMyDsl.g:559:4: rule__AtributoTipo__TipoAssignment_3
+                     before(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_3()); 
+                    // InternalMyDsl.g:559:3: ( rule__AtributoTipo__TipoPAssignment_3 )
+                    // InternalMyDsl.g:559:4: rule__AtributoTipo__TipoPAssignment_3
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AtributoTipo__TipoAssignment_3();
+                    rule__AtributoTipo__TipoPAssignment_3();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAtributoTipoAccess().getTipoAssignment_3()); 
+                     after(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_3()); 
 
                     }
 
@@ -2012,24 +2012,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalMyDsl.g:563:2: ( ( rule__AtributoTipo__TipoAssignment_4 ) )
+                    // InternalMyDsl.g:563:2: ( ( rule__AtributoTipo__TipoPAssignment_4 ) )
                     {
-                    // InternalMyDsl.g:563:2: ( ( rule__AtributoTipo__TipoAssignment_4 ) )
-                    // InternalMyDsl.g:564:3: ( rule__AtributoTipo__TipoAssignment_4 )
+                    // InternalMyDsl.g:563:2: ( ( rule__AtributoTipo__TipoPAssignment_4 ) )
+                    // InternalMyDsl.g:564:3: ( rule__AtributoTipo__TipoPAssignment_4 )
                     {
-                     before(grammarAccess.getAtributoTipoAccess().getTipoAssignment_4()); 
-                    // InternalMyDsl.g:565:3: ( rule__AtributoTipo__TipoAssignment_4 )
-                    // InternalMyDsl.g:565:4: rule__AtributoTipo__TipoAssignment_4
+                     before(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_4()); 
+                    // InternalMyDsl.g:565:3: ( rule__AtributoTipo__TipoPAssignment_4 )
+                    // InternalMyDsl.g:565:4: rule__AtributoTipo__TipoPAssignment_4
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AtributoTipo__TipoAssignment_4();
+                    rule__AtributoTipo__TipoPAssignment_4();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAtributoTipoAccess().getTipoAssignment_4()); 
+                     after(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_4()); 
 
                     }
 
@@ -2037,24 +2037,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // InternalMyDsl.g:569:2: ( ( rule__AtributoTipo__TipoAssignment_5 ) )
+                    // InternalMyDsl.g:569:2: ( ( rule__AtributoTipo__TipoPAssignment_5 ) )
                     {
-                    // InternalMyDsl.g:569:2: ( ( rule__AtributoTipo__TipoAssignment_5 ) )
-                    // InternalMyDsl.g:570:3: ( rule__AtributoTipo__TipoAssignment_5 )
+                    // InternalMyDsl.g:569:2: ( ( rule__AtributoTipo__TipoPAssignment_5 ) )
+                    // InternalMyDsl.g:570:3: ( rule__AtributoTipo__TipoPAssignment_5 )
                     {
-                     before(grammarAccess.getAtributoTipoAccess().getTipoAssignment_5()); 
-                    // InternalMyDsl.g:571:3: ( rule__AtributoTipo__TipoAssignment_5 )
-                    // InternalMyDsl.g:571:4: rule__AtributoTipo__TipoAssignment_5
+                     before(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_5()); 
+                    // InternalMyDsl.g:571:3: ( rule__AtributoTipo__TipoPAssignment_5 )
+                    // InternalMyDsl.g:571:4: rule__AtributoTipo__TipoPAssignment_5
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AtributoTipo__TipoAssignment_5();
+                    rule__AtributoTipo__TipoPAssignment_5();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAtributoTipoAccess().getTipoAssignment_5()); 
+                     after(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_5()); 
 
                     }
 
@@ -2062,24 +2062,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // InternalMyDsl.g:575:2: ( ( rule__AtributoTipo__TipoAssignment_6 ) )
+                    // InternalMyDsl.g:575:2: ( ( rule__AtributoTipo__TipoPAssignment_6 ) )
                     {
-                    // InternalMyDsl.g:575:2: ( ( rule__AtributoTipo__TipoAssignment_6 ) )
-                    // InternalMyDsl.g:576:3: ( rule__AtributoTipo__TipoAssignment_6 )
+                    // InternalMyDsl.g:575:2: ( ( rule__AtributoTipo__TipoPAssignment_6 ) )
+                    // InternalMyDsl.g:576:3: ( rule__AtributoTipo__TipoPAssignment_6 )
                     {
-                     before(grammarAccess.getAtributoTipoAccess().getTipoAssignment_6()); 
-                    // InternalMyDsl.g:577:3: ( rule__AtributoTipo__TipoAssignment_6 )
-                    // InternalMyDsl.g:577:4: rule__AtributoTipo__TipoAssignment_6
+                     before(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_6()); 
+                    // InternalMyDsl.g:577:3: ( rule__AtributoTipo__TipoPAssignment_6 )
+                    // InternalMyDsl.g:577:4: rule__AtributoTipo__TipoPAssignment_6
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AtributoTipo__TipoAssignment_6();
+                    rule__AtributoTipo__TipoPAssignment_6();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAtributoTipoAccess().getTipoAssignment_6()); 
+                     after(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_6()); 
 
                     }
 
@@ -2087,24 +2087,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 8 :
-                    // InternalMyDsl.g:581:2: ( ( rule__AtributoTipo__TipoAssignment_7 ) )
+                    // InternalMyDsl.g:581:2: ( ( rule__AtributoTipo__TipoPAssignment_7 ) )
                     {
-                    // InternalMyDsl.g:581:2: ( ( rule__AtributoTipo__TipoAssignment_7 ) )
-                    // InternalMyDsl.g:582:3: ( rule__AtributoTipo__TipoAssignment_7 )
+                    // InternalMyDsl.g:581:2: ( ( rule__AtributoTipo__TipoPAssignment_7 ) )
+                    // InternalMyDsl.g:582:3: ( rule__AtributoTipo__TipoPAssignment_7 )
                     {
-                     before(grammarAccess.getAtributoTipoAccess().getTipoAssignment_7()); 
-                    // InternalMyDsl.g:583:3: ( rule__AtributoTipo__TipoAssignment_7 )
-                    // InternalMyDsl.g:583:4: rule__AtributoTipo__TipoAssignment_7
+                     before(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_7()); 
+                    // InternalMyDsl.g:583:3: ( rule__AtributoTipo__TipoPAssignment_7 )
+                    // InternalMyDsl.g:583:4: rule__AtributoTipo__TipoPAssignment_7
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AtributoTipo__TipoAssignment_7();
+                    rule__AtributoTipo__TipoPAssignment_7();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAtributoTipoAccess().getTipoAssignment_7()); 
+                     after(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_7()); 
 
                     }
 
@@ -2112,24 +2112,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 9 :
-                    // InternalMyDsl.g:587:2: ( ( rule__AtributoTipo__TipoAssignment_8 ) )
+                    // InternalMyDsl.g:587:2: ( ( rule__AtributoTipo__TipoPAssignment_8 ) )
                     {
-                    // InternalMyDsl.g:587:2: ( ( rule__AtributoTipo__TipoAssignment_8 ) )
-                    // InternalMyDsl.g:588:3: ( rule__AtributoTipo__TipoAssignment_8 )
+                    // InternalMyDsl.g:587:2: ( ( rule__AtributoTipo__TipoPAssignment_8 ) )
+                    // InternalMyDsl.g:588:3: ( rule__AtributoTipo__TipoPAssignment_8 )
                     {
-                     before(grammarAccess.getAtributoTipoAccess().getTipoAssignment_8()); 
-                    // InternalMyDsl.g:589:3: ( rule__AtributoTipo__TipoAssignment_8 )
-                    // InternalMyDsl.g:589:4: rule__AtributoTipo__TipoAssignment_8
+                     before(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_8()); 
+                    // InternalMyDsl.g:589:3: ( rule__AtributoTipo__TipoPAssignment_8 )
+                    // InternalMyDsl.g:589:4: rule__AtributoTipo__TipoPAssignment_8
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AtributoTipo__TipoAssignment_8();
+                    rule__AtributoTipo__TipoPAssignment_8();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAtributoTipoAccess().getTipoAssignment_8()); 
+                     after(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_8()); 
 
                     }
 
@@ -2137,24 +2137,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 10 :
-                    // InternalMyDsl.g:593:2: ( ( rule__AtributoTipo__TipoAssignment_9 ) )
+                    // InternalMyDsl.g:593:2: ( ( rule__AtributoTipo__TipoPAssignment_9 ) )
                     {
-                    // InternalMyDsl.g:593:2: ( ( rule__AtributoTipo__TipoAssignment_9 ) )
-                    // InternalMyDsl.g:594:3: ( rule__AtributoTipo__TipoAssignment_9 )
+                    // InternalMyDsl.g:593:2: ( ( rule__AtributoTipo__TipoPAssignment_9 ) )
+                    // InternalMyDsl.g:594:3: ( rule__AtributoTipo__TipoPAssignment_9 )
                     {
-                     before(grammarAccess.getAtributoTipoAccess().getTipoAssignment_9()); 
-                    // InternalMyDsl.g:595:3: ( rule__AtributoTipo__TipoAssignment_9 )
-                    // InternalMyDsl.g:595:4: rule__AtributoTipo__TipoAssignment_9
+                     before(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_9()); 
+                    // InternalMyDsl.g:595:3: ( rule__AtributoTipo__TipoPAssignment_9 )
+                    // InternalMyDsl.g:595:4: rule__AtributoTipo__TipoPAssignment_9
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AtributoTipo__TipoAssignment_9();
+                    rule__AtributoTipo__TipoPAssignment_9();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAtributoTipoAccess().getTipoAssignment_9()); 
+                     after(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_9()); 
 
                     }
 
@@ -2162,24 +2162,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 11 :
-                    // InternalMyDsl.g:599:2: ( ( rule__AtributoTipo__TipoAssignment_10 ) )
+                    // InternalMyDsl.g:599:2: ( ( rule__AtributoTipo__TipoPAssignment_10 ) )
                     {
-                    // InternalMyDsl.g:599:2: ( ( rule__AtributoTipo__TipoAssignment_10 ) )
-                    // InternalMyDsl.g:600:3: ( rule__AtributoTipo__TipoAssignment_10 )
+                    // InternalMyDsl.g:599:2: ( ( rule__AtributoTipo__TipoPAssignment_10 ) )
+                    // InternalMyDsl.g:600:3: ( rule__AtributoTipo__TipoPAssignment_10 )
                     {
-                     before(grammarAccess.getAtributoTipoAccess().getTipoAssignment_10()); 
-                    // InternalMyDsl.g:601:3: ( rule__AtributoTipo__TipoAssignment_10 )
-                    // InternalMyDsl.g:601:4: rule__AtributoTipo__TipoAssignment_10
+                     before(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_10()); 
+                    // InternalMyDsl.g:601:3: ( rule__AtributoTipo__TipoPAssignment_10 )
+                    // InternalMyDsl.g:601:4: rule__AtributoTipo__TipoPAssignment_10
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AtributoTipo__TipoAssignment_10();
+                    rule__AtributoTipo__TipoPAssignment_10();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAtributoTipoAccess().getTipoAssignment_10()); 
+                     after(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_10()); 
 
                     }
 
@@ -2187,24 +2187,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 12 :
-                    // InternalMyDsl.g:605:2: ( ( rule__AtributoTipo__TipoAssignment_11 ) )
+                    // InternalMyDsl.g:605:2: ( ( rule__AtributoTipo__TipoPAssignment_11 ) )
                     {
-                    // InternalMyDsl.g:605:2: ( ( rule__AtributoTipo__TipoAssignment_11 ) )
-                    // InternalMyDsl.g:606:3: ( rule__AtributoTipo__TipoAssignment_11 )
+                    // InternalMyDsl.g:605:2: ( ( rule__AtributoTipo__TipoPAssignment_11 ) )
+                    // InternalMyDsl.g:606:3: ( rule__AtributoTipo__TipoPAssignment_11 )
                     {
-                     before(grammarAccess.getAtributoTipoAccess().getTipoAssignment_11()); 
-                    // InternalMyDsl.g:607:3: ( rule__AtributoTipo__TipoAssignment_11 )
-                    // InternalMyDsl.g:607:4: rule__AtributoTipo__TipoAssignment_11
+                     before(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_11()); 
+                    // InternalMyDsl.g:607:3: ( rule__AtributoTipo__TipoPAssignment_11 )
+                    // InternalMyDsl.g:607:4: rule__AtributoTipo__TipoPAssignment_11
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AtributoTipo__TipoAssignment_11();
+                    rule__AtributoTipo__TipoPAssignment_11();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAtributoTipoAccess().getTipoAssignment_11()); 
+                     after(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_11()); 
 
                     }
 
@@ -2212,24 +2212,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 13 :
-                    // InternalMyDsl.g:611:2: ( ( rule__AtributoTipo__TipoAssignment_12 ) )
+                    // InternalMyDsl.g:611:2: ( ( rule__AtributoTipo__TipoPAssignment_12 ) )
                     {
-                    // InternalMyDsl.g:611:2: ( ( rule__AtributoTipo__TipoAssignment_12 ) )
-                    // InternalMyDsl.g:612:3: ( rule__AtributoTipo__TipoAssignment_12 )
+                    // InternalMyDsl.g:611:2: ( ( rule__AtributoTipo__TipoPAssignment_12 ) )
+                    // InternalMyDsl.g:612:3: ( rule__AtributoTipo__TipoPAssignment_12 )
                     {
-                     before(grammarAccess.getAtributoTipoAccess().getTipoAssignment_12()); 
-                    // InternalMyDsl.g:613:3: ( rule__AtributoTipo__TipoAssignment_12 )
-                    // InternalMyDsl.g:613:4: rule__AtributoTipo__TipoAssignment_12
+                     before(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_12()); 
+                    // InternalMyDsl.g:613:3: ( rule__AtributoTipo__TipoPAssignment_12 )
+                    // InternalMyDsl.g:613:4: rule__AtributoTipo__TipoPAssignment_12
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AtributoTipo__TipoAssignment_12();
+                    rule__AtributoTipo__TipoPAssignment_12();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAtributoTipoAccess().getTipoAssignment_12()); 
+                     after(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_12()); 
 
                     }
 
@@ -2237,24 +2237,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 14 :
-                    // InternalMyDsl.g:617:2: ( ( rule__AtributoTipo__TipoAssignment_13 ) )
+                    // InternalMyDsl.g:617:2: ( ( rule__AtributoTipo__TipoPAssignment_13 ) )
                     {
-                    // InternalMyDsl.g:617:2: ( ( rule__AtributoTipo__TipoAssignment_13 ) )
-                    // InternalMyDsl.g:618:3: ( rule__AtributoTipo__TipoAssignment_13 )
+                    // InternalMyDsl.g:617:2: ( ( rule__AtributoTipo__TipoPAssignment_13 ) )
+                    // InternalMyDsl.g:618:3: ( rule__AtributoTipo__TipoPAssignment_13 )
                     {
-                     before(grammarAccess.getAtributoTipoAccess().getTipoAssignment_13()); 
-                    // InternalMyDsl.g:619:3: ( rule__AtributoTipo__TipoAssignment_13 )
-                    // InternalMyDsl.g:619:4: rule__AtributoTipo__TipoAssignment_13
+                     before(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_13()); 
+                    // InternalMyDsl.g:619:3: ( rule__AtributoTipo__TipoPAssignment_13 )
+                    // InternalMyDsl.g:619:4: rule__AtributoTipo__TipoPAssignment_13
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AtributoTipo__TipoAssignment_13();
+                    rule__AtributoTipo__TipoPAssignment_13();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAtributoTipoAccess().getTipoAssignment_13()); 
+                     after(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_13()); 
 
                     }
 
@@ -2262,24 +2262,24 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 15 :
-                    // InternalMyDsl.g:623:2: ( ( rule__AtributoTipo__TipoAssignment_14 ) )
+                    // InternalMyDsl.g:623:2: ( ( rule__AtributoTipo__TipoEAssignment_14 ) )
                     {
-                    // InternalMyDsl.g:623:2: ( ( rule__AtributoTipo__TipoAssignment_14 ) )
-                    // InternalMyDsl.g:624:3: ( rule__AtributoTipo__TipoAssignment_14 )
+                    // InternalMyDsl.g:623:2: ( ( rule__AtributoTipo__TipoEAssignment_14 ) )
+                    // InternalMyDsl.g:624:3: ( rule__AtributoTipo__TipoEAssignment_14 )
                     {
-                     before(grammarAccess.getAtributoTipoAccess().getTipoAssignment_14()); 
-                    // InternalMyDsl.g:625:3: ( rule__AtributoTipo__TipoAssignment_14 )
-                    // InternalMyDsl.g:625:4: rule__AtributoTipo__TipoAssignment_14
+                     before(grammarAccess.getAtributoTipoAccess().getTipoEAssignment_14()); 
+                    // InternalMyDsl.g:625:3: ( rule__AtributoTipo__TipoEAssignment_14 )
+                    // InternalMyDsl.g:625:4: rule__AtributoTipo__TipoEAssignment_14
                     {
                     pushFollow(FOLLOW_2);
-                    rule__AtributoTipo__TipoAssignment_14();
+                    rule__AtributoTipo__TipoEAssignment_14();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getAtributoTipoAccess().getTipoAssignment_14()); 
+                     after(grammarAccess.getAtributoTipoAccess().getTipoEAssignment_14()); 
 
                     }
 
@@ -8056,9 +8056,9 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__AtributoNome__IdAssignment"
 
 
-    // $ANTLR start "rule__AtributoTipo__TipoAssignment_0"
-    // InternalMyDsl.g:2694:1: rule__AtributoTipo__TipoAssignment_0 : ( ( 'Boolean' ) ) ;
-    public final void rule__AtributoTipo__TipoAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__AtributoTipo__TipoPAssignment_0"
+    // InternalMyDsl.g:2694:1: rule__AtributoTipo__TipoPAssignment_0 : ( ( 'Boolean' ) ) ;
+    public final void rule__AtributoTipo__TipoPAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8069,17 +8069,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:2699:2: ( ( 'Boolean' ) )
             // InternalMyDsl.g:2700:3: ( 'Boolean' )
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoBooleanKeyword_0_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPBooleanKeyword_0_0()); 
             // InternalMyDsl.g:2701:3: ( 'Boolean' )
             // InternalMyDsl.g:2702:4: 'Boolean'
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoBooleanKeyword_0_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPBooleanKeyword_0_0()); 
             match(input,39,FOLLOW_2); 
-             after(grammarAccess.getAtributoTipoAccess().getTipoBooleanKeyword_0_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPBooleanKeyword_0_0()); 
 
             }
 
-             after(grammarAccess.getAtributoTipoAccess().getTipoBooleanKeyword_0_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPBooleanKeyword_0_0()); 
 
             }
 
@@ -8098,12 +8098,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtributoTipo__TipoAssignment_0"
+    // $ANTLR end "rule__AtributoTipo__TipoPAssignment_0"
 
 
-    // $ANTLR start "rule__AtributoTipo__TipoAssignment_1"
-    // InternalMyDsl.g:2713:1: rule__AtributoTipo__TipoAssignment_1 : ( ( 'Byte' ) ) ;
-    public final void rule__AtributoTipo__TipoAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__AtributoTipo__TipoPAssignment_1"
+    // InternalMyDsl.g:2713:1: rule__AtributoTipo__TipoPAssignment_1 : ( ( 'Byte' ) ) ;
+    public final void rule__AtributoTipo__TipoPAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8114,17 +8114,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:2718:2: ( ( 'Byte' ) )
             // InternalMyDsl.g:2719:3: ( 'Byte' )
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoByteKeyword_1_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPByteKeyword_1_0()); 
             // InternalMyDsl.g:2720:3: ( 'Byte' )
             // InternalMyDsl.g:2721:4: 'Byte'
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoByteKeyword_1_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPByteKeyword_1_0()); 
             match(input,40,FOLLOW_2); 
-             after(grammarAccess.getAtributoTipoAccess().getTipoByteKeyword_1_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPByteKeyword_1_0()); 
 
             }
 
-             after(grammarAccess.getAtributoTipoAccess().getTipoByteKeyword_1_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPByteKeyword_1_0()); 
 
             }
 
@@ -8143,12 +8143,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtributoTipo__TipoAssignment_1"
+    // $ANTLR end "rule__AtributoTipo__TipoPAssignment_1"
 
 
-    // $ANTLR start "rule__AtributoTipo__TipoAssignment_2"
-    // InternalMyDsl.g:2732:1: rule__AtributoTipo__TipoAssignment_2 : ( ( 'Short' ) ) ;
-    public final void rule__AtributoTipo__TipoAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__AtributoTipo__TipoPAssignment_2"
+    // InternalMyDsl.g:2732:1: rule__AtributoTipo__TipoPAssignment_2 : ( ( 'Short' ) ) ;
+    public final void rule__AtributoTipo__TipoPAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8159,17 +8159,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:2737:2: ( ( 'Short' ) )
             // InternalMyDsl.g:2738:3: ( 'Short' )
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoShortKeyword_2_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPShortKeyword_2_0()); 
             // InternalMyDsl.g:2739:3: ( 'Short' )
             // InternalMyDsl.g:2740:4: 'Short'
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoShortKeyword_2_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPShortKeyword_2_0()); 
             match(input,41,FOLLOW_2); 
-             after(grammarAccess.getAtributoTipoAccess().getTipoShortKeyword_2_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPShortKeyword_2_0()); 
 
             }
 
-             after(grammarAccess.getAtributoTipoAccess().getTipoShortKeyword_2_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPShortKeyword_2_0()); 
 
             }
 
@@ -8188,12 +8188,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtributoTipo__TipoAssignment_2"
+    // $ANTLR end "rule__AtributoTipo__TipoPAssignment_2"
 
 
-    // $ANTLR start "rule__AtributoTipo__TipoAssignment_3"
-    // InternalMyDsl.g:2751:1: rule__AtributoTipo__TipoAssignment_3 : ( ( 'Character' ) ) ;
-    public final void rule__AtributoTipo__TipoAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__AtributoTipo__TipoPAssignment_3"
+    // InternalMyDsl.g:2751:1: rule__AtributoTipo__TipoPAssignment_3 : ( ( 'Character' ) ) ;
+    public final void rule__AtributoTipo__TipoPAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8204,17 +8204,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:2756:2: ( ( 'Character' ) )
             // InternalMyDsl.g:2757:3: ( 'Character' )
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoCharacterKeyword_3_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPCharacterKeyword_3_0()); 
             // InternalMyDsl.g:2758:3: ( 'Character' )
             // InternalMyDsl.g:2759:4: 'Character'
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoCharacterKeyword_3_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPCharacterKeyword_3_0()); 
             match(input,42,FOLLOW_2); 
-             after(grammarAccess.getAtributoTipoAccess().getTipoCharacterKeyword_3_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPCharacterKeyword_3_0()); 
 
             }
 
-             after(grammarAccess.getAtributoTipoAccess().getTipoCharacterKeyword_3_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPCharacterKeyword_3_0()); 
 
             }
 
@@ -8233,12 +8233,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtributoTipo__TipoAssignment_3"
+    // $ANTLR end "rule__AtributoTipo__TipoPAssignment_3"
 
 
-    // $ANTLR start "rule__AtributoTipo__TipoAssignment_4"
-    // InternalMyDsl.g:2770:1: rule__AtributoTipo__TipoAssignment_4 : ( ( 'Integer' ) ) ;
-    public final void rule__AtributoTipo__TipoAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__AtributoTipo__TipoPAssignment_4"
+    // InternalMyDsl.g:2770:1: rule__AtributoTipo__TipoPAssignment_4 : ( ( 'Integer' ) ) ;
+    public final void rule__AtributoTipo__TipoPAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8249,17 +8249,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:2775:2: ( ( 'Integer' ) )
             // InternalMyDsl.g:2776:3: ( 'Integer' )
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoIntegerKeyword_4_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPIntegerKeyword_4_0()); 
             // InternalMyDsl.g:2777:3: ( 'Integer' )
             // InternalMyDsl.g:2778:4: 'Integer'
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoIntegerKeyword_4_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPIntegerKeyword_4_0()); 
             match(input,43,FOLLOW_2); 
-             after(grammarAccess.getAtributoTipoAccess().getTipoIntegerKeyword_4_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPIntegerKeyword_4_0()); 
 
             }
 
-             after(grammarAccess.getAtributoTipoAccess().getTipoIntegerKeyword_4_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPIntegerKeyword_4_0()); 
 
             }
 
@@ -8278,12 +8278,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtributoTipo__TipoAssignment_4"
+    // $ANTLR end "rule__AtributoTipo__TipoPAssignment_4"
 
 
-    // $ANTLR start "rule__AtributoTipo__TipoAssignment_5"
-    // InternalMyDsl.g:2789:1: rule__AtributoTipo__TipoAssignment_5 : ( ( 'Long' ) ) ;
-    public final void rule__AtributoTipo__TipoAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__AtributoTipo__TipoPAssignment_5"
+    // InternalMyDsl.g:2789:1: rule__AtributoTipo__TipoPAssignment_5 : ( ( 'Long' ) ) ;
+    public final void rule__AtributoTipo__TipoPAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8294,17 +8294,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:2794:2: ( ( 'Long' ) )
             // InternalMyDsl.g:2795:3: ( 'Long' )
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoLongKeyword_5_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPLongKeyword_5_0()); 
             // InternalMyDsl.g:2796:3: ( 'Long' )
             // InternalMyDsl.g:2797:4: 'Long'
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoLongKeyword_5_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPLongKeyword_5_0()); 
             match(input,44,FOLLOW_2); 
-             after(grammarAccess.getAtributoTipoAccess().getTipoLongKeyword_5_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPLongKeyword_5_0()); 
 
             }
 
-             after(grammarAccess.getAtributoTipoAccess().getTipoLongKeyword_5_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPLongKeyword_5_0()); 
 
             }
 
@@ -8323,12 +8323,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtributoTipo__TipoAssignment_5"
+    // $ANTLR end "rule__AtributoTipo__TipoPAssignment_5"
 
 
-    // $ANTLR start "rule__AtributoTipo__TipoAssignment_6"
-    // InternalMyDsl.g:2808:1: rule__AtributoTipo__TipoAssignment_6 : ( ( 'Float' ) ) ;
-    public final void rule__AtributoTipo__TipoAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__AtributoTipo__TipoPAssignment_6"
+    // InternalMyDsl.g:2808:1: rule__AtributoTipo__TipoPAssignment_6 : ( ( 'Float' ) ) ;
+    public final void rule__AtributoTipo__TipoPAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8339,17 +8339,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:2813:2: ( ( 'Float' ) )
             // InternalMyDsl.g:2814:3: ( 'Float' )
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoFloatKeyword_6_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPFloatKeyword_6_0()); 
             // InternalMyDsl.g:2815:3: ( 'Float' )
             // InternalMyDsl.g:2816:4: 'Float'
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoFloatKeyword_6_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPFloatKeyword_6_0()); 
             match(input,45,FOLLOW_2); 
-             after(grammarAccess.getAtributoTipoAccess().getTipoFloatKeyword_6_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPFloatKeyword_6_0()); 
 
             }
 
-             after(grammarAccess.getAtributoTipoAccess().getTipoFloatKeyword_6_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPFloatKeyword_6_0()); 
 
             }
 
@@ -8368,12 +8368,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtributoTipo__TipoAssignment_6"
+    // $ANTLR end "rule__AtributoTipo__TipoPAssignment_6"
 
 
-    // $ANTLR start "rule__AtributoTipo__TipoAssignment_7"
-    // InternalMyDsl.g:2827:1: rule__AtributoTipo__TipoAssignment_7 : ( ( 'Double' ) ) ;
-    public final void rule__AtributoTipo__TipoAssignment_7() throws RecognitionException {
+    // $ANTLR start "rule__AtributoTipo__TipoPAssignment_7"
+    // InternalMyDsl.g:2827:1: rule__AtributoTipo__TipoPAssignment_7 : ( ( 'Double' ) ) ;
+    public final void rule__AtributoTipo__TipoPAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8384,17 +8384,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:2832:2: ( ( 'Double' ) )
             // InternalMyDsl.g:2833:3: ( 'Double' )
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoDoubleKeyword_7_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPDoubleKeyword_7_0()); 
             // InternalMyDsl.g:2834:3: ( 'Double' )
             // InternalMyDsl.g:2835:4: 'Double'
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoDoubleKeyword_7_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPDoubleKeyword_7_0()); 
             match(input,46,FOLLOW_2); 
-             after(grammarAccess.getAtributoTipoAccess().getTipoDoubleKeyword_7_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPDoubleKeyword_7_0()); 
 
             }
 
-             after(grammarAccess.getAtributoTipoAccess().getTipoDoubleKeyword_7_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPDoubleKeyword_7_0()); 
 
             }
 
@@ -8413,12 +8413,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtributoTipo__TipoAssignment_7"
+    // $ANTLR end "rule__AtributoTipo__TipoPAssignment_7"
 
 
-    // $ANTLR start "rule__AtributoTipo__TipoAssignment_8"
-    // InternalMyDsl.g:2846:1: rule__AtributoTipo__TipoAssignment_8 : ( ( 'Time' ) ) ;
-    public final void rule__AtributoTipo__TipoAssignment_8() throws RecognitionException {
+    // $ANTLR start "rule__AtributoTipo__TipoPAssignment_8"
+    // InternalMyDsl.g:2846:1: rule__AtributoTipo__TipoPAssignment_8 : ( ( 'Time' ) ) ;
+    public final void rule__AtributoTipo__TipoPAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8429,17 +8429,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:2851:2: ( ( 'Time' ) )
             // InternalMyDsl.g:2852:3: ( 'Time' )
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoTimeKeyword_8_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPTimeKeyword_8_0()); 
             // InternalMyDsl.g:2853:3: ( 'Time' )
             // InternalMyDsl.g:2854:4: 'Time'
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoTimeKeyword_8_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPTimeKeyword_8_0()); 
             match(input,47,FOLLOW_2); 
-             after(grammarAccess.getAtributoTipoAccess().getTipoTimeKeyword_8_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPTimeKeyword_8_0()); 
 
             }
 
-             after(grammarAccess.getAtributoTipoAccess().getTipoTimeKeyword_8_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPTimeKeyword_8_0()); 
 
             }
 
@@ -8458,12 +8458,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtributoTipo__TipoAssignment_8"
+    // $ANTLR end "rule__AtributoTipo__TipoPAssignment_8"
 
 
-    // $ANTLR start "rule__AtributoTipo__TipoAssignment_9"
-    // InternalMyDsl.g:2865:1: rule__AtributoTipo__TipoAssignment_9 : ( ( 'Timestamp' ) ) ;
-    public final void rule__AtributoTipo__TipoAssignment_9() throws RecognitionException {
+    // $ANTLR start "rule__AtributoTipo__TipoPAssignment_9"
+    // InternalMyDsl.g:2865:1: rule__AtributoTipo__TipoPAssignment_9 : ( ( 'Timestamp' ) ) ;
+    public final void rule__AtributoTipo__TipoPAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8474,17 +8474,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:2870:2: ( ( 'Timestamp' ) )
             // InternalMyDsl.g:2871:3: ( 'Timestamp' )
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoTimestampKeyword_9_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPTimestampKeyword_9_0()); 
             // InternalMyDsl.g:2872:3: ( 'Timestamp' )
             // InternalMyDsl.g:2873:4: 'Timestamp'
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoTimestampKeyword_9_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPTimestampKeyword_9_0()); 
             match(input,48,FOLLOW_2); 
-             after(grammarAccess.getAtributoTipoAccess().getTipoTimestampKeyword_9_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPTimestampKeyword_9_0()); 
 
             }
 
-             after(grammarAccess.getAtributoTipoAccess().getTipoTimestampKeyword_9_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPTimestampKeyword_9_0()); 
 
             }
 
@@ -8503,12 +8503,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtributoTipo__TipoAssignment_9"
+    // $ANTLR end "rule__AtributoTipo__TipoPAssignment_9"
 
 
-    // $ANTLR start "rule__AtributoTipo__TipoAssignment_10"
-    // InternalMyDsl.g:2884:1: rule__AtributoTipo__TipoAssignment_10 : ( ( 'Date' ) ) ;
-    public final void rule__AtributoTipo__TipoAssignment_10() throws RecognitionException {
+    // $ANTLR start "rule__AtributoTipo__TipoPAssignment_10"
+    // InternalMyDsl.g:2884:1: rule__AtributoTipo__TipoPAssignment_10 : ( ( 'Date' ) ) ;
+    public final void rule__AtributoTipo__TipoPAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8519,17 +8519,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:2889:2: ( ( 'Date' ) )
             // InternalMyDsl.g:2890:3: ( 'Date' )
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoDateKeyword_10_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPDateKeyword_10_0()); 
             // InternalMyDsl.g:2891:3: ( 'Date' )
             // InternalMyDsl.g:2892:4: 'Date'
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoDateKeyword_10_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPDateKeyword_10_0()); 
             match(input,49,FOLLOW_2); 
-             after(grammarAccess.getAtributoTipoAccess().getTipoDateKeyword_10_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPDateKeyword_10_0()); 
 
             }
 
-             after(grammarAccess.getAtributoTipoAccess().getTipoDateKeyword_10_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPDateKeyword_10_0()); 
 
             }
 
@@ -8548,12 +8548,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtributoTipo__TipoAssignment_10"
+    // $ANTLR end "rule__AtributoTipo__TipoPAssignment_10"
 
 
-    // $ANTLR start "rule__AtributoTipo__TipoAssignment_11"
-    // InternalMyDsl.g:2903:1: rule__AtributoTipo__TipoAssignment_11 : ( ( 'ENUM' ) ) ;
-    public final void rule__AtributoTipo__TipoAssignment_11() throws RecognitionException {
+    // $ANTLR start "rule__AtributoTipo__TipoPAssignment_11"
+    // InternalMyDsl.g:2903:1: rule__AtributoTipo__TipoPAssignment_11 : ( ( 'ENUM' ) ) ;
+    public final void rule__AtributoTipo__TipoPAssignment_11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8564,17 +8564,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:2908:2: ( ( 'ENUM' ) )
             // InternalMyDsl.g:2909:3: ( 'ENUM' )
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoENUMKeyword_11_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPENUMKeyword_11_0()); 
             // InternalMyDsl.g:2910:3: ( 'ENUM' )
             // InternalMyDsl.g:2911:4: 'ENUM'
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoENUMKeyword_11_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPENUMKeyword_11_0()); 
             match(input,50,FOLLOW_2); 
-             after(grammarAccess.getAtributoTipoAccess().getTipoENUMKeyword_11_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPENUMKeyword_11_0()); 
 
             }
 
-             after(grammarAccess.getAtributoTipoAccess().getTipoENUMKeyword_11_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPENUMKeyword_11_0()); 
 
             }
 
@@ -8593,12 +8593,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtributoTipo__TipoAssignment_11"
+    // $ANTLR end "rule__AtributoTipo__TipoPAssignment_11"
 
 
-    // $ANTLR start "rule__AtributoTipo__TipoAssignment_12"
-    // InternalMyDsl.g:2922:1: rule__AtributoTipo__TipoAssignment_12 : ( ( 'ArrayList' ) ) ;
-    public final void rule__AtributoTipo__TipoAssignment_12() throws RecognitionException {
+    // $ANTLR start "rule__AtributoTipo__TipoPAssignment_12"
+    // InternalMyDsl.g:2922:1: rule__AtributoTipo__TipoPAssignment_12 : ( ( 'ArrayList' ) ) ;
+    public final void rule__AtributoTipo__TipoPAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8609,17 +8609,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:2927:2: ( ( 'ArrayList' ) )
             // InternalMyDsl.g:2928:3: ( 'ArrayList' )
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoArrayListKeyword_12_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPArrayListKeyword_12_0()); 
             // InternalMyDsl.g:2929:3: ( 'ArrayList' )
             // InternalMyDsl.g:2930:4: 'ArrayList'
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoArrayListKeyword_12_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPArrayListKeyword_12_0()); 
             match(input,51,FOLLOW_2); 
-             after(grammarAccess.getAtributoTipoAccess().getTipoArrayListKeyword_12_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPArrayListKeyword_12_0()); 
 
             }
 
-             after(grammarAccess.getAtributoTipoAccess().getTipoArrayListKeyword_12_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPArrayListKeyword_12_0()); 
 
             }
 
@@ -8638,12 +8638,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtributoTipo__TipoAssignment_12"
+    // $ANTLR end "rule__AtributoTipo__TipoPAssignment_12"
 
 
-    // $ANTLR start "rule__AtributoTipo__TipoAssignment_13"
-    // InternalMyDsl.g:2941:1: rule__AtributoTipo__TipoAssignment_13 : ( ( 'HashSet' ) ) ;
-    public final void rule__AtributoTipo__TipoAssignment_13() throws RecognitionException {
+    // $ANTLR start "rule__AtributoTipo__TipoPAssignment_13"
+    // InternalMyDsl.g:2941:1: rule__AtributoTipo__TipoPAssignment_13 : ( ( 'HashSet' ) ) ;
+    public final void rule__AtributoTipo__TipoPAssignment_13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8654,17 +8654,17 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:2946:2: ( ( 'HashSet' ) )
             // InternalMyDsl.g:2947:3: ( 'HashSet' )
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoHashSetKeyword_13_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPHashSetKeyword_13_0()); 
             // InternalMyDsl.g:2948:3: ( 'HashSet' )
             // InternalMyDsl.g:2949:4: 'HashSet'
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoHashSetKeyword_13_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoPHashSetKeyword_13_0()); 
             match(input,52,FOLLOW_2); 
-             after(grammarAccess.getAtributoTipoAccess().getTipoHashSetKeyword_13_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPHashSetKeyword_13_0()); 
 
             }
 
-             after(grammarAccess.getAtributoTipoAccess().getTipoHashSetKeyword_13_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoPHashSetKeyword_13_0()); 
 
             }
 
@@ -8683,12 +8683,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtributoTipo__TipoAssignment_13"
+    // $ANTLR end "rule__AtributoTipo__TipoPAssignment_13"
 
 
-    // $ANTLR start "rule__AtributoTipo__TipoAssignment_14"
-    // InternalMyDsl.g:2960:1: rule__AtributoTipo__TipoAssignment_14 : ( RULE_ID ) ;
-    public final void rule__AtributoTipo__TipoAssignment_14() throws RecognitionException {
+    // $ANTLR start "rule__AtributoTipo__TipoEAssignment_14"
+    // InternalMyDsl.g:2960:1: rule__AtributoTipo__TipoEAssignment_14 : ( RULE_ID ) ;
+    public final void rule__AtributoTipo__TipoEAssignment_14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -8699,9 +8699,9 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:2965:2: ( RULE_ID )
             // InternalMyDsl.g:2966:3: RULE_ID
             {
-             before(grammarAccess.getAtributoTipoAccess().getTipoIDTerminalRuleCall_14_0()); 
+             before(grammarAccess.getAtributoTipoAccess().getTipoEIDTerminalRuleCall_14_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getAtributoTipoAccess().getTipoIDTerminalRuleCall_14_0()); 
+             after(grammarAccess.getAtributoTipoAccess().getTipoEIDTerminalRuleCall_14_0()); 
 
             }
 
@@ -8720,7 +8720,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__AtributoTipo__TipoAssignment_14"
+    // $ANTLR end "rule__AtributoTipo__TipoEAssignment_14"
 
 
     // $ANTLR start "rule__ChavePrimaria__IdAssignment"

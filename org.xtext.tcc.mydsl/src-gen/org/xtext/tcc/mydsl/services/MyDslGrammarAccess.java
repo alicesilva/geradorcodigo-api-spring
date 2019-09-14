@@ -597,137 +597,137 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class AtributoTipoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.AtributoTipo");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cTipoAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final Keyword cTipoBooleanKeyword_0_0 = (Keyword)cTipoAssignment_0.eContents().get(0);
-		private final Assignment cTipoAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final Keyword cTipoByteKeyword_1_0 = (Keyword)cTipoAssignment_1.eContents().get(0);
-		private final Assignment cTipoAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final Keyword cTipoShortKeyword_2_0 = (Keyword)cTipoAssignment_2.eContents().get(0);
-		private final Assignment cTipoAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final Keyword cTipoCharacterKeyword_3_0 = (Keyword)cTipoAssignment_3.eContents().get(0);
-		private final Assignment cTipoAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
-		private final Keyword cTipoIntegerKeyword_4_0 = (Keyword)cTipoAssignment_4.eContents().get(0);
-		private final Assignment cTipoAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
-		private final Keyword cTipoLongKeyword_5_0 = (Keyword)cTipoAssignment_5.eContents().get(0);
-		private final Assignment cTipoAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
-		private final Keyword cTipoFloatKeyword_6_0 = (Keyword)cTipoAssignment_6.eContents().get(0);
-		private final Assignment cTipoAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
-		private final Keyword cTipoDoubleKeyword_7_0 = (Keyword)cTipoAssignment_7.eContents().get(0);
-		private final Assignment cTipoAssignment_8 = (Assignment)cAlternatives.eContents().get(8);
-		private final Keyword cTipoTimeKeyword_8_0 = (Keyword)cTipoAssignment_8.eContents().get(0);
-		private final Assignment cTipoAssignment_9 = (Assignment)cAlternatives.eContents().get(9);
-		private final Keyword cTipoTimestampKeyword_9_0 = (Keyword)cTipoAssignment_9.eContents().get(0);
-		private final Assignment cTipoAssignment_10 = (Assignment)cAlternatives.eContents().get(10);
-		private final Keyword cTipoDateKeyword_10_0 = (Keyword)cTipoAssignment_10.eContents().get(0);
-		private final Assignment cTipoAssignment_11 = (Assignment)cAlternatives.eContents().get(11);
-		private final Keyword cTipoENUMKeyword_11_0 = (Keyword)cTipoAssignment_11.eContents().get(0);
-		private final Assignment cTipoAssignment_12 = (Assignment)cAlternatives.eContents().get(12);
-		private final Keyword cTipoArrayListKeyword_12_0 = (Keyword)cTipoAssignment_12.eContents().get(0);
-		private final Assignment cTipoAssignment_13 = (Assignment)cAlternatives.eContents().get(13);
-		private final Keyword cTipoHashSetKeyword_13_0 = (Keyword)cTipoAssignment_13.eContents().get(0);
-		private final Assignment cTipoAssignment_14 = (Assignment)cAlternatives.eContents().get(14);
-		private final RuleCall cTipoIDTerminalRuleCall_14_0 = (RuleCall)cTipoAssignment_14.eContents().get(0);
+		private final Assignment cTipoPAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final Keyword cTipoPBooleanKeyword_0_0 = (Keyword)cTipoPAssignment_0.eContents().get(0);
+		private final Assignment cTipoPAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Keyword cTipoPByteKeyword_1_0 = (Keyword)cTipoPAssignment_1.eContents().get(0);
+		private final Assignment cTipoPAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final Keyword cTipoPShortKeyword_2_0 = (Keyword)cTipoPAssignment_2.eContents().get(0);
+		private final Assignment cTipoPAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final Keyword cTipoPCharacterKeyword_3_0 = (Keyword)cTipoPAssignment_3.eContents().get(0);
+		private final Assignment cTipoPAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final Keyword cTipoPIntegerKeyword_4_0 = (Keyword)cTipoPAssignment_4.eContents().get(0);
+		private final Assignment cTipoPAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
+		private final Keyword cTipoPLongKeyword_5_0 = (Keyword)cTipoPAssignment_5.eContents().get(0);
+		private final Assignment cTipoPAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
+		private final Keyword cTipoPFloatKeyword_6_0 = (Keyword)cTipoPAssignment_6.eContents().get(0);
+		private final Assignment cTipoPAssignment_7 = (Assignment)cAlternatives.eContents().get(7);
+		private final Keyword cTipoPDoubleKeyword_7_0 = (Keyword)cTipoPAssignment_7.eContents().get(0);
+		private final Assignment cTipoPAssignment_8 = (Assignment)cAlternatives.eContents().get(8);
+		private final Keyword cTipoPTimeKeyword_8_0 = (Keyword)cTipoPAssignment_8.eContents().get(0);
+		private final Assignment cTipoPAssignment_9 = (Assignment)cAlternatives.eContents().get(9);
+		private final Keyword cTipoPTimestampKeyword_9_0 = (Keyword)cTipoPAssignment_9.eContents().get(0);
+		private final Assignment cTipoPAssignment_10 = (Assignment)cAlternatives.eContents().get(10);
+		private final Keyword cTipoPDateKeyword_10_0 = (Keyword)cTipoPAssignment_10.eContents().get(0);
+		private final Assignment cTipoPAssignment_11 = (Assignment)cAlternatives.eContents().get(11);
+		private final Keyword cTipoPENUMKeyword_11_0 = (Keyword)cTipoPAssignment_11.eContents().get(0);
+		private final Assignment cTipoPAssignment_12 = (Assignment)cAlternatives.eContents().get(12);
+		private final Keyword cTipoPArrayListKeyword_12_0 = (Keyword)cTipoPAssignment_12.eContents().get(0);
+		private final Assignment cTipoPAssignment_13 = (Assignment)cAlternatives.eContents().get(13);
+		private final Keyword cTipoPHashSetKeyword_13_0 = (Keyword)cTipoPAssignment_13.eContents().get(0);
+		private final Assignment cTipoEAssignment_14 = (Assignment)cAlternatives.eContents().get(14);
+		private final RuleCall cTipoEIDTerminalRuleCall_14_0 = (RuleCall)cTipoEAssignment_14.eContents().get(0);
 		
 		//AtributoTipo:
-		//	tipo="Boolean" | tipo="Byte" | tipo="Short" | tipo="Character" | tipo="Integer" | tipo="Long" | tipo="Float" |
-		//	tipo="Double" | tipo="Time" | tipo="Timestamp" | tipo="Date" | tipo="ENUM" | tipo="ArrayList" | tipo="HashSet" |
-		//	tipo=ID;
+		//	tipoP="Boolean" | tipoP="Byte" | tipoP="Short" | tipoP="Character" | tipoP="Integer" | tipoP="Long" | tipoP="Float" |
+		//	tipoP="Double" | tipoP="Time" | tipoP="Timestamp" | tipoP="Date" | tipoP="ENUM" | tipoP="ArrayList" | tipoP="HashSet"
+		//	| tipoE=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//tipo="Boolean" | tipo="Byte" | tipo="Short" | tipo="Character" | tipo="Integer" | tipo="Long" | tipo="Float" |
-		//tipo="Double" | tipo="Time" | tipo="Timestamp" | tipo="Date" | tipo="ENUM" | tipo="ArrayList" | tipo="HashSet" |
-		//tipo=ID
+		//tipoP="Boolean" | tipoP="Byte" | tipoP="Short" | tipoP="Character" | tipoP="Integer" | tipoP="Long" | tipoP="Float" |
+		//tipoP="Double" | tipoP="Time" | tipoP="Timestamp" | tipoP="Date" | tipoP="ENUM" | tipoP="ArrayList" | tipoP="HashSet" |
+		//tipoE=ID
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//tipo="Boolean"
-		public Assignment getTipoAssignment_0() { return cTipoAssignment_0; }
+		//tipoP="Boolean"
+		public Assignment getTipoPAssignment_0() { return cTipoPAssignment_0; }
 		
 		//"Boolean"
-		public Keyword getTipoBooleanKeyword_0_0() { return cTipoBooleanKeyword_0_0; }
+		public Keyword getTipoPBooleanKeyword_0_0() { return cTipoPBooleanKeyword_0_0; }
 		
-		//tipo="Byte"
-		public Assignment getTipoAssignment_1() { return cTipoAssignment_1; }
+		//tipoP="Byte"
+		public Assignment getTipoPAssignment_1() { return cTipoPAssignment_1; }
 		
 		//"Byte"
-		public Keyword getTipoByteKeyword_1_0() { return cTipoByteKeyword_1_0; }
+		public Keyword getTipoPByteKeyword_1_0() { return cTipoPByteKeyword_1_0; }
 		
-		//tipo="Short"
-		public Assignment getTipoAssignment_2() { return cTipoAssignment_2; }
+		//tipoP="Short"
+		public Assignment getTipoPAssignment_2() { return cTipoPAssignment_2; }
 		
 		//"Short"
-		public Keyword getTipoShortKeyword_2_0() { return cTipoShortKeyword_2_0; }
+		public Keyword getTipoPShortKeyword_2_0() { return cTipoPShortKeyword_2_0; }
 		
-		//tipo="Character"
-		public Assignment getTipoAssignment_3() { return cTipoAssignment_3; }
+		//tipoP="Character"
+		public Assignment getTipoPAssignment_3() { return cTipoPAssignment_3; }
 		
 		//"Character"
-		public Keyword getTipoCharacterKeyword_3_0() { return cTipoCharacterKeyword_3_0; }
+		public Keyword getTipoPCharacterKeyword_3_0() { return cTipoPCharacterKeyword_3_0; }
 		
-		//tipo="Integer"
-		public Assignment getTipoAssignment_4() { return cTipoAssignment_4; }
+		//tipoP="Integer"
+		public Assignment getTipoPAssignment_4() { return cTipoPAssignment_4; }
 		
 		//"Integer"
-		public Keyword getTipoIntegerKeyword_4_0() { return cTipoIntegerKeyword_4_0; }
+		public Keyword getTipoPIntegerKeyword_4_0() { return cTipoPIntegerKeyword_4_0; }
 		
-		//tipo="Long"
-		public Assignment getTipoAssignment_5() { return cTipoAssignment_5; }
+		//tipoP="Long"
+		public Assignment getTipoPAssignment_5() { return cTipoPAssignment_5; }
 		
 		//"Long"
-		public Keyword getTipoLongKeyword_5_0() { return cTipoLongKeyword_5_0; }
+		public Keyword getTipoPLongKeyword_5_0() { return cTipoPLongKeyword_5_0; }
 		
-		//tipo="Float"
-		public Assignment getTipoAssignment_6() { return cTipoAssignment_6; }
+		//tipoP="Float"
+		public Assignment getTipoPAssignment_6() { return cTipoPAssignment_6; }
 		
 		//"Float"
-		public Keyword getTipoFloatKeyword_6_0() { return cTipoFloatKeyword_6_0; }
+		public Keyword getTipoPFloatKeyword_6_0() { return cTipoPFloatKeyword_6_0; }
 		
-		//tipo="Double"
-		public Assignment getTipoAssignment_7() { return cTipoAssignment_7; }
+		//tipoP="Double"
+		public Assignment getTipoPAssignment_7() { return cTipoPAssignment_7; }
 		
 		//"Double"
-		public Keyword getTipoDoubleKeyword_7_0() { return cTipoDoubleKeyword_7_0; }
+		public Keyword getTipoPDoubleKeyword_7_0() { return cTipoPDoubleKeyword_7_0; }
 		
-		//tipo="Time"
-		public Assignment getTipoAssignment_8() { return cTipoAssignment_8; }
+		//tipoP="Time"
+		public Assignment getTipoPAssignment_8() { return cTipoPAssignment_8; }
 		
 		//"Time"
-		public Keyword getTipoTimeKeyword_8_0() { return cTipoTimeKeyword_8_0; }
+		public Keyword getTipoPTimeKeyword_8_0() { return cTipoPTimeKeyword_8_0; }
 		
-		//tipo="Timestamp"
-		public Assignment getTipoAssignment_9() { return cTipoAssignment_9; }
+		//tipoP="Timestamp"
+		public Assignment getTipoPAssignment_9() { return cTipoPAssignment_9; }
 		
 		//"Timestamp"
-		public Keyword getTipoTimestampKeyword_9_0() { return cTipoTimestampKeyword_9_0; }
+		public Keyword getTipoPTimestampKeyword_9_0() { return cTipoPTimestampKeyword_9_0; }
 		
-		//tipo="Date"
-		public Assignment getTipoAssignment_10() { return cTipoAssignment_10; }
+		//tipoP="Date"
+		public Assignment getTipoPAssignment_10() { return cTipoPAssignment_10; }
 		
 		//"Date"
-		public Keyword getTipoDateKeyword_10_0() { return cTipoDateKeyword_10_0; }
+		public Keyword getTipoPDateKeyword_10_0() { return cTipoPDateKeyword_10_0; }
 		
-		//tipo="ENUM"
-		public Assignment getTipoAssignment_11() { return cTipoAssignment_11; }
+		//tipoP="ENUM"
+		public Assignment getTipoPAssignment_11() { return cTipoPAssignment_11; }
 		
 		//"ENUM"
-		public Keyword getTipoENUMKeyword_11_0() { return cTipoENUMKeyword_11_0; }
+		public Keyword getTipoPENUMKeyword_11_0() { return cTipoPENUMKeyword_11_0; }
 		
-		//tipo="ArrayList"
-		public Assignment getTipoAssignment_12() { return cTipoAssignment_12; }
+		//tipoP="ArrayList"
+		public Assignment getTipoPAssignment_12() { return cTipoPAssignment_12; }
 		
 		//"ArrayList"
-		public Keyword getTipoArrayListKeyword_12_0() { return cTipoArrayListKeyword_12_0; }
+		public Keyword getTipoPArrayListKeyword_12_0() { return cTipoPArrayListKeyword_12_0; }
 		
-		//tipo="HashSet"
-		public Assignment getTipoAssignment_13() { return cTipoAssignment_13; }
+		//tipoP="HashSet"
+		public Assignment getTipoPAssignment_13() { return cTipoPAssignment_13; }
 		
 		//"HashSet"
-		public Keyword getTipoHashSetKeyword_13_0() { return cTipoHashSetKeyword_13_0; }
+		public Keyword getTipoPHashSetKeyword_13_0() { return cTipoPHashSetKeyword_13_0; }
 		
-		//tipo=ID
-		public Assignment getTipoAssignment_14() { return cTipoAssignment_14; }
+		//tipoE=ID
+		public Assignment getTipoEAssignment_14() { return cTipoEAssignment_14; }
 		
 		//ID
-		public RuleCall getTipoIDTerminalRuleCall_14_0() { return cTipoIDTerminalRuleCall_14_0; }
+		public RuleCall getTipoEIDTerminalRuleCall_14_0() { return cTipoEIDTerminalRuleCall_14_0; }
 	}
 	public class OptionalElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.Optional");
@@ -986,9 +986,9 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AtributoTipo:
-	//	tipo="Boolean" | tipo="Byte" | tipo="Short" | tipo="Character" | tipo="Integer" | tipo="Long" | tipo="Float" |
-	//	tipo="Double" | tipo="Time" | tipo="Timestamp" | tipo="Date" | tipo="ENUM" | tipo="ArrayList" | tipo="HashSet" |
-	//	tipo=ID;
+	//	tipoP="Boolean" | tipoP="Byte" | tipoP="Short" | tipoP="Character" | tipoP="Integer" | tipoP="Long" | tipoP="Float" |
+	//	tipoP="Double" | tipoP="Time" | tipoP="Timestamp" | tipoP="Date" | tipoP="ENUM" | tipoP="ArrayList" | tipoP="HashSet"
+	//	| tipoE=ID;
 	public AtributoTipoElements getAtributoTipoAccess() {
 		return pAtributoTipo;
 	}
