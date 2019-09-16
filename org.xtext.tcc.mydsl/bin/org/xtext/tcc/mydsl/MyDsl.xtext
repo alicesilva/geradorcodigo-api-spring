@@ -3,7 +3,7 @@ grammar org.xtext.tcc.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 generate myDsl "http://www.xtext.org/tcc/mydsl/MyDsl"
 
 Model:
-	greetings+=Greeting*;
+	greetings+=Greeting;
 	
 Greeting:
 	'{' api=Api '}';
@@ -33,8 +33,8 @@ Atributo:
 	'{' 
 		'"nome-atributo"' ':' atributoNome = AtributoNome ','
 		'"tipo-atributo"' ':' atributoTipo = AtributoTipo ','
-		'"associação"' ':' associacao = Associacao ','
-		'"operação em cascata"' ':' operacao = Operacao ','
+		'"associação"' ':' associacao = Associacao?','
+		'"operação em cascata"' ':' operacao = Operacao? ','
 		'"joinTable-nome"' ':' tabelaNome = TabelaNome ','
 		'"joinColumns-nome"' ':' colunaNome = ColunaNome ','
 		'"inverseJoinColumns-nome"' ':' colunaNomeInverse = ColunaNome
@@ -52,12 +52,12 @@ TabelaNome:
 Operacao:
 	opCascada = "ALL"| opCascada = "DETACH"| 
 	opCascada = "MERGE"| opCascada = "PERSIST"| opCascada = "REFRESH"| 
-	opCascada = "REMOVE" | opCascada = ANY_OTHER
+	opCascada = "REMOVE" //| opCascada = ANY_OTHER
 ;
 
 Associacao:
 	associacao = "OneToOne" | associacao = "OneToMany" |
-	associacao = "ManyToOne" | associacao = "ManyToMany" | associacao = ANY_OTHER
+	associacao = "ManyToOne" | associacao = "ManyToMany" //| associacao = ANY_OTHER
 ;
 
 AtributoNome:

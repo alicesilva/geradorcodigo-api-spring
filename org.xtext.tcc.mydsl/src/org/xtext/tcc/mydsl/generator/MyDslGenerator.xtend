@@ -7,6 +7,9 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.xtext.tcc.mydsl.myDsl.Entidade
+import org.eclipse.emf.common.util.EList
+import org.xtext.tcc.mydsl.myDsl.Atributo
 
 /**
  * Generates code from your model files on save.
@@ -14,12 +17,46 @@ import org.eclipse.xtext.generator.IGeneratorContext
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class MyDslGenerator extends AbstractGenerator {
-
+		
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		for(e: resource.allContents.toIterable.filter(Entidade)){
+			fsa.generateFile(e.nomeEntidades.id.toString + ".java", e.compile)
+		}
 	}
+	
+	def compile(Entidade entidade)'''
+		import javax.persistence.*;
+		
+		@Entity
+		public class «entidade.nomeEntidades.id.toFirstUpper» {
+			
+			«IF entidade.chavePrimaria.id.equalsIgnoreCase("id")»
+				@Id
+				@GeneratedValue(strategy=GenerationType.IDENTITY)
+				private Integer id;
+			«ENDIF»
+			
+			«compileAtributos(entidade.chavePrimaria.id, entidade.atributos)»
+			
+		}
+	'''
+		
+	def compileAtributos(String chavePrimaria, EList<Atributo> atributos)'''
+		«FOR a: atributos»
+			«IF a.associacao !== null»
+				«IF a.operacao === null»
+					@«a.associacao.associacao»
+				«ELSE»
+				     @«a.associacao.associacao»(cascade = CascadeType.«a.operacao.opCascada»)
+				«ENDIF»
+			«ENDIF»
+			«IF a.atributoTipo.tipoP !== null»
+				private «a.atributoTipo.tipoP.toFirstUpper» «a.atributoNome.id.toFirstLower»;
+			«ELSE»
+				private «a.atributoTipo.tipoE.toFirstUpper» «a.atributoNome.id.toFirstLower»;
+			«ENDIF»
+			
+		«ENDFOR»
+	'''
+		
 }

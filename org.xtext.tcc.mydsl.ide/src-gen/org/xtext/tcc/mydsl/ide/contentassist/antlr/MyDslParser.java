@@ -67,12 +67,10 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOperacaoAccess().getOpCascadaAssignment_3(), "rule__Operacao__OpCascadaAssignment_3");
 			builder.put(grammarAccess.getOperacaoAccess().getOpCascadaAssignment_4(), "rule__Operacao__OpCascadaAssignment_4");
 			builder.put(grammarAccess.getOperacaoAccess().getOpCascadaAssignment_5(), "rule__Operacao__OpCascadaAssignment_5");
-			builder.put(grammarAccess.getOperacaoAccess().getOpCascadaAssignment_6(), "rule__Operacao__OpCascadaAssignment_6");
 			builder.put(grammarAccess.getAssociacaoAccess().getAssociacaoAssignment_0(), "rule__Associacao__AssociacaoAssignment_0");
 			builder.put(grammarAccess.getAssociacaoAccess().getAssociacaoAssignment_1(), "rule__Associacao__AssociacaoAssignment_1");
 			builder.put(grammarAccess.getAssociacaoAccess().getAssociacaoAssignment_2(), "rule__Associacao__AssociacaoAssignment_2");
 			builder.put(grammarAccess.getAssociacaoAccess().getAssociacaoAssignment_3(), "rule__Associacao__AssociacaoAssignment_3");
-			builder.put(grammarAccess.getAssociacaoAccess().getAssociacaoAssignment_4(), "rule__Associacao__AssociacaoAssignment_4");
 			builder.put(grammarAccess.getAtributoNomeAccess().getIdAssignment(), "rule__AtributoNome__IdAssignment");
 			builder.put(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_0(), "rule__AtributoTipo__TipoPAssignment_0");
 			builder.put(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_1(), "rule__AtributoTipo__TipoPAssignment_1");

@@ -93,7 +93,7 @@ ruleModel returns [EObject current=null]
 				afterParserOrEnumRuleCall();
 			}
 		)
-	)*
+	)
 ;
 
 // Entry rule entryRuleGreeting
@@ -529,7 +529,7 @@ ruleAtributo returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 		otherlv_12=','
 		{
 			newLeafNode(otherlv_12, grammarAccess.getAtributoAccess().getCommaKeyword_12());
@@ -560,7 +560,7 @@ ruleAtributo returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 		otherlv_16=','
 		{
 			newLeafNode(otherlv_16, grammarAccess.getAtributoAccess().getCommaKeyword_16());
@@ -878,25 +878,6 @@ ruleOperacao returns [EObject current=null]
 				}
 			)
 		)
-		    |
-		(
-			(
-				lv_opCascada_6_0=RULE_ANY_OTHER
-				{
-					newLeafNode(lv_opCascada_6_0, grammarAccess.getOperacaoAccess().getOpCascadaANY_OTHERTerminalRuleCall_6_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOperacaoRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"opCascada",
-						lv_opCascada_6_0,
-						"org.eclipse.xtext.common.Terminals.ANY_OTHER");
-				}
-			)
-		)
 	)
 ;
 
@@ -972,25 +953,6 @@ ruleAssociacao returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getAssociacaoRule());
 					}
 					setWithLastConsumed($current, "associacao", lv_associacao_3_0, "ManyToMany");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_associacao_4_0=RULE_ANY_OTHER
-				{
-					newLeafNode(lv_associacao_4_0, grammarAccess.getAssociacaoAccess().getAssociacaoANY_OTHERTerminalRuleCall_4_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAssociacaoRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"associacao",
-						lv_associacao_4_0,
-						"org.eclipse.xtext.common.Terminals.ANY_OTHER");
 				}
 			)
 		)

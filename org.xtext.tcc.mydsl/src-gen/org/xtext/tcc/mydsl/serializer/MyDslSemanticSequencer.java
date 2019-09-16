@@ -131,7 +131,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Associacao returns Associacao
 	 *
 	 * Constraint:
-	 *     (associacao='OneToOne' | associacao='OneToMany' | associacao='ManyToOne' | associacao='ManyToMany' | associacao=ANY_OTHER)
+	 *     (associacao='OneToOne' | associacao='OneToMany' | associacao='ManyToOne' | associacao='ManyToMany')
 	 */
 	protected void sequence_Associacao(ISerializationContext context, Associacao semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -192,39 +192,15 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (
 	 *         atributoNome=AtributoNome 
 	 *         atributoTipo=AtributoTipo 
-	 *         associacao=Associacao 
-	 *         operacao=Operacao 
+	 *         associacao=Associacao? 
+	 *         operacao=Operacao? 
 	 *         tabelaNome=TabelaNome 
 	 *         colunaNome=ColunaNome 
 	 *         colunaNomeInverse=ColunaNome
 	 *     )
 	 */
 	protected void sequence_Atributo(ISerializationContext context, Atributo semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO__ATRIBUTO_NOME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO__ATRIBUTO_NOME));
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO__ATRIBUTO_TIPO) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO__ATRIBUTO_TIPO));
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO__ASSOCIACAO) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO__ASSOCIACAO));
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO__OPERACAO) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO__OPERACAO));
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO__TABELA_NOME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO__TABELA_NOME));
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO__COLUNA_NOME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO__COLUNA_NOME));
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO__COLUNA_NOME_INVERSE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO__COLUNA_NOME_INVERSE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtributoAccess().getAtributoNomeAtributoNomeParserRuleCall_3_0(), semanticObject.getAtributoNome());
-		feeder.accept(grammarAccess.getAtributoAccess().getAtributoTipoAtributoTipoParserRuleCall_7_0(), semanticObject.getAtributoTipo());
-		feeder.accept(grammarAccess.getAtributoAccess().getAssociacaoAssociacaoParserRuleCall_11_0(), semanticObject.getAssociacao());
-		feeder.accept(grammarAccess.getAtributoAccess().getOperacaoOperacaoParserRuleCall_15_0(), semanticObject.getOperacao());
-		feeder.accept(grammarAccess.getAtributoAccess().getTabelaNomeTabelaNomeParserRuleCall_19_0(), semanticObject.getTabelaNome());
-		feeder.accept(grammarAccess.getAtributoAccess().getColunaNomeColunaNomeParserRuleCall_23_0(), semanticObject.getColunaNome());
-		feeder.accept(grammarAccess.getAtributoAccess().getColunaNomeInverseColunaNomeParserRuleCall_27_0(), semanticObject.getColunaNomeInverse());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -311,7 +287,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     greetings+=Greeting+
+	 *     greetings+=Greeting
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -329,8 +305,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         opCascada='MERGE' | 
 	 *         opCascada='PERSIST' | 
 	 *         opCascada='REFRESH' | 
-	 *         opCascada='REMOVE' | 
-	 *         opCascada=ANY_OTHER
+	 *         opCascada='REMOVE'
 	 *     )
 	 */
 	protected void sequence_Operacao(ISerializationContext context, Operacao semanticObject) {
