@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMyDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_ANY_OTHER", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'{'", "'}'", "'\"Nome da Api\"'", "':'", "','", "'\"Entidades\"'", "'['", "']'", "'\"Nome\"'", "'\"Atributos\"'", "'\"Chave Primaria\"'", "'\"nome-atributo\"'", "'\"tipo-atributo\"'", "'\"associa\\u00E7\\u00E3o\"'", "'\"opera\\u00E7\\u00E3o em cascata\"'", "'\"joinTable-nome\"'", "'\"joinColumns-nome\"'", "'\"inverseJoinColumns-nome\"'", "'ALL'", "'DETACH'", "'MERGE'", "'PERSIST'", "'REFRESH'", "'REMOVE'", "'OneToOne'", "'OneToMany'", "'ManyToOne'", "'ManyToMany'", "'Boolean'", "'Byte'", "'Short'", "'Character'", "'Integer'", "'Long'", "'Float'", "'Double'", "'Time'", "'Timestamp'", "'Date'", "'ENUM'", "'ArrayList'", "'HashSet'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_ANY_OTHER", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'{'", "'}'", "'\"Nome da Api\"'", "':'", "','", "'\"Entidades\"'", "'['", "']'", "'\"Nome\"'", "'\"Atributos\"'", "'\"Chave Primaria\"'", "'\"nome-atributo\"'", "'\"tipo-atributo\"'", "'\"associa\\u00E7\\u00E3o\"'", "'\"opera\\u00E7\\u00E3o em cascata\"'", "'\"joinTable-nome\"'", "'\"joinColumns-nome\"'", "'\"inverseJoinColumns-nome\"'", "'ALL'", "'DETACH'", "'MERGE'", "'PERSIST'", "'REFRESH'", "'REMOVE'", "'OneToOne'", "'OneToMany'", "'ManyToOne'", "'ManyToMany'", "'Boolean'", "'Byte'", "'Short'", "'Character'", "'Integer'", "'Long'", "'String'", "'Float'", "'Double'", "'Time'", "'Timestamp'", "'Date'", "'ENUM'", "'ArrayList'", "'HashSet'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -35,6 +35,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
     public static final int T__14=14;
     public static final int T__51=51;
     public static final int T__52=52;
+    public static final int T__53=53;
     public static final int RULE_ID=4;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -2356,7 +2357,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtributoTipo"
-    // InternalMyDsl.g:1005:1: ruleAtributoTipo returns [EObject current=null] : ( ( (lv_tipoP_0_0= 'Boolean' ) ) | ( (lv_tipoP_1_0= 'Byte' ) ) | ( (lv_tipoP_2_0= 'Short' ) ) | ( (lv_tipoP_3_0= 'Character' ) ) | ( (lv_tipoP_4_0= 'Integer' ) ) | ( (lv_tipoP_5_0= 'Long' ) ) | ( (lv_tipoP_6_0= 'Float' ) ) | ( (lv_tipoP_7_0= 'Double' ) ) | ( (lv_tipoP_8_0= 'Time' ) ) | ( (lv_tipoP_9_0= 'Timestamp' ) ) | ( (lv_tipoP_10_0= 'Date' ) ) | ( (lv_tipoP_11_0= 'ENUM' ) ) | ( (lv_tipoP_12_0= 'ArrayList' ) ) | ( (lv_tipoP_13_0= 'HashSet' ) ) | ( (lv_tipoE_14_0= RULE_ID ) ) ) ;
+    // InternalMyDsl.g:1005:1: ruleAtributoTipo returns [EObject current=null] : ( ( (lv_tipoP_0_0= 'Boolean' ) ) | ( (lv_tipoP_1_0= 'Byte' ) ) | ( (lv_tipoP_2_0= 'Short' ) ) | ( (lv_tipoP_3_0= 'Character' ) ) | ( (lv_tipoP_4_0= 'Integer' ) ) | ( (lv_tipoP_5_0= 'Long' ) ) | ( (lv_tipoP_6_0= 'String' ) ) | ( (lv_tipoP_7_0= 'Float' ) ) | ( (lv_tipoP_8_0= 'Double' ) ) | ( (lv_tipoP_9_0= 'Time' ) ) | ( (lv_tipoP_10_0= 'Timestamp' ) ) | ( (lv_tipoP_11_0= 'Date' ) ) | ( (lv_tipoP_12_0= 'ENUM' ) ) | ( (lv_tipoP_13_0= 'ArrayList' ) ) | ( (lv_tipoP_14_0= 'HashSet' ) ) | ( (lv_tipoE_15_0= RULE_ID ) ) ) ;
     public final EObject ruleAtributoTipo() throws RecognitionException {
         EObject current = null;
 
@@ -2374,17 +2375,18 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
         Token lv_tipoP_11_0=null;
         Token lv_tipoP_12_0=null;
         Token lv_tipoP_13_0=null;
-        Token lv_tipoE_14_0=null;
+        Token lv_tipoP_14_0=null;
+        Token lv_tipoE_15_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalMyDsl.g:1011:2: ( ( ( (lv_tipoP_0_0= 'Boolean' ) ) | ( (lv_tipoP_1_0= 'Byte' ) ) | ( (lv_tipoP_2_0= 'Short' ) ) | ( (lv_tipoP_3_0= 'Character' ) ) | ( (lv_tipoP_4_0= 'Integer' ) ) | ( (lv_tipoP_5_0= 'Long' ) ) | ( (lv_tipoP_6_0= 'Float' ) ) | ( (lv_tipoP_7_0= 'Double' ) ) | ( (lv_tipoP_8_0= 'Time' ) ) | ( (lv_tipoP_9_0= 'Timestamp' ) ) | ( (lv_tipoP_10_0= 'Date' ) ) | ( (lv_tipoP_11_0= 'ENUM' ) ) | ( (lv_tipoP_12_0= 'ArrayList' ) ) | ( (lv_tipoP_13_0= 'HashSet' ) ) | ( (lv_tipoE_14_0= RULE_ID ) ) ) )
-            // InternalMyDsl.g:1012:2: ( ( (lv_tipoP_0_0= 'Boolean' ) ) | ( (lv_tipoP_1_0= 'Byte' ) ) | ( (lv_tipoP_2_0= 'Short' ) ) | ( (lv_tipoP_3_0= 'Character' ) ) | ( (lv_tipoP_4_0= 'Integer' ) ) | ( (lv_tipoP_5_0= 'Long' ) ) | ( (lv_tipoP_6_0= 'Float' ) ) | ( (lv_tipoP_7_0= 'Double' ) ) | ( (lv_tipoP_8_0= 'Time' ) ) | ( (lv_tipoP_9_0= 'Timestamp' ) ) | ( (lv_tipoP_10_0= 'Date' ) ) | ( (lv_tipoP_11_0= 'ENUM' ) ) | ( (lv_tipoP_12_0= 'ArrayList' ) ) | ( (lv_tipoP_13_0= 'HashSet' ) ) | ( (lv_tipoE_14_0= RULE_ID ) ) )
+            // InternalMyDsl.g:1011:2: ( ( ( (lv_tipoP_0_0= 'Boolean' ) ) | ( (lv_tipoP_1_0= 'Byte' ) ) | ( (lv_tipoP_2_0= 'Short' ) ) | ( (lv_tipoP_3_0= 'Character' ) ) | ( (lv_tipoP_4_0= 'Integer' ) ) | ( (lv_tipoP_5_0= 'Long' ) ) | ( (lv_tipoP_6_0= 'String' ) ) | ( (lv_tipoP_7_0= 'Float' ) ) | ( (lv_tipoP_8_0= 'Double' ) ) | ( (lv_tipoP_9_0= 'Time' ) ) | ( (lv_tipoP_10_0= 'Timestamp' ) ) | ( (lv_tipoP_11_0= 'Date' ) ) | ( (lv_tipoP_12_0= 'ENUM' ) ) | ( (lv_tipoP_13_0= 'ArrayList' ) ) | ( (lv_tipoP_14_0= 'HashSet' ) ) | ( (lv_tipoE_15_0= RULE_ID ) ) ) )
+            // InternalMyDsl.g:1012:2: ( ( (lv_tipoP_0_0= 'Boolean' ) ) | ( (lv_tipoP_1_0= 'Byte' ) ) | ( (lv_tipoP_2_0= 'Short' ) ) | ( (lv_tipoP_3_0= 'Character' ) ) | ( (lv_tipoP_4_0= 'Integer' ) ) | ( (lv_tipoP_5_0= 'Long' ) ) | ( (lv_tipoP_6_0= 'String' ) ) | ( (lv_tipoP_7_0= 'Float' ) ) | ( (lv_tipoP_8_0= 'Double' ) ) | ( (lv_tipoP_9_0= 'Time' ) ) | ( (lv_tipoP_10_0= 'Timestamp' ) ) | ( (lv_tipoP_11_0= 'Date' ) ) | ( (lv_tipoP_12_0= 'ENUM' ) ) | ( (lv_tipoP_13_0= 'ArrayList' ) ) | ( (lv_tipoP_14_0= 'HashSet' ) ) | ( (lv_tipoE_15_0= RULE_ID ) ) )
             {
-            // InternalMyDsl.g:1012:2: ( ( (lv_tipoP_0_0= 'Boolean' ) ) | ( (lv_tipoP_1_0= 'Byte' ) ) | ( (lv_tipoP_2_0= 'Short' ) ) | ( (lv_tipoP_3_0= 'Character' ) ) | ( (lv_tipoP_4_0= 'Integer' ) ) | ( (lv_tipoP_5_0= 'Long' ) ) | ( (lv_tipoP_6_0= 'Float' ) ) | ( (lv_tipoP_7_0= 'Double' ) ) | ( (lv_tipoP_8_0= 'Time' ) ) | ( (lv_tipoP_9_0= 'Timestamp' ) ) | ( (lv_tipoP_10_0= 'Date' ) ) | ( (lv_tipoP_11_0= 'ENUM' ) ) | ( (lv_tipoP_12_0= 'ArrayList' ) ) | ( (lv_tipoP_13_0= 'HashSet' ) ) | ( (lv_tipoE_14_0= RULE_ID ) ) )
-            int alt9=15;
+            // InternalMyDsl.g:1012:2: ( ( (lv_tipoP_0_0= 'Boolean' ) ) | ( (lv_tipoP_1_0= 'Byte' ) ) | ( (lv_tipoP_2_0= 'Short' ) ) | ( (lv_tipoP_3_0= 'Character' ) ) | ( (lv_tipoP_4_0= 'Integer' ) ) | ( (lv_tipoP_5_0= 'Long' ) ) | ( (lv_tipoP_6_0= 'String' ) ) | ( (lv_tipoP_7_0= 'Float' ) ) | ( (lv_tipoP_8_0= 'Double' ) ) | ( (lv_tipoP_9_0= 'Time' ) ) | ( (lv_tipoP_10_0= 'Timestamp' ) ) | ( (lv_tipoP_11_0= 'Date' ) ) | ( (lv_tipoP_12_0= 'ENUM' ) ) | ( (lv_tipoP_13_0= 'ArrayList' ) ) | ( (lv_tipoP_14_0= 'HashSet' ) ) | ( (lv_tipoE_15_0= RULE_ID ) ) )
+            int alt9=16;
             switch ( input.LA(1) ) {
             case 39:
                 {
@@ -2456,9 +2458,14 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                 alt9=14;
                 }
                 break;
-            case RULE_ID:
+            case 53:
                 {
                 alt9=15;
+                }
+                break;
+            case RULE_ID:
+                {
+                alt9=16;
                 }
                 break;
             default:
@@ -2638,23 +2645,23 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalMyDsl.g:1103:3: ( (lv_tipoP_6_0= 'Float' ) )
+                    // InternalMyDsl.g:1103:3: ( (lv_tipoP_6_0= 'String' ) )
                     {
-                    // InternalMyDsl.g:1103:3: ( (lv_tipoP_6_0= 'Float' ) )
-                    // InternalMyDsl.g:1104:4: (lv_tipoP_6_0= 'Float' )
+                    // InternalMyDsl.g:1103:3: ( (lv_tipoP_6_0= 'String' ) )
+                    // InternalMyDsl.g:1104:4: (lv_tipoP_6_0= 'String' )
                     {
-                    // InternalMyDsl.g:1104:4: (lv_tipoP_6_0= 'Float' )
-                    // InternalMyDsl.g:1105:5: lv_tipoP_6_0= 'Float'
+                    // InternalMyDsl.g:1104:4: (lv_tipoP_6_0= 'String' )
+                    // InternalMyDsl.g:1105:5: lv_tipoP_6_0= 'String'
                     {
                     lv_tipoP_6_0=(Token)match(input,45,FOLLOW_2); 
 
-                    					newLeafNode(lv_tipoP_6_0, grammarAccess.getAtributoTipoAccess().getTipoPFloatKeyword_6_0());
+                    					newLeafNode(lv_tipoP_6_0, grammarAccess.getAtributoTipoAccess().getTipoPStringKeyword_6_0());
                     				
 
                     					if (current==null) {
                     						current = createModelElement(grammarAccess.getAtributoTipoRule());
                     					}
-                    					setWithLastConsumed(current, "tipoP", lv_tipoP_6_0, "Float");
+                    					setWithLastConsumed(current, "tipoP", lv_tipoP_6_0, "String");
                     				
 
                     }
@@ -2666,23 +2673,23 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalMyDsl.g:1118:3: ( (lv_tipoP_7_0= 'Double' ) )
+                    // InternalMyDsl.g:1118:3: ( (lv_tipoP_7_0= 'Float' ) )
                     {
-                    // InternalMyDsl.g:1118:3: ( (lv_tipoP_7_0= 'Double' ) )
-                    // InternalMyDsl.g:1119:4: (lv_tipoP_7_0= 'Double' )
+                    // InternalMyDsl.g:1118:3: ( (lv_tipoP_7_0= 'Float' ) )
+                    // InternalMyDsl.g:1119:4: (lv_tipoP_7_0= 'Float' )
                     {
-                    // InternalMyDsl.g:1119:4: (lv_tipoP_7_0= 'Double' )
-                    // InternalMyDsl.g:1120:5: lv_tipoP_7_0= 'Double'
+                    // InternalMyDsl.g:1119:4: (lv_tipoP_7_0= 'Float' )
+                    // InternalMyDsl.g:1120:5: lv_tipoP_7_0= 'Float'
                     {
                     lv_tipoP_7_0=(Token)match(input,46,FOLLOW_2); 
 
-                    					newLeafNode(lv_tipoP_7_0, grammarAccess.getAtributoTipoAccess().getTipoPDoubleKeyword_7_0());
+                    					newLeafNode(lv_tipoP_7_0, grammarAccess.getAtributoTipoAccess().getTipoPFloatKeyword_7_0());
                     				
 
                     					if (current==null) {
                     						current = createModelElement(grammarAccess.getAtributoTipoRule());
                     					}
-                    					setWithLastConsumed(current, "tipoP", lv_tipoP_7_0, "Double");
+                    					setWithLastConsumed(current, "tipoP", lv_tipoP_7_0, "Float");
                     				
 
                     }
@@ -2694,23 +2701,23 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalMyDsl.g:1133:3: ( (lv_tipoP_8_0= 'Time' ) )
+                    // InternalMyDsl.g:1133:3: ( (lv_tipoP_8_0= 'Double' ) )
                     {
-                    // InternalMyDsl.g:1133:3: ( (lv_tipoP_8_0= 'Time' ) )
-                    // InternalMyDsl.g:1134:4: (lv_tipoP_8_0= 'Time' )
+                    // InternalMyDsl.g:1133:3: ( (lv_tipoP_8_0= 'Double' ) )
+                    // InternalMyDsl.g:1134:4: (lv_tipoP_8_0= 'Double' )
                     {
-                    // InternalMyDsl.g:1134:4: (lv_tipoP_8_0= 'Time' )
-                    // InternalMyDsl.g:1135:5: lv_tipoP_8_0= 'Time'
+                    // InternalMyDsl.g:1134:4: (lv_tipoP_8_0= 'Double' )
+                    // InternalMyDsl.g:1135:5: lv_tipoP_8_0= 'Double'
                     {
                     lv_tipoP_8_0=(Token)match(input,47,FOLLOW_2); 
 
-                    					newLeafNode(lv_tipoP_8_0, grammarAccess.getAtributoTipoAccess().getTipoPTimeKeyword_8_0());
+                    					newLeafNode(lv_tipoP_8_0, grammarAccess.getAtributoTipoAccess().getTipoPDoubleKeyword_8_0());
                     				
 
                     					if (current==null) {
                     						current = createModelElement(grammarAccess.getAtributoTipoRule());
                     					}
-                    					setWithLastConsumed(current, "tipoP", lv_tipoP_8_0, "Time");
+                    					setWithLastConsumed(current, "tipoP", lv_tipoP_8_0, "Double");
                     				
 
                     }
@@ -2722,23 +2729,23 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalMyDsl.g:1148:3: ( (lv_tipoP_9_0= 'Timestamp' ) )
+                    // InternalMyDsl.g:1148:3: ( (lv_tipoP_9_0= 'Time' ) )
                     {
-                    // InternalMyDsl.g:1148:3: ( (lv_tipoP_9_0= 'Timestamp' ) )
-                    // InternalMyDsl.g:1149:4: (lv_tipoP_9_0= 'Timestamp' )
+                    // InternalMyDsl.g:1148:3: ( (lv_tipoP_9_0= 'Time' ) )
+                    // InternalMyDsl.g:1149:4: (lv_tipoP_9_0= 'Time' )
                     {
-                    // InternalMyDsl.g:1149:4: (lv_tipoP_9_0= 'Timestamp' )
-                    // InternalMyDsl.g:1150:5: lv_tipoP_9_0= 'Timestamp'
+                    // InternalMyDsl.g:1149:4: (lv_tipoP_9_0= 'Time' )
+                    // InternalMyDsl.g:1150:5: lv_tipoP_9_0= 'Time'
                     {
                     lv_tipoP_9_0=(Token)match(input,48,FOLLOW_2); 
 
-                    					newLeafNode(lv_tipoP_9_0, grammarAccess.getAtributoTipoAccess().getTipoPTimestampKeyword_9_0());
+                    					newLeafNode(lv_tipoP_9_0, grammarAccess.getAtributoTipoAccess().getTipoPTimeKeyword_9_0());
                     				
 
                     					if (current==null) {
                     						current = createModelElement(grammarAccess.getAtributoTipoRule());
                     					}
-                    					setWithLastConsumed(current, "tipoP", lv_tipoP_9_0, "Timestamp");
+                    					setWithLastConsumed(current, "tipoP", lv_tipoP_9_0, "Time");
                     				
 
                     }
@@ -2750,23 +2757,23 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalMyDsl.g:1163:3: ( (lv_tipoP_10_0= 'Date' ) )
+                    // InternalMyDsl.g:1163:3: ( (lv_tipoP_10_0= 'Timestamp' ) )
                     {
-                    // InternalMyDsl.g:1163:3: ( (lv_tipoP_10_0= 'Date' ) )
-                    // InternalMyDsl.g:1164:4: (lv_tipoP_10_0= 'Date' )
+                    // InternalMyDsl.g:1163:3: ( (lv_tipoP_10_0= 'Timestamp' ) )
+                    // InternalMyDsl.g:1164:4: (lv_tipoP_10_0= 'Timestamp' )
                     {
-                    // InternalMyDsl.g:1164:4: (lv_tipoP_10_0= 'Date' )
-                    // InternalMyDsl.g:1165:5: lv_tipoP_10_0= 'Date'
+                    // InternalMyDsl.g:1164:4: (lv_tipoP_10_0= 'Timestamp' )
+                    // InternalMyDsl.g:1165:5: lv_tipoP_10_0= 'Timestamp'
                     {
                     lv_tipoP_10_0=(Token)match(input,49,FOLLOW_2); 
 
-                    					newLeafNode(lv_tipoP_10_0, grammarAccess.getAtributoTipoAccess().getTipoPDateKeyword_10_0());
+                    					newLeafNode(lv_tipoP_10_0, grammarAccess.getAtributoTipoAccess().getTipoPTimestampKeyword_10_0());
                     				
 
                     					if (current==null) {
                     						current = createModelElement(grammarAccess.getAtributoTipoRule());
                     					}
-                    					setWithLastConsumed(current, "tipoP", lv_tipoP_10_0, "Date");
+                    					setWithLastConsumed(current, "tipoP", lv_tipoP_10_0, "Timestamp");
                     				
 
                     }
@@ -2778,23 +2785,23 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalMyDsl.g:1178:3: ( (lv_tipoP_11_0= 'ENUM' ) )
+                    // InternalMyDsl.g:1178:3: ( (lv_tipoP_11_0= 'Date' ) )
                     {
-                    // InternalMyDsl.g:1178:3: ( (lv_tipoP_11_0= 'ENUM' ) )
-                    // InternalMyDsl.g:1179:4: (lv_tipoP_11_0= 'ENUM' )
+                    // InternalMyDsl.g:1178:3: ( (lv_tipoP_11_0= 'Date' ) )
+                    // InternalMyDsl.g:1179:4: (lv_tipoP_11_0= 'Date' )
                     {
-                    // InternalMyDsl.g:1179:4: (lv_tipoP_11_0= 'ENUM' )
-                    // InternalMyDsl.g:1180:5: lv_tipoP_11_0= 'ENUM'
+                    // InternalMyDsl.g:1179:4: (lv_tipoP_11_0= 'Date' )
+                    // InternalMyDsl.g:1180:5: lv_tipoP_11_0= 'Date'
                     {
                     lv_tipoP_11_0=(Token)match(input,50,FOLLOW_2); 
 
-                    					newLeafNode(lv_tipoP_11_0, grammarAccess.getAtributoTipoAccess().getTipoPENUMKeyword_11_0());
+                    					newLeafNode(lv_tipoP_11_0, grammarAccess.getAtributoTipoAccess().getTipoPDateKeyword_11_0());
                     				
 
                     					if (current==null) {
                     						current = createModelElement(grammarAccess.getAtributoTipoRule());
                     					}
-                    					setWithLastConsumed(current, "tipoP", lv_tipoP_11_0, "ENUM");
+                    					setWithLastConsumed(current, "tipoP", lv_tipoP_11_0, "Date");
                     				
 
                     }
@@ -2806,23 +2813,23 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // InternalMyDsl.g:1193:3: ( (lv_tipoP_12_0= 'ArrayList' ) )
+                    // InternalMyDsl.g:1193:3: ( (lv_tipoP_12_0= 'ENUM' ) )
                     {
-                    // InternalMyDsl.g:1193:3: ( (lv_tipoP_12_0= 'ArrayList' ) )
-                    // InternalMyDsl.g:1194:4: (lv_tipoP_12_0= 'ArrayList' )
+                    // InternalMyDsl.g:1193:3: ( (lv_tipoP_12_0= 'ENUM' ) )
+                    // InternalMyDsl.g:1194:4: (lv_tipoP_12_0= 'ENUM' )
                     {
-                    // InternalMyDsl.g:1194:4: (lv_tipoP_12_0= 'ArrayList' )
-                    // InternalMyDsl.g:1195:5: lv_tipoP_12_0= 'ArrayList'
+                    // InternalMyDsl.g:1194:4: (lv_tipoP_12_0= 'ENUM' )
+                    // InternalMyDsl.g:1195:5: lv_tipoP_12_0= 'ENUM'
                     {
                     lv_tipoP_12_0=(Token)match(input,51,FOLLOW_2); 
 
-                    					newLeafNode(lv_tipoP_12_0, grammarAccess.getAtributoTipoAccess().getTipoPArrayListKeyword_12_0());
+                    					newLeafNode(lv_tipoP_12_0, grammarAccess.getAtributoTipoAccess().getTipoPENUMKeyword_12_0());
                     				
 
                     					if (current==null) {
                     						current = createModelElement(grammarAccess.getAtributoTipoRule());
                     					}
-                    					setWithLastConsumed(current, "tipoP", lv_tipoP_12_0, "ArrayList");
+                    					setWithLastConsumed(current, "tipoP", lv_tipoP_12_0, "ENUM");
                     				
 
                     }
@@ -2834,23 +2841,23 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // InternalMyDsl.g:1208:3: ( (lv_tipoP_13_0= 'HashSet' ) )
+                    // InternalMyDsl.g:1208:3: ( (lv_tipoP_13_0= 'ArrayList' ) )
                     {
-                    // InternalMyDsl.g:1208:3: ( (lv_tipoP_13_0= 'HashSet' ) )
-                    // InternalMyDsl.g:1209:4: (lv_tipoP_13_0= 'HashSet' )
+                    // InternalMyDsl.g:1208:3: ( (lv_tipoP_13_0= 'ArrayList' ) )
+                    // InternalMyDsl.g:1209:4: (lv_tipoP_13_0= 'ArrayList' )
                     {
-                    // InternalMyDsl.g:1209:4: (lv_tipoP_13_0= 'HashSet' )
-                    // InternalMyDsl.g:1210:5: lv_tipoP_13_0= 'HashSet'
+                    // InternalMyDsl.g:1209:4: (lv_tipoP_13_0= 'ArrayList' )
+                    // InternalMyDsl.g:1210:5: lv_tipoP_13_0= 'ArrayList'
                     {
                     lv_tipoP_13_0=(Token)match(input,52,FOLLOW_2); 
 
-                    					newLeafNode(lv_tipoP_13_0, grammarAccess.getAtributoTipoAccess().getTipoPHashSetKeyword_13_0());
+                    					newLeafNode(lv_tipoP_13_0, grammarAccess.getAtributoTipoAccess().getTipoPArrayListKeyword_13_0());
                     				
 
                     					if (current==null) {
                     						current = createModelElement(grammarAccess.getAtributoTipoRule());
                     					}
-                    					setWithLastConsumed(current, "tipoP", lv_tipoP_13_0, "HashSet");
+                    					setWithLastConsumed(current, "tipoP", lv_tipoP_13_0, "ArrayList");
                     				
 
                     }
@@ -2862,17 +2869,45 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // InternalMyDsl.g:1223:3: ( (lv_tipoE_14_0= RULE_ID ) )
+                    // InternalMyDsl.g:1223:3: ( (lv_tipoP_14_0= 'HashSet' ) )
                     {
-                    // InternalMyDsl.g:1223:3: ( (lv_tipoE_14_0= RULE_ID ) )
-                    // InternalMyDsl.g:1224:4: (lv_tipoE_14_0= RULE_ID )
+                    // InternalMyDsl.g:1223:3: ( (lv_tipoP_14_0= 'HashSet' ) )
+                    // InternalMyDsl.g:1224:4: (lv_tipoP_14_0= 'HashSet' )
                     {
-                    // InternalMyDsl.g:1224:4: (lv_tipoE_14_0= RULE_ID )
-                    // InternalMyDsl.g:1225:5: lv_tipoE_14_0= RULE_ID
+                    // InternalMyDsl.g:1224:4: (lv_tipoP_14_0= 'HashSet' )
+                    // InternalMyDsl.g:1225:5: lv_tipoP_14_0= 'HashSet'
                     {
-                    lv_tipoE_14_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+                    lv_tipoP_14_0=(Token)match(input,53,FOLLOW_2); 
 
-                    					newLeafNode(lv_tipoE_14_0, grammarAccess.getAtributoTipoAccess().getTipoEIDTerminalRuleCall_14_0());
+                    					newLeafNode(lv_tipoP_14_0, grammarAccess.getAtributoTipoAccess().getTipoPHashSetKeyword_14_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getAtributoTipoRule());
+                    					}
+                    					setWithLastConsumed(current, "tipoP", lv_tipoP_14_0, "HashSet");
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 16 :
+                    // InternalMyDsl.g:1238:3: ( (lv_tipoE_15_0= RULE_ID ) )
+                    {
+                    // InternalMyDsl.g:1238:3: ( (lv_tipoE_15_0= RULE_ID ) )
+                    // InternalMyDsl.g:1239:4: (lv_tipoE_15_0= RULE_ID )
+                    {
+                    // InternalMyDsl.g:1239:4: (lv_tipoE_15_0= RULE_ID )
+                    // InternalMyDsl.g:1240:5: lv_tipoE_15_0= RULE_ID
+                    {
+                    lv_tipoE_15_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+                    					newLeafNode(lv_tipoE_15_0, grammarAccess.getAtributoTipoAccess().getTipoEIDTerminalRuleCall_15_0());
                     				
 
                     					if (current==null) {
@@ -2881,7 +2916,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
                     					setWithLastConsumed(
                     						current,
                     						"tipoE",
-                    						lv_tipoE_14_0,
+                    						lv_tipoE_15_0,
                     						"org.eclipse.xtext.common.Terminals.ID");
                     				
 
@@ -2916,7 +2951,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleChavePrimaria"
-    // InternalMyDsl.g:1245:1: entryRuleChavePrimaria returns [EObject current=null] : iv_ruleChavePrimaria= ruleChavePrimaria EOF ;
+    // InternalMyDsl.g:1260:1: entryRuleChavePrimaria returns [EObject current=null] : iv_ruleChavePrimaria= ruleChavePrimaria EOF ;
     public final EObject entryRuleChavePrimaria() throws RecognitionException {
         EObject current = null;
 
@@ -2924,8 +2959,8 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyDsl.g:1245:54: (iv_ruleChavePrimaria= ruleChavePrimaria EOF )
-            // InternalMyDsl.g:1246:2: iv_ruleChavePrimaria= ruleChavePrimaria EOF
+            // InternalMyDsl.g:1260:54: (iv_ruleChavePrimaria= ruleChavePrimaria EOF )
+            // InternalMyDsl.g:1261:2: iv_ruleChavePrimaria= ruleChavePrimaria EOF
             {
              newCompositeNode(grammarAccess.getChavePrimariaRule()); 
             pushFollow(FOLLOW_1);
@@ -2952,7 +2987,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleChavePrimaria"
-    // InternalMyDsl.g:1252:1: ruleChavePrimaria returns [EObject current=null] : ( (lv_id_0_0= RULE_ID ) ) ;
+    // InternalMyDsl.g:1267:1: ruleChavePrimaria returns [EObject current=null] : ( (lv_id_0_0= RULE_ID ) ) ;
     public final EObject ruleChavePrimaria() throws RecognitionException {
         EObject current = null;
 
@@ -2962,14 +2997,14 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyDsl.g:1258:2: ( ( (lv_id_0_0= RULE_ID ) ) )
-            // InternalMyDsl.g:1259:2: ( (lv_id_0_0= RULE_ID ) )
+            // InternalMyDsl.g:1273:2: ( ( (lv_id_0_0= RULE_ID ) ) )
+            // InternalMyDsl.g:1274:2: ( (lv_id_0_0= RULE_ID ) )
             {
-            // InternalMyDsl.g:1259:2: ( (lv_id_0_0= RULE_ID ) )
-            // InternalMyDsl.g:1260:3: (lv_id_0_0= RULE_ID )
+            // InternalMyDsl.g:1274:2: ( (lv_id_0_0= RULE_ID ) )
+            // InternalMyDsl.g:1275:3: (lv_id_0_0= RULE_ID )
             {
-            // InternalMyDsl.g:1260:3: (lv_id_0_0= RULE_ID )
-            // InternalMyDsl.g:1261:4: lv_id_0_0= RULE_ID
+            // InternalMyDsl.g:1275:3: (lv_id_0_0= RULE_ID )
+            // InternalMyDsl.g:1276:4: lv_id_0_0= RULE_ID
             {
             lv_id_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -3030,7 +3065,7 @@ public class InternalMyDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x001FFF8000000010L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x003FFF8000000010L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000007800008000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000002000000L});

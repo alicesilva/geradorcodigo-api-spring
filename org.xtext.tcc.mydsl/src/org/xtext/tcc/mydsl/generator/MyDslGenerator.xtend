@@ -65,19 +65,19 @@ class MyDslGenerator extends AbstractGenerator {
 		«FOR a: atributos»
 			«IF a.atributoTipo.tipoP !== null»
 				public «a.atributoTipo.tipoP» get«a.atributoNome.id.toFirstUpper»(){
-					return «a.atributoNome.id»
+					return «a.atributoNome.id»;
 				}
 				
-				public void set «a.atributoNome.id.toFirstUpper»(«a.atributoTipo.tipoP» «a.atributoNome.id»){
-					this.«a.atributoNome.id» = «a.atributoNome.id»
+				public void set«a.atributoNome.id.toFirstUpper»(«a.atributoTipo.tipoP» «a.atributoNome.id»){
+					this.«a.atributoNome.id» = «a.atributoNome.id»;
 				}
 			«ELSE»
 				public «a.atributoTipo.tipoE» get«a.atributoNome.id.toFirstUpper»(){
-					return «a.atributoNome.id»
+					return «a.atributoNome.id»;
 				}
 				
 				public void set «a.atributoNome.id.toFirstUpper»(«a.atributoTipo.tipoP» «a.atributoNome.id»){
-					this.«a.atributoNome.id» = «a.atributoNome.id»
+					this.«a.atributoNome.id» = «a.atributoNome.id»;
 				}
 			«ENDIF»
 		«ENDFOR»

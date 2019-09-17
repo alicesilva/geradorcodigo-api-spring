@@ -1102,129 +1102,144 @@ ruleAtributoTipo returns [EObject current=null]
 		    |
 		(
 			(
-				lv_tipoP_6_0='Float'
+				lv_tipoP_6_0='String'
 				{
-					newLeafNode(lv_tipoP_6_0, grammarAccess.getAtributoTipoAccess().getTipoPFloatKeyword_6_0());
+					newLeafNode(lv_tipoP_6_0, grammarAccess.getAtributoTipoAccess().getTipoPStringKeyword_6_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAtributoTipoRule());
 					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_6_0, "Float");
+					setWithLastConsumed($current, "tipoP", lv_tipoP_6_0, "String");
 				}
 			)
 		)
 		    |
 		(
 			(
-				lv_tipoP_7_0='Double'
+				lv_tipoP_7_0='Float'
 				{
-					newLeafNode(lv_tipoP_7_0, grammarAccess.getAtributoTipoAccess().getTipoPDoubleKeyword_7_0());
+					newLeafNode(lv_tipoP_7_0, grammarAccess.getAtributoTipoAccess().getTipoPFloatKeyword_7_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAtributoTipoRule());
 					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_7_0, "Double");
+					setWithLastConsumed($current, "tipoP", lv_tipoP_7_0, "Float");
 				}
 			)
 		)
 		    |
 		(
 			(
-				lv_tipoP_8_0='Time'
+				lv_tipoP_8_0='Double'
 				{
-					newLeafNode(lv_tipoP_8_0, grammarAccess.getAtributoTipoAccess().getTipoPTimeKeyword_8_0());
+					newLeafNode(lv_tipoP_8_0, grammarAccess.getAtributoTipoAccess().getTipoPDoubleKeyword_8_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAtributoTipoRule());
 					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_8_0, "Time");
+					setWithLastConsumed($current, "tipoP", lv_tipoP_8_0, "Double");
 				}
 			)
 		)
 		    |
 		(
 			(
-				lv_tipoP_9_0='Timestamp'
+				lv_tipoP_9_0='Time'
 				{
-					newLeafNode(lv_tipoP_9_0, grammarAccess.getAtributoTipoAccess().getTipoPTimestampKeyword_9_0());
+					newLeafNode(lv_tipoP_9_0, grammarAccess.getAtributoTipoAccess().getTipoPTimeKeyword_9_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAtributoTipoRule());
 					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_9_0, "Timestamp");
+					setWithLastConsumed($current, "tipoP", lv_tipoP_9_0, "Time");
 				}
 			)
 		)
 		    |
 		(
 			(
-				lv_tipoP_10_0='Date'
+				lv_tipoP_10_0='Timestamp'
 				{
-					newLeafNode(lv_tipoP_10_0, grammarAccess.getAtributoTipoAccess().getTipoPDateKeyword_10_0());
+					newLeafNode(lv_tipoP_10_0, grammarAccess.getAtributoTipoAccess().getTipoPTimestampKeyword_10_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAtributoTipoRule());
 					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_10_0, "Date");
+					setWithLastConsumed($current, "tipoP", lv_tipoP_10_0, "Timestamp");
 				}
 			)
 		)
 		    |
 		(
 			(
-				lv_tipoP_11_0='ENUM'
+				lv_tipoP_11_0='Date'
 				{
-					newLeafNode(lv_tipoP_11_0, grammarAccess.getAtributoTipoAccess().getTipoPENUMKeyword_11_0());
+					newLeafNode(lv_tipoP_11_0, grammarAccess.getAtributoTipoAccess().getTipoPDateKeyword_11_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAtributoTipoRule());
 					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_11_0, "ENUM");
+					setWithLastConsumed($current, "tipoP", lv_tipoP_11_0, "Date");
 				}
 			)
 		)
 		    |
 		(
 			(
-				lv_tipoP_12_0='ArrayList'
+				lv_tipoP_12_0='ENUM'
 				{
-					newLeafNode(lv_tipoP_12_0, grammarAccess.getAtributoTipoAccess().getTipoPArrayListKeyword_12_0());
+					newLeafNode(lv_tipoP_12_0, grammarAccess.getAtributoTipoAccess().getTipoPENUMKeyword_12_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAtributoTipoRule());
 					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_12_0, "ArrayList");
+					setWithLastConsumed($current, "tipoP", lv_tipoP_12_0, "ENUM");
 				}
 			)
 		)
 		    |
 		(
 			(
-				lv_tipoP_13_0='HashSet'
+				lv_tipoP_13_0='ArrayList'
 				{
-					newLeafNode(lv_tipoP_13_0, grammarAccess.getAtributoTipoAccess().getTipoPHashSetKeyword_13_0());
+					newLeafNode(lv_tipoP_13_0, grammarAccess.getAtributoTipoAccess().getTipoPArrayListKeyword_13_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAtributoTipoRule());
 					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_13_0, "HashSet");
+					setWithLastConsumed($current, "tipoP", lv_tipoP_13_0, "ArrayList");
 				}
 			)
 		)
 		    |
 		(
 			(
-				lv_tipoE_14_0=RULE_ID
+				lv_tipoP_14_0='HashSet'
 				{
-					newLeafNode(lv_tipoE_14_0, grammarAccess.getAtributoTipoAccess().getTipoEIDTerminalRuleCall_14_0());
+					newLeafNode(lv_tipoP_14_0, grammarAccess.getAtributoTipoAccess().getTipoPHashSetKeyword_14_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAtributoTipoRule());
+					}
+					setWithLastConsumed($current, "tipoP", lv_tipoP_14_0, "HashSet");
+				}
+			)
+		)
+		    |
+		(
+			(
+				lv_tipoE_15_0=RULE_ID
+				{
+					newLeafNode(lv_tipoE_15_0, grammarAccess.getAtributoTipoAccess().getTipoEIDTerminalRuleCall_15_0());
 				}
 				{
 					if ($current==null) {
@@ -1233,7 +1248,7 @@ ruleAtributoTipo returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"tipoE",
-						lv_tipoE_14_0,
+						lv_tipoE_15_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)

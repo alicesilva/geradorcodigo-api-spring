@@ -86,7 +86,8 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_11(), "rule__AtributoTipo__TipoPAssignment_11");
 			builder.put(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_12(), "rule__AtributoTipo__TipoPAssignment_12");
 			builder.put(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_13(), "rule__AtributoTipo__TipoPAssignment_13");
-			builder.put(grammarAccess.getAtributoTipoAccess().getTipoEAssignment_14(), "rule__AtributoTipo__TipoEAssignment_14");
+			builder.put(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_14(), "rule__AtributoTipo__TipoPAssignment_14");
+			builder.put(grammarAccess.getAtributoTipoAccess().getTipoEAssignment_15(), "rule__AtributoTipo__TipoEAssignment_15");
 			builder.put(grammarAccess.getOptionalAccess().getOptionalAssignment_0(), "rule__Optional__OptionalAssignment_0");
 			builder.put(grammarAccess.getOptionalAccess().getOptionalAssignment_1(), "rule__Optional__OptionalAssignment_1");
 			builder.put(grammarAccess.getOptionalAccess().getOptionalAssignment_2(), "rule__Optional__OptionalAssignment_2");

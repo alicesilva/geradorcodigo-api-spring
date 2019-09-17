@@ -160,11 +160,12 @@ public class MyDslGenerator extends AbstractGenerator {
             _builder.append("return ");
             String _id = a.getAtributoNome().getId();
             _builder.append(_id, "\t");
+            _builder.append(";");
             _builder.newLineIfNotEmpty();
             _builder.append("}");
             _builder.newLine();
             _builder.newLine();
-            _builder.append("public void set ");
+            _builder.append("public void set");
             String _firstUpper_1 = StringExtensions.toFirstUpper(a.getAtributoNome().getId());
             _builder.append(_firstUpper_1);
             _builder.append("(");
@@ -182,6 +183,7 @@ public class MyDslGenerator extends AbstractGenerator {
             _builder.append(" = ");
             String _id_3 = a.getAtributoNome().getId();
             _builder.append(_id_3, "\t");
+            _builder.append(";");
             _builder.newLineIfNotEmpty();
             _builder.append("}");
             _builder.newLine();
@@ -198,6 +200,7 @@ public class MyDslGenerator extends AbstractGenerator {
             _builder.append("return ");
             String _id_4 = a.getAtributoNome().getId();
             _builder.append(_id_4, "\t");
+            _builder.append(";");
             _builder.newLineIfNotEmpty();
             _builder.append("}");
             _builder.newLine();
@@ -220,6 +223,7 @@ public class MyDslGenerator extends AbstractGenerator {
             _builder.append(" = ");
             String _id_7 = a.getAtributoNome().getId();
             _builder.append(_id_7, "\t");
+            _builder.append(";");
             _builder.newLineIfNotEmpty();
             _builder.append("}");
             _builder.newLine();

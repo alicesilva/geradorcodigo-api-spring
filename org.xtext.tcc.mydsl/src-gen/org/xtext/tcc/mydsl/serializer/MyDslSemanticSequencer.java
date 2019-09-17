@@ -168,6 +168,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         tipoP='Character' | 
 	 *         tipoP='Integer' | 
 	 *         tipoP='Long' | 
+	 *         tipoP='String' | 
 	 *         tipoP='Float' | 
 	 *         tipoP='Double' | 
 	 *         tipoP='Time' | 
