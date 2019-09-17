@@ -71,6 +71,12 @@ public class MyDslGenerator extends AbstractGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.newLine();
+    _builder.append("\t");
+    CharSequence _compileGetersSeters = this.compileGetersSeters(entidade.getAtributos());
+    _builder.append(_compileGetersSeters, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.newLine();
     _builder.append("}");
     _builder.newLine();
     return _builder;
@@ -129,6 +135,96 @@ public class MyDslGenerator extends AbstractGenerator {
           }
         }
         _builder.newLine();
+      }
+    }
+    return _builder;
+  }
+  
+  public CharSequence compileGetersSeters(final EList<Atributo> atributos) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      for(final Atributo a : atributos) {
+        {
+          String _tipoP = a.getAtributoTipo().getTipoP();
+          boolean _tripleNotEquals = (_tipoP != null);
+          if (_tripleNotEquals) {
+            _builder.append("public ");
+            String _tipoP_1 = a.getAtributoTipo().getTipoP();
+            _builder.append(_tipoP_1);
+            _builder.append(" get");
+            String _firstUpper = StringExtensions.toFirstUpper(a.getAtributoNome().getId());
+            _builder.append(_firstUpper);
+            _builder.append("(){");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t");
+            _builder.append("return ");
+            String _id = a.getAtributoNome().getId();
+            _builder.append(_id, "\t");
+            _builder.newLineIfNotEmpty();
+            _builder.append("}");
+            _builder.newLine();
+            _builder.newLine();
+            _builder.append("public void set ");
+            String _firstUpper_1 = StringExtensions.toFirstUpper(a.getAtributoNome().getId());
+            _builder.append(_firstUpper_1);
+            _builder.append("(");
+            String _tipoP_2 = a.getAtributoTipo().getTipoP();
+            _builder.append(_tipoP_2);
+            _builder.append(" ");
+            String _id_1 = a.getAtributoNome().getId();
+            _builder.append(_id_1);
+            _builder.append("){");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t");
+            _builder.append("this.");
+            String _id_2 = a.getAtributoNome().getId();
+            _builder.append(_id_2, "\t");
+            _builder.append(" = ");
+            String _id_3 = a.getAtributoNome().getId();
+            _builder.append(_id_3, "\t");
+            _builder.newLineIfNotEmpty();
+            _builder.append("}");
+            _builder.newLine();
+          } else {
+            _builder.append("public ");
+            String _tipoE = a.getAtributoTipo().getTipoE();
+            _builder.append(_tipoE);
+            _builder.append(" get");
+            String _firstUpper_2 = StringExtensions.toFirstUpper(a.getAtributoNome().getId());
+            _builder.append(_firstUpper_2);
+            _builder.append("(){");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t");
+            _builder.append("return ");
+            String _id_4 = a.getAtributoNome().getId();
+            _builder.append(_id_4, "\t");
+            _builder.newLineIfNotEmpty();
+            _builder.append("}");
+            _builder.newLine();
+            _builder.newLine();
+            _builder.append("public void set ");
+            String _firstUpper_3 = StringExtensions.toFirstUpper(a.getAtributoNome().getId());
+            _builder.append(_firstUpper_3);
+            _builder.append("(");
+            String _tipoP_3 = a.getAtributoTipo().getTipoP();
+            _builder.append(_tipoP_3);
+            _builder.append(" ");
+            String _id_5 = a.getAtributoNome().getId();
+            _builder.append(_id_5);
+            _builder.append("){");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t");
+            _builder.append("this.");
+            String _id_6 = a.getAtributoNome().getId();
+            _builder.append(_id_6, "\t");
+            _builder.append(" = ");
+            String _id_7 = a.getAtributoNome().getId();
+            _builder.append(_id_7, "\t");
+            _builder.newLineIfNotEmpty();
+            _builder.append("}");
+            _builder.newLine();
+          }
+        }
       }
     }
     return _builder;
