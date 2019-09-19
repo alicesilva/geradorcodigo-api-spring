@@ -18,9 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.Atributo#getAtributoTipo <em>Atributo Tipo</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.Atributo#getAssociacao <em>Associacao</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.Atributo#getOperacao <em>Operacao</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.Atributo#getTabelaNome <em>Tabela Nome</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.Atributo#getColunaNome <em>Coluna Nome</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.Atributo#getColunaNomeInverse <em>Coluna Nome Inverse</em>}</li>
  * </ul>
  *
  * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributo()
@@ -116,71 +113,5 @@ public interface Atributo extends EObject
    * @generated
    */
   void setOperacao(Operacao value);
-
-  /**
-   * Returns the value of the '<em><b>Tabela Nome</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Tabela Nome</em>' containment reference.
-   * @see #setTabelaNome(TabelaNome)
-   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributo_TabelaNome()
-   * @model containment="true"
-   * @generated
-   */
-  TabelaNome getTabelaNome();
-
-  /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getTabelaNome <em>Tabela Nome</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Tabela Nome</em>' containment reference.
-   * @see #getTabelaNome()
-   * @generated
-   */
-  void setTabelaNome(TabelaNome value);
-
-  /**
-   * Returns the value of the '<em><b>Coluna Nome</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Coluna Nome</em>' containment reference.
-   * @see #setColunaNome(ColunaNome)
-   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributo_ColunaNome()
-   * @model containment="true"
-   * @generated
-   */
-  ColunaNome getColunaNome();
-
-  /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getColunaNome <em>Coluna Nome</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Coluna Nome</em>' containment reference.
-   * @see #getColunaNome()
-   * @generated
-   */
-  void setColunaNome(ColunaNome value);
-
-  /**
-   * Returns the value of the '<em><b>Coluna Nome Inverse</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Coluna Nome Inverse</em>' containment reference.
-   * @see #setColunaNomeInverse(ColunaNome)
-   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributo_ColunaNomeInverse()
-   * @model containment="true"
-   * @generated
-   */
-  ColunaNome getColunaNomeInverse();
-
-  /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getColunaNomeInverse <em>Coluna Nome Inverse</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Coluna Nome Inverse</em>' containment reference.
-   * @see #getColunaNomeInverse()
-   * @generated
-   */
-  void setColunaNomeInverse(ColunaNome value);
 
 } // Atributo

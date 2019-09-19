@@ -3,19 +3,15 @@
  */
 package org.xtext.tcc.mydsl.generator;
 
-import com.google.common.collect.Iterables;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
-import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.xtext.tcc.mydsl.myDsl.Associacao;
 import org.xtext.tcc.mydsl.myDsl.Atributo;
-import org.xtext.tcc.mydsl.myDsl.Entidade;
 import org.xtext.tcc.mydsl.myDsl.Operacao;
 
 /**
@@ -27,59 +23,6 @@ import org.xtext.tcc.mydsl.myDsl.Operacao;
 public class MyDslGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    Iterable<Entidade> _filter = Iterables.<Entidade>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Entidade.class);
-    for (final Entidade e : _filter) {
-      String _string = e.getNomeEntidades().getId().toString();
-      String _plus = (_string + ".java");
-      fsa.generateFile(_plus, this.compile(e));
-    }
-  }
-  
-  public CharSequence compile(final Entidade entidade) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("import javax.persistence.*;");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("@Entity");
-    _builder.newLine();
-    _builder.append("public class ");
-    String _firstUpper = StringExtensions.toFirstUpper(entidade.getNomeEntidades().getId());
-    _builder.append(_firstUpper);
-    _builder.append(" {");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.newLine();
-    {
-      boolean _equalsIgnoreCase = entidade.getChavePrimaria().getId().equalsIgnoreCase("id");
-      if (_equalsIgnoreCase) {
-        _builder.append("\t");
-        _builder.append("@Id");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("@GeneratedValue(strategy=GenerationType.IDENTITY)");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("private Integer id;");
-        _builder.newLine();
-      }
-    }
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("\t");
-    CharSequence _compileAtributos = this.compileAtributos(entidade.getChavePrimaria().getId(), entidade.getAtributos());
-    _builder.append(_compileAtributos, "\t");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("\t");
-    CharSequence _compileGetersSeters = this.compileGetersSeters(entidade.getAtributos());
-    _builder.append(_compileGetersSeters, "\t");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    return _builder;
   }
   
   public CharSequence compileAtributos(final String chavePrimaria, final EList<Atributo> atributos) {

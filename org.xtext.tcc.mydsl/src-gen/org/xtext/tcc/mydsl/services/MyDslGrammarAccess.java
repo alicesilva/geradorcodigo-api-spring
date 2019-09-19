@@ -155,18 +155,24 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		private final Assignment cChavePrimariaAssignment_13 = (Assignment)cGroup.eContents().get(13);
 		private final RuleCall cChavePrimariaChavePrimariaParserRuleCall_13_0 = (RuleCall)cChavePrimariaAssignment_13.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Keyword cCommaKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Keyword cNomeDoPacoteKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Keyword cColonKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Assignment cPackageAssignment_17 = (Assignment)cGroup.eContents().get(17);
+		private final RuleCall cPackagePackageNameParserRuleCall_17_0 = (RuleCall)cPackageAssignment_17.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_18 = (Keyword)cGroup.eContents().get(18);
 		
 		//Entidade:
 		//	'{'
 		//	'"Nome"' ':' nomeEntidades=EntidadeNome ','
 		//	'"Atributos"' ':' '[' atributos+=Atributo+ ']' ','
-		//	'"Chave Primaria"' ':' chavePrimaria=ChavePrimaria
+		//	'"Chave Primaria"' ':' chavePrimaria=ChavePrimaria ','
+		//	'"Nome do pacote"' ':' package=PackageName
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'{' '"Nome"' ':' nomeEntidades=EntidadeNome ',' '"Atributos"' ':' '[' atributos+=Atributo+ ']' ',' '"Chave Primaria"'
-		//':' chavePrimaria=ChavePrimaria '}'
+		//':' chavePrimaria=ChavePrimaria ',' '"Nome do pacote"' ':' package=PackageName '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'{'
@@ -220,23 +226,38 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ChavePrimaria
 		public RuleCall getChavePrimariaChavePrimariaParserRuleCall_13_0() { return cChavePrimariaChavePrimariaParserRuleCall_13_0; }
 		
+		//','
+		public Keyword getCommaKeyword_14() { return cCommaKeyword_14; }
+		
+		//'"Nome do pacote"'
+		public Keyword getNomeDoPacoteKeyword_15() { return cNomeDoPacoteKeyword_15; }
+		
+		//':'
+		public Keyword getColonKeyword_16() { return cColonKeyword_16; }
+		
+		//package=PackageName
+		public Assignment getPackageAssignment_17() { return cPackageAssignment_17; }
+		
+		//PackageName
+		public RuleCall getPackagePackageNameParserRuleCall_17_0() { return cPackagePackageNameParserRuleCall_17_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
+		public Keyword getRightCurlyBracketKeyword_18() { return cRightCurlyBracketKeyword_18; }
 	}
 	public class EntidadeNomeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.EntidadeNome");
-		private final Assignment cIdAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cIdIDTerminalRuleCall_0 = (RuleCall)cIdAssignment.eContents().get(0);
+		private final Assignment cString_litAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cString_litSTRING_LITTerminalRuleCall_0 = (RuleCall)cString_litAssignment.eContents().get(0);
 		
 		//EntidadeNome:
-		//	id=ID;
+		//	string_lit=STRING_LIT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//id=ID
-		public Assignment getIdAssignment() { return cIdAssignment; }
+		//string_lit=STRING_LIT
+		public Assignment getString_litAssignment() { return cString_litAssignment; }
 		
-		//ID
-		public RuleCall getIdIDTerminalRuleCall_0() { return cIdIDTerminalRuleCall_0; }
+		//STRING_LIT
+		public RuleCall getString_litSTRING_LITTerminalRuleCall_0() { return cString_litSTRING_LITTerminalRuleCall_0; }
 	}
 	public class AtributoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.Atributo");
@@ -261,39 +282,19 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		private final Assignment cOperacaoAssignment_15 = (Assignment)cGroup.eContents().get(15);
 		private final RuleCall cOperacaoOperacaoParserRuleCall_15_0 = (RuleCall)cOperacaoAssignment_15.eContents().get(0);
-		private final Keyword cCommaKeyword_16 = (Keyword)cGroup.eContents().get(16);
-		private final Keyword cJoinTableNomeKeyword_17 = (Keyword)cGroup.eContents().get(17);
-		private final Keyword cColonKeyword_18 = (Keyword)cGroup.eContents().get(18);
-		private final Assignment cTabelaNomeAssignment_19 = (Assignment)cGroup.eContents().get(19);
-		private final RuleCall cTabelaNomeTabelaNomeParserRuleCall_19_0 = (RuleCall)cTabelaNomeAssignment_19.eContents().get(0);
-		private final Keyword cCommaKeyword_20 = (Keyword)cGroup.eContents().get(20);
-		private final Keyword cJoinColumnsNomeKeyword_21 = (Keyword)cGroup.eContents().get(21);
-		private final Keyword cColonKeyword_22 = (Keyword)cGroup.eContents().get(22);
-		private final Assignment cColunaNomeAssignment_23 = (Assignment)cGroup.eContents().get(23);
-		private final RuleCall cColunaNomeColunaNomeParserRuleCall_23_0 = (RuleCall)cColunaNomeAssignment_23.eContents().get(0);
-		private final Keyword cCommaKeyword_24 = (Keyword)cGroup.eContents().get(24);
-		private final Keyword cInverseJoinColumnsNomeKeyword_25 = (Keyword)cGroup.eContents().get(25);
-		private final Keyword cColonKeyword_26 = (Keyword)cGroup.eContents().get(26);
-		private final Assignment cColunaNomeInverseAssignment_27 = (Assignment)cGroup.eContents().get(27);
-		private final RuleCall cColunaNomeInverseColunaNomeParserRuleCall_27_0 = (RuleCall)cColunaNomeInverseAssignment_27.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_28 = (Keyword)cGroup.eContents().get(28);
+		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
 		//Atributo:
 		//	'{'
 		//	'"nome-atributo"' ':' atributoNome=AtributoNome ','
 		//	'"tipo-atributo"' ':' atributoTipo=AtributoTipo ','
 		//	'"associação"' ':' associacao=Associacao? ','
-		//	'"operação em cascata"' ':' operacao=Operacao? ','
-		//	'"joinTable-nome"' ':' tabelaNome=TabelaNome ','
-		//	'"joinColumns-nome"' ':' colunaNome=ColunaNome ','
-		//	'"inverseJoinColumns-nome"' ':' colunaNomeInverse=ColunaNome
+		//	'"operação em cascata"' ':' operacao=Operacao?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'{' '"nome-atributo"' ':' atributoNome=AtributoNome ',' '"tipo-atributo"' ':' atributoTipo=AtributoTipo ','
-		//'"associação"' ':' associacao=Associacao? ',' '"operação em cascata"' ':' operacao=Operacao? ',' '"joinTable-nome"' ':'
-		//tabelaNome=TabelaNome ',' '"joinColumns-nome"' ':' colunaNome=ColunaNome ',' '"inverseJoinColumns-nome"' ':'
-		//colunaNomeInverse=ColunaNome '}'
+		//'"associação"' ':' associacao=Associacao? ',' '"operação em cascata"' ':' operacao=Operacao? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'{'
@@ -356,53 +357,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Operacao
 		public RuleCall getOperacaoOperacaoParserRuleCall_15_0() { return cOperacaoOperacaoParserRuleCall_15_0; }
 		
-		//','
-		public Keyword getCommaKeyword_16() { return cCommaKeyword_16; }
-		
-		//'"joinTable-nome"'
-		public Keyword getJoinTableNomeKeyword_17() { return cJoinTableNomeKeyword_17; }
-		
-		//':'
-		public Keyword getColonKeyword_18() { return cColonKeyword_18; }
-		
-		//tabelaNome=TabelaNome
-		public Assignment getTabelaNomeAssignment_19() { return cTabelaNomeAssignment_19; }
-		
-		//TabelaNome
-		public RuleCall getTabelaNomeTabelaNomeParserRuleCall_19_0() { return cTabelaNomeTabelaNomeParserRuleCall_19_0; }
-		
-		//','
-		public Keyword getCommaKeyword_20() { return cCommaKeyword_20; }
-		
-		//'"joinColumns-nome"'
-		public Keyword getJoinColumnsNomeKeyword_21() { return cJoinColumnsNomeKeyword_21; }
-		
-		//':'
-		public Keyword getColonKeyword_22() { return cColonKeyword_22; }
-		
-		//colunaNome=ColunaNome
-		public Assignment getColunaNomeAssignment_23() { return cColunaNomeAssignment_23; }
-		
-		//ColunaNome
-		public RuleCall getColunaNomeColunaNomeParserRuleCall_23_0() { return cColunaNomeColunaNomeParserRuleCall_23_0; }
-		
-		//','
-		public Keyword getCommaKeyword_24() { return cCommaKeyword_24; }
-		
-		//'"inverseJoinColumns-nome"'
-		public Keyword getInverseJoinColumnsNomeKeyword_25() { return cInverseJoinColumnsNomeKeyword_25; }
-		
-		//':'
-		public Keyword getColonKeyword_26() { return cColonKeyword_26; }
-		
-		//colunaNomeInverse=ColunaNome
-		public Assignment getColunaNomeInverseAssignment_27() { return cColunaNomeInverseAssignment_27; }
-		
-		//ColunaNome
-		public RuleCall getColunaNomeInverseColunaNomeParserRuleCall_27_0() { return cColunaNomeInverseColunaNomeParserRuleCall_27_0; }
-		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_28() { return cRightCurlyBracketKeyword_28; }
+		public Keyword getRightCurlyBracketKeyword_16() { return cRightCurlyBracketKeyword_16; }
 	}
 	public class ColunaNomeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.ColunaNome");
@@ -772,6 +728,21 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getIdIDTerminalRuleCall_0() { return cIdIDTerminalRuleCall_0; }
 	}
+	public class PackageNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.PackageName");
+		private final Assignment cIdAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cIdIDTerminalRuleCall_0 = (RuleCall)cIdAssignment.eContents().get(0);
+		
+		//PackageName:
+		//	id=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//id=ID
+		public Assignment getIdAssignment() { return cIdAssignment; }
+		
+		//ID
+		public RuleCall getIdIDTerminalRuleCall_0() { return cIdIDTerminalRuleCall_0; }
+	}
 	
 	
 	private final ModelElements pModel;
@@ -780,6 +751,9 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final ApiNomeElements pApiNome;
 	private final EntidadeElements pEntidade;
 	private final EntidadeNomeElements pEntidadeNome;
+	private final TerminalRule tSTRING_LIT;
+	private final TerminalRule tRAW_STRING_LIT;
+	private final TerminalRule tLETTER;
 	private final AtributoElements pAtributo;
 	private final ColunaNomeElements pColunaNome;
 	private final TabelaNomeElements pTabelaNome;
@@ -789,6 +763,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final AtributoTipoElements pAtributoTipo;
 	private final OptionalElements pOptional;
 	private final ChavePrimariaElements pChavePrimaria;
+	private final PackageNameElements pPackageName;
 	
 	private final Grammar grammar;
 	
@@ -805,6 +780,9 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pApiNome = new ApiNomeElements();
 		this.pEntidade = new EntidadeElements();
 		this.pEntidadeNome = new EntidadeNomeElements();
+		this.tSTRING_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.STRING_LIT");
+		this.tRAW_STRING_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.RAW_STRING_LIT");
+		this.tLETTER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.LETTER");
 		this.pAtributo = new AtributoElements();
 		this.pColunaNome = new ColunaNomeElements();
 		this.pTabelaNome = new TabelaNomeElements();
@@ -814,6 +792,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pAtributoTipo = new AtributoTipoElements();
 		this.pOptional = new OptionalElements();
 		this.pChavePrimaria = new ChavePrimariaElements();
+		this.pPackageName = new PackageNameElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -888,7 +867,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'{'
 	//	'"Nome"' ':' nomeEntidades=EntidadeNome ','
 	//	'"Atributos"' ':' '[' atributos+=Atributo+ ']' ','
-	//	'"Chave Primaria"' ':' chavePrimaria=ChavePrimaria
+	//	'"Chave Primaria"' ':' chavePrimaria=ChavePrimaria ','
+	//	'"Nome do pacote"' ':' package=PackageName
 	//	'}';
 	public EntidadeElements getEntidadeAccess() {
 		return pEntidade;
@@ -899,7 +879,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//EntidadeNome:
-	//	id=ID;
+	//	string_lit=STRING_LIT;
 	public EntidadeNomeElements getEntidadeNomeAccess() {
 		return pEntidadeNome;
 	}
@@ -908,15 +888,30 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getEntidadeNomeAccess().getRule();
 	}
 	
+	//terminal STRING_LIT:
+	//	RAW_STRING_LIT;
+	public TerminalRule getSTRING_LITRule() {
+		return tSTRING_LIT;
+	}
+	
+	//terminal RAW_STRING_LIT:
+	//	'"' LETTER* '"';
+	public TerminalRule getRAW_STRING_LITRule() {
+		return tRAW_STRING_LIT;
+	}
+	
+	//terminal LETTER:
+	//	"a".."z" | "A".."Z";
+	public TerminalRule getLETTERRule() {
+		return tLETTER;
+	}
+	
 	//Atributo:
 	//	'{'
 	//	'"nome-atributo"' ':' atributoNome=AtributoNome ','
 	//	'"tipo-atributo"' ':' atributoTipo=AtributoTipo ','
 	//	'"associação"' ':' associacao=Associacao? ','
-	//	'"operação em cascata"' ':' operacao=Operacao? ','
-	//	'"joinTable-nome"' ':' tabelaNome=TabelaNome ','
-	//	'"joinColumns-nome"' ':' colunaNome=ColunaNome ','
-	//	'"inverseJoinColumns-nome"' ':' colunaNomeInverse=ColunaNome
+	//	'"operação em cascata"' ':' operacao=Operacao?
 	//	'}';
 	public AtributoElements getAtributoAccess() {
 		return pAtributo;
@@ -1009,6 +1004,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getChavePrimariaRule() {
 		return getChavePrimariaAccess().getRule();
+	}
+	
+	//PackageName:
+	//	id=ID;
+	public PackageNameElements getPackageNameAccess() {
+		return pPackageName;
+	}
+	
+	public ParserRule getPackageNameRule() {
+		return getPackageNameAccess().getRule();
 	}
 	
 	//terminal ID:

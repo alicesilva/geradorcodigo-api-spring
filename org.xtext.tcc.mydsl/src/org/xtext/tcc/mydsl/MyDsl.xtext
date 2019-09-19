@@ -22,22 +22,33 @@ Entidade:
 	'{' 
 		'"Nome"' ':' nomeEntidades = EntidadeNome ','
 		'"Atributos"' ':' '[' atributos += (Atributo)+ ']' ','
-		'"Chave Primaria"' ':' chavePrimaria = ChavePrimaria
+		'"Chave Primaria"' ':' chavePrimaria = ChavePrimaria ','
+		'"Nome do pacote"' ':' package = PackageName
 	'}'
 ;
 
 EntidadeNome:
-	id = ID
+	 string_lit = STRING_LIT
 ;
+
+terminal STRING_LIT:
+	RAW_STRING_LIT
+;
+
+terminal RAW_STRING_LIT:
+	'"' (LETTER)*  '"'
+;
+
+terminal LETTER:
+	"a".."z" | "A" .."Z"
+;
+
 Atributo:
 	'{' 
 		'"nome-atributo"' ':' atributoNome = AtributoNome ','
 		'"tipo-atributo"' ':' atributoTipo = AtributoTipo ','
 		'"associação"' ':' associacao = Associacao?','
-		'"operação em cascata"' ':' operacao = Operacao? ','
-		'"joinTable-nome"' ':' tabelaNome = TabelaNome ','
-		'"joinColumns-nome"' ':' colunaNome = ColunaNome ','
-		'"inverseJoinColumns-nome"' ':' colunaNomeInverse = ColunaNome
+		'"operação em cascata"' ':' operacao = Operacao?
 	'}'
 ;
 
@@ -76,5 +87,9 @@ Optional:
 ;
 
 ChavePrimaria:
+	id = ID
+;
+
+PackageName: 
 	id = ID
 ;

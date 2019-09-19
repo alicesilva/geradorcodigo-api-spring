@@ -379,9 +379,40 @@ ruleEntidade returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_14='}'
+		otherlv_14=','
 		{
-			newLeafNode(otherlv_14, grammarAccess.getEntidadeAccess().getRightCurlyBracketKeyword_14());
+			newLeafNode(otherlv_14, grammarAccess.getEntidadeAccess().getCommaKeyword_14());
+		}
+		otherlv_15='"Nome do pacote"'
+		{
+			newLeafNode(otherlv_15, grammarAccess.getEntidadeAccess().getNomeDoPacoteKeyword_15());
+		}
+		otherlv_16=':'
+		{
+			newLeafNode(otherlv_16, grammarAccess.getEntidadeAccess().getColonKeyword_16());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getEntidadeAccess().getPackagePackageNameParserRuleCall_17_0());
+				}
+				lv_package_17_0=rulePackageName
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEntidadeRule());
+					}
+					set(
+						$current,
+						"package",
+						lv_package_17_0,
+						"org.xtext.tcc.mydsl.MyDsl.PackageName");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_18='}'
+		{
+			newLeafNode(otherlv_18, grammarAccess.getEntidadeAccess().getRightCurlyBracketKeyword_18());
 		}
 	)
 ;
@@ -403,9 +434,9 @@ ruleEntidadeNome returns [EObject current=null]
 }:
 	(
 		(
-			lv_id_0_0=RULE_ID
+			lv_string_lit_0_0=RULE_STRING_LIT
 			{
-				newLeafNode(lv_id_0_0, grammarAccess.getEntidadeNomeAccess().getIdIDTerminalRuleCall_0());
+				newLeafNode(lv_string_lit_0_0, grammarAccess.getEntidadeNomeAccess().getString_litSTRING_LITTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
@@ -413,9 +444,9 @@ ruleEntidadeNome returns [EObject current=null]
 				}
 				setWithLastConsumed(
 					$current,
-					"id",
-					lv_id_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
+					"string_lit",
+					lv_string_lit_0_0,
+					"org.xtext.tcc.mydsl.MyDsl.STRING_LIT");
 			}
 		)
 	)
@@ -561,215 +592,10 @@ ruleAtributo returns [EObject current=null]
 				}
 			)
 		)?
-		otherlv_16=','
+		otherlv_16='}'
 		{
-			newLeafNode(otherlv_16, grammarAccess.getAtributoAccess().getCommaKeyword_16());
+			newLeafNode(otherlv_16, grammarAccess.getAtributoAccess().getRightCurlyBracketKeyword_16());
 		}
-		otherlv_17='"joinTable-nome"'
-		{
-			newLeafNode(otherlv_17, grammarAccess.getAtributoAccess().getJoinTableNomeKeyword_17());
-		}
-		otherlv_18=':'
-		{
-			newLeafNode(otherlv_18, grammarAccess.getAtributoAccess().getColonKeyword_18());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAtributoAccess().getTabelaNomeTabelaNomeParserRuleCall_19_0());
-				}
-				lv_tabelaNome_19_0=ruleTabelaNome
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAtributoRule());
-					}
-					set(
-						$current,
-						"tabelaNome",
-						lv_tabelaNome_19_0,
-						"org.xtext.tcc.mydsl.MyDsl.TabelaNome");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_20=','
-		{
-			newLeafNode(otherlv_20, grammarAccess.getAtributoAccess().getCommaKeyword_20());
-		}
-		otherlv_21='"joinColumns-nome"'
-		{
-			newLeafNode(otherlv_21, grammarAccess.getAtributoAccess().getJoinColumnsNomeKeyword_21());
-		}
-		otherlv_22=':'
-		{
-			newLeafNode(otherlv_22, grammarAccess.getAtributoAccess().getColonKeyword_22());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAtributoAccess().getColunaNomeColunaNomeParserRuleCall_23_0());
-				}
-				lv_colunaNome_23_0=ruleColunaNome
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAtributoRule());
-					}
-					set(
-						$current,
-						"colunaNome",
-						lv_colunaNome_23_0,
-						"org.xtext.tcc.mydsl.MyDsl.ColunaNome");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_24=','
-		{
-			newLeafNode(otherlv_24, grammarAccess.getAtributoAccess().getCommaKeyword_24());
-		}
-		otherlv_25='"inverseJoinColumns-nome"'
-		{
-			newLeafNode(otherlv_25, grammarAccess.getAtributoAccess().getInverseJoinColumnsNomeKeyword_25());
-		}
-		otherlv_26=':'
-		{
-			newLeafNode(otherlv_26, grammarAccess.getAtributoAccess().getColonKeyword_26());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAtributoAccess().getColunaNomeInverseColunaNomeParserRuleCall_27_0());
-				}
-				lv_colunaNomeInverse_27_0=ruleColunaNome
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAtributoRule());
-					}
-					set(
-						$current,
-						"colunaNomeInverse",
-						lv_colunaNomeInverse_27_0,
-						"org.xtext.tcc.mydsl.MyDsl.ColunaNome");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_28='}'
-		{
-			newLeafNode(otherlv_28, grammarAccess.getAtributoAccess().getRightCurlyBracketKeyword_28());
-		}
-	)
-;
-
-// Entry rule entryRuleColunaNome
-entryRuleColunaNome returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getColunaNomeRule()); }
-	iv_ruleColunaNome=ruleColunaNome
-	{ $current=$iv_ruleColunaNome.current; }
-	EOF;
-
-// Rule ColunaNome
-ruleColunaNome returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_colunaNome_0_0=RULE_ID
-				{
-					newLeafNode(lv_colunaNome_0_0, grammarAccess.getColunaNomeAccess().getColunaNomeIDTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getColunaNomeRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"colunaNome",
-						lv_colunaNome_0_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_colunaNome_1_0=RULE_ANY_OTHER
-				{
-					newLeafNode(lv_colunaNome_1_0, grammarAccess.getColunaNomeAccess().getColunaNomeANY_OTHERTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getColunaNomeRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"colunaNome",
-						lv_colunaNome_1_0,
-						"org.eclipse.xtext.common.Terminals.ANY_OTHER");
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleTabelaNome
-entryRuleTabelaNome returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getTabelaNomeRule()); }
-	iv_ruleTabelaNome=ruleTabelaNome
-	{ $current=$iv_ruleTabelaNome.current; }
-	EOF;
-
-// Rule TabelaNome
-ruleTabelaNome returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_tabelaNome_0_0=RULE_ID
-				{
-					newLeafNode(lv_tabelaNome_0_0, grammarAccess.getTabelaNomeAccess().getTabelaNomeIDTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTabelaNomeRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"tabelaNome",
-						lv_tabelaNome_0_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_tabelaNome_1_0=RULE_ANY_OTHER
-				{
-					newLeafNode(lv_tabelaNome_1_0, grammarAccess.getTabelaNomeAccess().getTabelaNomeANY_OTHERTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTabelaNomeRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"tabelaNome",
-						lv_tabelaNome_1_0,
-						"org.eclipse.xtext.common.Terminals.ANY_OTHER");
-				}
-			)
-		)
 	)
 ;
 
@@ -1290,6 +1116,47 @@ ruleChavePrimaria returns [EObject current=null]
 		)
 	)
 ;
+
+// Entry rule entryRulePackageName
+entryRulePackageName returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPackageNameRule()); }
+	iv_rulePackageName=rulePackageName
+	{ $current=$iv_rulePackageName.current; }
+	EOF;
+
+// Rule PackageName
+rulePackageName returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			lv_id_0_0=RULE_ID
+			{
+				newLeafNode(lv_id_0_0, grammarAccess.getPackageNameAccess().getIdIDTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getPackageNameRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"id",
+					lv_id_0_0,
+					"org.eclipse.xtext.common.Terminals.ID");
+			}
+		)
+	)
+;
+
+RULE_STRING_LIT : RULE_RAW_STRING_LIT;
+
+fragment RULE_RAW_STRING_LIT : '"' RULE_LETTER* '"';
+
+fragment RULE_LETTER : ('a'..'z'|'A'..'Z');
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

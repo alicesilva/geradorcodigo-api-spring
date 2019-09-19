@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.Entidade#getNomeEntidades <em>Nome Entidades</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.Entidade#getAtributos <em>Atributos</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.Entidade#getChavePrimaria <em>Chave Primaria</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.Entidade#getPackage <em>Package</em>}</li>
  * </ul>
  *
  * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getEntidade()
@@ -82,5 +83,27 @@ public interface Entidade extends EObject
    * @generated
    */
   void setChavePrimaria(ChavePrimaria value);
+
+  /**
+   * Returns the value of the '<em><b>Package</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Package</em>' containment reference.
+   * @see #setPackage(PackageName)
+   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getEntidade_Package()
+   * @model containment="true"
+   * @generated
+   */
+  PackageName getPackage();
+
+  /**
+   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Entidade#getPackage <em>Package</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Package</em>' containment reference.
+   * @see #getPackage()
+   * @generated
+   */
+  void setPackage(PackageName value);
 
 } // Entidade

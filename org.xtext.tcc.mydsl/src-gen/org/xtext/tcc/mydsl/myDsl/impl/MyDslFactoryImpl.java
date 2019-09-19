@@ -80,6 +80,7 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.ATRIBUTO_TIPO: return createAtributoTipo();
       case MyDslPackage.OPTIONAL: return createOptional();
       case MyDslPackage.CHAVE_PRIMARIA: return createChavePrimaria();
+      case MyDslPackage.PACKAGE_NAME: return createPackageName();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -263,6 +264,18 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     ChavePrimariaImpl chavePrimaria = new ChavePrimariaImpl();
     return chavePrimaria;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PackageName createPackageName()
+  {
+    PackageNameImpl packageName = new PackageNameImpl();
+    return packageName;
   }
 
   /**

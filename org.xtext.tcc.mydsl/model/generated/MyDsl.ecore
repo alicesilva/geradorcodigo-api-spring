@@ -24,9 +24,11 @@
         eType="#//Atributo" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="chavePrimaria" eType="#//ChavePrimaria"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="package" eType="#//PackageName"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EntidadeNome">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="string_lit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Atributo">
     <eStructuralFeatures xsi:type="ecore:EReference" name="atributoNome" eType="#//AtributoNome"
@@ -36,12 +38,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="associacao" eType="#//Associacao"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operacao" eType="#//Operacao"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tabelaNome" eType="#//TabelaNome"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="colunaNome" eType="#//ColunaNome"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="colunaNomeInverse" eType="#//ColunaNome"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ColunaNome">
@@ -67,6 +63,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChavePrimaria">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PackageName">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

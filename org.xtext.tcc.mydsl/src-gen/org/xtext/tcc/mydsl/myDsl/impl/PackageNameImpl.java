@@ -10,50 +10,50 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.tcc.mydsl.myDsl.EntidadeNome;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
+import org.xtext.tcc.mydsl.myDsl.PackageName;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Entidade Nome</b></em>'.
+ * An implementation of the model object '<em><b>Package Name</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.EntidadeNomeImpl#getString_lit <em>String lit</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.PackageNameImpl#getId <em>Id</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements EntidadeNome
+public class PackageNameImpl extends MinimalEObjectImpl.Container implements PackageName
 {
   /**
-   * The default value of the '{@link #getString_lit() <em>String lit</em>}' attribute.
+   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getString_lit()
+   * @see #getId()
    * @generated
    * @ordered
    */
-  protected static final String STRING_LIT_EDEFAULT = null;
+  protected static final String ID_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getString_lit() <em>String lit</em>}' attribute.
+   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getString_lit()
+   * @see #getId()
    * @generated
    * @ordered
    */
-  protected String string_lit = STRING_LIT_EDEFAULT;
+  protected String id = ID_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected EntidadeNomeImpl()
+  protected PackageNameImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.ENTIDADE_NOME;
+    return MyDslPackage.Literals.PACKAGE_NAME;
   }
 
   /**
@@ -75,9 +75,9 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
    * @generated
    */
   @Override
-  public String getString_lit()
+  public String getId()
   {
-    return string_lit;
+    return id;
   }
 
   /**
@@ -86,12 +86,12 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
    * @generated
    */
   @Override
-  public void setString_lit(String newString_lit)
+  public void setId(String newId)
   {
-    String oldString_lit = string_lit;
-    string_lit = newString_lit;
+    String oldId = id;
+    id = newId;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ENTIDADE_NOME__STRING_LIT, oldString_lit, string_lit));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.PACKAGE_NAME__ID, oldId, id));
   }
 
   /**
@@ -104,8 +104,8 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
   {
     switch (featureID)
     {
-      case MyDslPackage.ENTIDADE_NOME__STRING_LIT:
-        return getString_lit();
+      case MyDslPackage.PACKAGE_NAME__ID:
+        return getId();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
   {
     switch (featureID)
     {
-      case MyDslPackage.ENTIDADE_NOME__STRING_LIT:
-        setString_lit((String)newValue);
+      case MyDslPackage.PACKAGE_NAME__ID:
+        setId((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
   {
     switch (featureID)
     {
-      case MyDslPackage.ENTIDADE_NOME__STRING_LIT:
-        setString_lit(STRING_LIT_EDEFAULT);
+      case MyDslPackage.PACKAGE_NAME__ID:
+        setId(ID_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
   {
     switch (featureID)
     {
-      case MyDslPackage.ENTIDADE_NOME__STRING_LIT:
-        return STRING_LIT_EDEFAULT == null ? string_lit != null : !STRING_LIT_EDEFAULT.equals(string_lit);
+      case MyDslPackage.PACKAGE_NAME__ID:
+        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
     }
     return super.eIsSet(featureID);
   }
@@ -171,10 +171,10 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (string_lit: ");
-    result.append(string_lit);
+    result.append(" (id: ");
+    result.append(id);
     result.append(')');
     return result.toString();
   }
 
-} //EntidadeNomeImpl
+} //PackageNameImpl

@@ -28,28 +28,30 @@ class MyDslValidator extends AbstractMyDslValidator {
 //		}
 //	}
 
-	@Check
+	//@Check
 	def checkEntidadesIguais(Api api){
-		if(entidadeValidator.checkNomeEntidades(api) !== null){
-			var Exception erro = entidadeValidator.checkNomeEntidades(api);
-			error(erro.erro, erro.feature)
-		}
+		//if(entidadeValidator.checkNomeEntidades(api) !== null){
+			//var Exception erro = entidadeValidator.checkNomeEntidades(api);
+			//error(erro.erro, erro.feature)
+		//}
 	}
 
 	@Check
 	def checkChavePrimaria(Entidade e){
-		if(entidadeValidator.checkChavePrimaria(e) !== null){
-			var Exception erro = entidadeValidator.checkChavePrimaria(e);
-			error(erro.erro, erro.feature)
-		}
+		e.nomeEntidades.string_lit = e.nomeEntidades.string_lit.substring(1, e.nomeEntidades.string_lit.length -1)
+		println(e.nomeEntidades.string_lit)
+		//if(entidadeValidator.checkChavePrimaria(e) !== null){
+			//var Exception erro = entidadeValidator.checkChavePrimaria(e);
+			//error(erro.erro, erro.feature)
+		//}
 	}
 	
-	@Check
+	//@Check
 	def checkTipoAtributos(Api api){
-		if(entidadeValidator.checkTipoAtributo(api) !== null){
-			var Exception erro = entidadeValidator.checkTipoAtributo(api);
-			error(erro.erro, erro.feature)
-		}
+		//if(entidadeValidator.checkTipoAtributo(api) !== null){
+			//var Exception erro = entidadeValidator.checkTipoAtributo(api);
+			//error(erro.erro, erro.feature)
+		//}
 	}
 	
 }

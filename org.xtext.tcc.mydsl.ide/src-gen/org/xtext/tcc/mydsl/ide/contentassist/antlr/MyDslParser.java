@@ -49,14 +49,12 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEntidadeAccess().getNomeEntidadesAssignment_3(), "rule__Entidade__NomeEntidadesAssignment_3");
 			builder.put(grammarAccess.getEntidadeAccess().getAtributosAssignment_8(), "rule__Entidade__AtributosAssignment_8");
 			builder.put(grammarAccess.getEntidadeAccess().getChavePrimariaAssignment_13(), "rule__Entidade__ChavePrimariaAssignment_13");
-			builder.put(grammarAccess.getEntidadeNomeAccess().getIdAssignment(), "rule__EntidadeNome__IdAssignment");
+			builder.put(grammarAccess.getEntidadeAccess().getPackageAssignment_17(), "rule__Entidade__PackageAssignment_17");
+			builder.put(grammarAccess.getEntidadeNomeAccess().getString_litAssignment(), "rule__EntidadeNome__String_litAssignment");
 			builder.put(grammarAccess.getAtributoAccess().getAtributoNomeAssignment_3(), "rule__Atributo__AtributoNomeAssignment_3");
 			builder.put(grammarAccess.getAtributoAccess().getAtributoTipoAssignment_7(), "rule__Atributo__AtributoTipoAssignment_7");
 			builder.put(grammarAccess.getAtributoAccess().getAssociacaoAssignment_11(), "rule__Atributo__AssociacaoAssignment_11");
 			builder.put(grammarAccess.getAtributoAccess().getOperacaoAssignment_15(), "rule__Atributo__OperacaoAssignment_15");
-			builder.put(grammarAccess.getAtributoAccess().getTabelaNomeAssignment_19(), "rule__Atributo__TabelaNomeAssignment_19");
-			builder.put(grammarAccess.getAtributoAccess().getColunaNomeAssignment_23(), "rule__Atributo__ColunaNomeAssignment_23");
-			builder.put(grammarAccess.getAtributoAccess().getColunaNomeInverseAssignment_27(), "rule__Atributo__ColunaNomeInverseAssignment_27");
 			builder.put(grammarAccess.getColunaNomeAccess().getColunaNomeAssignment_0(), "rule__ColunaNome__ColunaNomeAssignment_0");
 			builder.put(grammarAccess.getColunaNomeAccess().getColunaNomeAssignment_1(), "rule__ColunaNome__ColunaNomeAssignment_1");
 			builder.put(grammarAccess.getTabelaNomeAccess().getTabelaNomeAssignment_0(), "rule__TabelaNome__TabelaNomeAssignment_0");
@@ -92,6 +90,7 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOptionalAccess().getOptionalAssignment_1(), "rule__Optional__OptionalAssignment_1");
 			builder.put(grammarAccess.getOptionalAccess().getOptionalAssignment_2(), "rule__Optional__OptionalAssignment_2");
 			builder.put(grammarAccess.getChavePrimariaAccess().getIdAssignment(), "rule__ChavePrimaria__IdAssignment");
+			builder.put(grammarAccess.getPackageNameAccess().getIdAssignment(), "rule__PackageName__IdAssignment");
 		}
 	}
 	

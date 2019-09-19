@@ -23,18 +23,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Entidade/nomeEntidades"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Entidade/atributos"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Entidade/chavePrimaria"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Entidade/package"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//EntidadeNome">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//EntidadeNome/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//EntidadeNome/string_lit"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Atributo">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/atributoNome"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/atributoTipo"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/associacao"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/operacao"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/tabelaNome"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/colunaNome"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributo/colunaNomeInverse"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//ColunaNome">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//ColunaNome/colunaNome"/>
@@ -60,6 +58,9 @@
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//ChavePrimaria">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//ChavePrimaria/id"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//PackageName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//PackageName/id"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

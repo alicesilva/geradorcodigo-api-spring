@@ -16,10 +16,8 @@ import org.xtext.tcc.mydsl.myDsl.Associacao;
 import org.xtext.tcc.mydsl.myDsl.Atributo;
 import org.xtext.tcc.mydsl.myDsl.AtributoNome;
 import org.xtext.tcc.mydsl.myDsl.AtributoTipo;
-import org.xtext.tcc.mydsl.myDsl.ColunaNome;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
 import org.xtext.tcc.mydsl.myDsl.Operacao;
-import org.xtext.tcc.mydsl.myDsl.TabelaNome;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,9 +31,6 @@ import org.xtext.tcc.mydsl.myDsl.TabelaNome;
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getAtributoTipo <em>Atributo Tipo</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getAssociacao <em>Associacao</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getOperacao <em>Operacao</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getTabelaNome <em>Tabela Nome</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getColunaNome <em>Coluna Nome</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getColunaNomeInverse <em>Coluna Nome Inverse</em>}</li>
  * </ul>
  *
  * @generated
@@ -81,36 +76,6 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
    * @ordered
    */
   protected Operacao operacao;
-
-  /**
-   * The cached value of the '{@link #getTabelaNome() <em>Tabela Nome</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTabelaNome()
-   * @generated
-   * @ordered
-   */
-  protected TabelaNome tabelaNome;
-
-  /**
-   * The cached value of the '{@link #getColunaNome() <em>Coluna Nome</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getColunaNome()
-   * @generated
-   * @ordered
-   */
-  protected ColunaNome colunaNome;
-
-  /**
-   * The cached value of the '{@link #getColunaNomeInverse() <em>Coluna Nome Inverse</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getColunaNomeInverse()
-   * @generated
-   * @ordered
-   */
-  protected ColunaNome colunaNomeInverse;
 
   /**
    * <!-- begin-user-doc -->
@@ -339,156 +304,6 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
    * @generated
    */
   @Override
-  public TabelaNome getTabelaNome()
-  {
-    return tabelaNome;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTabelaNome(TabelaNome newTabelaNome, NotificationChain msgs)
-  {
-    TabelaNome oldTabelaNome = tabelaNome;
-    tabelaNome = newTabelaNome;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__TABELA_NOME, oldTabelaNome, newTabelaNome);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setTabelaNome(TabelaNome newTabelaNome)
-  {
-    if (newTabelaNome != tabelaNome)
-    {
-      NotificationChain msgs = null;
-      if (tabelaNome != null)
-        msgs = ((InternalEObject)tabelaNome).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__TABELA_NOME, null, msgs);
-      if (newTabelaNome != null)
-        msgs = ((InternalEObject)newTabelaNome).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__TABELA_NOME, null, msgs);
-      msgs = basicSetTabelaNome(newTabelaNome, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__TABELA_NOME, newTabelaNome, newTabelaNome));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ColunaNome getColunaNome()
-  {
-    return colunaNome;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetColunaNome(ColunaNome newColunaNome, NotificationChain msgs)
-  {
-    ColunaNome oldColunaNome = colunaNome;
-    colunaNome = newColunaNome;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__COLUNA_NOME, oldColunaNome, newColunaNome);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setColunaNome(ColunaNome newColunaNome)
-  {
-    if (newColunaNome != colunaNome)
-    {
-      NotificationChain msgs = null;
-      if (colunaNome != null)
-        msgs = ((InternalEObject)colunaNome).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__COLUNA_NOME, null, msgs);
-      if (newColunaNome != null)
-        msgs = ((InternalEObject)newColunaNome).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__COLUNA_NOME, null, msgs);
-      msgs = basicSetColunaNome(newColunaNome, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__COLUNA_NOME, newColunaNome, newColunaNome));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ColunaNome getColunaNomeInverse()
-  {
-    return colunaNomeInverse;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetColunaNomeInverse(ColunaNome newColunaNomeInverse, NotificationChain msgs)
-  {
-    ColunaNome oldColunaNomeInverse = colunaNomeInverse;
-    colunaNomeInverse = newColunaNomeInverse;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__COLUNA_NOME_INVERSE, oldColunaNomeInverse, newColunaNomeInverse);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setColunaNomeInverse(ColunaNome newColunaNomeInverse)
-  {
-    if (newColunaNomeInverse != colunaNomeInverse)
-    {
-      NotificationChain msgs = null;
-      if (colunaNomeInverse != null)
-        msgs = ((InternalEObject)colunaNomeInverse).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__COLUNA_NOME_INVERSE, null, msgs);
-      if (newColunaNomeInverse != null)
-        msgs = ((InternalEObject)newColunaNomeInverse).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__COLUNA_NOME_INVERSE, null, msgs);
-      msgs = basicSetColunaNomeInverse(newColunaNomeInverse, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__COLUNA_NOME_INVERSE, newColunaNomeInverse, newColunaNomeInverse));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -501,12 +316,6 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
         return basicSetAssociacao(null, msgs);
       case MyDslPackage.ATRIBUTO__OPERACAO:
         return basicSetOperacao(null, msgs);
-      case MyDslPackage.ATRIBUTO__TABELA_NOME:
-        return basicSetTabelaNome(null, msgs);
-      case MyDslPackage.ATRIBUTO__COLUNA_NOME:
-        return basicSetColunaNome(null, msgs);
-      case MyDslPackage.ATRIBUTO__COLUNA_NOME_INVERSE:
-        return basicSetColunaNomeInverse(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -529,12 +338,6 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
         return getAssociacao();
       case MyDslPackage.ATRIBUTO__OPERACAO:
         return getOperacao();
-      case MyDslPackage.ATRIBUTO__TABELA_NOME:
-        return getTabelaNome();
-      case MyDslPackage.ATRIBUTO__COLUNA_NOME:
-        return getColunaNome();
-      case MyDslPackage.ATRIBUTO__COLUNA_NOME_INVERSE:
-        return getColunaNomeInverse();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -560,15 +363,6 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
         return;
       case MyDslPackage.ATRIBUTO__OPERACAO:
         setOperacao((Operacao)newValue);
-        return;
-      case MyDslPackage.ATRIBUTO__TABELA_NOME:
-        setTabelaNome((TabelaNome)newValue);
-        return;
-      case MyDslPackage.ATRIBUTO__COLUNA_NOME:
-        setColunaNome((ColunaNome)newValue);
-        return;
-      case MyDslPackage.ATRIBUTO__COLUNA_NOME_INVERSE:
-        setColunaNomeInverse((ColunaNome)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -596,15 +390,6 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
       case MyDslPackage.ATRIBUTO__OPERACAO:
         setOperacao((Operacao)null);
         return;
-      case MyDslPackage.ATRIBUTO__TABELA_NOME:
-        setTabelaNome((TabelaNome)null);
-        return;
-      case MyDslPackage.ATRIBUTO__COLUNA_NOME:
-        setColunaNome((ColunaNome)null);
-        return;
-      case MyDslPackage.ATRIBUTO__COLUNA_NOME_INVERSE:
-        setColunaNomeInverse((ColunaNome)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -627,12 +412,6 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
         return associacao != null;
       case MyDslPackage.ATRIBUTO__OPERACAO:
         return operacao != null;
-      case MyDslPackage.ATRIBUTO__TABELA_NOME:
-        return tabelaNome != null;
-      case MyDslPackage.ATRIBUTO__COLUNA_NOME:
-        return colunaNome != null;
-      case MyDslPackage.ATRIBUTO__COLUNA_NOME_INVERSE:
-        return colunaNomeInverse != null;
     }
     return super.eIsSet(featureID);
   }

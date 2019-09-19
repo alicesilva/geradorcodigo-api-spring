@@ -151,6 +151,11 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createChavePrimariaAdapter();
       }
       @Override
+      public Adapter casePackageName(PackageName object)
+      {
+        return createPackageNameAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -393,6 +398,21 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createChavePrimariaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.PackageName <em>Package Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tcc.mydsl.myDsl.PackageName
+   * @generated
+   */
+  public Adapter createPackageNameAdapter()
   {
     return null;
   }

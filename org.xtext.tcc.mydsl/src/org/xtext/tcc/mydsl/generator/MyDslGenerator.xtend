@@ -19,29 +19,30 @@ import org.xtext.tcc.mydsl.myDsl.Atributo
 class MyDslGenerator extends AbstractGenerator {
 		
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		for(e: resource.allContents.toIterable.filter(Entidade)){
-			fsa.generateFile(e.nomeEntidades.id.toString + ".java", e.compile)
-		}
+		//for(e: resource.allContents.toIterable.filter(Entidade)){
+			//fsa.generateFile(e.nomeEntidades.id.toFirstUpper.toString + ".java", e.compile)
+		//}
 	}
 	
-	def compile(Entidade entidade)'''
-		import javax.persistence.*;
+	//def compile(Entidade entidade)'''
+		//package «entidade.package.id»;
+		//import javax.persistence.*;
 		
-		@Entity
-		public class «entidade.nomeEntidades.id.toFirstUpper» {
+		//@Entity
+		//public class «entidade.nomeEntidades.id.toFirstUpper» {
 			
-			«IF entidade.chavePrimaria.id.equalsIgnoreCase("id")»
-				@Id
-				@GeneratedValue(strategy=GenerationType.IDENTITY)
-				private Integer id;
-			«ENDIF»
+			//«IF entidade.chavePrimaria.id.equalsIgnoreCase("id")»
+				//@Id
+				//@GeneratedValue(strategy=GenerationType.IDENTITY)
+				//private Integer id;
+			//«ENDIF»
 			
-			«compileAtributos(entidade.chavePrimaria.id, entidade.atributos)»
+			//«compileAtributos(entidade.chavePrimaria.id, entidade.atributos)»
 			
-			«compileGetersSeters(entidade.atributos)»
+			//«compileGetersSeters(entidade.atributos)»
 			
-		}
-	'''
+		//}
+	//'''
 		
 	def compileAtributos(String chavePrimaria, EList<Atributo> atributos)'''
 		«FOR a: atributos»

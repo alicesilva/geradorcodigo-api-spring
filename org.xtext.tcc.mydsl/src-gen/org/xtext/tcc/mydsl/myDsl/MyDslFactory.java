@@ -159,6 +159,15 @@ public interface MyDslFactory extends EFactory
   ChavePrimaria createChavePrimaria();
 
   /**
+   * Returns a new object of class '<em>Package Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Package Name</em>'.
+   * @generated
+   */
+  PackageName createPackageName();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
