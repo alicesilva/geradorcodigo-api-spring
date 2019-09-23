@@ -21,7 +21,7 @@ import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoNomeImpl#getId <em>Id</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoNomeImpl#getNome <em>Nome</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +29,24 @@ import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
 public class AtributoNomeImpl extends MinimalEObjectImpl.Container implements AtributoNome
 {
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The default value of the '{@link #getNome() <em>Nome</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getNome()
    * @generated
    * @ordered
    */
-  protected static final String ID_EDEFAULT = null;
+  protected static final String NOME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The cached value of the '{@link #getNome() <em>Nome</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getNome()
    * @generated
    * @ordered
    */
-  protected String id = ID_EDEFAULT;
+  protected String nome = NOME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,9 +75,9 @@ public class AtributoNomeImpl extends MinimalEObjectImpl.Container implements At
    * @generated
    */
   @Override
-  public String getId()
+  public String getNome()
   {
-    return id;
+    return nome;
   }
 
   /**
@@ -86,12 +86,12 @@ public class AtributoNomeImpl extends MinimalEObjectImpl.Container implements At
    * @generated
    */
   @Override
-  public void setId(String newId)
+  public void setNome(String newNome)
   {
-    String oldId = id;
-    id = newId;
+    String oldNome = nome;
+    nome = newNome;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO_NOME__ID, oldId, id));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO_NOME__NOME, oldNome, nome));
   }
 
   /**
@@ -104,8 +104,8 @@ public class AtributoNomeImpl extends MinimalEObjectImpl.Container implements At
   {
     switch (featureID)
     {
-      case MyDslPackage.ATRIBUTO_NOME__ID:
-        return getId();
+      case MyDslPackage.ATRIBUTO_NOME__NOME:
+        return getNome();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class AtributoNomeImpl extends MinimalEObjectImpl.Container implements At
   {
     switch (featureID)
     {
-      case MyDslPackage.ATRIBUTO_NOME__ID:
-        setId((String)newValue);
+      case MyDslPackage.ATRIBUTO_NOME__NOME:
+        setNome((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class AtributoNomeImpl extends MinimalEObjectImpl.Container implements At
   {
     switch (featureID)
     {
-      case MyDslPackage.ATRIBUTO_NOME__ID:
-        setId(ID_EDEFAULT);
+      case MyDslPackage.ATRIBUTO_NOME__NOME:
+        setNome(NOME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class AtributoNomeImpl extends MinimalEObjectImpl.Container implements At
   {
     switch (featureID)
     {
-      case MyDslPackage.ATRIBUTO_NOME__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+      case MyDslPackage.ATRIBUTO_NOME__NOME:
+        return NOME_EDEFAULT == null ? nome != null : !NOME_EDEFAULT.equals(nome);
     }
     return super.eIsSet(featureID);
   }
@@ -171,8 +171,8 @@ public class AtributoNomeImpl extends MinimalEObjectImpl.Container implements At
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (id: ");
-    result.append(id);
+    result.append(" (nome: ");
+    result.append(nome);
     result.append(')');
     return result.toString();
   }

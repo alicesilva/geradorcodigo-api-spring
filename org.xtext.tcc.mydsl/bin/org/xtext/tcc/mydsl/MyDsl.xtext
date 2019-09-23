@@ -4,6 +4,20 @@ generate myDsl "http://www.xtext.org/tcc/mydsl/MyDsl"
 
 Model:
 	greetings+=Greeting;
+
+
+terminal TIPO_DEFINIDO:
+	'"' ("Boolean" | "Integer" | "Long" | "String" | "Float" | "Double"|
+	 "Time" | "Timestamp" | "Date" | "ENUM" | "ArrayList" | "HashSet") '"'
+;
+
+terminal STRING_LIT:
+	'"' (LETRA)* '"'
+;
+
+terminal LETRA:
+	"a".."z" | "A" .."Z"
+;
 	
 Greeting:
 	'{' api=Api '}';
@@ -28,36 +42,16 @@ Entidade:
 ;
 
 EntidadeNome:
-	 string_lit = STRING_LIT
-;
-
-terminal STRING_LIT:
-	RAW_STRING_LIT
-;
-
-terminal RAW_STRING_LIT:
-	'"' (LETTER)*  '"'
-;
-
-terminal LETTER:
-	"a".."z" | "A" .."Z"
+	 nome = STRING_LIT
 ;
 
 Atributo:
 	'{' 
 		'"nome-atributo"' ':' atributoNome = AtributoNome ','
 		'"tipo-atributo"' ':' atributoTipo = AtributoTipo ','
-		'"associação"' ':' associacao = Associacao?','
-		'"operação em cascata"' ':' operacao = Operacao?
+		//'"associação"' ':' associacao = Associacao?','
+		//'"operação em cascata"' ':' operacao = Operacao?
 	'}'
-;
-
-ColunaNome:
-	colunaNome = ID | colunaNome = ANY_OTHER
-;
-
-TabelaNome:
-	tabelaNome = ID | tabelaNome = ANY_OTHER
 ;
 
 Operacao:
@@ -72,20 +66,14 @@ Associacao:
 ;
 
 AtributoNome:
-	id = ID
+	nome = STRING_LIT
 ;
 
 AtributoTipo:
-	 tipoP = "Boolean" | tipoP = "Byte" | tipoP = "Short" |
-	 tipoP = "Character" | tipoP = "Integer" | tipoP = "Long" | tipoP = "String" |
-	 tipoP = "Float"| tipoP = "Double" | tipoP = "Time" | tipoP = "Timestamp" |
-	 tipoP = "Date" | tipoP = "ENUM" | tipoP = "ArrayList" | tipoP = "HashSet" |
-	 tipoE = ID;
-
-Optional:
-	optional = 'true' | optional = 'false' | optional = ANY_OTHER
+	tipoP = TIPO_DEFINIDO | tipoE = STRING_LIT
 ;
 
+	 
 ChavePrimaria:
 	id = ID
 ;

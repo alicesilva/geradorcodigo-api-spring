@@ -12,12 +12,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.tcc.mydsl.myDsl.Associacao;
 import org.xtext.tcc.mydsl.myDsl.Atributo;
 import org.xtext.tcc.mydsl.myDsl.AtributoNome;
 import org.xtext.tcc.mydsl.myDsl.AtributoTipo;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
-import org.xtext.tcc.mydsl.myDsl.Operacao;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,8 +27,6 @@ import org.xtext.tcc.mydsl.myDsl.Operacao;
  * <ul>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getAtributoNome <em>Atributo Nome</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getAtributoTipo <em>Atributo Tipo</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getAssociacao <em>Associacao</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.AtributoImpl#getOperacao <em>Operacao</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,26 +52,6 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
    * @ordered
    */
   protected AtributoTipo atributoTipo;
-
-  /**
-   * The cached value of the '{@link #getAssociacao() <em>Associacao</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAssociacao()
-   * @generated
-   * @ordered
-   */
-  protected Associacao associacao;
-
-  /**
-   * The cached value of the '{@link #getOperacao() <em>Operacao</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOperacao()
-   * @generated
-   * @ordered
-   */
-  protected Operacao operacao;
 
   /**
    * <!-- begin-user-doc -->
@@ -204,106 +180,6 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
    * @generated
    */
   @Override
-  public Associacao getAssociacao()
-  {
-    return associacao;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetAssociacao(Associacao newAssociacao, NotificationChain msgs)
-  {
-    Associacao oldAssociacao = associacao;
-    associacao = newAssociacao;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__ASSOCIACAO, oldAssociacao, newAssociacao);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setAssociacao(Associacao newAssociacao)
-  {
-    if (newAssociacao != associacao)
-    {
-      NotificationChain msgs = null;
-      if (associacao != null)
-        msgs = ((InternalEObject)associacao).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__ASSOCIACAO, null, msgs);
-      if (newAssociacao != null)
-        msgs = ((InternalEObject)newAssociacao).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__ASSOCIACAO, null, msgs);
-      msgs = basicSetAssociacao(newAssociacao, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__ASSOCIACAO, newAssociacao, newAssociacao));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Operacao getOperacao()
-  {
-    return operacao;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetOperacao(Operacao newOperacao, NotificationChain msgs)
-  {
-    Operacao oldOperacao = operacao;
-    operacao = newOperacao;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__OPERACAO, oldOperacao, newOperacao);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setOperacao(Operacao newOperacao)
-  {
-    if (newOperacao != operacao)
-    {
-      NotificationChain msgs = null;
-      if (operacao != null)
-        msgs = ((InternalEObject)operacao).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__OPERACAO, null, msgs);
-      if (newOperacao != null)
-        msgs = ((InternalEObject)newOperacao).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ATRIBUTO__OPERACAO, null, msgs);
-      msgs = basicSetOperacao(newOperacao, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ATRIBUTO__OPERACAO, newOperacao, newOperacao));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -312,10 +188,6 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
         return basicSetAtributoNome(null, msgs);
       case MyDslPackage.ATRIBUTO__ATRIBUTO_TIPO:
         return basicSetAtributoTipo(null, msgs);
-      case MyDslPackage.ATRIBUTO__ASSOCIACAO:
-        return basicSetAssociacao(null, msgs);
-      case MyDslPackage.ATRIBUTO__OPERACAO:
-        return basicSetOperacao(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -334,10 +206,6 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
         return getAtributoNome();
       case MyDslPackage.ATRIBUTO__ATRIBUTO_TIPO:
         return getAtributoTipo();
-      case MyDslPackage.ATRIBUTO__ASSOCIACAO:
-        return getAssociacao();
-      case MyDslPackage.ATRIBUTO__OPERACAO:
-        return getOperacao();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -357,12 +225,6 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
         return;
       case MyDslPackage.ATRIBUTO__ATRIBUTO_TIPO:
         setAtributoTipo((AtributoTipo)newValue);
-        return;
-      case MyDslPackage.ATRIBUTO__ASSOCIACAO:
-        setAssociacao((Associacao)newValue);
-        return;
-      case MyDslPackage.ATRIBUTO__OPERACAO:
-        setOperacao((Operacao)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -384,12 +246,6 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
       case MyDslPackage.ATRIBUTO__ATRIBUTO_TIPO:
         setAtributoTipo((AtributoTipo)null);
         return;
-      case MyDslPackage.ATRIBUTO__ASSOCIACAO:
-        setAssociacao((Associacao)null);
-        return;
-      case MyDslPackage.ATRIBUTO__OPERACAO:
-        setOperacao((Operacao)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -408,10 +264,6 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
         return atributoNome != null;
       case MyDslPackage.ATRIBUTO__ATRIBUTO_TIPO:
         return atributoTipo != null;
-      case MyDslPackage.ATRIBUTO__ASSOCIACAO:
-        return associacao != null;
-      case MyDslPackage.ATRIBUTO__OPERACAO:
-        return operacao != null;
     }
     return super.eIsSet(featureID);
   }

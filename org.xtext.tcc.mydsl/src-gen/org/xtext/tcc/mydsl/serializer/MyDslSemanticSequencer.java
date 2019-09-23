@@ -21,16 +21,13 @@ import org.xtext.tcc.mydsl.myDsl.Atributo;
 import org.xtext.tcc.mydsl.myDsl.AtributoNome;
 import org.xtext.tcc.mydsl.myDsl.AtributoTipo;
 import org.xtext.tcc.mydsl.myDsl.ChavePrimaria;
-import org.xtext.tcc.mydsl.myDsl.ColunaNome;
 import org.xtext.tcc.mydsl.myDsl.Entidade;
 import org.xtext.tcc.mydsl.myDsl.EntidadeNome;
 import org.xtext.tcc.mydsl.myDsl.Greeting;
 import org.xtext.tcc.mydsl.myDsl.Model;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
 import org.xtext.tcc.mydsl.myDsl.Operacao;
-import org.xtext.tcc.mydsl.myDsl.Optional;
 import org.xtext.tcc.mydsl.myDsl.PackageName;
-import org.xtext.tcc.mydsl.myDsl.TabelaNome;
 import org.xtext.tcc.mydsl.services.MyDslGrammarAccess;
 
 @SuppressWarnings("all")
@@ -68,9 +65,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.CHAVE_PRIMARIA:
 				sequence_ChavePrimaria(context, (ChavePrimaria) semanticObject); 
 				return; 
-			case MyDslPackage.COLUNA_NOME:
-				sequence_ColunaNome(context, (ColunaNome) semanticObject); 
-				return; 
 			case MyDslPackage.ENTIDADE:
 				sequence_Entidade(context, (Entidade) semanticObject); 
 				return; 
@@ -86,14 +80,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.OPERACAO:
 				sequence_Operacao(context, (Operacao) semanticObject); 
 				return; 
-			case MyDslPackage.OPTIONAL:
-				sequence_Optional(context, (Optional) semanticObject); 
-				return; 
 			case MyDslPackage.PACKAGE_NAME:
 				sequence_PackageName(context, (PackageName) semanticObject); 
-				return; 
-			case MyDslPackage.TABELA_NOME:
-				sequence_TabelaNome(context, (TabelaNome) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -147,15 +135,15 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     AtributoNome returns AtributoNome
 	 *
 	 * Constraint:
-	 *     id=ID
+	 *     nome=STRING_LIT
 	 */
 	protected void sequence_AtributoNome(ISerializationContext context, AtributoNome semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO_NOME__ID) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO_NOME__ID));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO_NOME__NOME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO_NOME__NOME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtributoNomeAccess().getIdIDTerminalRuleCall_0(), semanticObject.getId());
+		feeder.accept(grammarAccess.getAtributoNomeAccess().getNomeSTRING_LITTerminalRuleCall_0(), semanticObject.getNome());
 		feeder.finish();
 	}
 	
@@ -165,24 +153,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     AtributoTipo returns AtributoTipo
 	 *
 	 * Constraint:
-	 *     (
-	 *         tipoP='Boolean' | 
-	 *         tipoP='Byte' | 
-	 *         tipoP='Short' | 
-	 *         tipoP='Character' | 
-	 *         tipoP='Integer' | 
-	 *         tipoP='Long' | 
-	 *         tipoP='String' | 
-	 *         tipoP='Float' | 
-	 *         tipoP='Double' | 
-	 *         tipoP='Time' | 
-	 *         tipoP='Timestamp' | 
-	 *         tipoP='Date' | 
-	 *         tipoP='ENUM' | 
-	 *         tipoP='ArrayList' | 
-	 *         tipoP='HashSet' | 
-	 *         tipoE=ID
-	 *     )
+	 *     (tipoP=TIPO_DEFINIDO | tipoE=STRING_LIT)
 	 */
 	protected void sequence_AtributoTipo(ISerializationContext context, AtributoTipo semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -194,10 +165,19 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Atributo returns Atributo
 	 *
 	 * Constraint:
-	 *     (atributoNome=AtributoNome atributoTipo=AtributoTipo associacao=Associacao? operacao=Operacao?)
+	 *     (atributoNome=AtributoNome atributoTipo=AtributoTipo)
 	 */
 	protected void sequence_Atributo(ISerializationContext context, Atributo semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO__ATRIBUTO_NOME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO__ATRIBUTO_NOME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ATRIBUTO__ATRIBUTO_TIPO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ATRIBUTO__ATRIBUTO_TIPO));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAtributoAccess().getAtributoNomeAtributoNomeParserRuleCall_3_0(), semanticObject.getAtributoNome());
+		feeder.accept(grammarAccess.getAtributoAccess().getAtributoTipoAtributoTipoParserRuleCall_7_0(), semanticObject.getAtributoTipo());
+		feeder.finish();
 	}
 	
 	
@@ -221,30 +201,18 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     ColunaNome returns ColunaNome
-	 *
-	 * Constraint:
-	 *     (colunaNome=ID | colunaNome=ANY_OTHER)
-	 */
-	protected void sequence_ColunaNome(ISerializationContext context, ColunaNome semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     EntidadeNome returns EntidadeNome
 	 *
 	 * Constraint:
-	 *     string_lit=STRING_LIT
+	 *     nome=STRING_LIT
 	 */
 	protected void sequence_EntidadeNome(ISerializationContext context, EntidadeNome semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ENTIDADE_NOME__STRING_LIT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ENTIDADE_NOME__STRING_LIT));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.ENTIDADE_NOME__NOME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.ENTIDADE_NOME__NOME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEntidadeNomeAccess().getString_litSTRING_LITTerminalRuleCall_0(), semanticObject.getString_lit());
+		feeder.accept(grammarAccess.getEntidadeNomeAccess().getNomeSTRING_LITTerminalRuleCall_0(), semanticObject.getNome());
 		feeder.finish();
 	}
 	
@@ -312,18 +280,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Optional returns Optional
-	 *
-	 * Constraint:
-	 *     (optional='true' | optional='false' | optional=ANY_OTHER)
-	 */
-	protected void sequence_Optional(ISerializationContext context, Optional semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     PackageName returns PackageName
 	 *
 	 * Constraint:
@@ -337,18 +293,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getPackageNameAccess().getIdIDTerminalRuleCall_0(), semanticObject.getId());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     TabelaNome returns TabelaNome
-	 *
-	 * Constraint:
-	 *     (tabelaNome=ID | tabelaNome=ANY_OTHER)
-	 */
-	protected void sequence_TabelaNome(ISerializationContext context, TabelaNome semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

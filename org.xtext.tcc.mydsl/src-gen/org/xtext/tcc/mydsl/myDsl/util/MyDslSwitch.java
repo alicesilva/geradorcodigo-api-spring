@@ -122,20 +122,6 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.COLUNA_NOME:
-      {
-        ColunaNome colunaNome = (ColunaNome)theEObject;
-        T result = caseColunaNome(colunaNome);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MyDslPackage.TABELA_NOME:
-      {
-        TabelaNome tabelaNome = (TabelaNome)theEObject;
-        T result = caseTabelaNome(tabelaNome);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MyDslPackage.OPERACAO:
       {
         Operacao operacao = (Operacao)theEObject;
@@ -161,13 +147,6 @@ public class MyDslSwitch<T> extends Switch<T>
       {
         AtributoTipo atributoTipo = (AtributoTipo)theEObject;
         T result = caseAtributoTipo(atributoTipo);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MyDslPackage.OPTIONAL:
-      {
-        Optional optional = (Optional)theEObject;
-        T result = caseOptional(optional);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -302,38 +281,6 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Coluna Nome</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Coluna Nome</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseColunaNome(ColunaNome object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Tabela Nome</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Tabela Nome</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTabelaNome(TabelaNome object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Operacao</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -393,22 +340,6 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAtributoTipo(AtributoTipo object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Optional</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Optional</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOptional(Optional object)
   {
     return null;
   }

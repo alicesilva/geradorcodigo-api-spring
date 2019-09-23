@@ -3,10 +3,9 @@
  */
 package org.xtext.tcc.mydsl.validation
 
-import org.eclipse.xtext.validation.Check
-import org.xtext.tcc.mydsl.myDsl.EntidadeNome
+import org.xtext.tcc.mydsl.myDsl.Atributo
 import org.xtext.tcc.mydsl.myDsl.Api
-import org.xtext.tcc.mydsl.myDsl.Entidade
+import org.eclipse.xtext.validation.Check
 
 /**
  * This class contains custom validation rules. 
@@ -37,9 +36,9 @@ class MyDslValidator extends AbstractMyDslValidator {
 	}
 
 	@Check
-	def checkChavePrimaria(Entidade e){
-		e.nomeEntidades.string_lit = e.nomeEntidades.string_lit.substring(1, e.nomeEntidades.string_lit.length -1)
-		println(e.nomeEntidades.string_lit)
+	def checkChavePrimaria(Atributo a){
+		//e.nomeEntidades.string_lit = e.nomeEntidades.string_lit.substring(1, e.nomeEntidades.string_lit.length -1)
+		//println(e.nomeEntidades.string_lit)
 		//if(entidadeValidator.checkChavePrimaria(e) !== null){
 			//var Exception erro = entidadeValidator.checkChavePrimaria(e);
 			//error(erro.erro, erro.feature)

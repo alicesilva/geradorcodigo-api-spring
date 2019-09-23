@@ -4,10 +4,8 @@
 package org.xtext.tcc.mydsl.validation;
 
 import org.eclipse.xtext.validation.Check;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.xtext.tcc.mydsl.myDsl.Api;
-import org.xtext.tcc.mydsl.myDsl.Entidade;
-import org.xtext.tcc.mydsl.myDsl.EntidadeNome;
+import org.xtext.tcc.mydsl.myDsl.Atributo;
 import org.xtext.tcc.mydsl.validation.AbstractMyDslValidator;
 import org.xtext.tcc.mydsl.validation.EntidadeValidator;
 
@@ -25,17 +23,8 @@ public class MyDslValidator extends AbstractMyDslValidator {
   }
   
   @Check
-  public String checkChavePrimaria(final Entidade e) {
-    String _xblockexpression = null;
-    {
-      EntidadeNome _nomeEntidades = e.getNomeEntidades();
-      String _string_lit = e.getNomeEntidades().getString_lit();
-      int _length = e.getNomeEntidades().getString_lit().length();
-      int _minus = (_length - 1);
-      _nomeEntidades.setString_lit(_string_lit.substring(1, _minus));
-      _xblockexpression = InputOutput.<String>println(e.getNomeEntidades().getString_lit());
-    }
-    return _xblockexpression;
+  public Object checkChavePrimaria(final Atributo a) {
+    return null;
   }
   
   public Object checkTipoAtributos(final Api api) {

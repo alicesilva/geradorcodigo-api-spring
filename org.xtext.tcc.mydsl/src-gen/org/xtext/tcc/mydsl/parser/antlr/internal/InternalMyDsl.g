@@ -5,6 +5,7 @@ grammar InternalMyDsl;
 
 options {
 	superClass=AbstractInternalAntlrParser;
+	backtrack=true;
 }
 
 @lexer::header {
@@ -32,6 +33,11 @@ import org.xtext.tcc.mydsl.services.MyDslGrammarAccess;
 }
 
 @parser::members {
+
+/*
+  This grammar contains a lot of empty actions to work around a bug in ANTLR.
+  Otherwise the ANTLR tool will create synpreds that cannot be compiled in some rare cases.
+*/
 
  	private MyDslGrammarAccess grammarAccess;
 
@@ -434,9 +440,9 @@ ruleEntidadeNome returns [EObject current=null]
 }:
 	(
 		(
-			lv_string_lit_0_0=RULE_STRING_LIT
+			lv_nome_0_0=RULE_STRING_LIT
 			{
-				newLeafNode(lv_string_lit_0_0, grammarAccess.getEntidadeNomeAccess().getString_litSTRING_LITTerminalRuleCall_0());
+				newLeafNode(lv_nome_0_0, grammarAccess.getEntidadeNomeAccess().getNomeSTRING_LITTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
@@ -444,8 +450,8 @@ ruleEntidadeNome returns [EObject current=null]
 				}
 				setWithLastConsumed(
 					$current,
-					"string_lit",
-					lv_string_lit_0_0,
+					"nome",
+					lv_nome_0_0,
 					"org.xtext.tcc.mydsl.MyDsl.STRING_LIT");
 			}
 		)
@@ -534,254 +540,10 @@ ruleAtributo returns [EObject current=null]
 		{
 			newLeafNode(otherlv_8, grammarAccess.getAtributoAccess().getCommaKeyword_8());
 		}
-		otherlv_9='"associa\u00E7\u00E3o"'
+		otherlv_9='}'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getAtributoAccess().getAssociaOKeyword_9());
+			newLeafNode(otherlv_9, grammarAccess.getAtributoAccess().getRightCurlyBracketKeyword_9());
 		}
-		otherlv_10=':'
-		{
-			newLeafNode(otherlv_10, grammarAccess.getAtributoAccess().getColonKeyword_10());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAtributoAccess().getAssociacaoAssociacaoParserRuleCall_11_0());
-				}
-				lv_associacao_11_0=ruleAssociacao
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAtributoRule());
-					}
-					set(
-						$current,
-						"associacao",
-						lv_associacao_11_0,
-						"org.xtext.tcc.mydsl.MyDsl.Associacao");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		otherlv_12=','
-		{
-			newLeafNode(otherlv_12, grammarAccess.getAtributoAccess().getCommaKeyword_12());
-		}
-		otherlv_13='"opera\u00E7\u00E3o em cascata"'
-		{
-			newLeafNode(otherlv_13, grammarAccess.getAtributoAccess().getOperaOEmCascataKeyword_13());
-		}
-		otherlv_14=':'
-		{
-			newLeafNode(otherlv_14, grammarAccess.getAtributoAccess().getColonKeyword_14());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAtributoAccess().getOperacaoOperacaoParserRuleCall_15_0());
-				}
-				lv_operacao_15_0=ruleOperacao
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAtributoRule());
-					}
-					set(
-						$current,
-						"operacao",
-						lv_operacao_15_0,
-						"org.xtext.tcc.mydsl.MyDsl.Operacao");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		otherlv_16='}'
-		{
-			newLeafNode(otherlv_16, grammarAccess.getAtributoAccess().getRightCurlyBracketKeyword_16());
-		}
-	)
-;
-
-// Entry rule entryRuleOperacao
-entryRuleOperacao returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getOperacaoRule()); }
-	iv_ruleOperacao=ruleOperacao
-	{ $current=$iv_ruleOperacao.current; }
-	EOF;
-
-// Rule Operacao
-ruleOperacao returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_opCascada_0_0='ALL'
-				{
-					newLeafNode(lv_opCascada_0_0, grammarAccess.getOperacaoAccess().getOpCascadaALLKeyword_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOperacaoRule());
-					}
-					setWithLastConsumed($current, "opCascada", lv_opCascada_0_0, "ALL");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_opCascada_1_0='DETACH'
-				{
-					newLeafNode(lv_opCascada_1_0, grammarAccess.getOperacaoAccess().getOpCascadaDETACHKeyword_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOperacaoRule());
-					}
-					setWithLastConsumed($current, "opCascada", lv_opCascada_1_0, "DETACH");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_opCascada_2_0='MERGE'
-				{
-					newLeafNode(lv_opCascada_2_0, grammarAccess.getOperacaoAccess().getOpCascadaMERGEKeyword_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOperacaoRule());
-					}
-					setWithLastConsumed($current, "opCascada", lv_opCascada_2_0, "MERGE");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_opCascada_3_0='PERSIST'
-				{
-					newLeafNode(lv_opCascada_3_0, grammarAccess.getOperacaoAccess().getOpCascadaPERSISTKeyword_3_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOperacaoRule());
-					}
-					setWithLastConsumed($current, "opCascada", lv_opCascada_3_0, "PERSIST");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_opCascada_4_0='REFRESH'
-				{
-					newLeafNode(lv_opCascada_4_0, grammarAccess.getOperacaoAccess().getOpCascadaREFRESHKeyword_4_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOperacaoRule());
-					}
-					setWithLastConsumed($current, "opCascada", lv_opCascada_4_0, "REFRESH");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_opCascada_5_0='REMOVE'
-				{
-					newLeafNode(lv_opCascada_5_0, grammarAccess.getOperacaoAccess().getOpCascadaREMOVEKeyword_5_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOperacaoRule());
-					}
-					setWithLastConsumed($current, "opCascada", lv_opCascada_5_0, "REMOVE");
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleAssociacao
-entryRuleAssociacao returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAssociacaoRule()); }
-	iv_ruleAssociacao=ruleAssociacao
-	{ $current=$iv_ruleAssociacao.current; }
-	EOF;
-
-// Rule Associacao
-ruleAssociacao returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_associacao_0_0='OneToOne'
-				{
-					newLeafNode(lv_associacao_0_0, grammarAccess.getAssociacaoAccess().getAssociacaoOneToOneKeyword_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAssociacaoRule());
-					}
-					setWithLastConsumed($current, "associacao", lv_associacao_0_0, "OneToOne");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_associacao_1_0='OneToMany'
-				{
-					newLeafNode(lv_associacao_1_0, grammarAccess.getAssociacaoAccess().getAssociacaoOneToManyKeyword_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAssociacaoRule());
-					}
-					setWithLastConsumed($current, "associacao", lv_associacao_1_0, "OneToMany");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_associacao_2_0='ManyToOne'
-				{
-					newLeafNode(lv_associacao_2_0, grammarAccess.getAssociacaoAccess().getAssociacaoManyToOneKeyword_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAssociacaoRule());
-					}
-					setWithLastConsumed($current, "associacao", lv_associacao_2_0, "ManyToOne");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_associacao_3_0='ManyToMany'
-				{
-					newLeafNode(lv_associacao_3_0, grammarAccess.getAssociacaoAccess().getAssociacaoManyToManyKeyword_3_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAssociacaoRule());
-					}
-					setWithLastConsumed($current, "associacao", lv_associacao_3_0, "ManyToMany");
-				}
-			)
-		)
 	)
 ;
 
@@ -802,9 +564,9 @@ ruleAtributoNome returns [EObject current=null]
 }:
 	(
 		(
-			lv_id_0_0=RULE_ID
+			lv_nome_0_0=RULE_STRING_LIT
 			{
-				newLeafNode(lv_id_0_0, grammarAccess.getAtributoNomeAccess().getIdIDTerminalRuleCall_0());
+				newLeafNode(lv_nome_0_0, grammarAccess.getAtributoNomeAccess().getNomeSTRING_LITTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
@@ -812,9 +574,9 @@ ruleAtributoNome returns [EObject current=null]
 				}
 				setWithLastConsumed(
 					$current,
-					"id",
-					lv_id_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
+					"nome",
+					lv_nome_0_0,
+					"org.xtext.tcc.mydsl.MyDsl.STRING_LIT");
 			}
 		)
 	)
@@ -838,234 +600,28 @@ ruleAtributoTipo returns [EObject current=null]
 	(
 		(
 			(
-				lv_tipoP_0_0='Boolean'
+				lv_tipoP_0_0=RULE_TIPO_DEFINIDO
 				{
-					newLeafNode(lv_tipoP_0_0, grammarAccess.getAtributoTipoAccess().getTipoPBooleanKeyword_0_0());
+					newLeafNode(lv_tipoP_0_0, grammarAccess.getAtributoTipoAccess().getTipoPTIPO_DEFINIDOTerminalRuleCall_0_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getAtributoTipoRule());
 					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_0_0, "Boolean");
+					setWithLastConsumed(
+						$current,
+						"tipoP",
+						lv_tipoP_0_0,
+						"org.xtext.tcc.mydsl.MyDsl.TIPO_DEFINIDO");
 				}
 			)
 		)
 		    |
 		(
 			(
-				lv_tipoP_1_0='Byte'
+				lv_tipoE_1_0=RULE_STRING_LIT
 				{
-					newLeafNode(lv_tipoP_1_0, grammarAccess.getAtributoTipoAccess().getTipoPByteKeyword_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtributoTipoRule());
-					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_1_0, "Byte");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_tipoP_2_0='Short'
-				{
-					newLeafNode(lv_tipoP_2_0, grammarAccess.getAtributoTipoAccess().getTipoPShortKeyword_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtributoTipoRule());
-					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_2_0, "Short");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_tipoP_3_0='Character'
-				{
-					newLeafNode(lv_tipoP_3_0, grammarAccess.getAtributoTipoAccess().getTipoPCharacterKeyword_3_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtributoTipoRule());
-					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_3_0, "Character");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_tipoP_4_0='Integer'
-				{
-					newLeafNode(lv_tipoP_4_0, grammarAccess.getAtributoTipoAccess().getTipoPIntegerKeyword_4_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtributoTipoRule());
-					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_4_0, "Integer");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_tipoP_5_0='Long'
-				{
-					newLeafNode(lv_tipoP_5_0, grammarAccess.getAtributoTipoAccess().getTipoPLongKeyword_5_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtributoTipoRule());
-					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_5_0, "Long");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_tipoP_6_0='String'
-				{
-					newLeafNode(lv_tipoP_6_0, grammarAccess.getAtributoTipoAccess().getTipoPStringKeyword_6_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtributoTipoRule());
-					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_6_0, "String");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_tipoP_7_0='Float'
-				{
-					newLeafNode(lv_tipoP_7_0, grammarAccess.getAtributoTipoAccess().getTipoPFloatKeyword_7_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtributoTipoRule());
-					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_7_0, "Float");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_tipoP_8_0='Double'
-				{
-					newLeafNode(lv_tipoP_8_0, grammarAccess.getAtributoTipoAccess().getTipoPDoubleKeyword_8_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtributoTipoRule());
-					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_8_0, "Double");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_tipoP_9_0='Time'
-				{
-					newLeafNode(lv_tipoP_9_0, grammarAccess.getAtributoTipoAccess().getTipoPTimeKeyword_9_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtributoTipoRule());
-					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_9_0, "Time");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_tipoP_10_0='Timestamp'
-				{
-					newLeafNode(lv_tipoP_10_0, grammarAccess.getAtributoTipoAccess().getTipoPTimestampKeyword_10_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtributoTipoRule());
-					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_10_0, "Timestamp");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_tipoP_11_0='Date'
-				{
-					newLeafNode(lv_tipoP_11_0, grammarAccess.getAtributoTipoAccess().getTipoPDateKeyword_11_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtributoTipoRule());
-					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_11_0, "Date");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_tipoP_12_0='ENUM'
-				{
-					newLeafNode(lv_tipoP_12_0, grammarAccess.getAtributoTipoAccess().getTipoPENUMKeyword_12_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtributoTipoRule());
-					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_12_0, "ENUM");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_tipoP_13_0='ArrayList'
-				{
-					newLeafNode(lv_tipoP_13_0, grammarAccess.getAtributoTipoAccess().getTipoPArrayListKeyword_13_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtributoTipoRule());
-					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_13_0, "ArrayList");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_tipoP_14_0='HashSet'
-				{
-					newLeafNode(lv_tipoP_14_0, grammarAccess.getAtributoTipoAccess().getTipoPHashSetKeyword_14_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAtributoTipoRule());
-					}
-					setWithLastConsumed($current, "tipoP", lv_tipoP_14_0, "HashSet");
-				}
-			)
-		)
-		    |
-		(
-			(
-				lv_tipoE_15_0=RULE_ID
-				{
-					newLeafNode(lv_tipoE_15_0, grammarAccess.getAtributoTipoAccess().getTipoEIDTerminalRuleCall_15_0());
+					newLeafNode(lv_tipoE_1_0, grammarAccess.getAtributoTipoAccess().getTipoESTRING_LITTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -1074,8 +630,8 @@ ruleAtributoTipo returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"tipoE",
-						lv_tipoE_15_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						lv_tipoE_1_0,
+						"org.xtext.tcc.mydsl.MyDsl.STRING_LIT");
 				}
 			)
 		)
@@ -1152,11 +708,11 @@ rulePackageName returns [EObject current=null]
 	)
 ;
 
-RULE_STRING_LIT : RULE_RAW_STRING_LIT;
+RULE_TIPO_DEFINIDO : '"' ('Boolean'|'Integer'|'Long'|'String'|'Float'|'Double'|'Time'|'Timestamp'|'Date'|'ENUM'|'ArrayList'|'HashSet') '"';
 
-fragment RULE_RAW_STRING_LIT : '"' RULE_LETTER* '"';
+RULE_STRING_LIT : '"' RULE_LETRA* '"';
 
-fragment RULE_LETTER : ('a'..'z'|'A'..'Z');
+fragment RULE_LETRA : ('a'..'z'|'A'..'Z');
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

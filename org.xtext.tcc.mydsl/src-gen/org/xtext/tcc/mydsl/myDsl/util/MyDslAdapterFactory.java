@@ -111,16 +111,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createAtributoAdapter();
       }
       @Override
-      public Adapter caseColunaNome(ColunaNome object)
-      {
-        return createColunaNomeAdapter();
-      }
-      @Override
-      public Adapter caseTabelaNome(TabelaNome object)
-      {
-        return createTabelaNomeAdapter();
-      }
-      @Override
       public Adapter caseOperacao(Operacao object)
       {
         return createOperacaoAdapter();
@@ -139,11 +129,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAtributoTipo(AtributoTipo object)
       {
         return createAtributoTipoAdapter();
-      }
-      @Override
-      public Adapter caseOptional(Optional object)
-      {
-        return createOptionalAdapter();
       }
       @Override
       public Adapter caseChavePrimaria(ChavePrimaria object)
@@ -283,36 +268,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.ColunaNome <em>Coluna Nome</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.tcc.mydsl.myDsl.ColunaNome
-   * @generated
-   */
-  public Adapter createColunaNomeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.TabelaNome <em>Tabela Nome</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.tcc.mydsl.myDsl.TabelaNome
-   * @generated
-   */
-  public Adapter createTabelaNomeAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.Operacao <em>Operacao</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -368,21 +323,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAtributoTipoAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.Optional <em>Optional</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.tcc.mydsl.myDsl.Optional
-   * @generated
-   */
-  public Adapter createOptionalAdapter()
   {
     return null;
   }

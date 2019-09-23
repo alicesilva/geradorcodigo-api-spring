@@ -21,7 +21,7 @@ import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.EntidadeNomeImpl#getString_lit <em>String lit</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.EntidadeNomeImpl#getNome <em>Nome</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +29,24 @@ import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
 public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements EntidadeNome
 {
   /**
-   * The default value of the '{@link #getString_lit() <em>String lit</em>}' attribute.
+   * The default value of the '{@link #getNome() <em>Nome</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getString_lit()
+   * @see #getNome()
    * @generated
    * @ordered
    */
-  protected static final String STRING_LIT_EDEFAULT = null;
+  protected static final String NOME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getString_lit() <em>String lit</em>}' attribute.
+   * The cached value of the '{@link #getNome() <em>Nome</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getString_lit()
+   * @see #getNome()
    * @generated
    * @ordered
    */
-  protected String string_lit = STRING_LIT_EDEFAULT;
+  protected String nome = NOME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,9 +75,9 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
    * @generated
    */
   @Override
-  public String getString_lit()
+  public String getNome()
   {
-    return string_lit;
+    return nome;
   }
 
   /**
@@ -86,12 +86,12 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
    * @generated
    */
   @Override
-  public void setString_lit(String newString_lit)
+  public void setNome(String newNome)
   {
-    String oldString_lit = string_lit;
-    string_lit = newString_lit;
+    String oldNome = nome;
+    nome = newNome;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ENTIDADE_NOME__STRING_LIT, oldString_lit, string_lit));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ENTIDADE_NOME__NOME, oldNome, nome));
   }
 
   /**
@@ -104,8 +104,8 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
   {
     switch (featureID)
     {
-      case MyDslPackage.ENTIDADE_NOME__STRING_LIT:
-        return getString_lit();
+      case MyDslPackage.ENTIDADE_NOME__NOME:
+        return getNome();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
   {
     switch (featureID)
     {
-      case MyDslPackage.ENTIDADE_NOME__STRING_LIT:
-        setString_lit((String)newValue);
+      case MyDslPackage.ENTIDADE_NOME__NOME:
+        setNome((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
   {
     switch (featureID)
     {
-      case MyDslPackage.ENTIDADE_NOME__STRING_LIT:
-        setString_lit(STRING_LIT_EDEFAULT);
+      case MyDslPackage.ENTIDADE_NOME__NOME:
+        setNome(NOME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
   {
     switch (featureID)
     {
-      case MyDslPackage.ENTIDADE_NOME__STRING_LIT:
-        return STRING_LIT_EDEFAULT == null ? string_lit != null : !STRING_LIT_EDEFAULT.equals(string_lit);
+      case MyDslPackage.ENTIDADE_NOME__NOME:
+        return NOME_EDEFAULT == null ? nome != null : !NOME_EDEFAULT.equals(nome);
     }
     return super.eIsSet(featureID);
   }
@@ -171,8 +171,8 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (string_lit: ");
-    result.append(string_lit);
+    result.append(" (nome: ");
+    result.append(nome);
     result.append(')');
     return result.toString();
   }

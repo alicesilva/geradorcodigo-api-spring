@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.EntidadeNome#getString_lit <em>String lit</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.EntidadeNome#getNome <em>Nome</em>}</li>
  * </ul>
  *
  * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getEntidadeNome()
@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface EntidadeNome extends EObject
 {
   /**
-   * Returns the value of the '<em><b>String lit</b></em>' attribute.
+   * Returns the value of the '<em><b>Nome</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>String lit</em>' attribute.
-   * @see #setString_lit(String)
-   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getEntidadeNome_String_lit()
+   * @return the value of the '<em>Nome</em>' attribute.
+   * @see #setNome(String)
+   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getEntidadeNome_Nome()
    * @model
    * @generated
    */
-  String getString_lit();
+  String getNome();
 
   /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.EntidadeNome#getString_lit <em>String lit</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.EntidadeNome#getNome <em>Nome</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>String lit</em>' attribute.
-   * @see #getString_lit()
+   * @param value the new value of the '<em>Nome</em>' attribute.
+   * @see #getNome()
    * @generated
    */
-  void setString_lit(String value);
+  void setNome(String value);
 
 } // EntidadeNome

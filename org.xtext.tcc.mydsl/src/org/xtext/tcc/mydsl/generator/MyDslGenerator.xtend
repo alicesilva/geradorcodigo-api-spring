@@ -44,7 +44,7 @@ class MyDslGenerator extends AbstractGenerator {
 		//}
 	//'''
 		
-	def compileAtributos(String chavePrimaria, EList<Atributo> atributos)'''
+	/*def compileAtributos(String chavePrimaria, EList<Atributo> atributos)'''
 		«FOR a: atributos»
 			«IF a.associacao !== null»
 				«IF a.operacao === null»
@@ -82,6 +82,6 @@ class MyDslGenerator extends AbstractGenerator {
 				}
 			«ENDIF»
 		«ENDFOR»
-	'''
+	'''*/
 		
 }

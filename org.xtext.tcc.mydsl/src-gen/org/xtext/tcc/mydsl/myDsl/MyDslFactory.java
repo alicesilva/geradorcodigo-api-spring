@@ -87,24 +87,6 @@ public interface MyDslFactory extends EFactory
   Atributo createAtributo();
 
   /**
-   * Returns a new object of class '<em>Coluna Nome</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Coluna Nome</em>'.
-   * @generated
-   */
-  ColunaNome createColunaNome();
-
-  /**
-   * Returns a new object of class '<em>Tabela Nome</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Tabela Nome</em>'.
-   * @generated
-   */
-  TabelaNome createTabelaNome();
-
-  /**
    * Returns a new object of class '<em>Operacao</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -139,15 +121,6 @@ public interface MyDslFactory extends EFactory
    * @generated
    */
   AtributoTipo createAtributoTipo();
-
-  /**
-   * Returns a new object of class '<em>Optional</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Optional</em>'.
-   * @generated
-   */
-  Optional createOptional();
 
   /**
    * Returns a new object of class '<em>Chave Primaria</em>'.

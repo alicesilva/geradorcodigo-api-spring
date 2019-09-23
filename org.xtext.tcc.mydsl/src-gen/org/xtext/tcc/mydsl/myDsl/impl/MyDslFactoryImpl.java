@@ -72,13 +72,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.ENTIDADE: return createEntidade();
       case MyDslPackage.ENTIDADE_NOME: return createEntidadeNome();
       case MyDslPackage.ATRIBUTO: return createAtributo();
-      case MyDslPackage.COLUNA_NOME: return createColunaNome();
-      case MyDslPackage.TABELA_NOME: return createTabelaNome();
       case MyDslPackage.OPERACAO: return createOperacao();
       case MyDslPackage.ASSOCIACAO: return createAssociacao();
       case MyDslPackage.ATRIBUTO_NOME: return createAtributoNome();
       case MyDslPackage.ATRIBUTO_TIPO: return createAtributoTipo();
-      case MyDslPackage.OPTIONAL: return createOptional();
       case MyDslPackage.CHAVE_PRIMARIA: return createChavePrimaria();
       case MyDslPackage.PACKAGE_NAME: return createPackageName();
       default:
@@ -176,30 +173,6 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * @generated
    */
   @Override
-  public ColunaNome createColunaNome()
-  {
-    ColunaNomeImpl colunaNome = new ColunaNomeImpl();
-    return colunaNome;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public TabelaNome createTabelaNome()
-  {
-    TabelaNomeImpl tabelaNome = new TabelaNomeImpl();
-    return tabelaNome;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Operacao createOperacao()
   {
     OperacaoImpl operacao = new OperacaoImpl();
@@ -240,18 +213,6 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     AtributoTipoImpl atributoTipo = new AtributoTipoImpl();
     return atributoTipo;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Optional createOptional()
-  {
-    OptionalImpl optional = new OptionalImpl();
-    return optional;
   }
 
   /**
