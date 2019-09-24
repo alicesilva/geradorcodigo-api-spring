@@ -45,10 +45,9 @@ class MyDslValidator extends AbstractMyDslValidator {
 				a.associacao.associacao = a.associacao.associacao.substring(1, a.associacao.associacao.length - 1);
 				a.operacao.opCascada = a.operacao.opCascada.substring(1, a.operacao.opCascada.length - 1);
 			}
-			
-			checkChavePrimaria(e);
 		}
-
+		
+		checkChavePrimaria(api);
 		checkNomesEntidades(api);
 		checkTipoAtributos(api);
 	}
@@ -61,9 +60,9 @@ class MyDslValidator extends AbstractMyDslValidator {
 	}
 
 	
-	def checkChavePrimaria(Entidade e) {
-		if (entidadeValidator.checkChavePrimaria(e) !== null) {
-			var Exception erro = entidadeValidator.checkChavePrimaria(e);
+	def checkChavePrimaria(Api api) {
+		if (entidadeValidator.checkChavePrimaria(api) !== null) {
+			var Exception erro = entidadeValidator.checkChavePrimaria(api);
 			error(erro.erro, erro.feature);
 		}
 	}
@@ -73,5 +72,9 @@ class MyDslValidator extends AbstractMyDslValidator {
 			var Exception erro = entidadeValidator.checkTipoAtributo(api);
 			error(erro.erro, erro.feature);
 		}
+	}
+	
+	def verificaTamanho(String palavra){
+		return palavra.length > 0
 	}
 }

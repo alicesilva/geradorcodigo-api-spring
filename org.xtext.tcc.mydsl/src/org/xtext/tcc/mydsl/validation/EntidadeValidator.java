@@ -24,20 +24,24 @@ public class EntidadeValidator {
 		return null;
 	}
 
-	public Exception checkChavePrimaria(Entidade e) {
-		String chavePrimaria = e.getChavePrimaria().getNome();
-		if (!chavePrimaria.equalsIgnoreCase("id")) {
-			EList<Atributo> atributos = e.getAtributos();
-			for (Atributo atributo : atributos) {
-				if (atributo.getNomeAtributo().getNome().equalsIgnoreCase(chavePrimaria)) {
-					return null;
+	public Exception checkChavePrimaria(Api api) {
+		for (Entidade e : api.getEntidades()) {
+			String chavePrimaria = e.getChavePrimaria().getNome();
+			if(!chavePrimaria.equalsIgnoreCase("id")) {
+				EList<Atributo> atributos = e.getAtributos();
+				int cont = 0;
+				for (Atributo atributo : atributos) {
+					if (atributo.getNomeAtributo().getNome().equalsIgnoreCase(chavePrimaria)) {
+						cont++;
+					}
+				}
+				if(cont == 0) {
+					return new Exception("Chave Primraia deve ser ID ou algum atributo definido anteriormente.",
+							MyDslPackage.Literals.API__ENTIDADES);
 				}
 			}
-			return new Exception("Chave Primraia deve ser ID ou algum atributo definido anteriormente.",
-					MyDslPackage.Literals.API__ENTIDADES);
-		} else {
-			return null;
 		}
+		return null;
 	}
 
 	public Exception checkTipoAtributo(Api api) {

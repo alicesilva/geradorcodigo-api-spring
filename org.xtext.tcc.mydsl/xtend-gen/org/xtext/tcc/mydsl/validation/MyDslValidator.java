@@ -85,9 +85,9 @@ public class MyDslValidator extends AbstractMyDslValidator {
             _operacao.setOpCascada(_opCascada.substring(1, _minus_8));
           }
         }
-        this.checkChavePrimaria(e);
       }
     }
+    this.checkChavePrimaria(api);
     this.checkNomesEntidades(api);
     this.checkTipoAtributos(api);
   }
@@ -101,11 +101,11 @@ public class MyDslValidator extends AbstractMyDslValidator {
     }
   }
   
-  public void checkChavePrimaria(final Entidade e) {
-    org.xtext.tcc.mydsl.validation.Exception _checkChavePrimaria = this.entidadeValidator.checkChavePrimaria(e);
+  public void checkChavePrimaria(final Api api) {
+    org.xtext.tcc.mydsl.validation.Exception _checkChavePrimaria = this.entidadeValidator.checkChavePrimaria(api);
     boolean _tripleNotEquals = (_checkChavePrimaria != null);
     if (_tripleNotEquals) {
-      org.xtext.tcc.mydsl.validation.Exception erro = this.entidadeValidator.checkChavePrimaria(e);
+      org.xtext.tcc.mydsl.validation.Exception erro = this.entidadeValidator.checkChavePrimaria(api);
       this.error(erro.erro, erro.feature);
     }
   }
@@ -117,5 +117,10 @@ public class MyDslValidator extends AbstractMyDslValidator {
       org.xtext.tcc.mydsl.validation.Exception erro = this.entidadeValidator.checkTipoAtributo(api);
       this.error(erro.erro, erro.feature);
     }
+  }
+  
+  public boolean verificaTamanho(final String palavra) {
+    int _length = palavra.length();
+    return (_length > 0);
   }
 }

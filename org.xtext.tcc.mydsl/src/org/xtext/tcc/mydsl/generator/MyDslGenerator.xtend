@@ -19,44 +19,46 @@ import org.xtext.tcc.mydsl.myDsl.Atributo
 class MyDslGenerator extends AbstractGenerator {
 		
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		//for(e: resource.allContents.toIterable.filter(Entidade)){
-			//fsa.generateFile(e.nomeEntidades.id.toFirstUpper.toString + ".java", e.compile)
-		//}
+		for(e: resource.allContents.toIterable.filter(Entidade)){
+			fsa.generateFile(e.nomeEntidade.nome.toFirstUpper.toString + ".java", e.compile)
+		}
 	}
 	
-	//def compile(Entidade entidade)'''
-		//package «entidade.package.id»;
-		//import javax.persistence.*;
+	def compile(Entidade entidade)'''
+		package «entidade.package.nome»;
+		import javax.persistence.*;
 		
-		//@Entity
-		//public class «entidade.nomeEntidades.id.toFirstUpper» {
+		@Entity
+		public class «entidade.nomeEntidade.nome.toFirstUpper» {
 			
-			//«IF entidade.chavePrimaria.id.equalsIgnoreCase("id")»
-				//@Id
-				//@GeneratedValue(strategy=GenerationType.IDENTITY)
-				//private Integer id;
-			//«ENDIF»
+			«IF entidade.chavePrimaria.nome.equalsIgnoreCase("id")»
+				@Id
+				@GeneratedValue(strategy=GenerationType.IDENTITY)
+				private Integer id;
+			«ENDIF»
 			
-			//«compileAtributos(entidade.chavePrimaria.id, entidade.atributos)»
+			«compileAtributos(entidade.chavePrimaria.nome, entidade.atributos)»
+			«compileGetersSeters(entidade.atributos)»
 			
-			//«compileGetersSeters(entidade.atributos)»
-			
-		//}
-	//'''
+		}
+	'''
 		
-	/*def compileAtributos(String chavePrimaria, EList<Atributo> atributos)'''
+	def compileAtributos(String chaveParimaria, EList<Atributo> atributos)'''
 		«FOR a: atributos»
-			«IF a.associacao !== null»
-				«IF a.operacao === null»
+			«IF a.nomeAtributo.nome.equals(chaveParimaria)»
+				@Id
+			«ENDIF»
+			«IF !(a.associacao.associacao.equals("None-Associacao"))»
+				«IF a.operacao.opCascada.equals("None-Operacao")»
 					@«a.associacao.associacao»
 				«ELSE»
 				     @«a.associacao.associacao»(cascade = CascadeType.«a.operacao.opCascada»)
 				«ENDIF»
 			«ENDIF»
 			«IF a.atributoTipo.tipoP !== null»
-				private «a.atributoTipo.tipoP.toFirstUpper» «a.atributoNome.id.toFirstLower»;
+				private «a.atributoTipo.tipoP.toFirstUpper» «a.nomeAtributo.nome.toFirstLower»;
 			«ELSE»
-				private «a.atributoTipo.tipoE.toFirstUpper» «a.atributoNome.id.toFirstLower»;
+				private «a.atributoTipo.tipoE.toFirstUpper» «a.nomeAtributo.nome.toFirstLower»;
 			«ENDIF»
 			
 		«ENDFOR»
@@ -65,23 +67,23 @@ class MyDslGenerator extends AbstractGenerator {
 	def compileGetersSeters(EList<Atributo> atributos) '''
 		«FOR a: atributos»
 			«IF a.atributoTipo.tipoP !== null»
-				public «a.atributoTipo.tipoP» get«a.atributoNome.id.toFirstUpper»(){
-					return «a.atributoNome.id»;
+				public «a.atributoTipo.tipoP» get«a.nomeAtributo.nome.toFirstUpper»(){
+					return «a.nomeAtributo.nome»;
 				}
 				
-				public void set«a.atributoNome.id.toFirstUpper»(«a.atributoTipo.tipoP» «a.atributoNome.id»){
-					this.«a.atributoNome.id» = «a.atributoNome.id»;
+				public void set«a.nomeAtributo.nome.toFirstUpper»(«a.atributoTipo.tipoP» «a.nomeAtributo.nome»){
+					this.«a.nomeAtributo.nome» = «a.nomeAtributo.nome»;
 				}
 			«ELSE»
-				public «a.atributoTipo.tipoE» get«a.atributoNome.id.toFirstUpper»(){
-					return «a.atributoNome.id»;
+				public «a.atributoTipo.tipoE» get«a.nomeAtributo.nome.toFirstUpper»(){
+					return «a.nomeAtributo.nome»;
 				}
 				
-				public void set «a.atributoNome.id.toFirstUpper»(«a.atributoTipo.tipoP» «a.atributoNome.id»){
-					this.«a.atributoNome.id» = «a.atributoNome.id»;
+				public void set «a.nomeAtributo.nome.toFirstUpper»(«a.atributoTipo.tipoP» «a.nomeAtributo.nome»){
+					this.«a.nomeAtributo.nome» = «a.nomeAtributo.nome»;
 				}
 			«ENDIF»
 		«ENDFOR»
-	'''*/
+	'''
 		
 }
