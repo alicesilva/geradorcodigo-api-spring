@@ -47,7 +47,7 @@ class MyDslValidator extends AbstractMyDslValidator {
 			}
 		}
 		
-		checkChavePrimaria(api);
+		//checkChavePrimaria(api);
 		checkNomesEntidades(api);
 		checkTipoAtributos(api);
 	}
