@@ -15,25 +15,29 @@
         eType="#//Entidade" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ApiNome">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nome" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entidade">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nomeEntidades" eType="#//EntidadeNome"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nomeEntidade" eType="#//Nome"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="atributos" upperBound="-1"
         eType="#//Atributo" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="chavePrimaria" eType="#//ChavePrimaria"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="chavePrimaria" eType="#//Nome"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="package" eType="#//PackageName"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="package" eType="#//Nome"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EntidadeNome">
+  <eClassifiers xsi:type="ecore:EClass" name="Nome">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nome" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Atributo">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="atributoNome" eType="#//AtributoNome"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nomeAtributo" eType="#//Nome"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="atributoTipo" eType="#//AtributoTipo"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associacao" eType="#//Associacao"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operacao" eType="#//Operacao"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Operacao">
@@ -42,17 +46,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Associacao">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="associacao" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AtributoNome">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nome" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AtributoTipo">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoP" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoE" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ChavePrimaria">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PackageName">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

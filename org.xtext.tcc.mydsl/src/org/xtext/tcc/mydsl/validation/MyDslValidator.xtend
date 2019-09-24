@@ -3,19 +3,19 @@
  */
 package org.xtext.tcc.mydsl.validation
 
-import org.xtext.tcc.mydsl.myDsl.Atributo
-import org.xtext.tcc.mydsl.myDsl.Api
 import org.eclipse.xtext.validation.Check
+import org.xtext.tcc.mydsl.myDsl.Api
+import org.xtext.tcc.mydsl.myDsl.Entidade
 
 /**
  * This class contains custom validation rules. 
- *
+ * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class MyDslValidator extends AbstractMyDslValidator {
-	
+
 	EntidadeValidator entidadeValidator = new EntidadeValidator();
-	
+
 //	public static val INVALID_NAME = 'invalidName'
 //
 //	@Check
@@ -26,31 +26,52 @@ class MyDslValidator extends AbstractMyDslValidator {
 //					INVALID_NAME)
 //		}
 //	}
-
-	//@Check
-	def checkEntidadesIguais(Api api){
-		//if(entidadeValidator.checkNomeEntidades(api) !== null){
-			//var Exception erro = entidadeValidator.checkNomeEntidades(api);
-			//error(erro.erro, erro.feature)
-		//}
-	}
-
 	@Check
-	def checkChavePrimaria(Atributo a){
-		//e.nomeEntidades.string_lit = e.nomeEntidades.string_lit.substring(1, e.nomeEntidades.string_lit.length -1)
-		//println(e.nomeEntidades.string_lit)
-		//if(entidadeValidator.checkChavePrimaria(e) !== null){
-			//var Exception erro = entidadeValidator.checkChavePrimaria(e);
-			//error(erro.erro, erro.feature)
-		//}
+	def check(Api api) {
+		api.nomeApi.nome = api.nomeApi.nome.substring(1, api.nomeApi.nome.length - 1);
+		for (e : api.entidades) {
+			e.nomeEntidade.nome = e.nomeEntidade.nome.substring(1, e.nomeEntidade.nome.length - 1);
+			e.chavePrimaria.nome = e.chavePrimaria.nome.substring(1, e.chavePrimaria.nome.length - 1);
+			e.package.nome = e.package.nome.substring(1, e.package.nome.length - 1);
+
+			for (a : e.atributos) {
+				a.nomeAtributo.nome = a.nomeAtributo.nome.substring(1, a.nomeAtributo.nome.length - 1);
+				if (a.atributoTipo.tipoP !== null) {
+					a.atributoTipo.tipoP = a.atributoTipo.tipoP.substring(1, a.atributoTipo.tipoP.length - 1);
+				} else {
+					a.atributoTipo.tipoE = a.atributoTipo.tipoE.substring(1, a.atributoTipo.tipoE.length - 1);
+				}
+
+				a.associacao.associacao = a.associacao.associacao.substring(1, a.associacao.associacao.length - 1);
+				a.operacao.opCascada = a.operacao.opCascada.substring(1, a.operacao.opCascada.length - 1);
+			}
+			
+			checkChavePrimaria(e);
+		}
+
+		checkNomesEntidades(api);
+		checkTipoAtributos(api);
 	}
-	
-	//@Check
-	def checkTipoAtributos(Api api){
-		//if(entidadeValidator.checkTipoAtributo(api) !== null){
-			//var Exception erro = entidadeValidator.checkTipoAtributo(api);
-			//error(erro.erro, erro.feature)
-		//}
+
+	def checkNomesEntidades(Api api) {
+		if (entidadeValidator.checkNomeEntidades(api) !== null) {
+			var Exception erro = entidadeValidator.checkNomeEntidades(api);
+			error(erro.erro, erro.feature);
+		}
 	}
+
 	
+	def checkChavePrimaria(Entidade e) {
+		if (entidadeValidator.checkChavePrimaria(e) !== null) {
+			var Exception erro = entidadeValidator.checkChavePrimaria(e);
+			error(erro.erro, erro.feature);
+		}
+	}
+
+	def checkTipoAtributos(Api api) {
+		if (entidadeValidator.checkTipoAtributo(api) !== null) {
+			var Exception erro = entidadeValidator.checkTipoAtributo(api);
+			error(erro.erro, erro.feature);
+		}
+	}
 }

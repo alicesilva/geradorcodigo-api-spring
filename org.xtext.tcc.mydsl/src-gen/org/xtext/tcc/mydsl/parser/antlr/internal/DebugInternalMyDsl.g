@@ -31,7 +31,7 @@ ruleApi:
 
 // Rule ApiNome
 ruleApiNome:
-	RULE_ID
+	RULE_STRING_LIT
 ;
 
 // Rule Entidade
@@ -39,7 +39,7 @@ ruleEntidade:
 	'{'
 	'"Nome"'
 	':'
-	ruleEntidadeNome
+	ruleNome
 	','
 	'"Atributos"'
 	':'
@@ -50,16 +50,16 @@ ruleEntidade:
 	','
 	'"Chave Primaria"'
 	':'
-	ruleChavePrimaria
+	ruleNome
 	','
 	'"Nome do pacote"'
 	':'
-	rulePackageName
+	ruleNome
 	'}'
 ;
 
-// Rule EntidadeNome
-ruleEntidadeNome:
+// Rule Nome
+ruleNome:
 	RULE_STRING_LIT
 ;
 
@@ -68,18 +68,30 @@ ruleAtributo:
 	'{'
 	'"nome-atributo"'
 	':'
-	ruleAtributoNome
+	ruleNome
 	','
 	'"tipo-atributo"'
 	':'
 	ruleAtributoTipo
 	','
+	'"associa\u00E7\u00E3o"'
+	':'
+	ruleAssociacao
+	','
+	'"opera\u00E7\u00E3o em cascata"'
+	':'
+	ruleOperacao
 	'}'
 ;
 
-// Rule AtributoNome
-ruleAtributoNome:
-	RULE_STRING_LIT
+// Rule Operacao
+ruleOperacao:
+	RULE_NOME_OPERACAO
+;
+
+// Rule Associacao
+ruleAssociacao:
+	RULE_NOME_ASSOCIACAO
 ;
 
 // Rule AtributoTipo
@@ -91,19 +103,15 @@ ruleAtributoTipo:
 	)
 ;
 
-// Rule ChavePrimaria
-ruleChavePrimaria:
-	RULE_ID
-;
+RULE_VAZIO : '""';
 
-// Rule PackageName
-rulePackageName:
-	RULE_ID
-;
+RULE_NOME_ASSOCIACAO : '"' ('OneToOne'|'OneToMany'|'ManyToOne'|'ManyToMany'|'None-Associacao') '"';
+
+RULE_NOME_OPERACAO : '"' ('ALL'|'DETACH'|'MERGE'|'PERSIST'|'REFRESH'|'REMOVE'|'None-Operacao') '"';
 
 RULE_TIPO_DEFINIDO : '"' ('Boolean'|'Integer'|'Long'|'String'|'Float'|'Double'|'Time'|'Timestamp'|'Date'|'ENUM'|'ArrayList'|'HashSet') '"';
 
-RULE_STRING_LIT : '"' RULE_LETRA* '"';
+RULE_STRING_LIT : '"' RULE_LETRA+ '"';
 
 fragment RULE_LETRA : ('a'..'z'|'A'..'Z');
 

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.ApiNome#getId <em>Id</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.ApiNome#getNome <em>Nome</em>}</li>
  * </ul>
  *
  * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getApiNome()
@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface ApiNome extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Id</b></em>' attribute.
+   * Returns the value of the '<em><b>Nome</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' attribute.
-   * @see #setId(String)
-   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getApiNome_Id()
+   * @return the value of the '<em>Nome</em>' attribute.
+   * @see #setNome(String)
+   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getApiNome_Nome()
    * @model
    * @generated
    */
-  String getId();
+  String getNome();
 
   /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.ApiNome#getId <em>Id</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.ApiNome#getNome <em>Nome</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' attribute.
-   * @see #getId()
+   * @param value the new value of the '<em>Nome</em>' attribute.
+   * @see #getNome()
    * @generated
    */
-  void setId(String value);
+  void setNome(String value);
 
 } // ApiNome

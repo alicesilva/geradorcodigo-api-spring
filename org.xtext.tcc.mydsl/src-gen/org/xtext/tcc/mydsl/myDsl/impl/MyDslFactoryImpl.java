@@ -70,14 +70,11 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.API: return createApi();
       case MyDslPackage.API_NOME: return createApiNome();
       case MyDslPackage.ENTIDADE: return createEntidade();
-      case MyDslPackage.ENTIDADE_NOME: return createEntidadeNome();
+      case MyDslPackage.NOME: return createNome();
       case MyDslPackage.ATRIBUTO: return createAtributo();
       case MyDslPackage.OPERACAO: return createOperacao();
       case MyDslPackage.ASSOCIACAO: return createAssociacao();
-      case MyDslPackage.ATRIBUTO_NOME: return createAtributoNome();
       case MyDslPackage.ATRIBUTO_TIPO: return createAtributoTipo();
-      case MyDslPackage.CHAVE_PRIMARIA: return createChavePrimaria();
-      case MyDslPackage.PACKAGE_NAME: return createPackageName();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -149,10 +146,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * @generated
    */
   @Override
-  public EntidadeNome createEntidadeNome()
+  public Nome createNome()
   {
-    EntidadeNomeImpl entidadeNome = new EntidadeNomeImpl();
-    return entidadeNome;
+    NomeImpl nome = new NomeImpl();
+    return nome;
   }
 
   /**
@@ -197,46 +194,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * @generated
    */
   @Override
-  public AtributoNome createAtributoNome()
-  {
-    AtributoNomeImpl atributoNome = new AtributoNomeImpl();
-    return atributoNome;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public AtributoTipo createAtributoTipo()
   {
     AtributoTipoImpl atributoTipo = new AtributoTipoImpl();
     return atributoTipo;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ChavePrimaria createChavePrimaria()
-  {
-    ChavePrimariaImpl chavePrimaria = new ChavePrimariaImpl();
-    return chavePrimaria;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public PackageName createPackageName()
-  {
-    PackageNameImpl packageName = new PackageNameImpl();
-    return packageName;
   }
 
   /**

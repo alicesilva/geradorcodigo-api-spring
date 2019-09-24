@@ -250,9 +250,9 @@ ruleApiNome returns [EObject current=null]
 }:
 	(
 		(
-			lv_id_0_0=RULE_ID
+			lv_nome_0_0=RULE_STRING_LIT
 			{
-				newLeafNode(lv_id_0_0, grammarAccess.getApiNomeAccess().getIdIDTerminalRuleCall_0());
+				newLeafNode(lv_nome_0_0, grammarAccess.getApiNomeAccess().getNomeSTRING_LITTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
@@ -260,9 +260,9 @@ ruleApiNome returns [EObject current=null]
 				}
 				setWithLastConsumed(
 					$current,
-					"id",
-					lv_id_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
+					"nome",
+					lv_nome_0_0,
+					"org.xtext.tcc.mydsl.MyDsl.STRING_LIT");
 			}
 		)
 	)
@@ -299,18 +299,18 @@ ruleEntidade returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEntidadeAccess().getNomeEntidadesEntidadeNomeParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getEntidadeAccess().getNomeEntidadeNomeParserRuleCall_3_0());
 				}
-				lv_nomeEntidades_3_0=ruleEntidadeNome
+				lv_nomeEntidade_3_0=ruleNome
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEntidadeRule());
 					}
 					set(
 						$current,
-						"nomeEntidades",
-						lv_nomeEntidades_3_0,
-						"org.xtext.tcc.mydsl.MyDsl.EntidadeNome");
+						"nomeEntidade",
+						lv_nomeEntidade_3_0,
+						"org.xtext.tcc.mydsl.MyDsl.Nome");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -369,9 +369,9 @@ ruleEntidade returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEntidadeAccess().getChavePrimariaChavePrimariaParserRuleCall_13_0());
+					newCompositeNode(grammarAccess.getEntidadeAccess().getChavePrimariaNomeParserRuleCall_13_0());
 				}
-				lv_chavePrimaria_13_0=ruleChavePrimaria
+				lv_chavePrimaria_13_0=ruleNome
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEntidadeRule());
@@ -380,7 +380,7 @@ ruleEntidade returns [EObject current=null]
 						$current,
 						"chavePrimaria",
 						lv_chavePrimaria_13_0,
-						"org.xtext.tcc.mydsl.MyDsl.ChavePrimaria");
+						"org.xtext.tcc.mydsl.MyDsl.Nome");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -400,9 +400,9 @@ ruleEntidade returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEntidadeAccess().getPackagePackageNameParserRuleCall_17_0());
+					newCompositeNode(grammarAccess.getEntidadeAccess().getPackageNomeParserRuleCall_17_0());
 				}
-				lv_package_17_0=rulePackageName
+				lv_package_17_0=ruleNome
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEntidadeRule());
@@ -411,7 +411,7 @@ ruleEntidade returns [EObject current=null]
 						$current,
 						"package",
 						lv_package_17_0,
-						"org.xtext.tcc.mydsl.MyDsl.PackageName");
+						"org.xtext.tcc.mydsl.MyDsl.Nome");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -423,15 +423,15 @@ ruleEntidade returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleEntidadeNome
-entryRuleEntidadeNome returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getEntidadeNomeRule()); }
-	iv_ruleEntidadeNome=ruleEntidadeNome
-	{ $current=$iv_ruleEntidadeNome.current; }
+// Entry rule entryRuleNome
+entryRuleNome returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNomeRule()); }
+	iv_ruleNome=ruleNome
+	{ $current=$iv_ruleNome.current; }
 	EOF;
 
-// Rule EntidadeNome
-ruleEntidadeNome returns [EObject current=null]
+// Rule Nome
+ruleNome returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -442,11 +442,11 @@ ruleEntidadeNome returns [EObject current=null]
 		(
 			lv_nome_0_0=RULE_STRING_LIT
 			{
-				newLeafNode(lv_nome_0_0, grammarAccess.getEntidadeNomeAccess().getNomeSTRING_LITTerminalRuleCall_0());
+				newLeafNode(lv_nome_0_0, grammarAccess.getNomeAccess().getNomeSTRING_LITTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
-					$current = createModelElement(grammarAccess.getEntidadeNomeRule());
+					$current = createModelElement(grammarAccess.getNomeRule());
 				}
 				setWithLastConsumed(
 					$current,
@@ -489,18 +489,18 @@ ruleAtributo returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAtributoAccess().getAtributoNomeAtributoNomeParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getAtributoAccess().getNomeAtributoNomeParserRuleCall_3_0());
 				}
-				lv_atributoNome_3_0=ruleAtributoNome
+				lv_nomeAtributo_3_0=ruleNome
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAtributoRule());
 					}
 					set(
 						$current,
-						"atributoNome",
-						lv_atributoNome_3_0,
-						"org.xtext.tcc.mydsl.MyDsl.AtributoNome");
+						"nomeAtributo",
+						lv_nomeAtributo_3_0,
+						"org.xtext.tcc.mydsl.MyDsl.Nome");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -540,22 +540,80 @@ ruleAtributo returns [EObject current=null]
 		{
 			newLeafNode(otherlv_8, grammarAccess.getAtributoAccess().getCommaKeyword_8());
 		}
-		otherlv_9='}'
+		otherlv_9='"associa\u00E7\u00E3o"'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getAtributoAccess().getRightCurlyBracketKeyword_9());
+			newLeafNode(otherlv_9, grammarAccess.getAtributoAccess().getAssociaOKeyword_9());
+		}
+		otherlv_10=':'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getAtributoAccess().getColonKeyword_10());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAtributoAccess().getAssociacaoAssociacaoParserRuleCall_11_0());
+				}
+				lv_associacao_11_0=ruleAssociacao
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAtributoRule());
+					}
+					set(
+						$current,
+						"associacao",
+						lv_associacao_11_0,
+						"org.xtext.tcc.mydsl.MyDsl.Associacao");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_12=','
+		{
+			newLeafNode(otherlv_12, grammarAccess.getAtributoAccess().getCommaKeyword_12());
+		}
+		otherlv_13='"opera\u00E7\u00E3o em cascata"'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getAtributoAccess().getOperaOEmCascataKeyword_13());
+		}
+		otherlv_14=':'
+		{
+			newLeafNode(otherlv_14, grammarAccess.getAtributoAccess().getColonKeyword_14());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAtributoAccess().getOperacaoOperacaoParserRuleCall_15_0());
+				}
+				lv_operacao_15_0=ruleOperacao
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAtributoRule());
+					}
+					set(
+						$current,
+						"operacao",
+						lv_operacao_15_0,
+						"org.xtext.tcc.mydsl.MyDsl.Operacao");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_16='}'
+		{
+			newLeafNode(otherlv_16, grammarAccess.getAtributoAccess().getRightCurlyBracketKeyword_16());
 		}
 	)
 ;
 
-// Entry rule entryRuleAtributoNome
-entryRuleAtributoNome returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAtributoNomeRule()); }
-	iv_ruleAtributoNome=ruleAtributoNome
-	{ $current=$iv_ruleAtributoNome.current; }
+// Entry rule entryRuleOperacao
+entryRuleOperacao returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getOperacaoRule()); }
+	iv_ruleOperacao=ruleOperacao
+	{ $current=$iv_ruleOperacao.current; }
 	EOF;
 
-// Rule AtributoNome
-ruleAtributoNome returns [EObject current=null]
+// Rule Operacao
+ruleOperacao returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -564,19 +622,54 @@ ruleAtributoNome returns [EObject current=null]
 }:
 	(
 		(
-			lv_nome_0_0=RULE_STRING_LIT
+			lv_opCascada_0_0=RULE_NOME_OPERACAO
 			{
-				newLeafNode(lv_nome_0_0, grammarAccess.getAtributoNomeAccess().getNomeSTRING_LITTerminalRuleCall_0());
+				newLeafNode(lv_opCascada_0_0, grammarAccess.getOperacaoAccess().getOpCascadaNOME_OPERACAOTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
-					$current = createModelElement(grammarAccess.getAtributoNomeRule());
+					$current = createModelElement(grammarAccess.getOperacaoRule());
 				}
 				setWithLastConsumed(
 					$current,
-					"nome",
-					lv_nome_0_0,
-					"org.xtext.tcc.mydsl.MyDsl.STRING_LIT");
+					"opCascada",
+					lv_opCascada_0_0,
+					"org.xtext.tcc.mydsl.MyDsl.NOME_OPERACAO");
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleAssociacao
+entryRuleAssociacao returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAssociacaoRule()); }
+	iv_ruleAssociacao=ruleAssociacao
+	{ $current=$iv_ruleAssociacao.current; }
+	EOF;
+
+// Rule Associacao
+ruleAssociacao returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			lv_associacao_0_0=RULE_NOME_ASSOCIACAO
+			{
+				newLeafNode(lv_associacao_0_0, grammarAccess.getAssociacaoAccess().getAssociacaoNOME_ASSOCIACAOTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getAssociacaoRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"associacao",
+					lv_associacao_0_0,
+					"org.xtext.tcc.mydsl.MyDsl.NOME_ASSOCIACAO");
 			}
 		)
 	)
@@ -638,79 +731,15 @@ ruleAtributoTipo returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleChavePrimaria
-entryRuleChavePrimaria returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getChavePrimariaRule()); }
-	iv_ruleChavePrimaria=ruleChavePrimaria
-	{ $current=$iv_ruleChavePrimaria.current; }
-	EOF;
+RULE_VAZIO : '""';
 
-// Rule ChavePrimaria
-ruleChavePrimaria returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			lv_id_0_0=RULE_ID
-			{
-				newLeafNode(lv_id_0_0, grammarAccess.getChavePrimariaAccess().getIdIDTerminalRuleCall_0());
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getChavePrimariaRule());
-				}
-				setWithLastConsumed(
-					$current,
-					"id",
-					lv_id_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
-			}
-		)
-	)
-;
+RULE_NOME_ASSOCIACAO : '"' ('OneToOne'|'OneToMany'|'ManyToOne'|'ManyToMany'|'None-Associacao') '"';
 
-// Entry rule entryRulePackageName
-entryRulePackageName returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getPackageNameRule()); }
-	iv_rulePackageName=rulePackageName
-	{ $current=$iv_rulePackageName.current; }
-	EOF;
-
-// Rule PackageName
-rulePackageName returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			lv_id_0_0=RULE_ID
-			{
-				newLeafNode(lv_id_0_0, grammarAccess.getPackageNameAccess().getIdIDTerminalRuleCall_0());
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getPackageNameRule());
-				}
-				setWithLastConsumed(
-					$current,
-					"id",
-					lv_id_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
-			}
-		)
-	)
-;
+RULE_NOME_OPERACAO : '"' ('ALL'|'DETACH'|'MERGE'|'PERSIST'|'REFRESH'|'REMOVE'|'None-Operacao') '"';
 
 RULE_TIPO_DEFINIDO : '"' ('Boolean'|'Integer'|'Long'|'String'|'Float'|'Double'|'Time'|'Timestamp'|'Date'|'ENUM'|'ArrayList'|'HashSet') '"';
 
-RULE_STRING_LIT : '"' RULE_LETRA* '"';
+RULE_STRING_LIT : '"' RULE_LETRA+ '"';
 
 fragment RULE_LETRA : ('a'..'z'|'A'..'Z');
 

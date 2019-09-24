@@ -108,10 +108,10 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.ENTIDADE_NOME:
+      case MyDslPackage.NOME:
       {
-        EntidadeNome entidadeNome = (EntidadeNome)theEObject;
-        T result = caseEntidadeNome(entidadeNome);
+        Nome nome = (Nome)theEObject;
+        T result = caseNome(nome);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -136,31 +136,10 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.ATRIBUTO_NOME:
-      {
-        AtributoNome atributoNome = (AtributoNome)theEObject;
-        T result = caseAtributoNome(atributoNome);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MyDslPackage.ATRIBUTO_TIPO:
       {
         AtributoTipo atributoTipo = (AtributoTipo)theEObject;
         T result = caseAtributoTipo(atributoTipo);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MyDslPackage.CHAVE_PRIMARIA:
-      {
-        ChavePrimaria chavePrimaria = (ChavePrimaria)theEObject;
-        T result = caseChavePrimaria(chavePrimaria);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MyDslPackage.PACKAGE_NAME:
-      {
-        PackageName packageName = (PackageName)theEObject;
-        T result = casePackageName(packageName);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -249,17 +228,17 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Entidade Nome</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Nome</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Entidade Nome</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Nome</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEntidadeNome(EntidadeNome object)
+  public T caseNome(Nome object)
   {
     return null;
   }
@@ -313,22 +292,6 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Atributo Nome</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Atributo Nome</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAtributoNome(AtributoNome object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Atributo Tipo</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -340,38 +303,6 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAtributoTipo(AtributoTipo object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Chave Primaria</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Chave Primaria</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseChavePrimaria(ChavePrimaria object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Package Name</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Package Name</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePackageName(PackageName object)
   {
     return null;
   }

@@ -5,6 +5,17 @@ generate myDsl "http://www.xtext.org/tcc/mydsl/MyDsl"
 Model:
 	greetings+=Greeting;
 
+terminal VAZIO:
+	'""'
+;
+
+terminal NOME_ASSOCIACAO:
+	'"'("OneToOne" | "OneToMany" | "ManyToOne" | "ManyToMany" | "None-Associacao") '"'
+;
+	
+terminal NOME_OPERACAO:
+	'"'("ALL"| "DETACH"| "MERGE"| "PERSIST"| "REFRESH"| "REMOVE" | "None-Operacao") '"'
+;
 
 terminal TIPO_DEFINIDO:
 	'"' ("Boolean" | "Integer" | "Long" | "String" | "Float" | "Double"|
@@ -12,7 +23,7 @@ terminal TIPO_DEFINIDO:
 ;
 
 terminal STRING_LIT:
-	'"' (LETRA)* '"'
+	'"' (LETRA)+ '"'
 ;
 
 terminal LETRA:
@@ -29,55 +40,39 @@ Api:
 
 
 ApiNome:
-	id = ID
+	nome = STRING_LIT
 ;
 
 Entidade:
 	'{' 
-		'"Nome"' ':' nomeEntidades = EntidadeNome ','
+		'"Nome"' ':' nomeEntidade = Nome ','
 		'"Atributos"' ':' '[' atributos += (Atributo)+ ']' ','
-		'"Chave Primaria"' ':' chavePrimaria = ChavePrimaria ','
-		'"Nome do pacote"' ':' package = PackageName
+		'"Chave Primaria"' ':' chavePrimaria = Nome ','
+		'"Nome do pacote"' ':' package = Nome
 	'}'
 ;
 
-EntidadeNome:
-	 nome = STRING_LIT
+Nome:
+	nome = STRING_LIT
 ;
 
 Atributo:
 	'{' 
-		'"nome-atributo"' ':' atributoNome = AtributoNome ','
+		'"nome-atributo"' ':' nomeAtributo = Nome ','
 		'"tipo-atributo"' ':' atributoTipo = AtributoTipo ','
-		//'"associação"' ':' associacao = Associacao?','
-		//'"operação em cascata"' ':' operacao = Operacao?
+		'"associação"' ':' associacao = Associacao','
+		'"operação em cascata"' ':' operacao = Operacao
 	'}'
 ;
 
 Operacao:
-	opCascada = "ALL"| opCascada = "DETACH"| 
-	opCascada = "MERGE"| opCascada = "PERSIST"| opCascada = "REFRESH"| 
-	opCascada = "REMOVE" //| opCascada = ANY_OTHER
+	opCascada = NOME_OPERACAO
 ;
 
 Associacao:
-	associacao = "OneToOne" | associacao = "OneToMany" |
-	associacao = "ManyToOne" | associacao = "ManyToMany" //| associacao = ANY_OTHER
-;
-
-AtributoNome:
-	nome = STRING_LIT
+	associacao = NOME_ASSOCIACAO
 ;
 
 AtributoTipo:
 	tipoP = TIPO_DEFINIDO | tipoE = STRING_LIT
-;
-
-	 
-ChavePrimaria:
-	id = ID
-;
-
-PackageName: 
-	id = ID
 ;

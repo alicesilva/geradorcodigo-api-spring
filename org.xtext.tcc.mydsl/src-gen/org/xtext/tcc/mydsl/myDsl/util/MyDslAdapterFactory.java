@@ -101,9 +101,9 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createEntidadeAdapter();
       }
       @Override
-      public Adapter caseEntidadeNome(EntidadeNome object)
+      public Adapter caseNome(Nome object)
       {
-        return createEntidadeNomeAdapter();
+        return createNomeAdapter();
       }
       @Override
       public Adapter caseAtributo(Atributo object)
@@ -121,24 +121,9 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createAssociacaoAdapter();
       }
       @Override
-      public Adapter caseAtributoNome(AtributoNome object)
-      {
-        return createAtributoNomeAdapter();
-      }
-      @Override
       public Adapter caseAtributoTipo(AtributoTipo object)
       {
         return createAtributoTipoAdapter();
-      }
-      @Override
-      public Adapter caseChavePrimaria(ChavePrimaria object)
-      {
-        return createChavePrimariaAdapter();
-      }
-      @Override
-      public Adapter casePackageName(PackageName object)
-      {
-        return createPackageNameAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -238,16 +223,16 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.EntidadeNome <em>Entidade Nome</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.Nome <em>Nome</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.tcc.mydsl.myDsl.EntidadeNome
+   * @see org.xtext.tcc.mydsl.myDsl.Nome
    * @generated
    */
-  public Adapter createEntidadeNomeAdapter()
+  public Adapter createNomeAdapter()
   {
     return null;
   }
@@ -298,21 +283,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.AtributoNome <em>Atributo Nome</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.tcc.mydsl.myDsl.AtributoNome
-   * @generated
-   */
-  public Adapter createAtributoNomeAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo <em>Atributo Tipo</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -323,36 +293,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAtributoTipoAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.ChavePrimaria <em>Chave Primaria</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.tcc.mydsl.myDsl.ChavePrimaria
-   * @generated
-   */
-  public Adapter createChavePrimariaAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.PackageName <em>Package Name</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.tcc.mydsl.myDsl.PackageName
-   * @generated
-   */
-  public Adapter createPackageNameAdapter()
   {
     return null;
   }

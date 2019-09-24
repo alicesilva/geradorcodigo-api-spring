@@ -31,8 +31,6 @@ public class MyDslParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, MyDslGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getOperacaoAccess().getAlternatives(), "rule__Operacao__Alternatives");
-			builder.put(grammarAccess.getAssociacaoAccess().getAlternatives(), "rule__Associacao__Alternatives");
 			builder.put(grammarAccess.getAtributoTipoAccess().getAlternatives(), "rule__AtributoTipo__Alternatives");
 			builder.put(grammarAccess.getGreetingAccess().getGroup(), "rule__Greeting__Group__0");
 			builder.put(grammarAccess.getApiAccess().getGroup(), "rule__Api__Group__0");
@@ -42,29 +40,20 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGreetingAccess().getApiAssignment_1(), "rule__Greeting__ApiAssignment_1");
 			builder.put(grammarAccess.getApiAccess().getNomeApiAssignment_2(), "rule__Api__NomeApiAssignment_2");
 			builder.put(grammarAccess.getApiAccess().getEntidadesAssignment_7(), "rule__Api__EntidadesAssignment_7");
-			builder.put(grammarAccess.getApiNomeAccess().getIdAssignment(), "rule__ApiNome__IdAssignment");
-			builder.put(grammarAccess.getEntidadeAccess().getNomeEntidadesAssignment_3(), "rule__Entidade__NomeEntidadesAssignment_3");
+			builder.put(grammarAccess.getApiNomeAccess().getNomeAssignment(), "rule__ApiNome__NomeAssignment");
+			builder.put(grammarAccess.getEntidadeAccess().getNomeEntidadeAssignment_3(), "rule__Entidade__NomeEntidadeAssignment_3");
 			builder.put(grammarAccess.getEntidadeAccess().getAtributosAssignment_8(), "rule__Entidade__AtributosAssignment_8");
 			builder.put(grammarAccess.getEntidadeAccess().getChavePrimariaAssignment_13(), "rule__Entidade__ChavePrimariaAssignment_13");
 			builder.put(grammarAccess.getEntidadeAccess().getPackageAssignment_17(), "rule__Entidade__PackageAssignment_17");
-			builder.put(grammarAccess.getEntidadeNomeAccess().getNomeAssignment(), "rule__EntidadeNome__NomeAssignment");
-			builder.put(grammarAccess.getAtributoAccess().getAtributoNomeAssignment_3(), "rule__Atributo__AtributoNomeAssignment_3");
+			builder.put(grammarAccess.getNomeAccess().getNomeAssignment(), "rule__Nome__NomeAssignment");
+			builder.put(grammarAccess.getAtributoAccess().getNomeAtributoAssignment_3(), "rule__Atributo__NomeAtributoAssignment_3");
 			builder.put(grammarAccess.getAtributoAccess().getAtributoTipoAssignment_7(), "rule__Atributo__AtributoTipoAssignment_7");
-			builder.put(grammarAccess.getOperacaoAccess().getOpCascadaAssignment_0(), "rule__Operacao__OpCascadaAssignment_0");
-			builder.put(grammarAccess.getOperacaoAccess().getOpCascadaAssignment_1(), "rule__Operacao__OpCascadaAssignment_1");
-			builder.put(grammarAccess.getOperacaoAccess().getOpCascadaAssignment_2(), "rule__Operacao__OpCascadaAssignment_2");
-			builder.put(grammarAccess.getOperacaoAccess().getOpCascadaAssignment_3(), "rule__Operacao__OpCascadaAssignment_3");
-			builder.put(grammarAccess.getOperacaoAccess().getOpCascadaAssignment_4(), "rule__Operacao__OpCascadaAssignment_4");
-			builder.put(grammarAccess.getOperacaoAccess().getOpCascadaAssignment_5(), "rule__Operacao__OpCascadaAssignment_5");
-			builder.put(grammarAccess.getAssociacaoAccess().getAssociacaoAssignment_0(), "rule__Associacao__AssociacaoAssignment_0");
-			builder.put(grammarAccess.getAssociacaoAccess().getAssociacaoAssignment_1(), "rule__Associacao__AssociacaoAssignment_1");
-			builder.put(grammarAccess.getAssociacaoAccess().getAssociacaoAssignment_2(), "rule__Associacao__AssociacaoAssignment_2");
-			builder.put(grammarAccess.getAssociacaoAccess().getAssociacaoAssignment_3(), "rule__Associacao__AssociacaoAssignment_3");
-			builder.put(grammarAccess.getAtributoNomeAccess().getNomeAssignment(), "rule__AtributoNome__NomeAssignment");
+			builder.put(grammarAccess.getAtributoAccess().getAssociacaoAssignment_11(), "rule__Atributo__AssociacaoAssignment_11");
+			builder.put(grammarAccess.getAtributoAccess().getOperacaoAssignment_15(), "rule__Atributo__OperacaoAssignment_15");
+			builder.put(grammarAccess.getOperacaoAccess().getOpCascadaAssignment(), "rule__Operacao__OpCascadaAssignment");
+			builder.put(grammarAccess.getAssociacaoAccess().getAssociacaoAssignment(), "rule__Associacao__AssociacaoAssignment");
 			builder.put(grammarAccess.getAtributoTipoAccess().getTipoPAssignment_0(), "rule__AtributoTipo__TipoPAssignment_0");
 			builder.put(grammarAccess.getAtributoTipoAccess().getTipoEAssignment_1(), "rule__AtributoTipo__TipoEAssignment_1");
-			builder.put(grammarAccess.getChavePrimariaAccess().getIdAssignment(), "rule__ChavePrimaria__IdAssignment");
-			builder.put(grammarAccess.getPackageNameAccess().getIdAssignment(), "rule__PackageName__IdAssignment");
 		}
 	}
 	

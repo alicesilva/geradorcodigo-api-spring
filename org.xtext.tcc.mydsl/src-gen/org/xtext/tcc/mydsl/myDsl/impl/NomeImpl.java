@@ -10,23 +10,23 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.tcc.mydsl.myDsl.EntidadeNome;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
+import org.xtext.tcc.mydsl.myDsl.Nome;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Entidade Nome</b></em>'.
+ * An implementation of the model object '<em><b>Nome</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.EntidadeNomeImpl#getNome <em>Nome</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.NomeImpl#getNome <em>Nome</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements EntidadeNome
+public class NomeImpl extends MinimalEObjectImpl.Container implements Nome
 {
   /**
    * The default value of the '{@link #getNome() <em>Nome</em>}' attribute.
@@ -53,7 +53,7 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
    * <!-- end-user-doc -->
    * @generated
    */
-  protected EntidadeNomeImpl()
+  protected NomeImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
   @Override
   protected EClass eStaticClass()
   {
-    return MyDslPackage.Literals.ENTIDADE_NOME;
+    return MyDslPackage.Literals.NOME;
   }
 
   /**
@@ -91,7 +91,7 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
     String oldNome = nome;
     nome = newNome;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ENTIDADE_NOME__NOME, oldNome, nome));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.NOME__NOME, oldNome, nome));
   }
 
   /**
@@ -104,7 +104,7 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
   {
     switch (featureID)
     {
-      case MyDslPackage.ENTIDADE_NOME__NOME:
+      case MyDslPackage.NOME__NOME:
         return getNome();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -120,7 +120,7 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
   {
     switch (featureID)
     {
-      case MyDslPackage.ENTIDADE_NOME__NOME:
+      case MyDslPackage.NOME__NOME:
         setNome((String)newValue);
         return;
     }
@@ -137,7 +137,7 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
   {
     switch (featureID)
     {
-      case MyDslPackage.ENTIDADE_NOME__NOME:
+      case MyDslPackage.NOME__NOME:
         setNome(NOME_EDEFAULT);
         return;
     }
@@ -154,7 +154,7 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
   {
     switch (featureID)
     {
-      case MyDslPackage.ENTIDADE_NOME__NOME:
+      case MyDslPackage.NOME__NOME:
         return NOME_EDEFAULT == null ? nome != null : !NOME_EDEFAULT.equals(nome);
     }
     return super.eIsSet(featureID);
@@ -177,4 +177,4 @@ public class EntidadeNomeImpl extends MinimalEObjectImpl.Container implements En
     return result.toString();
   }
 
-} //EntidadeNomeImpl
+} //NomeImpl

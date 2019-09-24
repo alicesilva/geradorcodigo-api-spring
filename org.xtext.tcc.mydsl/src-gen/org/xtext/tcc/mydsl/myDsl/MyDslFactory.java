@@ -69,13 +69,13 @@ public interface MyDslFactory extends EFactory
   Entidade createEntidade();
 
   /**
-   * Returns a new object of class '<em>Entidade Nome</em>'.
+   * Returns a new object of class '<em>Nome</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Entidade Nome</em>'.
+   * @return a new object of class '<em>Nome</em>'.
    * @generated
    */
-  EntidadeNome createEntidadeNome();
+  Nome createNome();
 
   /**
    * Returns a new object of class '<em>Atributo</em>'.
@@ -105,15 +105,6 @@ public interface MyDslFactory extends EFactory
   Associacao createAssociacao();
 
   /**
-   * Returns a new object of class '<em>Atributo Nome</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Atributo Nome</em>'.
-   * @generated
-   */
-  AtributoNome createAtributoNome();
-
-  /**
    * Returns a new object of class '<em>Atributo Tipo</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -121,24 +112,6 @@ public interface MyDslFactory extends EFactory
    * @generated
    */
   AtributoTipo createAtributoTipo();
-
-  /**
-   * Returns a new object of class '<em>Chave Primaria</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Chave Primaria</em>'.
-   * @generated
-   */
-  ChavePrimaria createChavePrimaria();
-
-  /**
-   * Returns a new object of class '<em>Package Name</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Package Name</em>'.
-   * @generated
-   */
-  PackageName createPackageName();
 
   /**
    * Returns the package supported by this factory.
