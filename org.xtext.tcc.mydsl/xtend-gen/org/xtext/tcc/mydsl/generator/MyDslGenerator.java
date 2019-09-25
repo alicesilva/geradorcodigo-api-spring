@@ -13,6 +13,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
+import org.xtext.tcc.mydsl.myDsl.Api;
 import org.xtext.tcc.mydsl.myDsl.Atributo;
 import org.xtext.tcc.mydsl.myDsl.Entidade;
 
@@ -25,11 +26,19 @@ import org.xtext.tcc.mydsl.myDsl.Entidade;
 public class MyDslGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    Iterable<Entidade> _filter = Iterables.<Entidade>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Entidade.class);
-    for (final Entidade e : _filter) {
-      String _string = StringExtensions.toFirstUpper(e.getNomeEntidade().getNome()).toString();
-      String _plus = (_string + ".java");
-      fsa.generateFile(_plus, this.compile(e));
+    Iterable<Api> _filter = Iterables.<Api>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Api.class);
+    for (final Api a : _filter) {
+      Iterable<Entidade> _filter_1 = Iterables.<Entidade>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Entidade.class);
+      for (final Entidade e : _filter_1) {
+        {
+          String _string = StringExtensions.toFirstUpper(e.getNomeEntidade().getNome()).toString();
+          String _plus = (_string + ".java");
+          fsa.generateFile(_plus, this.compile(e));
+          String _string_1 = StringExtensions.toFirstUpper(e.getNomeEntidade().getNome()).toString();
+          String _plus_1 = (_string_1 + "Controller.java");
+          fsa.generateFile(_plus_1, this.compileController(a, e));
+        }
+      }
     }
   }
   
@@ -238,6 +247,50 @@ public class MyDslGenerator extends AbstractGenerator {
         }
       }
     }
+    return _builder;
+  }
+  
+  public CharSequence compileController(final Api api, final Entidade entidade) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("package ");
+    String _nome = entidade.getPackage().getNome();
+    _builder.append(_nome);
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.append("@RestController");
+    _builder.newLine();
+    _builder.append("@RequestMapping(\"/");
+    String _nome_1 = api.getNomeApi().getNome();
+    _builder.append(_nome_1);
+    _builder.append("\")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("public class ");
+    String _firstUpper = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
+    _builder.append(_firstUpper);
+    _builder.append("Controller{");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("@RequestMapping(method=RequestMethod.POST, value = \"/");
+    String _nome_2 = entidade.getNomeEntidade().getNome();
+    _builder.append(_nome_2, "\t");
+    _builder.append("s\", produces = MediaType.APPLICATION_JSON_VALUE)");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("public void ResponseEntity<");
+    String _firstUpper_1 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
+    _builder.append(_firstUpper_1, "\t");
+    _builder.append("> registrar(@RequestBody ");
+    String _nome_3 = entidade.getNomeEntidade().getNome();
+    _builder.append(_nome_3, "\t");
+    _builder.append(" user){");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
     return _builder;
   }
 }

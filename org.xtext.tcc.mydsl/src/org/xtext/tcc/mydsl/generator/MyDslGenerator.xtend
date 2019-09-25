@@ -10,6 +10,7 @@ import org.eclipse.xtext.generator.IGeneratorContext
 import org.xtext.tcc.mydsl.myDsl.Entidade
 import org.eclipse.emf.common.util.EList
 import org.xtext.tcc.mydsl.myDsl.Atributo
+import org.xtext.tcc.mydsl.myDsl.Api
 
 /**
  * Generates code from your model files on save.
@@ -19,9 +20,22 @@ import org.xtext.tcc.mydsl.myDsl.Atributo
 class MyDslGenerator extends AbstractGenerator {
 		
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		for(e: resource.allContents.toIterable.filter(Entidade)){
-			fsa.generateFile(e.nomeEntidade.nome.toFirstUpper.toString + ".java", e.compile)
+		//for(e: resource.allContents.toIterable.filter(Entidade)){
+			//fsa.generateFile(e.nomeEntidade.nome.toFirstUpper.toString + ".java", e.compile);
+			//fsa.generateFile(e.nomeEntidade.nome.toFirstUpper.toString + "Controller.java", e.compileController);
+		//}
+		
+		for (a : resource.allContents.toIterable.filter(Api)) {
+			for (e : resource.allContents.toIterable.filter(Entidade)) {
+				fsa.generateFile(e.nomeEntidade.nome.toFirstUpper.toString + ".java", e.compile);
+				fsa.generateFile(e.nomeEntidade.nome.toFirstUpper.toString + "Controller.java", compileController(a, e));
+			}
+
 		}
+		
+		
+					
+		
 	}
 	
 	def compile(Entidade entidade)'''
@@ -84,6 +98,19 @@ class MyDslGenerator extends AbstractGenerator {
 				}
 			«ENDIF»
 		«ENDFOR»
+	'''
+	
+	def compileController(Api api, Entidade entidade) '''
+		package «entidade.package.nome»;
+		@RestController
+		@RequestMapping("/«api.nomeApi.nome»")
+		public class «entidade.nomeEntidade.nome.toFirstUpper»Controller{
+			
+			@RequestMapping(method=RequestMethod.POST, value = "/«entidade.nomeEntidade.nome»s", produces = MediaType.APPLICATION_JSON_VALUE)
+			public void ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»> registrar(@RequestBody «entidade.nomeEntidade.nome» user){
+				
+		}
+		
 	'''
 		
 }
