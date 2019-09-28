@@ -48,10 +48,6 @@ ruleEntidade:
 	+
 	']'
 	','
-	'"Chave Primaria"'
-	':'
-	ruleNome
-	','
 	'"Nome do pacote"'
 	':'
 	ruleNome

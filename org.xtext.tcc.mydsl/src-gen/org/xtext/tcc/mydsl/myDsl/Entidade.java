@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.Entidade#getNomeEntidade <em>Nome Entidade</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.Entidade#getAtributos <em>Atributos</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.Entidade#getChavePrimaria <em>Chave Primaria</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.Entidade#getPackage <em>Package</em>}</li>
  * </ul>
  *
@@ -61,28 +60,6 @@ public interface Entidade extends EObject
    * @generated
    */
   EList<Atributo> getAtributos();
-
-  /**
-   * Returns the value of the '<em><b>Chave Primaria</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Chave Primaria</em>' containment reference.
-   * @see #setChavePrimaria(Nome)
-   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getEntidade_ChavePrimaria()
-   * @model containment="true"
-   * @generated
-   */
-  Nome getChavePrimaria();
-
-  /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Entidade#getChavePrimaria <em>Chave Primaria</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Chave Primaria</em>' containment reference.
-   * @see #getChavePrimaria()
-   * @generated
-   */
-  void setChavePrimaria(Nome value);
 
   /**
    * Returns the value of the '<em><b>Package</b></em>' containment reference.

@@ -47,7 +47,6 @@ Entidade:
 	'{' 
 		'"Nome"' ':' nomeEntidade = Nome ','
 		'"Atributos"' ':' '[' atributos += (Atributo)+ ']' ','
-		'"Chave Primaria"' ':' chavePrimaria = Nome ','
 		'"Nome do pacote"' ':' package = Nome
 	'}'
 ;

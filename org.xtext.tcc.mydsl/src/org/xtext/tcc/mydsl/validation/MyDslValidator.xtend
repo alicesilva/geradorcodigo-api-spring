@@ -31,7 +31,6 @@ class MyDslValidator extends AbstractMyDslValidator {
 		api.nomeApi.nome = api.nomeApi.nome.substring(1, api.nomeApi.nome.length - 1);
 		for (e : api.entidades) {
 			e.nomeEntidade.nome = e.nomeEntidade.nome.substring(1, e.nomeEntidade.nome.length - 1);
-			e.chavePrimaria.nome = e.chavePrimaria.nome.substring(1, e.chavePrimaria.nome.length - 1);
 			e.package.nome = e.package.nome.substring(1, e.package.nome.length - 1);
 
 			for (a : e.atributos) {
@@ -60,12 +59,12 @@ class MyDslValidator extends AbstractMyDslValidator {
 	}
 
 	
-	def checkChavePrimaria(Api api) {
+	/*def checkChavePrimaria(Api api) {
 		if (entidadeValidator.checkChavePrimaria(api) !== null) {
 			var Exception erro = entidadeValidator.checkChavePrimaria(api);
 			error(erro.erro, erro.feature);
 		}
-	}
+	}*/
 
 	def checkTipoAtributos(Api api) {
 		if (entidadeValidator.checkTipoAtributo(api) !== null) {

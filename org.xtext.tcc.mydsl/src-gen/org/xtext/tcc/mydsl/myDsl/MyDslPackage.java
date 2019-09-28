@@ -207,22 +207,13 @@ public interface MyDslPackage extends EPackage
   int ENTIDADE__ATRIBUTOS = 1;
 
   /**
-   * The feature id for the '<em><b>Chave Primaria</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENTIDADE__CHAVE_PRIMARIA = 2;
-
-  /**
    * The feature id for the '<em><b>Package</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTIDADE__PACKAGE = 3;
+  int ENTIDADE__PACKAGE = 2;
 
   /**
    * The number of structural features of the '<em>Entidade</em>' class.
@@ -231,7 +222,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENTIDADE_FEATURE_COUNT = 4;
+  int ENTIDADE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.tcc.mydsl.myDsl.impl.NomeImpl <em>Nome</em>}' class.
@@ -538,17 +529,6 @@ public interface MyDslPackage extends EPackage
   EReference getEntidade_Atributos();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Entidade#getChavePrimaria <em>Chave Primaria</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Chave Primaria</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.Entidade#getChavePrimaria()
-   * @see #getEntidade()
-   * @generated
-   */
-  EReference getEntidade_ChavePrimaria();
-
-  /**
    * Returns the meta object for the containment reference '{@link org.xtext.tcc.mydsl.myDsl.Entidade#getPackage <em>Package</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -836,14 +816,6 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EReference ENTIDADE__ATRIBUTOS = eINSTANCE.getEntidade_Atributos();
-
-    /**
-     * The meta object literal for the '<em><b>Chave Primaria</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ENTIDADE__CHAVE_PRIMARIA = eINSTANCE.getEntidade_ChavePrimaria();
 
     /**
      * The meta object literal for the '<em><b>Package</b></em>' containment reference feature.

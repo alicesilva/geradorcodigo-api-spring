@@ -34,7 +34,6 @@ import org.xtext.tcc.mydsl.myDsl.Nome;
  * <ul>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.EntidadeImpl#getNomeEntidade <em>Nome Entidade</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.EntidadeImpl#getAtributos <em>Atributos</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.EntidadeImpl#getChavePrimaria <em>Chave Primaria</em>}</li>
  *   <li>{@link org.xtext.tcc.mydsl.myDsl.impl.EntidadeImpl#getPackage <em>Package</em>}</li>
  * </ul>
  *
@@ -61,16 +60,6 @@ public class EntidadeImpl extends MinimalEObjectImpl.Container implements Entida
    * @ordered
    */
   protected EList<Atributo> atributos;
-
-  /**
-   * The cached value of the '{@link #getChavePrimaria() <em>Chave Primaria</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getChavePrimaria()
-   * @generated
-   * @ordered
-   */
-  protected Nome chavePrimaria;
 
   /**
    * The cached value of the '{@link #getPackage() <em>Package</em>}' containment reference.
@@ -174,56 +163,6 @@ public class EntidadeImpl extends MinimalEObjectImpl.Container implements Entida
    * @generated
    */
   @Override
-  public Nome getChavePrimaria()
-  {
-    return chavePrimaria;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetChavePrimaria(Nome newChavePrimaria, NotificationChain msgs)
-  {
-    Nome oldChavePrimaria = chavePrimaria;
-    chavePrimaria = newChavePrimaria;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.ENTIDADE__CHAVE_PRIMARIA, oldChavePrimaria, newChavePrimaria);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setChavePrimaria(Nome newChavePrimaria)
-  {
-    if (newChavePrimaria != chavePrimaria)
-    {
-      NotificationChain msgs = null;
-      if (chavePrimaria != null)
-        msgs = ((InternalEObject)chavePrimaria).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ENTIDADE__CHAVE_PRIMARIA, null, msgs);
-      if (newChavePrimaria != null)
-        msgs = ((InternalEObject)newChavePrimaria).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.ENTIDADE__CHAVE_PRIMARIA, null, msgs);
-      msgs = basicSetChavePrimaria(newChavePrimaria, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.ENTIDADE__CHAVE_PRIMARIA, newChavePrimaria, newChavePrimaria));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Nome getPackage()
   {
     return package_;
@@ -282,8 +221,6 @@ public class EntidadeImpl extends MinimalEObjectImpl.Container implements Entida
         return basicSetNomeEntidade(null, msgs);
       case MyDslPackage.ENTIDADE__ATRIBUTOS:
         return ((InternalEList<?>)getAtributos()).basicRemove(otherEnd, msgs);
-      case MyDslPackage.ENTIDADE__CHAVE_PRIMARIA:
-        return basicSetChavePrimaria(null, msgs);
       case MyDslPackage.ENTIDADE__PACKAGE:
         return basicSetPackage(null, msgs);
     }
@@ -304,8 +241,6 @@ public class EntidadeImpl extends MinimalEObjectImpl.Container implements Entida
         return getNomeEntidade();
       case MyDslPackage.ENTIDADE__ATRIBUTOS:
         return getAtributos();
-      case MyDslPackage.ENTIDADE__CHAVE_PRIMARIA:
-        return getChavePrimaria();
       case MyDslPackage.ENTIDADE__PACKAGE:
         return getPackage();
     }
@@ -330,9 +265,6 @@ public class EntidadeImpl extends MinimalEObjectImpl.Container implements Entida
         getAtributos().clear();
         getAtributos().addAll((Collection<? extends Atributo>)newValue);
         return;
-      case MyDslPackage.ENTIDADE__CHAVE_PRIMARIA:
-        setChavePrimaria((Nome)newValue);
-        return;
       case MyDslPackage.ENTIDADE__PACKAGE:
         setPackage((Nome)newValue);
         return;
@@ -356,9 +288,6 @@ public class EntidadeImpl extends MinimalEObjectImpl.Container implements Entida
       case MyDslPackage.ENTIDADE__ATRIBUTOS:
         getAtributos().clear();
         return;
-      case MyDslPackage.ENTIDADE__CHAVE_PRIMARIA:
-        setChavePrimaria((Nome)null);
-        return;
       case MyDslPackage.ENTIDADE__PACKAGE:
         setPackage((Nome)null);
         return;
@@ -380,8 +309,6 @@ public class EntidadeImpl extends MinimalEObjectImpl.Container implements Entida
         return nomeEntidade != null;
       case MyDslPackage.ENTIDADE__ATRIBUTOS:
         return atributos != null && !atributos.isEmpty();
-      case MyDslPackage.ENTIDADE__CHAVE_PRIMARIA:
-        return chavePrimaria != null;
       case MyDslPackage.ENTIDADE__PACKAGE:
         return package_ != null;
     }

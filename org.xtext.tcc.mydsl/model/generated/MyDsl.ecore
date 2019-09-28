@@ -22,8 +22,6 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="atributos" upperBound="-1"
         eType="#//Atributo" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="chavePrimaria" eType="#//Nome"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="package" eType="#//Nome"
         containment="true"/>
   </eClassifiers>

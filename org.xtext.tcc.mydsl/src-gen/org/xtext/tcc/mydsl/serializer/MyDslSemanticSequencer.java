@@ -168,7 +168,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Entidade returns Entidade
 	 *
 	 * Constraint:
-	 *     (nomeEntidade=Nome atributos+=Atributo+ chavePrimaria=Nome package=Nome)
+	 *     (nomeEntidade=Nome atributos+=Atributo+ package=Nome)
 	 */
 	protected void sequence_Entidade(ISerializationContext context, Entidade semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

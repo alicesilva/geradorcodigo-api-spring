@@ -358,9 +358,9 @@ ruleEntidade returns [EObject current=null]
 		{
 			newLeafNode(otherlv_10, grammarAccess.getEntidadeAccess().getCommaKeyword_10());
 		}
-		otherlv_11='"Chave Primaria"'
+		otherlv_11='"Nome do pacote"'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getEntidadeAccess().getChavePrimariaKeyword_11());
+			newLeafNode(otherlv_11, grammarAccess.getEntidadeAccess().getNomeDoPacoteKeyword_11());
 		}
 		otherlv_12=':'
 		{
@@ -369,40 +369,9 @@ ruleEntidade returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEntidadeAccess().getChavePrimariaNomeParserRuleCall_13_0());
+					newCompositeNode(grammarAccess.getEntidadeAccess().getPackageNomeParserRuleCall_13_0());
 				}
-				lv_chavePrimaria_13_0=ruleNome
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getEntidadeRule());
-					}
-					set(
-						$current,
-						"chavePrimaria",
-						lv_chavePrimaria_13_0,
-						"org.xtext.tcc.mydsl.MyDsl.Nome");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_14=','
-		{
-			newLeafNode(otherlv_14, grammarAccess.getEntidadeAccess().getCommaKeyword_14());
-		}
-		otherlv_15='"Nome do pacote"'
-		{
-			newLeafNode(otherlv_15, grammarAccess.getEntidadeAccess().getNomeDoPacoteKeyword_15());
-		}
-		otherlv_16=':'
-		{
-			newLeafNode(otherlv_16, grammarAccess.getEntidadeAccess().getColonKeyword_16());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getEntidadeAccess().getPackageNomeParserRuleCall_17_0());
-				}
-				lv_package_17_0=ruleNome
+				lv_package_13_0=ruleNome
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEntidadeRule());
@@ -410,15 +379,15 @@ ruleEntidade returns [EObject current=null]
 					set(
 						$current,
 						"package",
-						lv_package_17_0,
+						lv_package_13_0,
 						"org.xtext.tcc.mydsl.MyDsl.Nome");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_18='}'
+		otherlv_14='}'
 		{
-			newLeafNode(otherlv_18, grammarAccess.getEntidadeAccess().getRightCurlyBracketKeyword_18());
+			newLeafNode(otherlv_14, grammarAccess.getEntidadeAccess().getRightCurlyBracketKeyword_14());
 		}
 	)
 ;

@@ -302,20 +302,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EReference getEntidade_ChavePrimaria()
-  {
-    return (EReference)entidadeEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getEntidade_Package()
   {
-    return (EReference)entidadeEClass.getEStructuralFeatures().get(3);
+    return (EReference)entidadeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -519,7 +508,6 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     entidadeEClass = createEClass(ENTIDADE);
     createEReference(entidadeEClass, ENTIDADE__NOME_ENTIDADE);
     createEReference(entidadeEClass, ENTIDADE__ATRIBUTOS);
-    createEReference(entidadeEClass, ENTIDADE__CHAVE_PRIMARIA);
     createEReference(entidadeEClass, ENTIDADE__PACKAGE);
 
     nomeEClass = createEClass(NOME);
@@ -589,7 +577,6 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEClass(entidadeEClass, Entidade.class, "Entidade", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEntidade_NomeEntidade(), this.getNome(), null, "nomeEntidade", null, 0, 1, Entidade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEntidade_Atributos(), this.getAtributo(), null, "atributos", null, 0, -1, Entidade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntidade_ChavePrimaria(), this.getNome(), null, "chavePrimaria", null, 0, 1, Entidade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEntidade_Package(), this.getNome(), null, "package", null, 0, 1, Entidade.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nomeEClass, Nome.class, "Nome", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -22,7 +22,6 @@
     <genClasses ecoreClass="MyDsl.ecore#//Entidade">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Entidade/nomeEntidade"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Entidade/atributos"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Entidade/chavePrimaria"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Entidade/package"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Nome">

@@ -40,49 +40,44 @@ public class MyDslValidator extends AbstractMyDslValidator {
         int _length_1 = e.getNomeEntidade().getNome().length();
         int _minus_1 = (_length_1 - 1);
         _nomeEntidade.setNome(_nome_1.substring(1, _minus_1));
-        Nome _chavePrimaria = e.getChavePrimaria();
-        String _nome_2 = e.getChavePrimaria().getNome();
-        int _length_2 = e.getChavePrimaria().getNome().length();
-        int _minus_2 = (_length_2 - 1);
-        _chavePrimaria.setNome(_nome_2.substring(1, _minus_2));
         Nome _package = e.getPackage();
-        String _nome_3 = e.getPackage().getNome();
-        int _length_3 = e.getPackage().getNome().length();
-        int _minus_3 = (_length_3 - 1);
-        _package.setNome(_nome_3.substring(1, _minus_3));
+        String _nome_2 = e.getPackage().getNome();
+        int _length_2 = e.getPackage().getNome().length();
+        int _minus_2 = (_length_2 - 1);
+        _package.setNome(_nome_2.substring(1, _minus_2));
         EList<Atributo> _atributos = e.getAtributos();
         for (final Atributo a : _atributos) {
           {
             Nome _nomeAtributo = a.getNomeAtributo();
-            String _nome_4 = a.getNomeAtributo().getNome();
-            int _length_4 = a.getNomeAtributo().getNome().length();
-            int _minus_4 = (_length_4 - 1);
-            _nomeAtributo.setNome(_nome_4.substring(1, _minus_4));
+            String _nome_3 = a.getNomeAtributo().getNome();
+            int _length_3 = a.getNomeAtributo().getNome().length();
+            int _minus_3 = (_length_3 - 1);
+            _nomeAtributo.setNome(_nome_3.substring(1, _minus_3));
             String _tipoP = a.getAtributoTipo().getTipoP();
             boolean _tripleNotEquals = (_tipoP != null);
             if (_tripleNotEquals) {
               AtributoTipo _atributoTipo = a.getAtributoTipo();
               String _tipoP_1 = a.getAtributoTipo().getTipoP();
-              int _length_5 = a.getAtributoTipo().getTipoP().length();
-              int _minus_5 = (_length_5 - 1);
-              _atributoTipo.setTipoP(_tipoP_1.substring(1, _minus_5));
+              int _length_4 = a.getAtributoTipo().getTipoP().length();
+              int _minus_4 = (_length_4 - 1);
+              _atributoTipo.setTipoP(_tipoP_1.substring(1, _minus_4));
             } else {
               AtributoTipo _atributoTipo_1 = a.getAtributoTipo();
               String _tipoE = a.getAtributoTipo().getTipoE();
-              int _length_6 = a.getAtributoTipo().getTipoE().length();
-              int _minus_6 = (_length_6 - 1);
-              _atributoTipo_1.setTipoE(_tipoE.substring(1, _minus_6));
+              int _length_5 = a.getAtributoTipo().getTipoE().length();
+              int _minus_5 = (_length_5 - 1);
+              _atributoTipo_1.setTipoE(_tipoE.substring(1, _minus_5));
             }
             Associacao _associacao = a.getAssociacao();
             String _associacao_1 = a.getAssociacao().getAssociacao();
-            int _length_7 = a.getAssociacao().getAssociacao().length();
-            int _minus_7 = (_length_7 - 1);
-            _associacao.setAssociacao(_associacao_1.substring(1, _minus_7));
+            int _length_6 = a.getAssociacao().getAssociacao().length();
+            int _minus_6 = (_length_6 - 1);
+            _associacao.setAssociacao(_associacao_1.substring(1, _minus_6));
             Operacao _operacao = a.getOperacao();
             String _opCascada = a.getOperacao().getOpCascada();
-            int _length_8 = a.getOperacao().getOpCascada().length();
-            int _minus_8 = (_length_8 - 1);
-            _operacao.setOpCascada(_opCascada.substring(1, _minus_8));
+            int _length_7 = a.getOperacao().getOpCascada().length();
+            int _minus_7 = (_length_7 - 1);
+            _operacao.setOpCascada(_opCascada.substring(1, _minus_7));
           }
         }
       }
@@ -100,15 +95,14 @@ public class MyDslValidator extends AbstractMyDslValidator {
     }
   }
   
-  public void checkChavePrimaria(final Api api) {
-    org.xtext.tcc.mydsl.validation.Exception _checkChavePrimaria = this.entidadeValidator.checkChavePrimaria(api);
-    boolean _tripleNotEquals = (_checkChavePrimaria != null);
-    if (_tripleNotEquals) {
-      org.xtext.tcc.mydsl.validation.Exception erro = this.entidadeValidator.checkChavePrimaria(api);
-      this.error(erro.erro, erro.feature);
-    }
-  }
-  
+  /**
+   * def checkChavePrimaria(Api api) {
+   * if (entidadeValidator.checkChavePrimaria(api) !== null) {
+   * var Exception erro = entidadeValidator.checkChavePrimaria(api);
+   * error(erro.erro, erro.feature);
+   * }
+   * }
+   */
   public void checkTipoAtributos(final Api api) {
     org.xtext.tcc.mydsl.validation.Exception _checkTipoAtributo = this.entidadeValidator.checkTipoAtributo(api);
     boolean _tripleNotEquals = (_checkTipoAtributo != null);
