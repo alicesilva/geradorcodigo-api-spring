@@ -14,8 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoP <em>Tipo P</em>}</li>
- *   <li>{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoE <em>Tipo E</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoPrimitivo <em>Tipo Primitivo</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoColecao <em>Tipo Colecao</em>}</li>
+ *   <li>{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoObjeto <em>Tipo Objeto</em>}</li>
  * </ul>
  *
  * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributoTipo()
@@ -25,47 +26,69 @@ import org.eclipse.emf.ecore.EObject;
 public interface AtributoTipo extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Tipo P</b></em>' attribute.
+   * Returns the value of the '<em><b>Tipo Primitivo</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Tipo P</em>' attribute.
-   * @see #setTipoP(String)
-   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributoTipo_TipoP()
+   * @return the value of the '<em>Tipo Primitivo</em>' attribute.
+   * @see #setTipoPrimitivo(String)
+   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributoTipo_TipoPrimitivo()
    * @model
    * @generated
    */
-  String getTipoP();
+  String getTipoPrimitivo();
 
   /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoP <em>Tipo P</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoPrimitivo <em>Tipo Primitivo</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Tipo P</em>' attribute.
-   * @see #getTipoP()
+   * @param value the new value of the '<em>Tipo Primitivo</em>' attribute.
+   * @see #getTipoPrimitivo()
    * @generated
    */
-  void setTipoP(String value);
+  void setTipoPrimitivo(String value);
 
   /**
-   * Returns the value of the '<em><b>Tipo E</b></em>' attribute.
+   * Returns the value of the '<em><b>Tipo Colecao</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Tipo E</em>' attribute.
-   * @see #setTipoE(String)
-   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributoTipo_TipoE()
+   * @return the value of the '<em>Tipo Colecao</em>' attribute.
+   * @see #setTipoColecao(String)
+   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributoTipo_TipoColecao()
    * @model
    * @generated
    */
-  String getTipoE();
+  String getTipoColecao();
 
   /**
-   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoE <em>Tipo E</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoColecao <em>Tipo Colecao</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Tipo E</em>' attribute.
-   * @see #getTipoE()
+   * @param value the new value of the '<em>Tipo Colecao</em>' attribute.
+   * @see #getTipoColecao()
    * @generated
    */
-  void setTipoE(String value);
+  void setTipoColecao(String value);
+
+  /**
+   * Returns the value of the '<em><b>Tipo Objeto</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Tipo Objeto</em>' attribute.
+   * @see #setTipoObjeto(String)
+   * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributoTipo_TipoObjeto()
+   * @model
+   * @generated
+   */
+  String getTipoObjeto();
+
+  /**
+   * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoObjeto <em>Tipo Objeto</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Tipo Objeto</em>' attribute.
+   * @see #getTipoObjeto()
+   * @generated
+   */
+  void setTipoObjeto(String value);
 
 } // AtributoTipo

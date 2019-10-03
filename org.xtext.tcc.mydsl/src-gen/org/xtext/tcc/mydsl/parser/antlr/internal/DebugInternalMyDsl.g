@@ -52,6 +52,7 @@ ruleEntidade:
 	':'
 	ruleNome
 	'}'
+	','?
 ;
 
 // Rule Nome
@@ -70,7 +71,7 @@ ruleAtributo:
 	':'
 	ruleAtributoTipo
 	','
-	'"associa\u00E7\u00E3o"'
+	'"associa\u00E7\u00E3o/relacionamento"'
 	':'
 	ruleAssociacao
 	','
@@ -78,6 +79,7 @@ ruleAtributo:
 	':'
 	ruleOperacao
 	'}'
+	','?
 ;
 
 // Rule Operacao
@@ -93,21 +95,25 @@ ruleAssociacao:
 // Rule AtributoTipo
 ruleAtributoTipo:
 	(
-		RULE_TIPO_DEFINIDO
+		RULE_TIPO_PRIMITIVO
+		    |
+		RULE_TIPO_COLECAO
 		    |
 		RULE_STRING_LIT
 	)
 ;
 
-RULE_VAZIO : '""';
-
 RULE_NOME_ASSOCIACAO : '"' ('OneToOne'|'OneToMany'|'ManyToOne'|'ManyToMany'|'None-Associacao') '"';
 
 RULE_NOME_OPERACAO : '"' ('ALL'|'DETACH'|'MERGE'|'PERSIST'|'REFRESH'|'REMOVE'|'None-Operacao') '"';
 
-RULE_TIPO_DEFINIDO : '"' ('Boolean'|'Integer'|'Long'|'String'|'Float'|'Double'|'Time'|'Timestamp'|'Date'|'ENUM'|'ArrayList'|'HashSet') '"';
+RULE_TIPO_PRIMITIVO : '"' ('Boolean'|'Integer'|'Long'|'String'|'Float'|'Double'|'Time'|'Timestamp'|'Date'|'ENUM') '"';
+
+RULE_TIPO_COLECAO : '"' ('List<' RULE_STRING_I '>'|'Set<' RULE_STRING_I '>'|'ArrayList<' RULE_STRING_I '>'|'HashSet<' RULE_STRING_I '>') '"';
 
 RULE_STRING_LIT : '"' RULE_LETRA+ '"';
+
+fragment RULE_STRING_I : RULE_LETRA+;
 
 fragment RULE_LETRA : ('a'..'z'|'A'..'Z');
 

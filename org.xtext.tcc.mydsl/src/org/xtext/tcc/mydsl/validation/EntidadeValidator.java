@@ -8,7 +8,7 @@ import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
 
 public class EntidadeValidator {
 
-	public Exception checkNomeEntidades(Api api) {
+/*	public Exception checkNomeEntidades(Api api) {
 		for (Entidade entidade : api.getEntidades()) {
 			int count = 0;
 			for (Entidade entidadeI : api.getEntidades()) {
@@ -29,8 +29,8 @@ public class EntidadeValidator {
 		for (Entidade entidade : entidades) {
 			EList<Atributo> atributos = entidade.getAtributos();
 			for (Atributo atributo : atributos) {
-				if (atributo.getAtributoTipo().getTipoE() != null) {
-					if (!verificaNomeAtributoEmEntidades(entidades, atributo.getAtributoTipo().getTipoE())) {
+				if (atributo.getAtributoTipo().getTipoObjeto() != null) {
+					if (!verificaNomeAtributoEmEntidades(entidades, atributo.getAtributoTipo().getTipoObjeto())) {
 						return new Exception(
 								"Tipo do atributo dever ser algum tipo primitivo ou do tipo de alguma entidade definida anteriormente",
 								MyDslPackage.Literals.API__ENTIDADES);

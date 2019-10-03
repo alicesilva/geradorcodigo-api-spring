@@ -5,10 +5,6 @@ generate myDsl "http://www.xtext.org/tcc/mydsl/MyDsl"
 Model:
 	greetings+=Greeting;
 
-terminal VAZIO:
-	'""'
-;
-
 terminal NOME_ASSOCIACAO:
 	'"'("OneToOne" | "OneToMany" | "ManyToOne" | "ManyToMany" | "None-Associacao") '"'
 ;
@@ -17,13 +13,22 @@ terminal NOME_OPERACAO:
 	'"'("ALL"| "DETACH"| "MERGE"| "PERSIST"| "REFRESH"| "REMOVE" | "None-Operacao") '"'
 ;
 
-terminal TIPO_DEFINIDO:
+terminal TIPO_PRIMITIVO:
 	'"' ("Boolean" | "Integer" | "Long" | "String" | "Float" | "Double"|
-	 "Time" | "Timestamp" | "Date" | "ENUM" | "ArrayList" | "HashSet") '"'
+	 "Time" | "Timestamp" | "Date" | "ENUM") '"'
+;
+
+terminal TIPO_COLECAO:
+	'"' ("List<"(STRING_I) ">" | "Set<"(STRING_I) ">" | "ArrayList<"(STRING_I) ">" 
+		| "HashSet<"(STRING_I) ">") '"'
 ;
 
 terminal STRING_LIT:
 	'"' (LETRA)+ '"'
+;
+
+terminal STRING_I:
+	(LETRA)+
 ;
 
 terminal LETRA:
@@ -48,7 +53,7 @@ Entidade:
 		'"Nome"' ':' nomeEntidade = Nome ','
 		'"Atributos"' ':' '[' atributos += (Atributo)+ ']' ','
 		'"Nome do pacote"' ':' package = Nome
-	'}'
+	'}' (',')?
 ;
 
 Nome:
@@ -59,9 +64,9 @@ Atributo:
 	'{' 
 		'"nome-atributo"' ':' nomeAtributo = Nome ','
 		'"tipo-atributo"' ':' atributoTipo = AtributoTipo ','
-		'"associação/relacionamento"' ':' associacao = Associacao','
+		'"associação/relacionamento"' ':' associacao = (Associacao) ','
 		'"operação em cascata"' ':' operacao = Operacao
-	'}'
+	'}' (',')?
 ;
 
 Operacao:
@@ -73,5 +78,5 @@ Associacao:
 ;
 
 AtributoTipo:
-	tipoP = TIPO_DEFINIDO | tipoE = STRING_LIT
+	tipoPrimitivo = TIPO_PRIMITIVO | tipoColecao = TIPO_COLECAO | tipoObjeto = STRING_LIT
 ;

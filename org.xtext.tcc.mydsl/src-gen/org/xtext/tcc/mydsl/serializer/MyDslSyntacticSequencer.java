@@ -10,6 +10,8 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import org.xtext.tcc.mydsl.services.MyDslGrammarAccess;
@@ -18,10 +20,14 @@ import org.xtext.tcc.mydsl.services.MyDslGrammarAccess;
 public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MyDslGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Atributo_CommaKeyword_17_q;
+	protected AbstractElementAlias match_Entidade_CommaKeyword_15_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MyDslGrammarAccess) access;
+		match_Atributo_CommaKeyword_17_q = new TokenAlias(false, true, grammarAccess.getAtributoAccess().getCommaKeyword_17());
+		match_Entidade_CommaKeyword_15_q = new TokenAlias(false, true, grammarAccess.getEntidadeAccess().getCommaKeyword_15());
 	}
 	
 	@Override
@@ -36,8 +42,34 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_Atributo_CommaKeyword_17_q.equals(syntax))
+				emit_Atributo_CommaKeyword_17_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Entidade_CommaKeyword_15_q.equals(syntax))
+				emit_Entidade_CommaKeyword_15_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     operacao=Operacao '}' (ambiguity) (rule end)
+	 */
+	protected void emit_Atributo_CommaKeyword_17_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     package=Nome '}' (ambiguity) (rule end)
+	 */
+	protected void emit_Entidade_CommaKeyword_15_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

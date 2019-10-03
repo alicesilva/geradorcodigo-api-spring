@@ -26,8 +26,8 @@ class MyDslValidator extends AbstractMyDslValidator {
 //					INVALID_NAME)
 //		}
 //	}
-	@Check
-	def check(Api api) {
+	//@Check
+	/*def check(Api api) {
 		api.nomeApi.nome = api.nomeApi.nome.substring(1, api.nomeApi.nome.length - 1);
 		for (e : api.entidades) {
 			e.nomeEntidade.nome = e.nomeEntidade.nome.substring(1, e.nomeEntidade.nome.length - 1);
@@ -35,10 +35,12 @@ class MyDslValidator extends AbstractMyDslValidator {
 
 			for (a : e.atributos) {
 				a.nomeAtributo.nome = a.nomeAtributo.nome.substring(1, a.nomeAtributo.nome.length - 1);
-				if (a.atributoTipo.tipoP !== null) {
-					a.atributoTipo.tipoP = a.atributoTipo.tipoP.substring(1, a.atributoTipo.tipoP.length - 1);
-				} else {
-					a.atributoTipo.tipoE = a.atributoTipo.tipoE.substring(1, a.atributoTipo.tipoE.length - 1);
+				if (a.atributoTipo.tipoPrimitivo !== null) {
+					a.atributoTipo.tipoPrimitivo = a.atributoTipo.tipoPrimitivo.substring(1, a.atributoTipo.tipoPrimitivo.length - 1);
+				} else if(a.atributoTipo.tipoObjeto !== null){
+					a.atributoTipo.tipoObjeto = a.atributoTipo.tipoObjeto.substring(1, a.atributoTipo.tipoObjeto.length - 1);
+				}else{
+					 a.atributoTipo.tipoColecao = a.atributoTipo.tipoColecao.substring(1, a.atributoTipo.tipoObjeto.length - 1);
 				}
 
 				a.associacao.associacao = a.associacao.associacao.substring(1, a.associacao.associacao.length - 1);
@@ -49,14 +51,14 @@ class MyDslValidator extends AbstractMyDslValidator {
 		//checkChavePrimaria(api);
 		checkNomesEntidades(api);
 		checkTipoAtributos(api);
-	}
+	}*/
 
-	def checkNomesEntidades(Api api) {
+	/*def checkNomesEntidades(Api api) {
 		if (entidadeValidator.checkNomeEntidades(api) !== null) {
 			var Exception erro = entidadeValidator.checkNomeEntidades(api);
 			error(erro.erro, erro.feature);
 		}
-	}
+	}*/
 
 	
 	/*def checkChavePrimaria(Api api) {
@@ -66,7 +68,7 @@ class MyDslValidator extends AbstractMyDslValidator {
 		}
 	}*/
 
-	def checkTipoAtributos(Api api) {
+	/*def checkTipoAtributos(Api api) {
 		if (entidadeValidator.checkTipoAtributo(api) !== null) {
 			var Exception erro = entidadeValidator.checkTipoAtributo(api);
 			error(erro.erro, erro.feature);
@@ -75,5 +77,5 @@ class MyDslValidator extends AbstractMyDslValidator {
 	
 	def verificaTamanho(String palavra){
 		return palavra.length > 0
-	}
+	}*/
 }

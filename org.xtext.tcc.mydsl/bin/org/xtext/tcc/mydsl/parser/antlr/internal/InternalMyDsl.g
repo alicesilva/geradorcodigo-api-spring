@@ -389,6 +389,12 @@ ruleEntidade returns [EObject current=null]
 		{
 			newLeafNode(otherlv_14, grammarAccess.getEntidadeAccess().getRightCurlyBracketKeyword_14());
 		}
+		(
+			otherlv_15=','
+			{
+				newLeafNode(otherlv_15, grammarAccess.getEntidadeAccess().getCommaKeyword_15());
+			}
+		)?
 	)
 ;
 
@@ -509,9 +515,9 @@ ruleAtributo returns [EObject current=null]
 		{
 			newLeafNode(otherlv_8, grammarAccess.getAtributoAccess().getCommaKeyword_8());
 		}
-		otherlv_9='"associa\u00E7\u00E3o"'
+		otherlv_9='"associa\u00E7\u00E3o/relacionamento"'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getAtributoAccess().getAssociaOKeyword_9());
+			newLeafNode(otherlv_9, grammarAccess.getAtributoAccess().getAssociaORelacionamentoKeyword_9());
 		}
 		otherlv_10=':'
 		{
@@ -571,6 +577,12 @@ ruleAtributo returns [EObject current=null]
 		{
 			newLeafNode(otherlv_16, grammarAccess.getAtributoAccess().getRightCurlyBracketKeyword_16());
 		}
+		(
+			otherlv_17=','
+			{
+				newLeafNode(otherlv_17, grammarAccess.getAtributoAccess().getCommaKeyword_17());
+			}
+		)?
 	)
 ;
 
@@ -662,9 +674,9 @@ ruleAtributoTipo returns [EObject current=null]
 	(
 		(
 			(
-				lv_tipoP_0_0=RULE_TIPO_DEFINIDO
+				lv_tipoPrimitivo_0_0=RULE_TIPO_PRIMITIVO
 				{
-					newLeafNode(lv_tipoP_0_0, grammarAccess.getAtributoTipoAccess().getTipoPTIPO_DEFINIDOTerminalRuleCall_0_0());
+					newLeafNode(lv_tipoPrimitivo_0_0, grammarAccess.getAtributoTipoAccess().getTipoPrimitivoTIPO_PRIMITIVOTerminalRuleCall_0_0());
 				}
 				{
 					if ($current==null) {
@@ -672,18 +684,18 @@ ruleAtributoTipo returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"tipoP",
-						lv_tipoP_0_0,
-						"org.xtext.tcc.mydsl.MyDsl.TIPO_DEFINIDO");
+						"tipoPrimitivo",
+						lv_tipoPrimitivo_0_0,
+						"org.xtext.tcc.mydsl.MyDsl.TIPO_PRIMITIVO");
 				}
 			)
 		)
 		    |
 		(
 			(
-				lv_tipoE_1_0=RULE_STRING_LIT
+				lv_tipoColecao_1_0=RULE_TIPO_COLECAO
 				{
-					newLeafNode(lv_tipoE_1_0, grammarAccess.getAtributoTipoAccess().getTipoESTRING_LITTerminalRuleCall_1_0());
+					newLeafNode(lv_tipoColecao_1_0, grammarAccess.getAtributoTipoAccess().getTipoColecaoTIPO_COLECAOTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -691,8 +703,27 @@ ruleAtributoTipo returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"tipoE",
-						lv_tipoE_1_0,
+						"tipoColecao",
+						lv_tipoColecao_1_0,
+						"org.xtext.tcc.mydsl.MyDsl.TIPO_COLECAO");
+				}
+			)
+		)
+		    |
+		(
+			(
+				lv_tipoObjeto_2_0=RULE_STRING_LIT
+				{
+					newLeafNode(lv_tipoObjeto_2_0, grammarAccess.getAtributoTipoAccess().getTipoObjetoSTRING_LITTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAtributoTipoRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"tipoObjeto",
+						lv_tipoObjeto_2_0,
 						"org.xtext.tcc.mydsl.MyDsl.STRING_LIT");
 				}
 			)
@@ -700,15 +731,17 @@ ruleAtributoTipo returns [EObject current=null]
 	)
 ;
 
-RULE_VAZIO : '""';
-
 RULE_NOME_ASSOCIACAO : '"' ('OneToOne'|'OneToMany'|'ManyToOne'|'ManyToMany'|'None-Associacao') '"';
 
 RULE_NOME_OPERACAO : '"' ('ALL'|'DETACH'|'MERGE'|'PERSIST'|'REFRESH'|'REMOVE'|'None-Operacao') '"';
 
-RULE_TIPO_DEFINIDO : '"' ('Boolean'|'Integer'|'Long'|'String'|'Float'|'Double'|'Time'|'Timestamp'|'Date'|'ENUM'|'ArrayList'|'HashSet') '"';
+RULE_TIPO_PRIMITIVO : '"' ('Boolean'|'Integer'|'Long'|'String'|'Float'|'Double'|'Time'|'Timestamp'|'Date'|'ENUM') '"';
+
+RULE_TIPO_COLECAO : '"' ('List<' RULE_STRING_I '>'|'Set<' RULE_STRING_I '>'|'ArrayList<' RULE_STRING_I '>'|'HashSet<' RULE_STRING_I '>') '"';
 
 RULE_STRING_LIT : '"' RULE_LETRA+ '"';
+
+fragment RULE_STRING_I : RULE_LETRA+;
 
 fragment RULE_LETRA : ('a'..'z'|'A'..'Z');
 

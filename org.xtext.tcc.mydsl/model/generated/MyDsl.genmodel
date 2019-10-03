@@ -40,8 +40,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Associacao/associacao"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//AtributoTipo">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//AtributoTipo/tipoP"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//AtributoTipo/tipoE"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//AtributoTipo/tipoPrimitivo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//AtributoTipo/tipoColecao"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//AtributoTipo/tipoObjeto"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

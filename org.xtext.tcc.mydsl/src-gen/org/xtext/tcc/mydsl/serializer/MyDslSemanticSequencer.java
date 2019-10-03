@@ -129,7 +129,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     AtributoTipo returns AtributoTipo
 	 *
 	 * Constraint:
-	 *     (tipoP=TIPO_DEFINIDO | tipoE=STRING_LIT)
+	 *     (tipoPrimitivo=TIPO_PRIMITIVO | tipoColecao=TIPO_COLECAO | tipoObjeto=STRING_LIT)
 	 */
 	protected void sequence_AtributoTipo(ISerializationContext context, AtributoTipo semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

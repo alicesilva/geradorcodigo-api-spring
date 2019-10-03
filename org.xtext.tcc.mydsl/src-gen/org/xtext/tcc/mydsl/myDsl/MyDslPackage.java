@@ -374,22 +374,31 @@ public interface MyDslPackage extends EPackage
   int ATRIBUTO_TIPO = 9;
 
   /**
-   * The feature id for the '<em><b>Tipo P</b></em>' attribute.
+   * The feature id for the '<em><b>Tipo Primitivo</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATRIBUTO_TIPO__TIPO_P = 0;
+  int ATRIBUTO_TIPO__TIPO_PRIMITIVO = 0;
 
   /**
-   * The feature id for the '<em><b>Tipo E</b></em>' attribute.
+   * The feature id for the '<em><b>Tipo Colecao</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATRIBUTO_TIPO__TIPO_E = 1;
+  int ATRIBUTO_TIPO__TIPO_COLECAO = 1;
+
+  /**
+   * The feature id for the '<em><b>Tipo Objeto</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATRIBUTO_TIPO__TIPO_OBJETO = 2;
 
   /**
    * The number of structural features of the '<em>Atributo Tipo</em>' class.
@@ -398,7 +407,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATRIBUTO_TIPO_FEATURE_COUNT = 2;
+  int ATRIBUTO_TIPO_FEATURE_COUNT = 3;
 
 
   /**
@@ -667,26 +676,37 @@ public interface MyDslPackage extends EPackage
   EClass getAtributoTipo();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoP <em>Tipo P</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoPrimitivo <em>Tipo Primitivo</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Tipo P</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoP()
+   * @return the meta object for the attribute '<em>Tipo Primitivo</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoPrimitivo()
    * @see #getAtributoTipo()
    * @generated
    */
-  EAttribute getAtributoTipo_TipoP();
+  EAttribute getAtributoTipo_TipoPrimitivo();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoE <em>Tipo E</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoColecao <em>Tipo Colecao</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Tipo E</em>'.
-   * @see org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoE()
+   * @return the meta object for the attribute '<em>Tipo Colecao</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoColecao()
    * @see #getAtributoTipo()
    * @generated
    */
-  EAttribute getAtributoTipo_TipoE();
+  EAttribute getAtributoTipo_TipoColecao();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoObjeto <em>Tipo Objeto</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Tipo Objeto</em>'.
+   * @see org.xtext.tcc.mydsl.myDsl.AtributoTipo#getTipoObjeto()
+   * @see #getAtributoTipo()
+   * @generated
+   */
+  EAttribute getAtributoTipo_TipoObjeto();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -932,20 +952,28 @@ public interface MyDslPackage extends EPackage
     EClass ATRIBUTO_TIPO = eINSTANCE.getAtributoTipo();
 
     /**
-     * The meta object literal for the '<em><b>Tipo P</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Tipo Primitivo</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATRIBUTO_TIPO__TIPO_P = eINSTANCE.getAtributoTipo_TipoP();
+    EAttribute ATRIBUTO_TIPO__TIPO_PRIMITIVO = eINSTANCE.getAtributoTipo_TipoPrimitivo();
 
     /**
-     * The meta object literal for the '<em><b>Tipo E</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Tipo Colecao</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATRIBUTO_TIPO__TIPO_E = eINSTANCE.getAtributoTipo_TipoE();
+    EAttribute ATRIBUTO_TIPO__TIPO_COLECAO = eINSTANCE.getAtributoTipo_TipoColecao();
+
+    /**
+     * The meta object literal for the '<em><b>Tipo Objeto</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATRIBUTO_TIPO__TIPO_OBJETO = eINSTANCE.getAtributoTipo_TipoObjeto();
 
   }
 

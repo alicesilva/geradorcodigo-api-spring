@@ -24,7 +24,7 @@ class MyDslGenerator extends AbstractGenerator {
 		// fsa.generateFile(e.nomeEntidade.nome.toFirstUpper.toString + ".java", e.compile);
 		// fsa.generateFile(e.nomeEntidade.nome.toFirstUpper.toString + "Controller.java", e.compileController);
 		// }
-		for (a : resource.allContents.toIterable.filter(Api)) {
+		/*for (a : resource.allContents.toIterable.filter(Api)) {
 			for (e : resource.allContents.toIterable.filter(Entidade)) {
 				fsa.generateFile(e.nomeEntidade.nome.toFirstUpper.toString + ".java", e.compile);
 				fsa.generateFile(e.nomeEntidade.nome.toFirstUpper.toString + "Repository.java", compileRepository(e));
@@ -246,6 +246,8 @@ class MyDslGenerator extends AbstractGenerator {
 				return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper» atualizado com sucesso.", HttpStatus.OK);
 			}
 		}
-	'''
+	'''*/
+
+	}
 
 }

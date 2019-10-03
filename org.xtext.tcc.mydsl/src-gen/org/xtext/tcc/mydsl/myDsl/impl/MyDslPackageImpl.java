@@ -445,7 +445,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EAttribute getAtributoTipo_TipoP()
+  public EAttribute getAtributoTipo_TipoPrimitivo()
   {
     return (EAttribute)atributoTipoEClass.getEStructuralFeatures().get(0);
   }
@@ -456,9 +456,20 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EAttribute getAtributoTipo_TipoE()
+  public EAttribute getAtributoTipo_TipoColecao()
   {
     return (EAttribute)atributoTipoEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAtributoTipo_TipoObjeto()
+  {
+    return (EAttribute)atributoTipoEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -526,8 +537,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEAttribute(associacaoEClass, ASSOCIACAO__ASSOCIACAO);
 
     atributoTipoEClass = createEClass(ATRIBUTO_TIPO);
-    createEAttribute(atributoTipoEClass, ATRIBUTO_TIPO__TIPO_P);
-    createEAttribute(atributoTipoEClass, ATRIBUTO_TIPO__TIPO_E);
+    createEAttribute(atributoTipoEClass, ATRIBUTO_TIPO__TIPO_PRIMITIVO);
+    createEAttribute(atributoTipoEClass, ATRIBUTO_TIPO__TIPO_COLECAO);
+    createEAttribute(atributoTipoEClass, ATRIBUTO_TIPO__TIPO_OBJETO);
   }
 
   /**
@@ -595,8 +607,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEAttribute(getAssociacao_Associacao(), ecorePackage.getEString(), "associacao", null, 0, 1, Associacao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(atributoTipoEClass, AtributoTipo.class, "AtributoTipo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAtributoTipo_TipoP(), ecorePackage.getEString(), "tipoP", null, 0, 1, AtributoTipo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAtributoTipo_TipoE(), ecorePackage.getEString(), "tipoE", null, 0, 1, AtributoTipo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAtributoTipo_TipoPrimitivo(), ecorePackage.getEString(), "tipoPrimitivo", null, 0, 1, AtributoTipo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAtributoTipo_TipoColecao(), ecorePackage.getEString(), "tipoColecao", null, 0, 1, AtributoTipo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAtributoTipo_TipoObjeto(), ecorePackage.getEString(), "tipoObjeto", null, 0, 1, AtributoTipo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
