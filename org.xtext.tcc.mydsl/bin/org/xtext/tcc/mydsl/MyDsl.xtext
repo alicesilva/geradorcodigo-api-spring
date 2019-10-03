@@ -59,7 +59,7 @@ Atributo:
 	'{' 
 		'"nome-atributo"' ':' nomeAtributo = Nome ','
 		'"tipo-atributo"' ':' atributoTipo = AtributoTipo ','
-		'"associação"' ':' associacao = Associacao','
+		'"associação/relacionamento"' ':' associacao = Associacao','
 		'"operação em cascata"' ':' operacao = Operacao
 	'}'
 ;
