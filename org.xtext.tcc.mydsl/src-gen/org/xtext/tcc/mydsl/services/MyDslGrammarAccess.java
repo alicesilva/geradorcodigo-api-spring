@@ -498,13 +498,15 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal NOME_ASSOCIACAO:
-	//	'"' ("OneToOne" | "OneToMany" | "ManyToOne" | "ManyToMany" | "None-Associacao") '"';
+	//	'"' ("OneToOne" | "OneToMany" | "ManyToOne"
+	//	| "ManyToMany" | "None-Associacao")? '"';
 	public TerminalRule getNOME_ASSOCIACAORule() {
 		return tNOME_ASSOCIACAO;
 	}
 	
 	//terminal NOME_OPERACAO:
-	//	'"' ("ALL" | "DETACH" | "MERGE" | "PERSIST" | "REFRESH" | "REMOVE" | "None-Operacao") '"';
+	//	'"' ("ALL" | "DETACH" | "MERGE" | "PERSIST"
+	//	| "REFRESH" | "REMOVE" | "None-Operacao")? '"';
 	public TerminalRule getNOME_OPERACAORule() {
 		return tNOME_OPERACAO;
 	}

@@ -3,7 +3,6 @@
  */
 package org.xtext.tcc.mydsl.validation;
 
-import org.xtext.tcc.mydsl.validation.AbstractMyDslValidator;
 import org.xtext.tcc.mydsl.validation.EntidadeValidator;
 
 /**
@@ -12,6 +11,6 @@ import org.xtext.tcc.mydsl.validation.EntidadeValidator;
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 @SuppressWarnings("all")
-public class MyDslValidator extends AbstractMyDslValidator {
+public class MyDslValidator /* implements AbstractMyDslValidator  */{
   private EntidadeValidator entidadeValidator = new EntidadeValidator();
 }

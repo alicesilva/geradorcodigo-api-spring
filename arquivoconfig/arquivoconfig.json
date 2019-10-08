@@ -1,0 +1,17 @@
+{ 
+	"Nome da Api": "",
+	"Entidades": [ 
+		{ 
+			"Nome": "",
+			"Atributos": [ 
+				{ "nome-atributo": "",
+				   "tipo-atributo": "",
+				   "associação/relacionamento": "",
+				   "operação em cascata": ""
+				}
+				
+			],
+			"Nome do pacote": ""
+		}
+	]
+}

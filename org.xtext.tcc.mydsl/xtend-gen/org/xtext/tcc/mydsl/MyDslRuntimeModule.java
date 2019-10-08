@@ -3,11 +3,9 @@
  */
 package org.xtext.tcc.mydsl;
 
-import org.xtext.tcc.mydsl.AbstractMyDslRuntimeModule;
-
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 @SuppressWarnings("all")
-public class MyDslRuntimeModule extends AbstractMyDslRuntimeModule {
+public class MyDslRuntimeModule /* implements AbstractMyDslRuntimeModule  */{
 }

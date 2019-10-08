@@ -3,11 +3,9 @@
  */
 package org.xtext.tcc.mydsl.ide;
 
-import org.xtext.tcc.mydsl.ide.AbstractMyDslIdeModule;
-
 /**
  * Use this class to register ide components.
  */
 @SuppressWarnings("all")
-public class MyDslIdeModule extends AbstractMyDslIdeModule {
+public class MyDslIdeModule /* implements AbstractMyDslIdeModule  */{
 }

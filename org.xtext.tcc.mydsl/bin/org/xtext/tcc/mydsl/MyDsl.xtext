@@ -6,11 +6,15 @@ Model:
 	greetings+=Greeting;
 
 terminal NOME_ASSOCIACAO:
-	'"'("OneToOne" | "OneToMany" | "ManyToOne" | "ManyToMany" | "None-Associacao") '"'
+	'"'("OneToOne" | "OneToMany" | "ManyToOne" 
+		| "ManyToMany" | "None-Associacao"
+	)? '"'
 ;
 	
 terminal NOME_OPERACAO:
-	'"'("ALL"| "DETACH"| "MERGE"| "PERSIST"| "REFRESH"| "REMOVE" | "None-Operacao") '"'
+	'"'("ALL"| "DETACH"| "MERGE"| "PERSIST"
+		| "REFRESH"| "REMOVE" | "None-Operacao"
+	)? '"'
 ;
 
 terminal TIPO_PRIMITIVO:

@@ -3,8 +3,6 @@
  */
 package org.xtext.tcc.mydsl.scoping;
 
-import org.xtext.tcc.mydsl.scoping.AbstractMyDslScopeProvider;
-
 /**
  * This class contains custom scoping description.
  * 
@@ -12,5 +10,5 @@ import org.xtext.tcc.mydsl.scoping.AbstractMyDslScopeProvider;
  * on how and when to use it.
  */
 @SuppressWarnings("all")
-public class MyDslScopeProvider extends AbstractMyDslScopeProvider {
+public class MyDslScopeProvider /* implements AbstractMyDslScopeProvider  */{
 }
