@@ -3,6 +3,20 @@
  */
 package org.xtext.tcc.mydsl.validation;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.InputOutput;
+import org.xtext.tcc.mydsl.myDsl.Api;
+import org.xtext.tcc.mydsl.myDsl.ApiNome;
+import org.xtext.tcc.mydsl.myDsl.Associacao;
+import org.xtext.tcc.mydsl.myDsl.Atributo;
+import org.xtext.tcc.mydsl.myDsl.AtributoTipo;
+import org.xtext.tcc.mydsl.myDsl.Entidade;
+import org.xtext.tcc.mydsl.myDsl.Entidades;
+import org.xtext.tcc.mydsl.myDsl.Nome;
+import org.xtext.tcc.mydsl.myDsl.Operacao;
+import org.xtext.tcc.mydsl.myDsl.OperacaoCascada;
+import org.xtext.tcc.mydsl.validation.AbstractMyDslValidator;
 import org.xtext.tcc.mydsl.validation.EntidadeValidator;
 
 /**
@@ -11,6 +25,118 @@ import org.xtext.tcc.mydsl.validation.EntidadeValidator;
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 @SuppressWarnings("all")
-public class MyDslValidator /* implements AbstractMyDslValidator  */{
+public class MyDslValidator extends AbstractMyDslValidator {
   private EntidadeValidator entidadeValidator = new EntidadeValidator();
+  
+  @Check
+  public void validaNomes(final Api api) {
+    ApiNome _nomeApi = api.getNomeApi();
+    String _nome = api.getNomeApi().getNome();
+    int _length = api.getNomeApi().getNome().length();
+    int _minus = (_length - 1);
+    _nomeApi.setNome(_nome.substring(1, _minus));
+    this.validaEntidade(api.getEntidades().getEntidade());
+    InputOutput.<String>println(api.getEntidades().getEntidade().getNomeEntidade().getNome());
+    int _size = api.getEntidades().getEntidadeMais().size();
+    boolean _greaterThan = (_size > 0);
+    if (_greaterThan) {
+      EList<Entidade> _entidadeMais = api.getEntidades().getEntidadeMais();
+      for (final Entidade entidade : _entidadeMais) {
+        {
+          this.validaEntidade(entidade);
+          InputOutput.<String>println(entidade.getNomeEntidade().getNome());
+        }
+      }
+    }
+  }
+  
+  public void validaEntidade(final Entidade entidade) {
+    Nome _nomeEntidade = entidade.getNomeEntidade();
+    _nomeEntidade.setNome(entidade.getNomeEntidade().getNome().substring(1, entidade.getNomeEntidade().getNome().length()));
+    Nome _package = entidade.getPackage();
+    String _nome = entidade.getPackage().getNome();
+    int _length = entidade.getPackage().getNome().length();
+    int _minus = (_length - 1);
+    _package.setNome(_nome.substring(1, _minus));
+    this.validaAtributo(entidade.getAtributos().getAtributo());
+    int _size = entidade.getAtributos().getAtributoMais().size();
+    boolean _greaterThan = (_size > 0);
+    if (_greaterThan) {
+      EList<Atributo> _atributoMais = entidade.getAtributos().getAtributoMais();
+      for (final Atributo atributo : _atributoMais) {
+        this.validaAtributo(atributo);
+      }
+    }
+  }
+  
+  public void validaAtributo(final Atributo atributo) {
+    Nome _nomeAtributo = atributo.getNomeAtributo();
+    String _nome = atributo.getNomeAtributo().getNome();
+    int _length = atributo.getNomeAtributo().getNome().length();
+    int _minus = (_length - 1);
+    _nomeAtributo.setNome(_nome.substring(1, _minus));
+    String _tipoPrimitivo = atributo.getAtributoTipo().getTipoPrimitivo();
+    boolean _tripleNotEquals = (_tipoPrimitivo != null);
+    if (_tripleNotEquals) {
+      AtributoTipo _atributoTipo = atributo.getAtributoTipo();
+      String _tipoPrimitivo_1 = atributo.getAtributoTipo().getTipoPrimitivo();
+      int _length_1 = atributo.getAtributoTipo().getTipoPrimitivo().length();
+      int _minus_1 = (_length_1 - 1);
+      _atributoTipo.setTipoPrimitivo(_tipoPrimitivo_1.substring(1, _minus_1));
+    } else {
+      String _tipoColecao = atributo.getAtributoTipo().getTipoColecao();
+      boolean _tripleNotEquals_1 = (_tipoColecao != null);
+      if (_tripleNotEquals_1) {
+        AtributoTipo _atributoTipo_1 = atributo.getAtributoTipo();
+        String _tipoColecao_1 = atributo.getAtributoTipo().getTipoColecao();
+        int _length_2 = atributo.getAtributoTipo().getTipoColecao().length();
+        int _minus_2 = (_length_2 - 1);
+        _atributoTipo_1.setTipoColecao(_tipoColecao_1.substring(1, _minus_2));
+      } else {
+        AtributoTipo _atributoTipo_2 = atributo.getAtributoTipo();
+        String _tipoObjeto = atributo.getAtributoTipo().getTipoObjeto();
+        int _length_3 = atributo.getAtributoTipo().getTipoObjeto().length();
+        int _minus_3 = (_length_3 - 1);
+        _atributoTipo_2.setTipoObjeto(_tipoObjeto.substring(1, _minus_3));
+      }
+    }
+    boolean _equals = atributo.getAssociacao().getAssociacao().equals("");
+    boolean _not = (!_equals);
+    if (_not) {
+      Associacao _associacao = atributo.getAssociacao();
+      String _associacao_1 = atributo.getAssociacao().getAssociacao();
+      int _length_4 = atributo.getAssociacao().getAssociacao().length();
+      int _minus_4 = (_length_4 - 1);
+      _associacao.setAssociacao(_associacao_1.substring(1, _minus_4));
+    }
+    Operacao _operacao = atributo.getOperacao();
+    boolean _tripleNotEquals_2 = (_operacao != null);
+    if (_tripleNotEquals_2) {
+      OperacaoCascada _opCascada = atributo.getOperacao().getOpCascada();
+      String _operacao_1 = atributo.getOperacao().getOpCascada().getOperacao();
+      int _length_5 = atributo.getOperacao().getOpCascada().getOperacao().length();
+      int _minus_5 = (_length_5 - 1);
+      _opCascada.setOperacao(_operacao_1.substring(1, _minus_5));
+      int _size = atributo.getOperacao().getOpCascadaMais().size();
+      boolean _greaterThan = (_size > 0);
+      if (_greaterThan) {
+        EList<OperacaoCascada> _opCascadaMais = atributo.getOperacao().getOpCascadaMais();
+        for (final OperacaoCascada operacao : _opCascadaMais) {
+          String _operacao_2 = operacao.getOperacao();
+          int _length_6 = operacao.getOperacao().length();
+          int _minus_6 = (_length_6 - 1);
+          operacao.setOperacao(_operacao_2.substring(1, _minus_6));
+        }
+      }
+    }
+  }
+  
+  public void validaNomeEntidade(final Entidades entidades) {
+    org.xtext.tcc.mydsl.validation.Exception _verificaNomesEntidade = this.entidadeValidator.verificaNomesEntidade(entidades);
+    boolean _tripleNotEquals = (_verificaNomesEntidade != null);
+    if (_tripleNotEquals) {
+      org.xtext.tcc.mydsl.validation.Exception erro = this.entidadeValidator.verificaNomesEntidade(entidades);
+      this.error(erro.erro, erro.feature);
+    }
+  }
 }

@@ -31,7 +31,7 @@ Workflow {
 		}
 		language = StandardLanguage {
 			name = "org.xtext.tcc.mydsl.MyDsl"
-			fileExtensions = "json"
+			fileExtensions = "mydsl"
 
 			serializer = {
 				generateStub = false

@@ -76,15 +76,15 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Keyword cLeftSquareBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cEntidadesAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cEntidadesEntidadeParserRuleCall_7_0 = (RuleCall)cEntidadesAssignment_7.eContents().get(0);
+		private final RuleCall cEntidadesEntidadesParserRuleCall_7_0 = (RuleCall)cEntidadesAssignment_7.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Api:
 		//	'"Nome da Api"' ':' nomeApi=ApiNome ','
-		//	'"Entidades"' ':' '[' entidades+=Entidade+ ']';
+		//	'"Entidades"' ':' '[' entidades=Entidades ']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'"Nome da Api"' ':' nomeApi=ApiNome ',' '"Entidades"' ':' '[' entidades+=Entidade+ ']'
+		//'"Nome da Api"' ':' nomeApi=ApiNome ',' '"Entidades"' ':' '[' entidades=Entidades ']'
 		public Group getGroup() { return cGroup; }
 		
 		//'"Nome da Api"'
@@ -111,11 +111,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'['
 		public Keyword getLeftSquareBracketKeyword_6() { return cLeftSquareBracketKeyword_6; }
 		
-		//entidades+=Entidade+
+		//entidades=Entidades
 		public Assignment getEntidadesAssignment_7() { return cEntidadesAssignment_7; }
 		
-		//Entidade
-		public RuleCall getEntidadesEntidadeParserRuleCall_7_0() { return cEntidadesEntidadeParserRuleCall_7_0; }
+		//Entidades
+		public RuleCall getEntidadesEntidadesParserRuleCall_7_0() { return cEntidadesEntidadesParserRuleCall_7_0; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_8() { return cRightSquareBracketKeyword_8; }
@@ -135,6 +135,41 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING_LIT
 		public RuleCall getNomeSTRING_LITTerminalRuleCall_0() { return cNomeSTRING_LITTerminalRuleCall_0; }
 	}
+	public class EntidadesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.Entidades");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cEntidadeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cEntidadeEntidadeParserRuleCall_0_0 = (RuleCall)cEntidadeAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cEntidadeMaisAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cEntidadeMaisEntidadeParserRuleCall_1_1_0 = (RuleCall)cEntidadeMaisAssignment_1_1.eContents().get(0);
+		
+		//Entidades:
+		//	entidade=Entidade ("," entidadeMais+=Entidade)*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//entidade=Entidade ("," entidadeMais+=Entidade)*
+		public Group getGroup() { return cGroup; }
+		
+		//entidade=Entidade
+		public Assignment getEntidadeAssignment_0() { return cEntidadeAssignment_0; }
+		
+		//Entidade
+		public RuleCall getEntidadeEntidadeParserRuleCall_0_0() { return cEntidadeEntidadeParserRuleCall_0_0; }
+		
+		//("," entidadeMais+=Entidade)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//","
+		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
+		
+		//entidadeMais+=Entidade
+		public Assignment getEntidadeMaisAssignment_1_1() { return cEntidadeMaisAssignment_1_1; }
+		
+		//Entidade
+		public RuleCall getEntidadeMaisEntidadeParserRuleCall_1_1_0() { return cEntidadeMaisEntidadeParserRuleCall_1_1_0; }
+	}
 	public class EntidadeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.Entidade");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -148,7 +183,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cLeftSquareBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cAtributosAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cAtributosAtributoParserRuleCall_8_0 = (RuleCall)cAtributosAssignment_8.eContents().get(0);
+		private final RuleCall cAtributosAtributosParserRuleCall_8_0 = (RuleCall)cAtributosAssignment_8.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Keyword cCommaKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Keyword cNomeDoPacoteKeyword_11 = (Keyword)cGroup.eContents().get(11);
@@ -156,18 +191,17 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPackageAssignment_13 = (Assignment)cGroup.eContents().get(13);
 		private final RuleCall cPackageNomeParserRuleCall_13_0 = (RuleCall)cPackageAssignment_13.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Keyword cCommaKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		
 		//Entidade:
 		//	'{'
 		//	'"Nome"' ':' nomeEntidade=Nome ','
-		//	'"Atributos"' ':' '[' atributos+=Atributo+ ']' ','
+		//	'"Atributos"' ':' '[' atributos=Atributos ']' ','
 		//	'"Nome do pacote"' ':' package=Nome
-		//	'}' ','?;
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'{' '"Nome"' ':' nomeEntidade=Nome ',' '"Atributos"' ':' '[' atributos+=Atributo+ ']' ',' '"Nome do pacote"' ':'
-		//package=Nome '}' ','?
+		//'{' '"Nome"' ':' nomeEntidade=Nome ',' '"Atributos"' ':' '[' atributos=Atributos ']' ',' '"Nome do pacote"' ':'
+		//package=Nome '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'{'
@@ -197,11 +231,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'['
 		public Keyword getLeftSquareBracketKeyword_7() { return cLeftSquareBracketKeyword_7; }
 		
-		//atributos+=Atributo+
+		//atributos=Atributos
 		public Assignment getAtributosAssignment_8() { return cAtributosAssignment_8; }
 		
-		//Atributo
-		public RuleCall getAtributosAtributoParserRuleCall_8_0() { return cAtributosAtributoParserRuleCall_8_0; }
+		//Atributos
+		public RuleCall getAtributosAtributosParserRuleCall_8_0() { return cAtributosAtributosParserRuleCall_8_0; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_9() { return cRightSquareBracketKeyword_9; }
@@ -223,9 +257,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
-		
-		//','?
-		public Keyword getCommaKeyword_15() { return cCommaKeyword_15; }
 	}
 	public class NomeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.Nome");
@@ -241,6 +272,41 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//STRING_LIT
 		public RuleCall getNomeSTRING_LITTerminalRuleCall_0() { return cNomeSTRING_LITTerminalRuleCall_0; }
+	}
+	public class AtributosElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.Atributos");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cAtributoAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cAtributoAtributoParserRuleCall_0_0 = (RuleCall)cAtributoAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cAtributoMaisAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cAtributoMaisAtributoParserRuleCall_1_1_0 = (RuleCall)cAtributoMaisAssignment_1_1.eContents().get(0);
+		
+		//Atributos:
+		//	atributo=Atributo ("," atributoMais+=Atributo)*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//atributo=Atributo ("," atributoMais+=Atributo)*
+		public Group getGroup() { return cGroup; }
+		
+		//atributo=Atributo
+		public Assignment getAtributoAssignment_0() { return cAtributoAssignment_0; }
+		
+		//Atributo
+		public RuleCall getAtributoAtributoParserRuleCall_0_0() { return cAtributoAtributoParserRuleCall_0_0; }
+		
+		//("," atributoMais+=Atributo)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//","
+		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
+		
+		//atributoMais+=Atributo
+		public Assignment getAtributoMaisAssignment_1_1() { return cAtributoMaisAssignment_1_1; }
+		
+		//Atributo
+		public RuleCall getAtributoMaisAtributoParserRuleCall_1_1_0() { return cAtributoMaisAtributoParserRuleCall_1_1_0; }
 	}
 	public class AtributoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.Atributo");
@@ -263,22 +329,23 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		private final Keyword cOperaOEmCascataKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		private final Keyword cColonKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Assignment cOperacaoAssignment_15 = (Assignment)cGroup.eContents().get(15);
-		private final RuleCall cOperacaoOperacaoParserRuleCall_15_0 = (RuleCall)cOperacaoAssignment_15.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
-		private final Keyword cCommaKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Keyword cLeftSquareBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Assignment cOperacaoAssignment_16 = (Assignment)cGroup.eContents().get(16);
+		private final RuleCall cOperacaoOperacaoParserRuleCall_16_0 = (RuleCall)cOperacaoAssignment_16.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Keyword cRightCurlyBracketKeyword_18 = (Keyword)cGroup.eContents().get(18);
 		
 		//Atributo:
 		//	'{'
 		//	'"nome-atributo"' ':' nomeAtributo=Nome ','
 		//	'"tipo-atributo"' ':' atributoTipo=AtributoTipo ','
 		//	'"associação/relacionamento"' ':' associacao=Associacao ','
-		//	'"operação em cascata"' ':' operacao=Operacao
-		//	'}' ','?;
+		//	'"operação em cascata"' ':' '[' operacao=Operacao? ']'
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'{' '"nome-atributo"' ':' nomeAtributo=Nome ',' '"tipo-atributo"' ':' atributoTipo=AtributoTipo ','
-		//'"associação/relacionamento"' ':' associacao=Associacao ',' '"operação em cascata"' ':' operacao=Operacao '}' ','?
+		//'"associação/relacionamento"' ':' associacao=Associacao ',' '"operação em cascata"' ':' '[' operacao=Operacao? ']' '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'{'
@@ -335,32 +402,70 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_14() { return cColonKeyword_14; }
 		
-		//operacao=Operacao
-		public Assignment getOperacaoAssignment_15() { return cOperacaoAssignment_15; }
+		//'['
+		public Keyword getLeftSquareBracketKeyword_15() { return cLeftSquareBracketKeyword_15; }
+		
+		//operacao=Operacao?
+		public Assignment getOperacaoAssignment_16() { return cOperacaoAssignment_16; }
 		
 		//Operacao
-		public RuleCall getOperacaoOperacaoParserRuleCall_15_0() { return cOperacaoOperacaoParserRuleCall_15_0; }
+		public RuleCall getOperacaoOperacaoParserRuleCall_16_0() { return cOperacaoOperacaoParserRuleCall_16_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_17() { return cRightSquareBracketKeyword_17; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_16() { return cRightCurlyBracketKeyword_16; }
-		
-		//','?
-		public Keyword getCommaKeyword_17() { return cCommaKeyword_17; }
+		public Keyword getRightCurlyBracketKeyword_18() { return cRightCurlyBracketKeyword_18; }
 	}
 	public class OperacaoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.Operacao");
-		private final Assignment cOpCascadaAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cOpCascadaNOME_OPERACAOTerminalRuleCall_0 = (RuleCall)cOpCascadaAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cOpCascadaAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cOpCascadaOperacaoCascadaParserRuleCall_0_0 = (RuleCall)cOpCascadaAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cOpCascadaMaisAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOpCascadaMaisOperacaoCascadaParserRuleCall_1_1_0 = (RuleCall)cOpCascadaMaisAssignment_1_1.eContents().get(0);
 		
 		//Operacao:
-		//	opCascada=NOME_OPERACAO;
+		//	opCascada=OperacaoCascada ("," opCascadaMais+=OperacaoCascada)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//opCascada=NOME_OPERACAO
-		public Assignment getOpCascadaAssignment() { return cOpCascadaAssignment; }
+		//opCascada=OperacaoCascada ("," opCascadaMais+=OperacaoCascada)*
+		public Group getGroup() { return cGroup; }
+		
+		//opCascada=OperacaoCascada
+		public Assignment getOpCascadaAssignment_0() { return cOpCascadaAssignment_0; }
+		
+		//OperacaoCascada
+		public RuleCall getOpCascadaOperacaoCascadaParserRuleCall_0_0() { return cOpCascadaOperacaoCascadaParserRuleCall_0_0; }
+		
+		//("," opCascadaMais+=OperacaoCascada)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//","
+		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
+		
+		//opCascadaMais+=OperacaoCascada
+		public Assignment getOpCascadaMaisAssignment_1_1() { return cOpCascadaMaisAssignment_1_1; }
+		
+		//OperacaoCascada
+		public RuleCall getOpCascadaMaisOperacaoCascadaParserRuleCall_1_1_0() { return cOpCascadaMaisOperacaoCascadaParserRuleCall_1_1_0; }
+	}
+	public class OperacaoCascadaElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.OperacaoCascada");
+		private final Assignment cOperacaoAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cOperacaoNOME_OPERACAOTerminalRuleCall_0 = (RuleCall)cOperacaoAssignment.eContents().get(0);
+		
+		//OperacaoCascada:
+		//	operacao=NOME_OPERACAO;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//operacao=NOME_OPERACAO
+		public Assignment getOperacaoAssignment() { return cOperacaoAssignment; }
 		
 		//NOME_OPERACAO
-		public RuleCall getOpCascadaNOME_OPERACAOTerminalRuleCall_0() { return cOpCascadaNOME_OPERACAOTerminalRuleCall_0; }
+		public RuleCall getOperacaoNOME_OPERACAOTerminalRuleCall_0() { return cOperacaoNOME_OPERACAOTerminalRuleCall_0; }
 	}
 	public class AssociacaoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.Associacao");
@@ -425,10 +530,13 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final GreetingElements pGreeting;
 	private final ApiElements pApi;
 	private final ApiNomeElements pApiNome;
+	private final EntidadesElements pEntidades;
 	private final EntidadeElements pEntidade;
 	private final NomeElements pNome;
+	private final AtributosElements pAtributos;
 	private final AtributoElements pAtributo;
 	private final OperacaoElements pOperacao;
+	private final OperacaoCascadaElements pOperacaoCascada;
 	private final AssociacaoElements pAssociacao;
 	private final AtributoTipoElements pAtributoTipo;
 	
@@ -452,10 +560,13 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pGreeting = new GreetingElements();
 		this.pApi = new ApiElements();
 		this.pApiNome = new ApiNomeElements();
+		this.pEntidades = new EntidadesElements();
 		this.pEntidade = new EntidadeElements();
 		this.pNome = new NomeElements();
+		this.pAtributos = new AtributosElements();
 		this.pAtributo = new AtributoElements();
 		this.pOperacao = new OperacaoElements();
+		this.pOperacaoCascada = new OperacaoCascadaElements();
 		this.pAssociacao = new AssociacaoElements();
 		this.pAtributoTipo = new AtributoTipoElements();
 	}
@@ -506,7 +617,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//terminal NOME_OPERACAO:
 	//	'"' ("ALL" | "DETACH" | "MERGE" | "PERSIST"
-	//	| "REFRESH" | "REMOVE" | "None-Operacao")? '"';
+	//	| "REFRESH" | "REMOVE" | "None-Operacao") '"';
 	public TerminalRule getNOME_OPERACAORule() {
 		return tNOME_OPERACAO;
 	}
@@ -555,7 +666,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Api:
 	//	'"Nome da Api"' ':' nomeApi=ApiNome ','
-	//	'"Entidades"' ':' '[' entidades+=Entidade+ ']';
+	//	'"Entidades"' ':' '[' entidades=Entidades ']';
 	public ApiElements getApiAccess() {
 		return pApi;
 	}
@@ -574,12 +685,22 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getApiNomeAccess().getRule();
 	}
 	
+	//Entidades:
+	//	entidade=Entidade ("," entidadeMais+=Entidade)*;
+	public EntidadesElements getEntidadesAccess() {
+		return pEntidades;
+	}
+	
+	public ParserRule getEntidadesRule() {
+		return getEntidadesAccess().getRule();
+	}
+	
 	//Entidade:
 	//	'{'
 	//	'"Nome"' ':' nomeEntidade=Nome ','
-	//	'"Atributos"' ':' '[' atributos+=Atributo+ ']' ','
+	//	'"Atributos"' ':' '[' atributos=Atributos ']' ','
 	//	'"Nome do pacote"' ':' package=Nome
-	//	'}' ','?;
+	//	'}';
 	public EntidadeElements getEntidadeAccess() {
 		return pEntidade;
 	}
@@ -598,13 +719,23 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getNomeAccess().getRule();
 	}
 	
+	//Atributos:
+	//	atributo=Atributo ("," atributoMais+=Atributo)*;
+	public AtributosElements getAtributosAccess() {
+		return pAtributos;
+	}
+	
+	public ParserRule getAtributosRule() {
+		return getAtributosAccess().getRule();
+	}
+	
 	//Atributo:
 	//	'{'
 	//	'"nome-atributo"' ':' nomeAtributo=Nome ','
 	//	'"tipo-atributo"' ':' atributoTipo=AtributoTipo ','
 	//	'"associação/relacionamento"' ':' associacao=Associacao ','
-	//	'"operação em cascata"' ':' operacao=Operacao
-	//	'}' ','?;
+	//	'"operação em cascata"' ':' '[' operacao=Operacao? ']'
+	//	'}';
 	public AtributoElements getAtributoAccess() {
 		return pAtributo;
 	}
@@ -614,13 +745,23 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Operacao:
-	//	opCascada=NOME_OPERACAO;
+	//	opCascada=OperacaoCascada ("," opCascadaMais+=OperacaoCascada)*;
 	public OperacaoElements getOperacaoAccess() {
 		return pOperacao;
 	}
 	
 	public ParserRule getOperacaoRule() {
 		return getOperacaoAccess().getRule();
+	}
+	
+	//OperacaoCascada:
+	//	operacao=NOME_OPERACAO;
+	public OperacaoCascadaElements getOperacaoCascadaAccess() {
+		return pOperacaoCascada;
+	}
+	
+	public ParserRule getOperacaoCascadaRule() {
+		return getOperacaoCascadaAccess().getRule();
 	}
 	
 	//Associacao:

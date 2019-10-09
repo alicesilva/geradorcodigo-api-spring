@@ -3,12 +3,17 @@
  */
 package org.xtext.tcc.mydsl.ui;
 
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor;
+import org.xtext.tcc.mydsl.ui.AbstractMyDslUiModule;
 
 /**
  * Use this class to register components to be used within the Eclipse IDE.
  */
 @FinalFieldsConstructor
 @SuppressWarnings("all")
-public class MyDslUiModule /* implements AbstractMyDslUiModule  */{
+public class MyDslUiModule extends AbstractMyDslUiModule {
+  public MyDslUiModule(final AbstractUIPlugin plugin) {
+    super(plugin);
+  }
 }

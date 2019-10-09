@@ -14,7 +14,7 @@ terminal NOME_ASSOCIACAO:
 terminal NOME_OPERACAO:
 	'"'("ALL"| "DETACH"| "MERGE"| "PERSIST"
 		| "REFRESH"| "REMOVE" | "None-Operacao"
-	)? '"'
+	) '"'
 ;
 
 terminal TIPO_PRIMITIVO:
@@ -44,24 +44,31 @@ Greeting:
 
 Api:
 	'"Nome da Api"' ':' nomeApi = ApiNome ','
-	'"Entidades"' ':' '[' entidades += (Entidade)+ ']'
+	'"Entidades"' ':' '[' entidades = Entidades ']'
 ;
-
 
 ApiNome:
 	nome = STRING_LIT
 ;
 
+Entidades:
+	entidade = Entidade ("," entidadeMais += Entidade)*
+;
+
 Entidade:
 	'{' 
 		'"Nome"' ':' nomeEntidade = Nome ','
-		'"Atributos"' ':' '[' atributos += (Atributo)+ ']' ','
+		'"Atributos"' ':' '[' atributos = (Atributos) ']' ','
 		'"Nome do pacote"' ':' package = Nome
-	'}' (',')?
+	'}'
 ;
 
 Nome:
 	nome = STRING_LIT
+;
+
+Atributos:
+	atributo = Atributo ("," atributoMais += Atributo)*
 ;
 
 Atributo:
@@ -69,12 +76,16 @@ Atributo:
 		'"nome-atributo"' ':' nomeAtributo = Nome ','
 		'"tipo-atributo"' ':' atributoTipo = AtributoTipo ','
 		'"associação/relacionamento"' ':' associacao = (Associacao) ','
-		'"operação em cascata"' ':' operacao = Operacao
-	'}' (',')?
+		'"operação em cascata"' ':' '[' operacao = (Operacao)? ']'
+	'}'
 ;
 
 Operacao:
-	opCascada = NOME_OPERACAO
+	opCascada = (OperacaoCascada) ("," opCascadaMais += OperacaoCascada)*
+;
+
+OperacaoCascada:
+	operacao = NOME_OPERACAO
 ;
 
 Associacao:

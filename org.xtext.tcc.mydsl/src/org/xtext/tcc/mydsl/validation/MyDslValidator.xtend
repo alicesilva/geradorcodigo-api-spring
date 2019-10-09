@@ -6,6 +6,8 @@ package org.xtext.tcc.mydsl.validation
 import org.eclipse.xtext.validation.Check
 import org.xtext.tcc.mydsl.myDsl.Api
 import org.xtext.tcc.mydsl.myDsl.Entidade
+import org.xtext.tcc.mydsl.myDsl.Atributo
+import org.xtext.tcc.mydsl.myDsl.Entidades
 
 /**
  * This class contains custom validation rules. 
@@ -26,56 +28,61 @@ class MyDslValidator extends AbstractMyDslValidator {
 //					INVALID_NAME)
 //		}
 //	}
-	//@Check
-	/*def check(Api api) {
+	@Check
+	def validaNomes(Api api) {
 		api.nomeApi.nome = api.nomeApi.nome.substring(1, api.nomeApi.nome.length - 1);
-		for (e : api.entidades) {
-			e.nomeEntidade.nome = e.nomeEntidade.nome.substring(1, e.nomeEntidade.nome.length - 1);
-			e.package.nome = e.package.nome.substring(1, e.package.nome.length - 1);
-
-			for (a : e.atributos) {
-				a.nomeAtributo.nome = a.nomeAtributo.nome.substring(1, a.nomeAtributo.nome.length - 1);
-				if (a.atributoTipo.tipoPrimitivo !== null) {
-					a.atributoTipo.tipoPrimitivo = a.atributoTipo.tipoPrimitivo.substring(1, a.atributoTipo.tipoPrimitivo.length - 1);
-				} else if(a.atributoTipo.tipoObjeto !== null){
-					a.atributoTipo.tipoObjeto = a.atributoTipo.tipoObjeto.substring(1, a.atributoTipo.tipoObjeto.length - 1);
-				}else{
-					 a.atributoTipo.tipoColecao = a.atributoTipo.tipoColecao.substring(1, a.atributoTipo.tipoObjeto.length - 1);
-				}
-
-				a.associacao.associacao = a.associacao.associacao.substring(1, a.associacao.associacao.length - 1);
-				a.operacao.opCascada = a.operacao.opCascada.substring(1, a.operacao.opCascada.length - 1);
+		validaEntidade(api.entidades.entidade);
+		println(api.entidades.entidade.nomeEntidade.nome)
+		if(api.entidades.entidadeMais.size() > 0){
+			for(entidade: api.entidades.entidadeMais){
+				validaEntidade(entidade);
+				println(entidade.nomeEntidade.nome)
 			}
-		}
-		
-		//checkChavePrimaria(api);
-		checkNomesEntidades(api);
-		checkTipoAtributos(api);
-	}*/
-
-	/*def checkNomesEntidades(Api api) {
-		if (entidadeValidator.checkNomeEntidades(api) !== null) {
-			var Exception erro = entidadeValidator.checkNomeEntidades(api);
-			error(erro.erro, erro.feature);
-		}
-	}*/
-
-	
-	/*def checkChavePrimaria(Api api) {
-		if (entidadeValidator.checkChavePrimaria(api) !== null) {
-			var Exception erro = entidadeValidator.checkChavePrimaria(api);
-			error(erro.erro, erro.feature);
-		}
-	}*/
-
-	/*def checkTipoAtributos(Api api) {
-		if (entidadeValidator.checkTipoAtributo(api) !== null) {
-			var Exception erro = entidadeValidator.checkTipoAtributo(api);
-			error(erro.erro, erro.feature);
 		}
 	}
 	
-	def verificaTamanho(String palavra){
-		return palavra.length > 0
-	}*/
+	def validaEntidade(Entidade entidade){
+		entidade.nomeEntidade.nome = entidade.nomeEntidade.nome.substring(1, entidade.nomeEntidade.nome.length);
+		entidade.package.nome = entidade.package.nome.substring(1, entidade.package.nome.length - 1);
+		
+		validaAtributo(entidade.atributos.atributo);
+		if(entidade.atributos.atributoMais.size() > 0){
+			for(atributo: entidade.atributos.atributoMais){
+				validaAtributo(atributo)
+			}
+		}
+	}
+	
+	def validaAtributo(Atributo atributo){
+		atributo.nomeAtributo.nome = atributo.nomeAtributo.nome.substring(1, atributo.nomeAtributo.nome.length - 1);
+		
+		if(atributo.atributoTipo.tipoPrimitivo !== null){
+			atributo.atributoTipo.tipoPrimitivo = atributo.atributoTipo.tipoPrimitivo.substring(1, atributo.atributoTipo.tipoPrimitivo.length-1);
+		}else if(atributo.atributoTipo.tipoColecao !== null){
+			atributo.atributoTipo.tipoColecao = atributo.atributoTipo.tipoColecao.substring(1, atributo.atributoTipo.tipoColecao.length-1);
+		}else{
+			atributo.atributoTipo.tipoObjeto = atributo.atributoTipo.tipoObjeto.substring(1, atributo.atributoTipo.tipoObjeto.length-1);
+		}
+		
+		if(!atributo.associacao.associacao.equals("")){
+			atributo.associacao.associacao = atributo.associacao.associacao.substring(1, atributo.associacao.associacao.length-1)
+		}
+		
+		if(atributo.operacao !== null){
+			atributo.operacao.opCascada.operacao = atributo.operacao.opCascada.operacao.substring(1, atributo.operacao.opCascada.operacao.length - 1);		
+			if(atributo.operacao.opCascadaMais.size() > 0){
+				for(operacao: atributo.operacao.opCascadaMais){
+					operacao.operacao = operacao.operacao.substring(1, operacao.operacao.length - 1);
+				}
+			}
+		}
+	}
+	
+	//@Check
+	def validaNomeEntidade(Entidades entidades){
+		if(entidadeValidator.verificaNomesEntidade(entidades) !== null){
+			var Exception erro = entidadeValidator.verificaNomesEntidade(entidades);
+			error(erro.erro, erro.feature);
+		}
+	}
 }

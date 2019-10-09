@@ -1,12 +1,37 @@
 package org.xtext.tcc.mydsl.validation;
 
-import org.eclipse.emf.common.util.EList;
-import org.xtext.tcc.mydsl.myDsl.Api;
-import org.xtext.tcc.mydsl.myDsl.Atributo;
 import org.xtext.tcc.mydsl.myDsl.Entidade;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
+import org.xtext.tcc.mydsl.myDsl.Entidades;
 
 public class EntidadeValidator {
+
+	public Exception verificaNomesEntidade(Entidades entidades) {
+	  if(entidades.getEntidadeMais().size() > 0) {
+		  for(Entidade entidade: entidades.getEntidadeMais()) {
+			  if(entidades.getEntidade().getNomeEntidade().getNome().equals(entidade.getNomeEntidade().getNome())) {
+				  return new Exception("Nome de entidade deve ser único.", MyDslPackage.Literals.ENTIDADES__ENTIDADE_MAIS);
+			  }
+		  }
+		  
+		  
+		  for(Entidade entidade: entidades.getEntidadeMais()) {
+			  int count = 0;
+			  for(Entidade entidadeI: entidades.getEntidadeMais()) {
+				  if(entidade.getNomeEntidade().getNome().equals(entidadeI.getNomeEntidade().getNome())) {
+					  count ++;
+				  }
+			  }
+			  if(count > 1) {
+				  return new Exception("Nome de entidade deve ser único.", MyDslPackage.Literals.ENTIDADES__ENTIDADE_MAIS);
+			  }
+		  }
+		  
+		  return null;
+	  }
+	  
+	  return null;
+	}
 
 /*	public Exception checkNomeEntidades(Api api) {
 		for (Entidade entidade : api.getEntidades()) {
