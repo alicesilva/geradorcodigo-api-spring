@@ -1,0 +1,24 @@
+{
+	"Nome da Api": "banco",
+	"Entidades": [
+		{
+			"Nome": "conta",
+			"Atributos": [
+				{
+					"nome-atributo": "numero",
+					"tipo-atributo": "Integer",
+					"associação/relacionamento": "",
+					"operação em cascata": []
+				},
+				{
+					"nome-atributo": "tipoConta",
+					"tipo-atributo": "String",
+					"associação/relacionamento": "",
+					"operação em cascata": []
+				}
+			],
+			"Nome do pacote": "modelconta"
+			
+		}
+	]
+}
