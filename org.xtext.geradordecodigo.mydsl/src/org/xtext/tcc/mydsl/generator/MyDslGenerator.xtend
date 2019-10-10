@@ -37,16 +37,13 @@ class MyDslGenerator extends AbstractGenerator {
 
 			}
 		}
-	/*for (a : resource.allContents.toIterable.filter(Api)) {
-	 * 	for (e : resource.allContents.toIterable.filter(Entidade)) {
-	 * 		fsa.generateFile(e.nomeEntidade.nome.toFirstUpper.toString + ".java", e.compile);
-	 * 		fsa.generateFile(e.nomeEntidade.nome.toFirstUpper.toString + "Repository.java", compileRepository(e));
-	 * 		fsa.generateFile(e.nomeEntidade.nome.toFirstUpper.toString + "Service.java", compileService(e));
-	 * 		fsa.generateFile(e.nomeEntidade.nome.toFirstUpper.toString + "Controller.java", compileController(a, e));
+		for (a : resource.allContents.toIterable.filter(Api)) {
+			for (e : resource.allContents.toIterable.filter(Entidades)) {
+				fsa.generateFile(e.entidade.nomeEntidade.nome.toFirstUpper.toString + "Controller.java",
+					compileController(a, e.entidade));
+			}
 
-	 * 	}
-
-	 }*/
+		}
 	}
 
 	def compile(Entidade entidade) '''
@@ -191,87 +188,84 @@ class MyDslGenerator extends AbstractGenerator {
 		}
 	'''
 
-/*def compileController(Api api, Entidade entidade) '''
- * 	package «entidade.package.nome»;
- * 	
- * 	import java.util.List;
- * 	import org.springframework.beans.factory.annotation.Autowired;
- * 	import org.springframework.http.*;
- * 	import org.springframework.web.bind.annotation.*;
- * 	
- * 	@RestController
- * 	@RequestMapping("/«api.nomeApi.nome»-api")
- * 	public class «entidade.nomeEntidade.nome.toFirstUpper»Controller {
- * 		
- * 		@Autowired
- * 		«entidade.nomeEntidade.nome.toFirstUpper»Service «entidade.nomeEntidade.nome»Service;
- * 		
- * 		@PostMapping(value = "/«entidade.nomeEntidade.nome»s", consumes = MediaType.APPLICATION_JSON_VALUE)
- * 		public ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»> save(@RequestBody «entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome») {
- * 			if(«entidade.nomeEntidade.nome» == null) {
- * 				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
- * 			}
- * 			
- * 			this.«entidade.nomeEntidade.nome»Service.save(«entidade.nomeEntidade.nome»);
- * 			
- * 			return new ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»>(«entidade.nomeEntidade.nome», HttpStatus.CREATED);
- * 		}
- * 		
- * 		@GetMapping(value = "«entidade.nomeEntidade.nome»s", produces = MediaType.APPLICATION_JSON_VALUE)
- * 		public ResponseEntity<List<«entidade.nomeEntidade.nome.toFirstUpper»>> get«entidade.nomeEntidade.nome.toFirstUpper»s(){
- * 			List<«entidade.nomeEntidade.nome.toFirstUpper»> «entidade.nomeEntidade.nome»s = this.«entidade.nomeEntidade.nome»Service.get«entidade.nomeEntidade.nome.toFirstUpper»s();
- * 			
- * 			return new ResponseEntity<List<«entidade.nomeEntidade.nome.toFirstUpper»>>(«entidade.nomeEntidade.nome»s, HttpStatus.OK);
- * 		}
- * 		
- * 		@GetMapping(value = "«entidade.nomeEntidade.nome»s/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
- * 		public ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»> get«entidade.nomeEntidade.nome.toFirstUpper»(@PathVariable("id") Long id){
- * 			if(id == null) {
- * 				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
- * 			}
- * 			«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome» = «entidade.nomeEntidade.nome»Service.get«entidade.nomeEntidade.nome.toFirstUpper»ById(id);
- * 			
- * 			if(«entidade.nomeEntidade.nome» == null) {
- * 				return new ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»>(«entidade.nomeEntidade.nome», HttpStatus.NOT_FOUND);
- * 			}
- * 			
- * 			return new ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»>(«entidade.nomeEntidade.nome», HttpStatus.OK);
- * 		}
- * 		
- * 		@DeleteMapping(value = "«entidade.nomeEntidade.nome»")
- * 		public ResponseEntity<String> deleteAll«entidade.nomeEntidade.nome.toFirstUpper»(){
- * 			«entidade.nomeEntidade.nome»Service.deleteAll«entidade.nomeEntidade.nome.toFirstUpper»();
- * 			return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper»s removidos com sucesso.", HttpStatus.OK);
- * 		}
- * 		
- * 		@DeleteMapping(value = "«entidade.nomeEntidade.nome»s/{id}")
- * 		public ResponseEntity<String> delete«entidade.nomeEntidade.nome.toFirstUpper»(@PathVariable("id") Long id){
- * 			if(id == null) {
- * 				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
- * 			}
- * 			Boolean delete = «entidade.nomeEntidade.nome»Service.delete«entidade.nomeEntidade.nome.toFirstUpper»(id);
- * 			
- * 			if(!delete) {
- * 				return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper» nao esta cadastrado", HttpStatus.NOT_FOUND);
- * 			}
- * 			
- * 			return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper» removido com sucesso.", HttpStatus.OK);
- * 		}
- * 		
- * 		@PutMapping(value = "«entidade.nomeEntidade.nome»s/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
- * 		public ResponseEntity<String> update«entidade.nomeEntidade.nome.toFirstUpper»(@PathVariable("id") Long id, @RequestBody «entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome»){
- * 			if(id == null || «entidade.nomeEntidade.nome» == null) {
- * 				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
- * 			}
- * 			Boolean update = «entidade.nomeEntidade.nome»Service.update«entidade.nomeEntidade.nome.toFirstUpper»(id, «entidade.nomeEntidade.nome»);
- * 			
- * 			if(!update) {
- * 				return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper»nao esta cadastrado", HttpStatus.NOT_FOUND);
- * 			}
- * 			
- * 			return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper» atualizado com sucesso.", HttpStatus.OK);
- * 		}
- * 	}
- '''*/
-// }
+	def compileController(Api api, Entidade entidade) '''
+		package «entidade.package.nome»;
+		import java.util.List;
+		import org.springframework.beans.factory.annotation.Autowired;
+		import org.springframework.http.*;
+		import org.springframework.web.bind.annotation.*;
+			
+		@RestController
+		@RequestMapping("/«api.nomeApi.nome»-api")
+		public class «entidade.nomeEntidade.nome.toFirstUpper»Controller {
+				
+			@Autowired
+			«entidade.nomeEntidade.nome.toFirstUpper»Service «entidade.nomeEntidade.nome»Service;
+				
+			@PostMapping(value = "/«entidade.nomeEntidade.nome»s", consumes = MediaType.APPLICATION_JSON_VALUE)
+			public ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»> save(@RequestBody «entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome») {
+				if(«entidade.nomeEntidade.nome» == null) {
+					return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+				}
+					
+				this.«entidade.nomeEntidade.nome»Service.save(«entidade.nomeEntidade.nome»);
+					
+				return new ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»>(«entidade.nomeEntidade.nome», HttpStatus.CREATED);
+			}
+				
+			@GetMapping(value = "«entidade.nomeEntidade.nome»s", produces = MediaType.APPLICATION_JSON_VALUE)
+			public ResponseEntity<List<«entidade.nomeEntidade.nome.toFirstUpper»>> get«entidade.nomeEntidade.nome.toFirstUpper»s(){
+				List<«entidade.nomeEntidade.nome.toFirstUpper»> «entidade.nomeEntidade.nome»s = this.«entidade.nomeEntidade.nome»Service.get«entidade.nomeEntidade.nome.toFirstUpper»s();
+				return new ResponseEntity<List<«entidade.nomeEntidade.nome.toFirstUpper»>>(«entidade.nomeEntidade.nome»s, HttpStatus.OK);
+			}
+			
+			@GetMapping(value = "«entidade.nomeEntidade.nome»s/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+			public ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»> get«entidade.nomeEntidade.nome.toFirstUpper»(@PathVariable("id") Long id){
+				if(id == null) {
+					return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+				}
+				«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome» = «entidade.nomeEntidade.nome»Service.get«entidade.nomeEntidade.nome.toFirstUpper»ById(id);
+					
+				if(«entidade.nomeEntidade.nome» == null) {
+					return new ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»>(«entidade.nomeEntidade.nome», HttpStatus.NOT_FOUND);
+				}
+				
+				return new ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»>(«entidade.nomeEntidade.nome», HttpStatus.OK);
+			}
+			
+			@DeleteMapping(value = "«entidade.nomeEntidade.nome»")
+			public ResponseEntity<String> deleteAll«entidade.nomeEntidade.nome.toFirstUpper»(){
+				«entidade.nomeEntidade.nome»Service.deleteAll«entidade.nomeEntidade.nome.toFirstUpper»();
+				return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper»s removidos com sucesso.", HttpStatus.OK);
+			}
+				
+			@DeleteMapping(value = "«entidade.nomeEntidade.nome»s/{id}")
+			public ResponseEntity<String> delete«entidade.nomeEntidade.nome.toFirstUpper»(@PathVariable("id") Long id){
+				if(id == null) {
+					return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+				}
+				Boolean delete = «entidade.nomeEntidade.nome»Service.delete«entidade.nomeEntidade.nome.toFirstUpper»(id);
+					
+				if(!delete) {
+					return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper» nao esta cadastrado", HttpStatus.NOT_FOUND);
+				}
+					
+				return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper» removido com sucesso.", HttpStatus.OK);
+			}
+				
+			@PutMapping(value = "«entidade.nomeEntidade.nome»s/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+			public ResponseEntity<String> update«entidade.nomeEntidade.nome.toFirstUpper»(@PathVariable("id") Long id, @RequestBody «entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome»){
+				if(id == null || «entidade.nomeEntidade.nome» == null) {
+					return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+				}
+				Boolean update = «entidade.nomeEntidade.nome»Service.update«entidade.nomeEntidade.nome.toFirstUpper»(id, «entidade.nomeEntidade.nome»);
+					
+				if(!update) {
+					return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper» nao esta cadastrado", HttpStatus.NOT_FOUND);
+				}
+					
+				return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper» atualizado com sucesso.", HttpStatus.OK);
+			}
+		}
+	'''
 }
