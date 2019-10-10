@@ -1,0 +1,97 @@
+grammar org.xtext.tcc.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/tcc/mydsl/MyDsl"
+
+Model:
+	greetings+=Greeting;
+
+terminal NOME_ASSOCIACAO:
+	'"'("OneToOne" | "OneToMany" | "ManyToOne" 
+		| "ManyToMany"
+	)? '"'
+;
+	
+terminal NOME_OPERACAO:
+	'"'("ALL"| "DETACH"| "MERGE"| "PERSIST"
+		| "REFRESH"| "REMOVE" | "None-Operacao"
+	) '"'
+;
+
+terminal TIPO_PRIMITIVO:
+	'"' ("Boolean" | "Integer" | "Long" | "String" | "Float" | "Double"|
+	 "Time" | "Timestamp" | "Date" | "ENUM") '"'
+;
+
+terminal TIPO_COLECAO:
+	'"' ("List<"(STRING_I) ">" | "Set<"(STRING_I) ">" | "ArrayList<"(STRING_I) ">" 
+		| "HashSet<"(STRING_I) ">") '"'
+;
+
+terminal STRING_LIT:
+	'"' (LETRA)+ '"'
+;
+
+terminal STRING_I:
+	(LETRA)+
+;
+
+terminal LETRA:
+	"a".."z" | "A" .."Z"
+;
+	
+Greeting:
+	'{' api=Api '}';
+
+Api:
+	'"Nome da Api"' ':' nomeApi = ApiNome ','
+	'"Entidades"' ':' '[' entidades = Entidades ']'
+;
+
+ApiNome:
+	nome = STRING_LIT
+;
+
+Entidades:
+	entidade = Entidade ("," entidadeMais += Entidade)*
+;
+
+Entidade:
+	'{' 
+		'"Nome"' ':' nomeEntidade = Nome ','
+		'"Atributos"' ':' '[' atributos = (Atributos) ']' ','
+		'"Nome do pacote"' ':' package = Nome
+	'}'
+;
+
+Nome:
+	nome = STRING_LIT
+;
+
+Atributos:
+	atributo = Atributo ("," atributoMais += Atributo)*
+;
+
+Atributo:
+	'{' 
+		'"nome-atributo"' ':' nomeAtributo = Nome ','
+		'"tipo-atributo"' ':' atributoTipo = AtributoTipo ','
+		'"associação/relacionamento"' ':' associacao = (Associacao) ','
+		'"operação em cascata"' ':' '[' operacao = (Operacao)? ']'
+	'}'
+;
+
+Operacao:
+	opCascada = (OperacaoCascada) ("," opCascadaMais += OperacaoCascada)*
+;
+
+OperacaoCascada:
+	operacao = NOME_OPERACAO
+;
+
+Associacao:
+	associacao = NOME_ASSOCIACAO
+;
+
+AtributoTipo:
+	tipoPrimitivo = TIPO_PRIMITIVO | tipoColecao = TIPO_COLECAO | tipoObjeto = STRING_LIT
+;
