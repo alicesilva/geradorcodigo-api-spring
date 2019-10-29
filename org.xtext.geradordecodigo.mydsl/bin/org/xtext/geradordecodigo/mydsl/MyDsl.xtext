@@ -13,13 +13,13 @@ terminal NOME_ASSOCIACAO:
 	
 terminal NOME_OPERACAO:
 	'"'("ALL"| "DETACH"| "MERGE"| "PERSIST"
-		| "REFRESH"| "REMOVE" | "None-Operacao"
+		| "REFRESH"| "REMOVE"
 	) '"'
 ;
 
 terminal TIPO_PRIMITIVO:
 	'"' ("Boolean" | "Integer" | "Long" | "String" | "Float" | "Double"|
-	 "Time" | "Timestamp" | "Date" | "ENUM") '"'
+	 "Time" | "Timestamp" | "Date") '"'
 ;
 
 terminal TIPO_COLECAO:
@@ -58,8 +58,8 @@ Entidades:
 Entidade:
 	'{' 
 		'"Nome"' ':' nomeEntidade = Nome ','
-		'"Atributos"' ':' '[' atributos = (Atributos) ']' ','
-		'"Nome do pacote"' ':' package = Nome
+		'"Atributos"' ':' '[' atributos = (Atributos) ']'
+		//'"Nome do pacote"' ':' package = Nome
 	'}'
 ;
 

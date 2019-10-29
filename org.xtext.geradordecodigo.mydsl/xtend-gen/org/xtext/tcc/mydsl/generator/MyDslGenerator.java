@@ -79,11 +79,17 @@ public class MyDslGenerator extends AbstractGenerator {
   public CharSequence compile(final Entidade entidade) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package ");
-    String _nome = entidade.getPackage().getNome();
-    _builder.append(_nome);
+    String _lowerCase = entidade.getNomeEntidade().getNome().toLowerCase();
+    _builder.append(_lowerCase);
     _builder.append(";");
     _builder.newLineIfNotEmpty();
     _builder.append("import javax.persistence.*;");
+    _builder.newLine();
+    _builder.append("import java.sql.*;");
+    _builder.newLine();
+    _builder.append("import java.sql.Date;");
+    _builder.newLine();
+    _builder.append("import java.util.*;");
     _builder.newLine();
     _builder.newLine();
     _builder.append("@Entity");
@@ -282,7 +288,7 @@ public class MyDslGenerator extends AbstractGenerator {
           _builder.append("}");
           _builder.newLine();
           _builder.newLine();
-          _builder.append("public void set ");
+          _builder.append("public void set");
           String _firstUpper_3 = StringExtensions.toFirstUpper(atributo.getNomeAtributo().getNome());
           _builder.append(_firstUpper_3);
           _builder.append("(");
@@ -306,11 +312,11 @@ public class MyDslGenerator extends AbstractGenerator {
           _builder.newLine();
         } else {
           _builder.append("public ");
-          String _tipoObjeto = atributo.getAtributoTipo().getTipoObjeto();
-          _builder.append(_tipoObjeto);
-          _builder.append(" get");
-          String _firstUpper_4 = StringExtensions.toFirstUpper(atributo.getNomeAtributo().getNome());
+          String _firstUpper_4 = StringExtensions.toFirstUpper(atributo.getAtributoTipo().getTipoObjeto());
           _builder.append(_firstUpper_4);
+          _builder.append(" get");
+          String _firstUpper_5 = StringExtensions.toFirstUpper(atributo.getNomeAtributo().getNome());
+          _builder.append(_firstUpper_5);
           _builder.append("(){");
           _builder.newLineIfNotEmpty();
           _builder.append("\t");
@@ -323,12 +329,12 @@ public class MyDslGenerator extends AbstractGenerator {
           _builder.newLine();
           _builder.append("\t\t\t\t");
           _builder.newLine();
-          _builder.append("public void set ");
-          String _firstUpper_5 = StringExtensions.toFirstUpper(atributo.getNomeAtributo().getNome());
-          _builder.append(_firstUpper_5);
+          _builder.append("public void set");
+          String _firstUpper_6 = StringExtensions.toFirstUpper(atributo.getNomeAtributo().getNome());
+          _builder.append(_firstUpper_6);
           _builder.append("(");
-          String _tipoObjeto_1 = atributo.getAtributoTipo().getTipoObjeto();
-          _builder.append(_tipoObjeto_1);
+          String _tipoObjeto = atributo.getAtributoTipo().getTipoObjeto();
+          _builder.append(_tipoObjeto);
           _builder.append(" ");
           String _nome_9 = atributo.getNomeAtributo().getNome();
           _builder.append(_nome_9);

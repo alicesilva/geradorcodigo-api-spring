@@ -617,14 +617,14 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//terminal NOME_OPERACAO:
 	//	'"' ("ALL" | "DETACH" | "MERGE" | "PERSIST"
-	//	| "REFRESH" | "REMOVE" | "None-Operacao") '"';
+	//	| "REFRESH" | "REMOVE") '"';
 	public TerminalRule getNOME_OPERACAORule() {
 		return tNOME_OPERACAO;
 	}
 	
 	//terminal TIPO_PRIMITIVO:
 	//	'"' ("Boolean" | "Integer" | "Long" | "String" | "Float" | "Double" |
-	//	"Time" | "Timestamp" | "Date" | "ENUM") '"';
+	//	"Time" | "Timestamp" | "Date") '"';
 	public TerminalRule getTIPO_PRIMITIVORule() {
 		return tTIPO_PRIMITIVO;
 	}

@@ -22,7 +22,6 @@ import org.xtext.tcc.mydsl.myDsl.Nome;
 import org.xtext.tcc.mydsl.myDsl.Operacao;
 import org.xtext.tcc.mydsl.myDsl.OperacaoCascada;
 import org.xtext.tcc.mydsl.validation.AbstractMyDslValidator;
-import org.xtext.tcc.mydsl.validation.EntidadeValidator;
 
 /**
  * This class contains custom validation rules.
@@ -31,8 +30,6 @@ import org.xtext.tcc.mydsl.validation.EntidadeValidator;
  */
 @SuppressWarnings("all")
 public class MyDslValidator extends AbstractMyDslValidator {
-  private EntidadeValidator entidadeValidator = new EntidadeValidator();
-  
   @Check
   public void validaNomes(final Api api) {
     ApiNome _nomeApi = api.getNomeApi();
@@ -184,8 +181,7 @@ public class MyDslValidator extends AbstractMyDslValidator {
   }
   
   public void validaTipoAtributo(final Atributos atributos, final List<String> nomesEntidades) {
-    List<String> _asList = Arrays.<String>asList("Boolean", "Integer", "Long", "String", "Float", "Double", "Time", "Timestamp", "Date", 
-      "ENUM");
+    List<String> _asList = Arrays.<String>asList("Boolean", "Integer", "Long", "String", "Float", "Double", "Time", "Timestamp", "Date");
     List<String> tiposPrimitivos = new ArrayList<String>(_asList);
     String _tipoColecao = atributos.getAtributo().getAtributoTipo().getTipoColecao();
     boolean _tripleNotEquals = (_tipoColecao != null);
@@ -233,6 +229,47 @@ public class MyDslValidator extends AbstractMyDslValidator {
                 MyDslPackage.Literals.ENTIDADES__ENTIDADE_MAIS);
             }
           }
+        }
+      }
+    }
+  }
+  
+  @Check
+  public void validaNomeAtributos(final Entidades entidades) {
+    this.validaNomeAtributo(entidades.getEntidade().getAtributos());
+    EList<Entidade> _entidadeMais = entidades.getEntidadeMais();
+    for (final Entidade entidade : _entidadeMais) {
+      this.validaNomeAtributo(entidade.getAtributos());
+    }
+  }
+  
+  public void validaNomeAtributo(final Atributos atributos) {
+    EList<Atributo> _atributoMais = atributos.getAtributoMais();
+    for (final Atributo atributo : _atributoMais) {
+      if ((atributo != null)) {
+        String _nome = atributos.getAtributo().getNomeAtributo().getNome();
+        String _nome_1 = atributo.getNomeAtributo().getNome();
+        boolean _equals = Objects.equal(_nome, _nome_1);
+        if (_equals) {
+          this.error("Nome do atributo deve ser único.", MyDslPackage.Literals.ENTIDADES__ENTIDADE_MAIS);
+        }
+      }
+    }
+    EList<Atributo> _atributoMais_1 = atributos.getAtributoMais();
+    for (final Atributo atributo_1 : _atributoMais_1) {
+      {
+        int count = 0;
+        EList<Atributo> _atributoMais_2 = atributos.getAtributoMais();
+        for (final Atributo atributoI : _atributoMais_2) {
+          String _nome_2 = atributo_1.getNomeAtributo().getNome();
+          String _nome_3 = atributoI.getNomeAtributo().getNome();
+          boolean _equals_1 = Objects.equal(_nome_2, _nome_3);
+          if (_equals_1) {
+            count++;
+          }
+        }
+        if ((count > 1)) {
+          this.error("Nome do atributo deve ser único.", MyDslPackage.Literals.ENTIDADES__ENTIDADE_MAIS);
         }
       }
     }

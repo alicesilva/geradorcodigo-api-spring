@@ -47,8 +47,11 @@ class MyDslGenerator extends AbstractGenerator {
 	}
 
 	def compile(Entidade entidade) '''
-		package «entidade.package.nome»;
+		package «entidade.nomeEntidade.nome.toLowerCase»;
 		import javax.persistence.*;
+		import java.sql.*;
+		import java.sql.Date;
+		import java.util.*;
 		
 		@Entity
 		public class «entidade.nomeEntidade.nome.toFirstUpper» {
@@ -102,20 +105,21 @@ class MyDslGenerator extends AbstractGenerator {
 				return «atributo.nomeAtributo.nome»;
 			}
 			
-			public void set «atributo.nomeAtributo.nome.toFirstUpper»(«atributo.atributoTipo.tipoColecao» «atributo.nomeAtributo.nome»){
+			public void set«atributo.nomeAtributo.nome.toFirstUpper»(«atributo.atributoTipo.tipoColecao» «atributo.nomeAtributo.nome»){
 				this.«atributo.nomeAtributo.nome» = «atributo.nomeAtributo.nome»;
 			}
 		«ELSE»
-			public «atributo.atributoTipo.tipoObjeto» get«atributo.nomeAtributo.nome.toFirstUpper»(){
+			public «atributo.atributoTipo.tipoObjeto.toFirstUpper» get«atributo.nomeAtributo.nome.toFirstUpper»(){
 				return «atributo.nomeAtributo.nome»;
 			}
 							
-			public void set «atributo.nomeAtributo.nome.toFirstUpper»(«atributo.atributoTipo.tipoObjeto» «atributo.nomeAtributo.nome»){
+			public void set«atributo.nomeAtributo.nome.toFirstUpper»(«atributo.atributoTipo.tipoObjeto» «atributo.nomeAtributo.nome»){
 				this.«atributo.nomeAtributo.nome» = «atributo.nomeAtributo.nome»;
 			}
 		«ENDIF»
 	'''
-
+	
+	
 	def compileRepository(Entidade entidade) '''
 		package «entidade.package.nome»;
 		import org.springframework.data.jpa.repository.JpaRepository;

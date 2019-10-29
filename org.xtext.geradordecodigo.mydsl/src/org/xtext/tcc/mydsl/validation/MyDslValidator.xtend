@@ -21,7 +21,7 @@ import java.util.Arrays
  */
 class MyDslValidator extends AbstractMyDslValidator {
 
-	EntidadeValidator entidadeValidator = new EntidadeValidator();
+	//EntidadeValidator entidadeValidator = new EntidadeValidator();
 
 //	public static val INVALID_NAME = 'invalidName'
 //
@@ -133,8 +133,7 @@ class MyDslValidator extends AbstractMyDslValidator {
 	
 	def validaTipoAtributo(Atributos atributos, List<String> nomesEntidades) {
 		var List<String> tiposPrimitivos = new ArrayList(
-			Arrays.asList("Boolean", "Integer", "Long", "String", "Float", "Double", "Time", "Timestamp", "Date",
-				"ENUM"));
+			Arrays.asList("Boolean", "Integer", "Long", "String", "Float", "Double", "Time", "Timestamp", "Date"));
 		if (atributos.atributo.atributoTipo.tipoColecao !== null) {
 			var tipo = getNomeTipoColecao(atributos.atributo.atributoTipo.tipoColecao)
 			if (!nomesEntidades.contains(tipo) && !tiposPrimitivos.contains(tipo)) {
@@ -170,7 +169,37 @@ class MyDslValidator extends AbstractMyDslValidator {
 				}
 			}
 		}
+	}
+	
+	@Check
+	def validaNomeAtributos(Entidades entidades){
+		validaNomeAtributo(entidades.entidade.atributos)
+		
+		for(entidade: entidades.entidadeMais){
+			validaNomeAtributo(entidade.atributos)
+		}
+	}
+	
+	def validaNomeAtributo(Atributos atributos){
+		for (atributo : atributos.atributoMais) {
+			if (atributo !== null) {
+				if (atributos.atributo.nomeAtributo.nome == atributo.nomeAtributo.nome) {
+					error('Nome do atributo deve ser único.', MyDslPackage.Literals.ENTIDADES__ENTIDADE_MAIS)
+				}
+			}
+		}
 
+		for (atributo : atributos.atributoMais) {
+			var int count = 0;
+			for (atributoI : atributos.atributoMais) {
+				if (atributo.nomeAtributo.nome == atributoI.nomeAtributo.nome) {
+					count++;
+				}
+			}
+			if (count > 1) {
+				error("Nome do atributo deve ser único.", MyDslPackage.Literals.ENTIDADES__ENTIDADE_MAIS);
+			}
+		}
 	}
 
 	def getNomeTipoColecao(String nomeTipo) {
