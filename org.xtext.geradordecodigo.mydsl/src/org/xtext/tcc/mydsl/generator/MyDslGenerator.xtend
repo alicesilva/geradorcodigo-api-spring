@@ -47,7 +47,7 @@ class MyDslGenerator extends AbstractGenerator {
 	}
 
 	def compile(Entidade entidade) '''
-		package «entidade.nomeEntidade.nome.toLowerCase»;
+		package model;
 		import javax.persistence.*;
 		import java.sql.*;
 		import java.sql.Date;
@@ -121,7 +121,7 @@ class MyDslGenerator extends AbstractGenerator {
 	
 	
 	def compileRepository(Entidade entidade) '''
-		package «entidade.package.nome»;
+		package repository;
 		import org.springframework.data.jpa.repository.JpaRepository;
 		import org.springframework.stereotype.Repository;
 		
@@ -133,7 +133,7 @@ class MyDslGenerator extends AbstractGenerator {
 	'''
 
 	def compileService(Entidade entidade) '''
-		package «entidade.package.nome»;
+		package service;
 		
 		import java.util.List;
 		import org.springframework.beans.factory.annotation.Autowired;
@@ -193,7 +193,7 @@ class MyDslGenerator extends AbstractGenerator {
 	'''
 
 	def compileController(Api api, Entidade entidade) '''
-		package «entidade.package.nome»;
+		package controller;
 		import java.util.List;
 		import org.springframework.beans.factory.annotation.Autowired;
 		import org.springframework.http.*;
