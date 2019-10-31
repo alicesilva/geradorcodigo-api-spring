@@ -5,15 +5,18 @@ import java.sql.Date;
 import java.util.*;
 
 @Entity
-public class Conta {
+public class Pessoa {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	private Integer numero;
+	private String nome;
 	
 	private String tipo;
+	
+	@OneToOne(cascade = {javax.persistence.CascadeType.ALL})
+	private Conta conta;
 	
 	
 	public Long getId() {
@@ -24,12 +27,12 @@ public class Conta {
 		this.id = id;
 	}
 	
-	public Integer getNumero(){
-		return numero;
+	public String getNome(){
+		return nome;
 	}
 	
-	public void setNumero(Integer numero){
-		this.numero = numero;
+	public void setNome(String nome){
+		this.nome = nome;
 	}
 
 	public String getTipo(){
@@ -38,5 +41,12 @@ public class Conta {
 	
 	public void setTipo(String tipo){
 		this.tipo = tipo;
+	}
+	public Conta getConta(){
+		return conta;
+	}
+					
+	public void setConta(conta conta){
+		this.conta = conta;
 	}
 }

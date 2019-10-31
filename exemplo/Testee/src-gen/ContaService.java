@@ -1,8 +1,11 @@
-package modelconta;
+package service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import model.Conta;
+import repository.ContaRepository;
 
 @Service
 public class ContaService {
@@ -38,18 +41,7 @@ public class ContaService {
 		return false;
 	}
 		
-	private boolean existsContaById(Long id) {
+	public boolean existsContaById(Long id) {
 		return contaRepository.existsById(id);
-	}
-	
-	public Boolean updateConta(Long id, Conta contaUpdate) {
-		if(existsContaById(id)) {
-			Conta conta = getContaById(id);
-			conta.setNumero(contaUpdate.getNumero());
-			conta.setTipoConta(contaUpdate.getTipoConta());
-			contaRepository.save(conta);
-			return true;
-		}
-		return false;
 	}
 }

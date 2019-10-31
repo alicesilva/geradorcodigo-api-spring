@@ -11,13 +11,36 @@
 					"operação em cascata": []
 				},
 				{
-					"nome-atributo": "tipoConta",
+					"nome-atributo": "tipo",
 					"tipo-atributo": "String",
 					"associação/relacionamento": "",
 					"operação em cascata": []
 				}
-			],
-			"Nome do pacote": "modelconta"
+			]
+			
+		},
+		{
+			"Nome": "pessoa",
+			"Atributos": [
+				{
+					"nome-atributo": "nome",
+					"tipo-atributo": "String",
+					"associação/relacionamento": "",
+					"operação em cascata": []
+				},
+				{
+					"nome-atributo": "tipo",
+					"tipo-atributo": "String",
+					"associação/relacionamento": "",
+					"operação em cascata": []
+				},
+				{
+					"nome-atributo": "conta",
+					"tipo-atributo": "conta",
+					"associação/relacionamento": "OneToOne",
+					"operação em cascata": ["ALL"]
+				}
+			]
 			
 		}
 	]
