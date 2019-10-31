@@ -4,10 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.example.demo.model.Conta;
 import com.example.demo.model.Pessoa;
-import com.example.demo.repository.ContaRepository;
 import com.example.demo.repository.PessoaRepository;
 
 @Service
@@ -16,12 +13,7 @@ public class PessoaService {
 	@Autowired
 	private PessoaRepository pessoaRepository;
 	
-	@Autowired
-	private ContaRepository contaRepository;
-	
-	public void save(Pessoa pessoa, Long id) {
-		Conta conta = contaRepository.getOne(id);
-		pessoa.setConta(conta);
+	public void save(Pessoa pessoa) {
 		pessoaRepository.save(pessoa);
 	}
 	

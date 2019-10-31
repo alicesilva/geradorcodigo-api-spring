@@ -2,46 +2,41 @@ package com.example.demo.model;
 
 import javax.persistence.Entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Conta {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	private Integer número;
+	private Integer numero;
 	
 	private String tipo;
-
+	
 	public Long getId() {
 		return id;
 	}
-
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public Integer getNúmero() {
-		return número;
+	
+	public Integer getNumero(){
+		return numero;
+	}
+	
+	public void setNumero(Integer numero){
+		this.numero = numero;
 	}
 
-	public void setNúmero(Integer número) {
-		this.número = número;
-	}
-
-	public String getTipo() {
+	public String getTipo(){
 		return tipo;
 	}
-
-	public void setTipo(String tipo) {
+	
+	public void setTipo(String tipo){
 		this.tipo = tipo;
 	}
-	
-	
-	
-	
-
 }
+

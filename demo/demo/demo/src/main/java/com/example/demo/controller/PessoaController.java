@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Pessoa;
-import com.example.demo.service.ContaService;
 import com.example.demo.service.PessoaService;
 
 @RestController
@@ -26,17 +26,14 @@ public class PessoaController {
 	@Autowired
 	PessoaService pessoaService;
 	
-	@Autowired
-	ContaService contaService;
-	
 	
 	@PostMapping(value = "/pessoas/{contaid}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Pessoa> save(@RequestBody Pessoa pessoa, @PathVariable("contaid") Long contaid) {
-		if(pessoa == null || pessoaService.existsPessoaById(pessoa.getId()) || !contaService.existsContaById(contaid)) {
+	public ResponseEntity<Pessoa> save(@RequestBody Pessoa pessoa) {
+		if(pessoa == null || pessoaService.existsPessoaById(pessoa.getId())) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 			
-		this.pessoaService.save(pessoa, contaid);
+		this.pessoaService.save(pessoa);
 			
 		return new ResponseEntity<Pessoa>(pessoa, HttpStatus.CREATED);
 	}

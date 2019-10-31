@@ -45,16 +45,5 @@ public class ContaService {
 	public boolean existsContaById(Long id) {
 		return contaRepository.existsById(id);
 	}
-	
-	public Boolean updateConta(Long id, Conta contaUpdate) {
-		if(existsContaById(id)) {
-			Conta conta = getContaById(id);
-			conta.setNúmero(contaUpdate.getNúmero());
-			conta.setTipo(contaUpdate.getTipo());
-			contaRepository.save(conta);
-			return true;
-		}
-		return false;
-	}
 
 }
