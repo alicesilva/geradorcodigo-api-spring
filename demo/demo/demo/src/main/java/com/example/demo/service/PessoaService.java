@@ -4,7 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.example.demo.model.Conta;
+import com.example.demo.model.Livro;
 import com.example.demo.model.Pessoa;
+import com.example.demo.model.Telefone;
+import com.example.demo.model.Universidade;
 import com.example.demo.repository.PessoaRepository;
 
 @Service
@@ -26,23 +31,46 @@ public class PessoaService {
 	}
 	
 	public Pessoa getPessoaById(Long id) {
-		if(existsPessoaById(id)) {
-			return pessoaRepository.getOne(id);
-		}else {
-			return null;
-		}
+		return pessoaRepository.getOne(id);
 	}
 	
 	public void deleteAllPessoa() {
 		pessoaRepository.deleteAll();
 	}
 	
-	public Boolean deletePessoa(Long id) {
-		if(existsPessoaById(id)) {
-			pessoaRepository.deleteById(id);
-			return true;
-		}
-		return false;
+	public void deletePessoa(Long id) {
+		pessoaRepository.deleteById(id);
+	}
+	
+	public void update(Pessoa pessoa) {
+		pessoaRepository.save(pessoa);
+	}
+	
+	public void update(Long id, Conta conta) {
+		Pessoa pessoa = getPessoaById(id);
+		pessoa.setConta(conta);
+		pessoaRepository.save(pessoa);
+		
+	}
+	
+	public void update(Long id, Livro livro) {
+		Pessoa pessoa = getPessoaById(id);
+		pessoa.getLivros().add(livro);
+		pessoaRepository.save(pessoa);
+	}
+
+	public void update(Long id, Universidade universidade) {
+		Pessoa pessoa = getPessoaById(id);
+		pessoa.setUniversidade(universidade);
+		pessoaRepository.save(pessoa);
+		
+	}
+	
+	public void update(Long id, Telefone telefone) {
+		Pessoa pessoa = getPessoaById(id);
+		pessoa.getTelefone().add(telefone);
+		pessoaRepository.save(pessoa);
+		
 	}
 
 }

@@ -23,23 +23,15 @@ public class ContaService {
 	}
 	
 	public Conta getContaById(Long id) {
-		if(existsContaById(id)) {
-			return contaRepository.getOne(id);
-		}else {
-			return null;
-		}
+		return contaRepository.getOne(id);
 	}
 	
 	public void deleteAllConta() {
 		contaRepository.deleteAll();
 	}
 	
-	public Boolean deleteConta(Long id) {
-		if(existsContaById(id)) {
-			contaRepository.deleteById(id);
-			return true;
-		}
-		return false;
+	public void deleteConta(Long id) {
+		contaRepository.deleteById(id);
 	}
 		
 	public boolean existsContaById(Long id) {

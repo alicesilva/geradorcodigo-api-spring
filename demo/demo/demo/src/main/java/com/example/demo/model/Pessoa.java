@@ -5,6 +5,8 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -22,6 +24,12 @@ public class Pessoa {
 	
 	@OneToMany(cascade = {javax.persistence.CascadeType.ALL})
 	private List<Livro> livros;
+	
+	@ManyToOne
+	private Universidade universidade;
+	
+	@ManyToMany
+	private List<Telefone> telefone;
 
 	public Long getId() {
 		return id;
@@ -54,5 +62,23 @@ public class Pessoa {
 	public void setLivros(List<Livro> livros) {
 		this.livros = livros;
 	}
+
+	public Universidade getUniversidade() {
+		return universidade;
+	}
+
+	public void setUniversidade(Universidade universidade) {
+		this.universidade = universidade;
+	}
+
+	public List<Telefone> getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(List<Telefone> telefone) {
+		this.telefone = telefone;
+	}
+	
+	
 
 }
