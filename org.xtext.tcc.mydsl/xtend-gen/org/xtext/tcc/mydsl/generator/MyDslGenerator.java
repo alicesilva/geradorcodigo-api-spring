@@ -3,7 +3,11 @@
  */
 package org.xtext.tcc.mydsl.generator;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -66,26 +70,7 @@ public class MyDslGenerator extends AbstractGenerator {
     }
     Iterable<Api> _filter_1 = Iterables.<Api>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Api.class);
     for (final Api a : _filter_1) {
-      Iterable<Entidades> _filter_2 = Iterables.<Entidades>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Entidades.class);
-      for (final Entidades e_1 : _filter_2) {
-        {
-          String _string = StringExtensions.toFirstUpper(e_1.getEntidade().getNomeEntidade().getNome()).toString();
-          String _plus = (_string + "Controller.java");
-          fsa.generateFile(_plus, 
-            this.compileController(a, e_1.getEntidade()));
-          int _size = e_1.getEntidadeMais().size();
-          boolean _greaterThan = (_size > 0);
-          if (_greaterThan) {
-            EList<Entidade> _entidadeMais = e_1.getEntidadeMais();
-            for (final Entidade ent : _entidadeMais) {
-              String _string_1 = StringExtensions.toFirstUpper(ent.getNomeEntidade().getNome()).toString();
-              String _plus_1 = (_string_1 + "Controller.java");
-              fsa.generateFile(_plus_1, 
-                this.compileController(a, ent));
-            }
-          }
-        }
-      }
+      fsa.generateFile("Controller.java", this.compileController(a));
     }
   }
   
@@ -139,8 +124,6 @@ public class MyDslGenerator extends AbstractGenerator {
         _builder.newLine();
       }
     }
-    _builder.append("\t");
-    _builder.newLine();
     _builder.append("\t");
     _builder.append("public Long getId() {");
     _builder.newLine();
@@ -445,11 +428,21 @@ public class MyDslGenerator extends AbstractGenerator {
     _builder.append("Repository;");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
+    {
+      ArrayList<String> _tipoAtributos = this.getTipoAtributos(entidade);
+      for(final String ent : _tipoAtributos) {
+        _builder.append("import model.");
+        String _firstUpper_2 = StringExtensions.toFirstUpper(ent);
+        _builder.append(_firstUpper_2);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.newLine();
     _builder.append("@Service");
     _builder.newLine();
     _builder.append("public class ");
-    String _firstUpper_2 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
-    _builder.append(_firstUpper_2);
+    String _firstUpper_3 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
+    _builder.append(_firstUpper_3);
     _builder.append("Service {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
@@ -458,8 +451,8 @@ public class MyDslGenerator extends AbstractGenerator {
     _builder.append("@Autowired");
     _builder.newLine();
     _builder.append("\t");
-    String _firstUpper_3 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
-    _builder.append(_firstUpper_3, "\t");
+    String _firstUpper_4 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
+    _builder.append(_firstUpper_4, "\t");
     _builder.append("Repository ");
     String _nome = entidade.getNomeEntidade().getNome();
     _builder.append(_nome, "\t");
@@ -469,8 +462,8 @@ public class MyDslGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public void save(");
-    String _firstUpper_4 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
-    _builder.append(_firstUpper_4, "\t");
+    String _firstUpper_5 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
+    _builder.append(_firstUpper_5, "\t");
     _builder.append(" ");
     String _nome_1 = entidade.getNomeEntidade().getNome();
     _builder.append(_nome_1, "\t");
@@ -491,11 +484,11 @@ public class MyDslGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public List<");
-    String _firstUpper_5 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
-    _builder.append(_firstUpper_5, "\t");
-    _builder.append("> get");
     String _firstUpper_6 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
     _builder.append(_firstUpper_6, "\t");
+    _builder.append("> get");
+    String _firstUpper_7 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
+    _builder.append(_firstUpper_7, "\t");
     _builder.append("s(){");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -511,34 +504,19 @@ public class MyDslGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public ");
-    String _firstUpper_7 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
-    _builder.append(_firstUpper_7, "\t");
-    _builder.append(" get");
     String _firstUpper_8 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
     _builder.append(_firstUpper_8, "\t");
+    _builder.append(" get");
+    String _firstUpper_9 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
+    _builder.append(_firstUpper_9, "\t");
     _builder.append("ById(Long id) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
-    _builder.append("if(exists");
-    String _firstUpper_9 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
-    _builder.append(_firstUpper_9, "\t\t");
-    _builder.append("ById(id)) {");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t");
     _builder.append("return ");
     String _nome_5 = entidade.getNomeEntidade().getNome();
-    _builder.append(_nome_5, "\t\t\t");
+    _builder.append(_nome_5, "\t\t");
     _builder.append("Repository.getOne(id);");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.append("}else {");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("return null;");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("}");
-    _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
@@ -561,31 +539,16 @@ public class MyDslGenerator extends AbstractGenerator {
     _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("public Boolean delete");
+    _builder.append("public void delete");
     String _firstUpper_11 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
     _builder.append(_firstUpper_11, "\t");
     _builder.append("(Long id) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
-    _builder.append("if(exists");
-    String _firstUpper_12 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
-    _builder.append(_firstUpper_12, "\t\t");
-    _builder.append("ById(id)) {");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t");
     String _nome_7 = entidade.getNomeEntidade().getNome();
-    _builder.append(_nome_7, "\t\t\t");
+    _builder.append(_nome_7, "\t\t");
     _builder.append("Repository.deleteById(id);");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t");
-    _builder.append("return true;");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("return false;");
-    _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
@@ -593,8 +556,8 @@ public class MyDslGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public boolean exists");
-    String _firstUpper_13 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
-    _builder.append(_firstUpper_13, "\t");
+    String _firstUpper_12 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
+    _builder.append(_firstUpper_12, "\t");
     _builder.append("ById(Long id) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -606,7 +569,284 @@ public class MyDslGenerator extends AbstractGenerator {
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    {
+      if ((entidade.getAtributos().getAtributo().getAssociacao().getAssociacao().equals("OneToOne") || entidade.getAtributos().getAtributo().getAssociacao().getAssociacao().equals("ManyToOne"))) {
+        _builder.append("\t");
+        _builder.append("public void update(Long id, ");
+        String _firstUpper_13 = StringExtensions.toFirstUpper(entidade.getAtributos().getAtributo().getAtributoTipo().getTipoObjeto());
+        _builder.append(_firstUpper_13, "\t");
+        _builder.append(" ");
+        String _tipoObjeto = entidade.getAtributos().getAtributo().getAtributoTipo().getTipoObjeto();
+        _builder.append(_tipoObjeto, "\t");
+        _builder.append("){");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append("\t");
+        String _firstUpper_14 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
+        _builder.append(_firstUpper_14, "\t\t");
+        _builder.append(" ");
+        String _nome_9 = entidade.getNomeEntidade().getNome();
+        _builder.append(_nome_9, "\t\t");
+        _builder.append(" = get");
+        String _firstUpper_15 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
+        _builder.append(_firstUpper_15, "\t\t");
+        _builder.append("ById(id);");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append("\t");
+        String _nome_10 = entidade.getNomeEntidade().getNome();
+        _builder.append(_nome_10, "\t\t");
+        _builder.append(".set");
+        String _firstUpper_16 = StringExtensions.toFirstUpper(entidade.getAtributos().getAtributo().getNomeAtributo().getNome());
+        _builder.append(_firstUpper_16, "\t\t");
+        _builder.append("(");
+        String _tipoObjeto_1 = entidade.getAtributos().getAtributo().getAtributoTipo().getTipoObjeto();
+        _builder.append(_tipoObjeto_1, "\t\t");
+        _builder.append(");");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append("\t");
+        String _nome_11 = entidade.getNomeEntidade().getNome();
+        _builder.append(_nome_11, "\t\t");
+        _builder.append("Repository.save(");
+        String _nome_12 = entidade.getNomeEntidade().getNome();
+        _builder.append(_nome_12, "\t\t");
+        _builder.append(");");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append("}");
+        _builder.newLine();
+      } else {
+        if ((entidade.getAtributos().getAtributo().getAssociacao().getAssociacao().equals("OneToMany") || entidade.getAtributos().getAtributo().getAssociacao().getAssociacao().equals("ManyToMany"))) {
+          _builder.append("\t");
+          String nome = this.getNomeTipoColecao(entidade.getAtributos().getAtributo().getAtributoTipo().getTipoColecao());
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t");
+          _builder.append("public void update(Long id, ");
+          String _firstUpper_17 = StringExtensions.toFirstUpper(nome);
+          _builder.append(_firstUpper_17, "\t");
+          _builder.append(" ");
+          _builder.append(nome, "\t");
+          _builder.append(") {");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t");
+          _builder.append("\t");
+          String _firstUpper_18 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
+          _builder.append(_firstUpper_18, "\t\t");
+          _builder.append(" ");
+          String _nome_13 = entidade.getNomeEntidade().getNome();
+          _builder.append(_nome_13, "\t\t");
+          _builder.append(" = get");
+          String _firstUpper_19 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
+          _builder.append(_firstUpper_19, "\t\t");
+          _builder.append("ById(id);");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t");
+          _builder.append("\t");
+          String _nome_14 = entidade.getNomeEntidade().getNome();
+          _builder.append(_nome_14, "\t\t");
+          _builder.append(".get");
+          String _firstUpper_20 = StringExtensions.toFirstUpper(entidade.getAtributos().getAtributo().getNomeAtributo().getNome());
+          _builder.append(_firstUpper_20, "\t\t");
+          _builder.append("s().add(");
+          _builder.append(nome, "\t\t");
+          _builder.append(");");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t");
+          _builder.append("\t");
+          String _nome_15 = entidade.getNomeEntidade().getNome();
+          _builder.append(_nome_15, "\t\t");
+          _builder.append("Repository.save(");
+          String _nome_16 = entidade.getNomeEntidade().getNome();
+          _builder.append(_nome_16, "\t\t");
+          _builder.append(");");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t");
+          _builder.append("}");
+          _builder.newLine();
+        }
+      }
+    }
+    _builder.newLine();
+    {
+      EList<Atributo> _atributoMais = entidade.getAtributos().getAtributoMais();
+      for(final Atributo atributo : _atributoMais) {
+        {
+          if ((atributo.getAssociacao().getAssociacao().equals("OneToOne") || atributo.getAssociacao().getAssociacao().equals("ManyToOne"))) {
+            _builder.append("\t");
+            _builder.append("public void update(Long id, ");
+            String _firstUpper_21 = StringExtensions.toFirstUpper(atributo.getAtributoTipo().getTipoObjeto());
+            _builder.append(_firstUpper_21, "\t");
+            _builder.append(" ");
+            String _tipoObjeto_2 = atributo.getAtributoTipo().getTipoObjeto();
+            _builder.append(_tipoObjeto_2, "\t");
+            _builder.append("){");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t");
+            _builder.append("\t");
+            String _firstUpper_22 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
+            _builder.append(_firstUpper_22, "\t\t");
+            _builder.append(" ");
+            String _nome_17 = entidade.getNomeEntidade().getNome();
+            _builder.append(_nome_17, "\t\t");
+            _builder.append(" = get");
+            String _firstUpper_23 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
+            _builder.append(_firstUpper_23, "\t\t");
+            _builder.append("ById(id);");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t");
+            _builder.append("\t");
+            String _nome_18 = entidade.getNomeEntidade().getNome();
+            _builder.append(_nome_18, "\t\t");
+            _builder.append(".set");
+            String _firstUpper_24 = StringExtensions.toFirstUpper(atributo.getNomeAtributo().getNome());
+            _builder.append(_firstUpper_24, "\t\t");
+            _builder.append("(");
+            String _tipoObjeto_3 = atributo.getAtributoTipo().getTipoObjeto();
+            _builder.append(_tipoObjeto_3, "\t\t");
+            _builder.append(");");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t");
+            _builder.append("\t");
+            String _nome_19 = entidade.getNomeEntidade().getNome();
+            _builder.append(_nome_19, "\t\t");
+            _builder.append("Repository.save(");
+            String _nome_20 = entidade.getNomeEntidade().getNome();
+            _builder.append(_nome_20, "\t\t");
+            _builder.append(");");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t");
+            _builder.append("}");
+            _builder.newLine();
+          } else {
+            if ((atributo.getAssociacao().getAssociacao().equals("OneToMany") || atributo.getAssociacao().getAssociacao().equals("ManyToMany"))) {
+              _builder.append("\t");
+              String nome_1 = this.getNomeTipoColecao(atributo.getAtributoTipo().getTipoColecao());
+              _builder.newLineIfNotEmpty();
+              _builder.append("\t");
+              _builder.append("public void update(Long id, ");
+              String _firstUpper_25 = StringExtensions.toFirstUpper(nome_1);
+              _builder.append(_firstUpper_25, "\t");
+              _builder.append(" ");
+              _builder.append(nome_1, "\t");
+              _builder.append(") {");
+              _builder.newLineIfNotEmpty();
+              _builder.append("\t");
+              _builder.append("\t");
+              String _firstUpper_26 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
+              _builder.append(_firstUpper_26, "\t\t");
+              _builder.append(" ");
+              String _nome_21 = entidade.getNomeEntidade().getNome();
+              _builder.append(_nome_21, "\t\t");
+              _builder.append(" = get");
+              String _firstUpper_27 = StringExtensions.toFirstUpper(entidade.getNomeEntidade().getNome());
+              _builder.append(_firstUpper_27, "\t\t");
+              _builder.append("ById(id);");
+              _builder.newLineIfNotEmpty();
+              _builder.append("\t");
+              _builder.append("\t");
+              String _nome_22 = entidade.getNomeEntidade().getNome();
+              _builder.append(_nome_22, "\t\t");
+              _builder.append(".get");
+              String _firstUpper_28 = StringExtensions.toFirstUpper(atributo.getNomeAtributo().getNome());
+              _builder.append(_firstUpper_28, "\t\t");
+              _builder.append("().add(");
+              _builder.append(nome_1, "\t\t");
+              _builder.append(");");
+              _builder.newLineIfNotEmpty();
+              _builder.append("\t");
+              _builder.append("\t");
+              String _nome_23 = entidade.getNomeEntidade().getNome();
+              _builder.append(_nome_23, "\t\t");
+              _builder.append("Repository.save(");
+              String _nome_24 = entidade.getNomeEntidade().getNome();
+              _builder.append(_nome_24, "\t\t");
+              _builder.append(");");
+              _builder.newLineIfNotEmpty();
+              _builder.append("\t");
+              _builder.append("}");
+              _builder.newLine();
+            }
+          }
+        }
+      }
+    }
     _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public ArrayList<String> getTipoAtributos(final Entidade entidade) {
+    ArrayList<String> tipos = new ArrayList<String>();
+    List<String> _asList = Arrays.<String>asList("Boolean", "Integer", "Long", "String", "Float", "Double", "Time", "Timestamp", "Date");
+    List<String> tiposPrimitivos = new ArrayList<String>(_asList);
+    String _tipoObjeto = entidade.getAtributos().getAtributo().getAtributoTipo().getTipoObjeto();
+    boolean _tripleNotEquals = (_tipoObjeto != null);
+    if (_tripleNotEquals) {
+      tipos.add(entidade.getAtributos().getAtributo().getAtributoTipo().getTipoObjeto());
+    } else {
+      String _tipoColecao = entidade.getAtributos().getAtributo().getAtributoTipo().getTipoColecao();
+      boolean _tripleNotEquals_1 = (_tipoColecao != null);
+      if (_tripleNotEquals_1) {
+        String nome = this.getNomeTipoColecao(entidade.getAtributos().getAtributo().getAtributoTipo().getTipoColecao());
+        boolean _contains = tiposPrimitivos.contains(nome);
+        boolean _not = (!_contains);
+        if (_not) {
+          tipos.add(entidade.getAtributos().getAtributo().getAtributoTipo().getTipoObjeto());
+        }
+      }
+    }
+    int _size = entidade.getAtributos().getAtributoMais().size();
+    boolean _greaterThan = (_size > 0);
+    if (_greaterThan) {
+      EList<Atributo> _atributoMais = entidade.getAtributos().getAtributoMais();
+      for (final Atributo a : _atributoMais) {
+        String _tipoObjeto_1 = a.getAtributoTipo().getTipoObjeto();
+        boolean _tripleNotEquals_2 = (_tipoObjeto_1 != null);
+        if (_tripleNotEquals_2) {
+          tipos.add(a.getAtributoTipo().getTipoObjeto());
+        } else {
+          String _tipoColecao_1 = a.getAtributoTipo().getTipoColecao();
+          boolean _tripleNotEquals_3 = (_tipoColecao_1 != null);
+          if (_tripleNotEquals_3) {
+            String nome_1 = this.getNomeTipoColecao(a.getAtributoTipo().getTipoColecao());
+            boolean _contains_1 = tiposPrimitivos.contains(nome_1);
+            boolean _not_1 = (!_contains_1);
+            if (_not_1) {
+              tipos.add(nome_1);
+            }
+          }
+        }
+      }
+    }
+    return tipos;
+  }
+  
+  public String getNomeTipoColecao(final String nomeTipo) {
+    int inicio = 0;
+    int fim = 0;
+    for (int i = 0; (i < nomeTipo.length()); i++) {
+      {
+        String c = Character.valueOf(nomeTipo.charAt(i)).toString();
+        boolean _equals = Objects.equal(c, "<");
+        if (_equals) {
+          inicio = i;
+        }
+        boolean _equals_1 = c.equals(">");
+        if (_equals_1) {
+          fim = i;
+        }
+      }
+    }
+    String nome = nomeTipo.substring((inicio + 1), fim);
+    return nome;
+  }
+  
+  public CharSequence compileController(final Api api) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("OI");
     _builder.newLine();
     return _builder;
   }

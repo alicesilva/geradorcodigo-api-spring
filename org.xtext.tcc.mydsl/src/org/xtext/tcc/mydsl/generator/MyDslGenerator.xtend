@@ -3,14 +3,16 @@
  */
 package org.xtext.tcc.mydsl.generator
 
+import java.util.ArrayList
+import java.util.Arrays
+import java.util.List
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import org.xtext.tcc.mydsl.myDsl.Entidade
-import org.eclipse.emf.common.util.EList
-import org.xtext.tcc.mydsl.myDsl.Atributo
 import org.xtext.tcc.mydsl.myDsl.Api
+import org.xtext.tcc.mydsl.myDsl.Atributo
+import org.xtext.tcc.mydsl.myDsl.Entidade
 import org.xtext.tcc.mydsl.myDsl.Entidades
 
 /**
@@ -37,17 +39,7 @@ class MyDslGenerator extends AbstractGenerator {
 			}
 		}
 		for (a : resource.allContents.toIterable.filter(Api)) {
-			for (e : resource.allContents.toIterable.filter(Entidades)) {
-				fsa.generateFile(e.entidade.nomeEntidade.nome.toFirstUpper.toString + "Controller.java",
-					compileController(a, e.entidade));
-
-				if (e.entidadeMais.size > 0) {
-					for (Entidade ent : e.entidadeMais) {
-						fsa.generateFile(ent.nomeEntidade.nome.toFirstUpper.toString + "Controller.java",
-							compileController(a, ent));
-					}
-				}
-			}
+			fsa.generateFile( "Controller.java", compileController(a));
 		}
 	}
 
@@ -71,7 +63,6 @@ class MyDslGenerator extends AbstractGenerator {
 				«compileAtributos(a)»
 				
 			«ENDFOR»
-			
 			public Long getId() {
 				return id;
 			}
@@ -156,6 +147,10 @@ class MyDslGenerator extends AbstractGenerator {
 		import model.«entidade.nomeEntidade.nome.toFirstUpper»;
 		import repository.«entidade.nomeEntidade.nome.toFirstUpper»Repository;
 		
+		«FOR ent: getTipoAtributos(entidade)»
+			import model.«ent.toFirstUpper»
+		«ENDFOR»
+		
 		@Service
 		public class «entidade.nomeEntidade.nome.toFirstUpper»Service {
 			
@@ -171,29 +166,105 @@ class MyDslGenerator extends AbstractGenerator {
 			}
 			
 			public «entidade.nomeEntidade.nome.toFirstUpper» get«entidade.nomeEntidade.nome.toFirstUpper»ById(Long id) {
-				if(exists«entidade.nomeEntidade.nome.toFirstUpper»ById(id)) {
-					return «entidade.nomeEntidade.nome»Repository.getOne(id);
-				}else {
-					return null;
-				}
+				return «entidade.nomeEntidade.nome»Repository.getOne(id);
 			}
 			
 			public void deleteAll«entidade.nomeEntidade.nome.toFirstUpper»() {
 				«entidade.nomeEntidade.nome»Repository.deleteAll();
 			}
 			
-			public Boolean delete«entidade.nomeEntidade.nome.toFirstUpper»(Long id) {
-				if(exists«entidade.nomeEntidade.nome.toFirstUpper»ById(id)) {
-					«entidade.nomeEntidade.nome»Repository.deleteById(id);
-					return true;
-				}
-				return false;
+			public void delete«entidade.nomeEntidade.nome.toFirstUpper»(Long id) {
+				«entidade.nomeEntidade.nome»Repository.deleteById(id);
 			}
 				
 			public boolean exists«entidade.nomeEntidade.nome.toFirstUpper»ById(Long id) {
 				return «entidade.nomeEntidade.nome»Repository.existsById(id);
 			}
+			
+			«IF entidade.atributos.atributo.associacao.associacao.equals("OneToOne") || entidade.atributos.atributo.associacao.associacao.equals("ManyToOne")»
+				public void update(Long id, «entidade.atributos.atributo.atributoTipo.tipoObjeto.toFirstUpper» «entidade.atributos.atributo.atributoTipo.tipoObjeto»){
+					«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome» = get«entidade.nomeEntidade.nome.toFirstUpper»ById(id);
+					«entidade.nomeEntidade.nome».set«entidade.atributos.atributo.nomeAtributo.nome.toFirstUpper»(«entidade.atributos.atributo.atributoTipo.tipoObjeto»);
+					«entidade.nomeEntidade.nome»Repository.save(«entidade.nomeEntidade.nome»);
+				}
+			«ELSEIF entidade.atributos.atributo.associacao.associacao.equals("OneToMany") || entidade.atributos.atributo.associacao.associacao.equals("ManyToMany")»
+				«var nome = getNomeTipoColecao(entidade.atributos.atributo.atributoTipo.tipoColecao)»
+				public void update(Long id, «nome.toFirstUpper» «nome») {
+					«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome» = get«entidade.nomeEntidade.nome.toFirstUpper»ById(id);
+					«entidade.nomeEntidade.nome».get«entidade.atributos.atributo.nomeAtributo.nome.toFirstUpper»s().add(«nome»);
+					«entidade.nomeEntidade.nome»Repository.save(«entidade.nomeEntidade.nome»);
+				}
+			«ENDIF»
+		
+			«FOR atributo: entidade.atributos.atributoMais»
+				«IF atributo.associacao.associacao.equals("OneToOne") || atributo.associacao.associacao.equals("ManyToOne")»
+					public void update(Long id, «atributo.atributoTipo.tipoObjeto.toFirstUpper» «atributo.atributoTipo.tipoObjeto»){
+						«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome» = get«entidade.nomeEntidade.nome.toFirstUpper»ById(id);
+						«entidade.nomeEntidade.nome».set«atributo.nomeAtributo.nome.toFirstUpper»(«atributo.atributoTipo.tipoObjeto»);
+						«entidade.nomeEntidade.nome»Repository.save(«entidade.nomeEntidade.nome»);
+					}
+				«ELSEIF atributo.associacao.associacao.equals("OneToMany") || atributo.associacao.associacao.equals("ManyToMany")»
+					«var nome = getNomeTipoColecao(atributo.atributoTipo.tipoColecao)»
+					public void update(Long id, «nome.toFirstUpper» «nome») {
+						«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome» = get«entidade.nomeEntidade.nome.toFirstUpper»ById(id);
+						«entidade.nomeEntidade.nome».get«atributo.nomeAtributo.nome.toFirstUpper»().add(«nome»);
+						«entidade.nomeEntidade.nome»Repository.save(«entidade.nomeEntidade.nome»);
+					}
+				«ENDIF»
+			«ENDFOR»
 		}
+	'''
+		
+	def getTipoAtributos(Entidade entidade) {
+		
+		var ArrayList<String> tipos = new ArrayList();
+		
+		var List<String> tiposPrimitivos = new ArrayList(
+			Arrays.asList("Boolean", "Integer", "Long", "String", "Float", "Double", "Time", "Timestamp", "Date"));
+			
+		if(entidade.atributos.atributo. atributoTipo.tipoObjeto !== null){
+			tipos.add(entidade.atributos.atributo. atributoTipo.tipoObjeto)
+		}else if(entidade.atributos.atributo. atributoTipo.tipoColecao !== null){
+			var String nome = getNomeTipoColecao(entidade.atributos.atributo. atributoTipo.tipoColecao)
+			if(!tiposPrimitivos.contains(nome)){
+				tipos.add(entidade.atributos.atributo. atributoTipo.tipoObjeto)
+			}
+		}
+		
+		if(entidade.atributos.atributoMais.size > 0){
+			for(a : entidade.atributos.atributoMais){
+				if(a.atributoTipo.tipoObjeto !== null){
+					tipos.add(a.atributoTipo.tipoObjeto)
+				}else if(a.atributoTipo.tipoColecao !== null){
+					var String nome = getNomeTipoColecao(a.atributoTipo.tipoColecao)
+					if(!tiposPrimitivos.contains(nome)){
+						tipos.add(nome)
+					}
+				}
+			}
+		}
+		
+		return tipos;	
+	}
+	
+	def getNomeTipoColecao(String nomeTipo) {
+		var int inicio = 0;
+		var int fim = 0;
+		for (var int i = 0; i < nomeTipo.length; i++) {
+			var c = nomeTipo.charAt(i).toString;
+			if (c == '<') {
+				inicio = i
+			}
+			if (c.equals(">")) {
+				fim = i
+			}
+		}
+		var nome = nomeTipo.substring(inicio + 1, fim);
+		return nome;
+	}
+	
+	def compileController(Api api) '''
+		OI
 	'''
 
 	def compileController(Api api, Entidade entidade) '''
