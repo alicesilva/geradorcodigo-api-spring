@@ -16,7 +16,7 @@ import org.xtext.tcc.mydsl.myDsl.Associacao;
 import org.xtext.tcc.mydsl.myDsl.Atributo;
 import org.xtext.tcc.mydsl.myDsl.AtributoTipo;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
-import org.xtext.tcc.mydsl.myDsl.Nome;
+import org.xtext.tcc.mydsl.myDsl.Nome_Atributo;
 import org.xtext.tcc.mydsl.myDsl.Operacao;
 
 /**
@@ -45,7 +45,7 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
    * @generated
    * @ordered
    */
-  protected Nome nomeAtributo;
+  protected Nome_Atributo nomeAtributo;
 
   /**
    * The cached value of the '{@link #getAtributoTipo() <em>Atributo Tipo</em>}' containment reference.
@@ -104,7 +104,7 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
    * @generated
    */
   @Override
-  public Nome getNomeAtributo()
+  public Nome_Atributo getNomeAtributo()
   {
     return nomeAtributo;
   }
@@ -114,9 +114,9 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetNomeAtributo(Nome newNomeAtributo, NotificationChain msgs)
+  public NotificationChain basicSetNomeAtributo(Nome_Atributo newNomeAtributo, NotificationChain msgs)
   {
-    Nome oldNomeAtributo = nomeAtributo;
+    Nome_Atributo oldNomeAtributo = nomeAtributo;
     nomeAtributo = newNomeAtributo;
     if (eNotificationRequired())
     {
@@ -132,7 +132,7 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
    * @generated
    */
   @Override
-  public void setNomeAtributo(Nome newNomeAtributo)
+  public void setNomeAtributo(Nome_Atributo newNomeAtributo)
   {
     if (newNomeAtributo != nomeAtributo)
     {
@@ -353,7 +353,7 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
     switch (featureID)
     {
       case MyDslPackage.ATRIBUTO__NOME_ATRIBUTO:
-        setNomeAtributo((Nome)newValue);
+        setNomeAtributo((Nome_Atributo)newValue);
         return;
       case MyDslPackage.ATRIBUTO__ATRIBUTO_TIPO:
         setAtributoTipo((AtributoTipo)newValue);
@@ -379,7 +379,7 @@ public class AtributoImpl extends MinimalEObjectImpl.Container implements Atribu
     switch (featureID)
     {
       case MyDslPackage.ATRIBUTO__NOME_ATRIBUTO:
-        setNomeAtributo((Nome)null);
+        setNomeAtributo((Nome_Atributo)null);
         return;
       case MyDslPackage.ATRIBUTO__ATRIBUTO_TIPO:
         setAtributoTipo((AtributoTipo)null);

@@ -453,6 +453,41 @@ ruleNome returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleNome_Atributo
+entryRuleNome_Atributo returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNome_AtributoRule()); }
+	iv_ruleNome_Atributo=ruleNome_Atributo
+	{ $current=$iv_ruleNome_Atributo.current; }
+	EOF;
+
+// Rule Nome_Atributo
+ruleNome_Atributo returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			lv_nome_0_0=RULE_STRING_LIST_LOW
+			{
+				newLeafNode(lv_nome_0_0, grammarAccess.getNome_AtributoAccess().getNomeSTRING_LIST_LOWTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getNome_AtributoRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"nome",
+					lv_nome_0_0,
+					"org.xtext.tcc.mydsl.MyDsl.STRING_LIST_LOW");
+			}
+		)
+	)
+;
+
 // Entry rule entryRuleAtributos
 entryRuleAtributos returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getAtributosRule()); }
@@ -547,9 +582,9 @@ ruleAtributo returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAtributoAccess().getNomeAtributoNomeParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getAtributoAccess().getNomeAtributoNome_AtributoParserRuleCall_3_0());
 				}
-				lv_nomeAtributo_3_0=ruleNome
+				lv_nomeAtributo_3_0=ruleNome_Atributo
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAtributoRule());
@@ -558,7 +593,7 @@ ruleAtributo returns [EObject current=null]
 						$current,
 						"nomeAtributo",
 						lv_nomeAtributo_3_0,
-						"org.xtext.tcc.mydsl.MyDsl.Nome");
+						"org.xtext.tcc.mydsl.MyDsl.Nome_Atributo");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -887,11 +922,15 @@ RULE_TIPO_PRIMITIVO : '"' ('Boolean'|'Integer'|'Long'|'String'|'Float'|'Double'|
 
 RULE_TIPO_COLECAO : '"' ('List<' RULE_STRING_I '>'|'Set<' RULE_STRING_I '>'|'ArrayList<' RULE_STRING_I '>'|'HashSet<' RULE_STRING_I '>') '"';
 
-RULE_STRING_LIT : '"' RULE_LETRA+ '"';
+RULE_STRING_LIST_LOW : '"' RULE_LETRA_I+ '"';
 
-fragment RULE_STRING_I : RULE_LETRA+;
+fragment RULE_LETRA_I : 'a'..'z' ('a'..'z'|'A'..'Z')+;
 
-fragment RULE_LETRA : ('a'..'z'|'A'..'Z');
+RULE_STRING_LIT : '"' RULE_LETRA '"';
+
+fragment RULE_STRING_I : RULE_LETRA;
+
+fragment RULE_LETRA : 'A'..'Z' ('a'..'z'|'A'..'Z')+;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

@@ -31,12 +31,12 @@ public interface Atributo extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Nome Atributo</em>' containment reference.
-   * @see #setNomeAtributo(Nome)
+   * @see #setNomeAtributo(Nome_Atributo)
    * @see org.xtext.tcc.mydsl.myDsl.MyDslPackage#getAtributo_NomeAtributo()
    * @model containment="true"
    * @generated
    */
-  Nome getNomeAtributo();
+  Nome_Atributo getNomeAtributo();
 
   /**
    * Sets the value of the '{@link org.xtext.tcc.mydsl.myDsl.Atributo#getNomeAtributo <em>Nome Atributo</em>}' containment reference.
@@ -46,7 +46,7 @@ public interface Atributo extends EObject
    * @see #getNomeAtributo()
    * @generated
    */
-  void setNomeAtributo(Nome value);
+  void setNomeAtributo(Nome_Atributo value);
 
   /**
    * Returns the value of the '<em><b>Atributo Tipo</b></em>' containment reference.

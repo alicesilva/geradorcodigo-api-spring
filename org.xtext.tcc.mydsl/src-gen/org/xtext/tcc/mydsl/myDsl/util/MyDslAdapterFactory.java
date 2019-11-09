@@ -111,6 +111,11 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createNomeAdapter();
       }
       @Override
+      public Adapter caseNome_Atributo(Nome_Atributo object)
+      {
+        return createNome_AtributoAdapter();
+      }
+      @Override
       public Adapter caseAtributos(Atributos object)
       {
         return createAtributosAdapter();
@@ -263,6 +268,21 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNomeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tcc.mydsl.myDsl.Nome_Atributo <em>Nome Atributo</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tcc.mydsl.myDsl.Nome_Atributo
+   * @generated
+   */
+  public Adapter createNome_AtributoAdapter()
   {
     return null;
   }

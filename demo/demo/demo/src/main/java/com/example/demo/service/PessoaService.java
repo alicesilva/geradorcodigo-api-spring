@@ -1,22 +1,22 @@
-package com.example.demo.service;
+package service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.Conta;
-import com.example.demo.model.Livro;
-import com.example.demo.model.Pessoa;
-import com.example.demo.model.Telefone;
-import com.example.demo.model.Universidade;
-import com.example.demo.repository.PessoaRepository;
+import model.Pessoa;
+import repository.PessoaRepository;
+
+import model.Conta
+import model.Livro
+import model.Universidade
+import model.Telefone
 
 @Service
 public class PessoaService {
 	
 	@Autowired
-	private PessoaRepository pessoaRepository;
+	PessoaRepository pessoaRepository;
 	
 	public void save(Pessoa pessoa) {
 		pessoaRepository.save(pessoa);
@@ -24,10 +24,6 @@ public class PessoaService {
 	
 	public List<Pessoa> getPessoas(){
 		return pessoaRepository.findAll();
-	}
-	
-	public boolean existsPessoaById(Long id) {
-		return pessoaRepository.existsById(id);
 	}
 	
 	public Pessoa getPessoaById(Long id) {
@@ -41,36 +37,30 @@ public class PessoaService {
 	public void deletePessoa(Long id) {
 		pessoaRepository.deleteById(id);
 	}
-	
-	public void update(Pessoa pessoa) {
-		pessoaRepository.save(pessoa);
+		
+	public boolean existsPessoaById(Long id) {
+		return pessoaRepository.existsById(id);
 	}
 	
-	public void update(Long id, Conta conta) {
+
+	public void update(Long id, Conta conta){
 		Pessoa pessoa = getPessoaById(id);
 		pessoa.setConta(conta);
 		pessoaRepository.save(pessoa);
-		
 	}
-	
 	public void update(Long id, Livro livro) {
 		Pessoa pessoa = getPessoaById(id);
 		pessoa.getLivros().add(livro);
 		pessoaRepository.save(pessoa);
 	}
-
-	public void update(Long id, Universidade universidade) {
+	public void update(Long id, Universidade universidade){
 		Pessoa pessoa = getPessoaById(id);
 		pessoa.setUniversidade(universidade);
 		pessoaRepository.save(pessoa);
-		
 	}
-	
 	public void update(Long id, Telefone telefone) {
 		Pessoa pessoa = getPessoaById(id);
-		pessoa.getTelefone().add(telefone);
+		pessoa.getTelefones().add(telefone);
 		pessoaRepository.save(pessoa);
-		
 	}
-
 }

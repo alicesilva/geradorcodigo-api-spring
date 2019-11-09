@@ -23,6 +23,7 @@ import org.xtext.tcc.mydsl.myDsl.Model;
 import org.xtext.tcc.mydsl.myDsl.MyDslFactory;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
 import org.xtext.tcc.mydsl.myDsl.Nome;
+import org.xtext.tcc.mydsl.myDsl.Nome_Atributo;
 import org.xtext.tcc.mydsl.myDsl.Operacao;
 import org.xtext.tcc.mydsl.myDsl.OperacaoCascada;
 
@@ -82,6 +83,13 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   private EClass nomeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nome_AtributoEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -381,6 +389,28 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
+  public EClass getNome_Atributo()
+  {
+    return nome_AtributoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNome_Atributo_Nome()
+  {
+    return (EAttribute)nome_AtributoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getAtributos()
   {
     return atributosEClass;
@@ -639,6 +669,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     nomeEClass = createEClass(NOME);
     createEAttribute(nomeEClass, NOME__NOME);
 
+    nome_AtributoEClass = createEClass(NOME_ATRIBUTO);
+    createEAttribute(nome_AtributoEClass, NOME_ATRIBUTO__NOME);
+
     atributosEClass = createEClass(ATRIBUTOS);
     createEReference(atributosEClass, ATRIBUTOS__ATRIBUTO);
     createEReference(atributosEClass, ATRIBUTOS__ATRIBUTO_MAIS);
@@ -720,12 +753,15 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEClass(nomeEClass, Nome.class, "Nome", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNome_Nome(), ecorePackage.getEString(), "nome", null, 0, 1, Nome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(nome_AtributoEClass, Nome_Atributo.class, "Nome_Atributo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNome_Atributo_Nome(), ecorePackage.getEString(), "nome", null, 0, 1, Nome_Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(atributosEClass, Atributos.class, "Atributos", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAtributos_Atributo(), this.getAtributo(), null, "atributo", null, 0, 1, Atributos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAtributos_AtributoMais(), this.getAtributo(), null, "atributoMais", null, 0, -1, Atributos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(atributoEClass, Atributo.class, "Atributo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAtributo_NomeAtributo(), this.getNome(), null, "nomeAtributo", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtributo_NomeAtributo(), this.getNome_Atributo(), null, "nomeAtributo", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAtributo_AtributoTipo(), this.getAtributoTipo(), null, "atributoTipo", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAtributo_Associacao(), this.getAssociacao(), null, "associacao", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAtributo_Operacao(), this.getOperacao(), null, "operacao", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -19,6 +19,7 @@ import org.xtext.tcc.mydsl.myDsl.Entidade;
 import org.xtext.tcc.mydsl.myDsl.Entidades;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
 import org.xtext.tcc.mydsl.myDsl.Nome;
+import org.xtext.tcc.mydsl.myDsl.Nome_Atributo;
 import org.xtext.tcc.mydsl.myDsl.Operacao;
 import org.xtext.tcc.mydsl.myDsl.OperacaoCascada;
 import org.xtext.tcc.mydsl.validation.AbstractMyDslValidator;
@@ -62,7 +63,7 @@ public class MyDslValidator extends AbstractMyDslValidator {
   }
   
   public void validaAtributo(final Atributo atributo) {
-    Nome _nomeAtributo = atributo.getNomeAtributo();
+    Nome_Atributo _nomeAtributo = atributo.getNomeAtributo();
     String _nome = atributo.getNomeAtributo().getNome();
     int _length = atributo.getNomeAtributo().getNome().length();
     int _minus = (_length - 1);

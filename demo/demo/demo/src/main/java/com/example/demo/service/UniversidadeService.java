@@ -1,12 +1,12 @@
-package com.example.demo.service;
+package service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.Universidade;
-import com.example.demo.repository.UniversidadeRepository;
+import model.Universidade;
+import repository.UniversidadeRepository;
+
 
 @Service
 public class UniversidadeService {
@@ -21,15 +21,22 @@ public class UniversidadeService {
 	public List<Universidade> getUniversidades(){
 		return universidadeRepository.findAll();
 	}
+	
+	public Universidade getUniversidadeById(Long id) {
+		return universidadeRepository.getOne(id);
+	}
+	
+	public void deleteAllUniversidade() {
+		universidadeRepository.deleteAll();
+	}
+	
+	public void deleteUniversidade(Long id) {
+		universidadeRepository.deleteById(id);
+	}
+		
 	public boolean existsUniversidadeById(Long id) {
 		return universidadeRepository.existsById(id);
 	}
 	
-	public Universidade getUniversidadeById(Long id) {
-		if(existsUniversidadeById(id)) {
-			return universidadeRepository.getOne(id);
-		}else {
-			return null;
-		}
-	}
+
 }

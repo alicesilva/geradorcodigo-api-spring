@@ -1,41 +1,41 @@
-package com.example.demo.model;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+package model;
+import javax.persistence.*;
+import java.sql.*;
+import java.sql.Date;
+import java.util.*;
 
 @Entity
 public class Universidade {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
 	private String nome;
 	
 	private String localizacao;
-
+	
 	public Long getId() {
 		return id;
 	}
-
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getNome() {
+	
+	public String getNome(){
 		return nome;
 	}
-
-	public void setNome(String nome) {
+	
+	public void setNome(String nome){
 		this.nome = nome;
 	}
 
-	public String getLocalizacao() {
+	public String getLocalizacao(){
 		return localizacao;
 	}
-
-	public void setLocalizacao(String localizacao) {
+	
+	public void setLocalizacao(String localizacao){
 		this.localizacao = localizacao;
 	}
 }

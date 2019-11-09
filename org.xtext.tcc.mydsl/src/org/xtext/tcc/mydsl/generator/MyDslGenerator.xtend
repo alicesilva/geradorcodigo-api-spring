@@ -118,7 +118,7 @@ class MyDslGenerator extends AbstractGenerator {
 				return «atributo.nomeAtributo.nome»;
 			}
 							
-			public void set«atributo.nomeAtributo.nome.toFirstUpper»(«atributo.atributoTipo.tipoObjeto» «atributo.nomeAtributo.nome»){
+			public void set«atributo.nomeAtributo.nome.toFirstUpper»(«atributo.atributoTipo.tipoObjeto.toFirstUpper» «atributo.nomeAtributo.nome»){
 				this.«atributo.nomeAtributo.nome» = «atributo.nomeAtributo.nome»;
 			}
 		«ENDIF»
@@ -155,60 +155,60 @@ class MyDslGenerator extends AbstractGenerator {
 		public class «entidade.nomeEntidade.nome.toFirstUpper»Service {
 			
 			@Autowired
-			«entidade.nomeEntidade.nome.toFirstUpper»Repository «entidade.nomeEntidade.nome»Repository;
+			«entidade.nomeEntidade.nome.toFirstUpper»Repository «entidade.nomeEntidade.nome.toFirstLower»Repository;
 			
-			public void save(«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome») {
-				«entidade.nomeEntidade.nome»Repository.save(«entidade.nomeEntidade.nome»);
+			public void save(«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome.toFirstLower») {
+				«entidade.nomeEntidade.nome.toFirstLower»Repository.save(«entidade.nomeEntidade.nome.toFirstLower»);
 			}
 			
 			public List<«entidade.nomeEntidade.nome.toFirstUpper»> get«entidade.nomeEntidade.nome.toFirstUpper»s(){
-				return «entidade.nomeEntidade.nome»Repository.findAll();
+				return «entidade.nomeEntidade.nome.toFirstLower»Repository.findAll();
 			}
 			
 			public «entidade.nomeEntidade.nome.toFirstUpper» get«entidade.nomeEntidade.nome.toFirstUpper»ById(Long id) {
-				return «entidade.nomeEntidade.nome»Repository.getOne(id);
+				return «entidade.nomeEntidade.nome.toFirstLower»Repository.getOne(id);
 			}
 			
 			public void deleteAll«entidade.nomeEntidade.nome.toFirstUpper»() {
-				«entidade.nomeEntidade.nome»Repository.deleteAll();
+				«entidade.nomeEntidade.nome.toFirstLower»Repository.deleteAll();
 			}
 			
 			public void delete«entidade.nomeEntidade.nome.toFirstUpper»(Long id) {
-				«entidade.nomeEntidade.nome»Repository.deleteById(id);
+				«entidade.nomeEntidade.nome.toFirstLower»Repository.deleteById(id);
 			}
 				
 			public boolean exists«entidade.nomeEntidade.nome.toFirstUpper»ById(Long id) {
-				return «entidade.nomeEntidade.nome»Repository.existsById(id);
+				return «entidade.nomeEntidade.nome.toFirstLower»Repository.existsById(id);
 			}
 			
 			«IF entidade.atributos.atributo.associacao.associacao.equals("OneToOne") || entidade.atributos.atributo.associacao.associacao.equals("ManyToOne")»
-				public void update(Long id, «entidade.atributos.atributo.atributoTipo.tipoObjeto.toFirstUpper» «entidade.atributos.atributo.atributoTipo.tipoObjeto»){
-					«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome» = get«entidade.nomeEntidade.nome.toFirstUpper»ById(id);
-					«entidade.nomeEntidade.nome».set«entidade.atributos.atributo.nomeAtributo.nome.toFirstUpper»(«entidade.atributos.atributo.atributoTipo.tipoObjeto»);
-					«entidade.nomeEntidade.nome»Repository.save(«entidade.nomeEntidade.nome»);
+				public void update(Long id, «entidade.atributos.atributo.atributoTipo.tipoObjeto.toFirstUpper» «entidade.atributos.atributo.atributoTipo.tipoObjeto.toFirstLower»){
+					«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome.toFirstLower» = get«entidade.nomeEntidade.nome.toFirstUpper»ById(id);
+					«entidade.nomeEntidade.nome.toFirstLower».set«entidade.atributos.atributo.nomeAtributo.nome.toFirstUpper»(«entidade.atributos.atributo.atributoTipo.tipoObjeto.toFirstLower»);
+					«entidade.nomeEntidade.nome.toFirstLower»Repository.save(«entidade.nomeEntidade.nome.toFirstLower»);
 				}
 			«ELSEIF entidade.atributos.atributo.associacao.associacao.equals("OneToMany") || entidade.atributos.atributo.associacao.associacao.equals("ManyToMany")»
 				«var nome = getNomeTipoColecao(entidade.atributos.atributo.atributoTipo.tipoColecao)»
-				public void update(Long id, «nome.toFirstUpper» «nome») {
+				public void update(Long id, «nome.toFirstUpper» «nome.toFirstLower») {
 					«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome» = get«entidade.nomeEntidade.nome.toFirstUpper»ById(id);
-					«entidade.nomeEntidade.nome».get«entidade.atributos.atributo.nomeAtributo.nome.toFirstUpper»s().add(«nome»);
-					«entidade.nomeEntidade.nome»Repository.save(«entidade.nomeEntidade.nome»);
+					«entidade.nomeEntidade.nome.toFirstLower».get«entidade.atributos.atributo.nomeAtributo.nome.toFirstUpper»s().add(«nome.toFirstLower»);
+					«entidade.nomeEntidade.nome.toFirstLower»Repository.save(«entidade.nomeEntidade.nome.toFirstLower»);
 				}
 			«ENDIF»
 		
 			«FOR atributo: entidade.atributos.atributoMais»
 				«IF atributo.associacao.associacao.equals("OneToOne") || atributo.associacao.associacao.equals("ManyToOne")»
 					public void update(Long id, «atributo.atributoTipo.tipoObjeto.toFirstUpper» «atributo.atributoTipo.tipoObjeto»){
-						«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome» = get«entidade.nomeEntidade.nome.toFirstUpper»ById(id);
-						«entidade.nomeEntidade.nome».set«atributo.nomeAtributo.nome.toFirstUpper»(«atributo.atributoTipo.tipoObjeto»);
-						«entidade.nomeEntidade.nome»Repository.save(«entidade.nomeEntidade.nome»);
+						«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome.toFirstLower» = get«entidade.nomeEntidade.nome.toFirstUpper»ById(id);
+						«entidade.nomeEntidade.nome.toFirstLower».set«atributo.nomeAtributo.nome.toFirstUpper»(«atributo.atributoTipo.tipoObjeto»);
+						«entidade.nomeEntidade.nome.toFirstLower»Repository.save(«entidade.nomeEntidade.nome.toFirstLower»);
 					}
 				«ELSEIF atributo.associacao.associacao.equals("OneToMany") || atributo.associacao.associacao.equals("ManyToMany")»
 					«var nome = getNomeTipoColecao(atributo.atributoTipo.tipoColecao)»
 					public void update(Long id, «nome.toFirstUpper» «nome») {
-						«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome» = get«entidade.nomeEntidade.nome.toFirstUpper»ById(id);
-						«entidade.nomeEntidade.nome».get«atributo.nomeAtributo.nome.toFirstUpper»().add(«nome»);
-						«entidade.nomeEntidade.nome»Repository.save(«entidade.nomeEntidade.nome»);
+						«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome.toFirstLower» = get«entidade.nomeEntidade.nome.toFirstUpper»ById(id);
+						«entidade.nomeEntidade.nome.toFirstLower».get«atributo.nomeAtributo.nome.toFirstUpper»().add(«nome»);
+						«entidade.nomeEntidade.nome.toFirstLower»Repository.save(«entidade.nomeEntidade.nome.toFirstLower»);
 					}
 				«ENDIF»
 			«ENDFOR»
@@ -361,108 +361,38 @@ class MyDslGenerator extends AbstractGenerator {
 	
 	def compileAssociacao(Atributo atributo, String nomeEntidade) '''
 		«IF atributo.associacao.associacao.equals("OneToOne") || atributo.associacao.associacao.equals("ManyToOne")»
-		@PutMapping(value = "/«nomeEntidade»s-«atributo.nomeAtributo.nome»/{«nomeEntidade»Id}/{«atributo.nomeAtributo.nome»Id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-		public ResponseEntity associa«atributo.nomeAtributo.nome.toFirstUpper»To«nomeEntidade.toFirstUpper»(@PathVariable("«nomeEntidade»Id") Long «nomeEntidade»Id,
-			@PathVariable("«atributo.nomeAtributo.nome»Id") Long «atributo.nomeAtributo.nome»Id) {
+		@PutMapping(value = "/«nomeEntidade»s-«atributo.atributoTipo.tipoObjeto»/{«nomeEntidade»Id}/{«atributo.atributoTipo.tipoObjeto»Id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+		public ResponseEntity associa«atributo.atributoTipo.tipoObjeto.toFirstUpper»To«nomeEntidade.toFirstUpper»(@PathVariable("«nomeEntidade»Id") Long «nomeEntidade»Id,
+			@PathVariable("«atributo.atributoTipo.tipoObjeto»Id") Long «atributo.atributoTipo.tipoObjeto»Id) {
 			if (!«nomeEntidade»Service.exists«nomeEntidade.toFirstUpper»yId(«nomeEntidade»Id)) {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}
-			if (!«atributo.atributoTipo.tipoObjeto»Service.exists«atributo.atributoTipo.tipoObjeto.toFirstUpper»ById(«atributo.nomeAtributo.nome»Id)) {
+			if (!«atributo.atributoTipo.tipoObjeto»Service.exists«atributo.atributoTipo.tipoObjeto.toFirstUpper»ById(«atributo.atributoTipo.tipoObjeto»Id)) {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}
 							
-			«atributo.atributoTipo.tipoObjeto.toFirstUpper» «atributo.atributoTipo.tipoObjeto» = «atributo.atributoTipo.tipoObjeto»Service.get«atributo.atributoTipo.tipoObjeto.toFirstUpper»ById(«atributo.nomeAtributo.nome»Id);
+			«atributo.atributoTipo.tipoObjeto.toFirstUpper» «atributo.atributoTipo.tipoObjeto» = «atributo.atributoTipo.tipoObjeto»Service.get«atributo.atributoTipo.tipoObjeto.toFirstUpper»ById(«atributo.atributoTipo.tipoObjeto»Id);
 			this.«nomeEntidade»Service.update(«nomeEntidade»Id, «atributo.atributoTipo.tipoObjeto»);
 							
 			return new ResponseEntity("Ok.", HttpStatus.OK);
 		}
 		«ELSEIF atributo.associacao.associacao.equals("OneToMany") || atributo.associacao.associacao.equals("ManyToMany")»
-		@PutMapping(value = "/«nomeEntidade»s-«atributo.nomeAtributo.nome»/{pessoaId}/{«atributo.nomeAtributo.nome»Id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-		public ResponseEntity add«atributo.nomeAtributo.nome»To«nomeEntidade.toFirstUpper»(@PathVariable("«nomeEntidade»Id") Long «nomeEntidade»Id,
-			@PathVariable("«atributo.nomeAtributo.nome»Id") Long «atributo.nomeAtributo.nome»Id) {			
+		«var String nome = getNomeTipoColecao(atributo.atributoTipo.tipoColecao)»
+		@PutMapping(value = "/«nomeEntidade»s-«nome»/{pessoaId}/{«nome»Id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+		public ResponseEntity add«nome.toFirstUpper»To«nomeEntidade.toFirstUpper»(@PathVariable("«nomeEntidade»Id") Long «nomeEntidade»Id,
+			@PathVariable("«nome»Id") Long «nome»Id) {			
 			if (!«nomeEntidade»Service.exists«nomeEntidade.toFirstUpper»ById(«nomeEntidade»Id)) {
 				return new ResponseEntity(HttpStatus.NOT_FOUND);
 			}
-			if (!«atributo.atributoTipo.tipoObjeto»Service.exists«atributo.atributoTipo.tipoObjeto.toFirstUpper»ById(«atributo.atributoTipo.tipoObjeto»d)) {
+			if (!«nome»Service.exists«nome.toFirstUpper»ById(«nome»d)) {
 				return new ResponseEntity(HttpStatus.NOT_FOUND);
 			}
 							
-			«var String nome = getNomeTipoColecao(atributo.atributoTipo.tipoColecao)»
-			«nome.toFirstUpper» «nome» = «nome»Service.get«nome.toFirstUpper»ById(«atributo.nomeAtributo.nome»Id);
+			«nome.toFirstUpper» «nome» = «nome»Service.get«nome.toFirstUpper»ById(«nome»Id);
 			«nomeEntidade»Service.update(«nomeEntidade»Id, «nome»);
 							
 			return new ResponseEntity(HttpStatus.OK);
 		}
 		«ENDIF»
-	'''
-
-	def compileController(Api api, Entidade entidade) '''
-		package controller;
-		import java.util.List;
-		import org.springframework.beans.factory.annotation.Autowired;
-		import org.springframework.http.*;
-		import org.springframework.web.bind.annotation.*;
-		
-		import model.«entidade.nomeEntidade.nome.toFirstUpper»;
-		import service.«entidade.nomeEntidade.nome.toFirstUpper»Service;
-			
-		@RestController
-		@RequestMapping("/«api.nomeApi.nome»-api")
-		public class «entidade.nomeEntidade.nome.toFirstUpper»Controller {
-				
-			@Autowired
-			«entidade.nomeEntidade.nome.toFirstUpper»Service «entidade.nomeEntidade.nome»Service;
-				
-			@PostMapping(value = "/«entidade.nomeEntidade.nome»s", consumes = MediaType.APPLICATION_JSON_VALUE)
-			public ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»> save(@RequestBody «entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome») {
-				if(«entidade.nomeEntidade.nome» == null || «entidade.nomeEntidade.nome»Service.existsContaById(«entidade.nomeEntidade.nome».getId())) {
-					return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-				}
-					
-				this.«entidade.nomeEntidade.nome»Service.save(«entidade.nomeEntidade.nome»);
-					
-				return new ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»>(«entidade.nomeEntidade.nome», HttpStatus.CREATED);
-			}
-				
-			@GetMapping(value = "/«entidade.nomeEntidade.nome»s", produces = MediaType.APPLICATION_JSON_VALUE)
-			public ResponseEntity<List<«entidade.nomeEntidade.nome.toFirstUpper»>> get«entidade.nomeEntidade.nome.toFirstUpper»s(){
-				List<«entidade.nomeEntidade.nome.toFirstUpper»> «entidade.nomeEntidade.nome»s = this.«entidade.nomeEntidade.nome»Service.get«entidade.nomeEntidade.nome.toFirstUpper»s();
-				return new ResponseEntity<List<«entidade.nomeEntidade.nome.toFirstUpper»>>(«entidade.nomeEntidade.nome»s, HttpStatus.OK);
-			}
-			
-			@GetMapping(value = "/«entidade.nomeEntidade.nome»s/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-			public ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»> get«entidade.nomeEntidade.nome.toFirstUpper»(@PathVariable("id") Long id){
-				if(id == null) {
-					return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-				}
-				«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome» = «entidade.nomeEntidade.nome»Service.get«entidade.nomeEntidade.nome.toFirstUpper»ById(id);
-					
-				if(«entidade.nomeEntidade.nome» == null) {
-					return new ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»>(«entidade.nomeEntidade.nome», HttpStatus.NOT_FOUND);
-				}
-				
-				return new ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»>(«entidade.nomeEntidade.nome», HttpStatus.OK);
-			}
-			
-			@DeleteMapping(value = "/«entidade.nomeEntidade.nome»s ")
-			public ResponseEntity<String> deleteAll«entidade.nomeEntidade.nome.toFirstUpper»(){
-				«entidade.nomeEntidade.nome»Service.deleteAll«entidade.nomeEntidade.nome.toFirstUpper»();
-				return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper»s removidos com sucesso.", HttpStatus.OK);
-			}
-				
-			@DeleteMapping(value = "/«entidade.nomeEntidade.nome»s/{id}")
-			public ResponseEntity<String> delete«entidade.nomeEntidade.nome.toFirstUpper»(@PathVariable("id") Long id){
-				if(id == null) {
-					return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-				}
-				Boolean delete = «entidade.nomeEntidade.nome»Service.delete«entidade.nomeEntidade.nome.toFirstUpper»(id);
-					
-				if(!delete) {
-					return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper» nao esta cadastrado", HttpStatus.NOT_FOUND);
-				}
-					
-				return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper» removido com sucesso.", HttpStatus.OK);
-			}
-		}
 	'''
 }

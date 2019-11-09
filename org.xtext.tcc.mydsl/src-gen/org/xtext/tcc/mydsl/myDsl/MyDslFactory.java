@@ -87,6 +87,15 @@ public interface MyDslFactory extends EFactory
   Nome createNome();
 
   /**
+   * Returns a new object of class '<em>Nome Atributo</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Nome Atributo</em>'.
+   * @generated
+   */
+  Nome_Atributo createNome_Atributo();
+
+  /**
    * Returns a new object of class '<em>Atributos</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

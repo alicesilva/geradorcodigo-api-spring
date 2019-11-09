@@ -254,6 +254,21 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING_LIT
 		public RuleCall getNomeSTRING_LITTerminalRuleCall_0() { return cNomeSTRING_LITTerminalRuleCall_0; }
 	}
+	public class Nome_AtributoElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.Nome_Atributo");
+		private final Assignment cNomeAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNomeSTRING_LIST_LOWTerminalRuleCall_0 = (RuleCall)cNomeAssignment.eContents().get(0);
+		
+		//Nome_Atributo:
+		//	nome=STRING_LIST_LOW;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//nome=STRING_LIST_LOW
+		public Assignment getNomeAssignment() { return cNomeAssignment; }
+		
+		//STRING_LIST_LOW
+		public RuleCall getNomeSTRING_LIST_LOWTerminalRuleCall_0() { return cNomeSTRING_LIST_LOWTerminalRuleCall_0; }
+	}
 	public class AtributosElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.Atributos");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -296,7 +311,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNomeAtributoKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNomeAtributoAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNomeAtributoNomeParserRuleCall_3_0 = (RuleCall)cNomeAtributoAssignment_3.eContents().get(0);
+		private final RuleCall cNomeAtributoNome_AtributoParserRuleCall_3_0 = (RuleCall)cNomeAtributoAssignment_3.eContents().get(0);
 		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Keyword cTipoAtributoKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Keyword cColonKeyword_6 = (Keyword)cGroup.eContents().get(6);
@@ -318,14 +333,14 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Atributo:
 		//	'{'
-		//	'"nome-atributo"' ':' nomeAtributo=Nome ','
+		//	'"nome-atributo"' ':' nomeAtributo=Nome_Atributo ','
 		//	'"tipo-atributo"' ':' atributoTipo=AtributoTipo ','
 		//	'"associação/relacionamento"' ':' associacao=Associacao ','
 		//	'"operação em cascata"' ':' '[' operacao=Operacao? ']'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'{' '"nome-atributo"' ':' nomeAtributo=Nome ',' '"tipo-atributo"' ':' atributoTipo=AtributoTipo ','
+		//'{' '"nome-atributo"' ':' nomeAtributo=Nome_Atributo ',' '"tipo-atributo"' ':' atributoTipo=AtributoTipo ','
 		//'"associação/relacionamento"' ':' associacao=Associacao ',' '"operação em cascata"' ':' '[' operacao=Operacao? ']' '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -338,11 +353,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
-		//nomeAtributo=Nome
+		//nomeAtributo=Nome_Atributo
 		public Assignment getNomeAtributoAssignment_3() { return cNomeAtributoAssignment_3; }
 		
-		//Nome
-		public RuleCall getNomeAtributoNomeParserRuleCall_3_0() { return cNomeAtributoNomeParserRuleCall_3_0; }
+		//Nome_Atributo
+		public RuleCall getNomeAtributoNome_AtributoParserRuleCall_3_0() { return cNomeAtributoNome_AtributoParserRuleCall_3_0; }
 		
 		//','
 		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
@@ -505,6 +520,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tNOME_OPERACAO;
 	private final TerminalRule tTIPO_PRIMITIVO;
 	private final TerminalRule tTIPO_COLECAO;
+	private final TerminalRule tSTRING_LIST_LOW;
+	private final TerminalRule tLETRA_I;
 	private final TerminalRule tSTRING_LIT;
 	private final TerminalRule tSTRING_I;
 	private final TerminalRule tLETRA;
@@ -514,6 +531,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final EntidadesElements pEntidades;
 	private final EntidadeElements pEntidade;
 	private final NomeElements pNome;
+	private final Nome_AtributoElements pNome_Atributo;
 	private final AtributosElements pAtributos;
 	private final AtributoElements pAtributo;
 	private final OperacaoElements pOperacao;
@@ -535,6 +553,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.tNOME_OPERACAO = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.NOME_OPERACAO");
 		this.tTIPO_PRIMITIVO = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.TIPO_PRIMITIVO");
 		this.tTIPO_COLECAO = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.TIPO_COLECAO");
+		this.tSTRING_LIST_LOW = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.STRING_LIST_LOW");
+		this.tLETRA_I = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.LETRA_I");
 		this.tSTRING_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.STRING_LIT");
 		this.tSTRING_I = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.STRING_I");
 		this.tLETRA = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.LETRA");
@@ -544,6 +564,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pEntidades = new EntidadesElements();
 		this.pEntidade = new EntidadeElements();
 		this.pNome = new NomeElements();
+		this.pNome_Atributo = new Nome_AtributoElements();
 		this.pAtributos = new AtributosElements();
 		this.pAtributo = new AtributoElements();
 		this.pOperacao = new OperacaoElements();
@@ -617,20 +638,32 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return tTIPO_COLECAO;
 	}
 	
+	//terminal STRING_LIST_LOW:
+	//	'"' LETRA_I+ '"';
+	public TerminalRule getSTRING_LIST_LOWRule() {
+		return tSTRING_LIST_LOW;
+	}
+	
+	//terminal LETRA_I:
+	//	"a".."z" ("a".."z" | "A".."Z")+;
+	public TerminalRule getLETRA_IRule() {
+		return tLETRA_I;
+	}
+	
 	//terminal STRING_LIT:
-	//	'"' LETRA+ '"';
+	//	'"' LETRA '"';
 	public TerminalRule getSTRING_LITRule() {
 		return tSTRING_LIT;
 	}
 	
 	//terminal STRING_I:
-	//	LETRA+;
+	//	LETRA;
 	public TerminalRule getSTRING_IRule() {
 		return tSTRING_I;
 	}
 	
 	//terminal LETRA:
-	//	"a".."z" | "A".."Z";
+	//	"A".."Z" ("a".."z" | "A".."Z")+;
 	public TerminalRule getLETRARule() {
 		return tLETRA;
 	}
@@ -700,6 +733,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getNomeAccess().getRule();
 	}
 	
+	//Nome_Atributo:
+	//	nome=STRING_LIST_LOW;
+	public Nome_AtributoElements getNome_AtributoAccess() {
+		return pNome_Atributo;
+	}
+	
+	public ParserRule getNome_AtributoRule() {
+		return getNome_AtributoAccess().getRule();
+	}
+	
 	//Atributos:
 	//	atributo=Atributo ("," atributoMais+=Atributo)*;
 	public AtributosElements getAtributosAccess() {
@@ -712,7 +755,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Atributo:
 	//	'{'
-	//	'"nome-atributo"' ':' nomeAtributo=Nome ','
+	//	'"nome-atributo"' ':' nomeAtributo=Nome_Atributo ','
 	//	'"tipo-atributo"' ':' atributoTipo=AtributoTipo ','
 	//	'"associação/relacionamento"' ':' associacao=Associacao ','
 	//	'"operação em cascata"' ':' '[' operacao=Operacao? ']'

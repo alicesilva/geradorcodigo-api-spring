@@ -27,16 +27,24 @@ terminal TIPO_COLECAO:
 		| "HashSet<"(STRING_I) ">") '"'
 ;
 
+
+terminal STRING_LIST_LOW:
+	'"' (LETRA_I)+ '"'
+;
+
+terminal LETRA_I:
+	"a" .. "z"  ("a" .. "z" | "A".."Z")+
+;
 terminal STRING_LIT:
-	'"' (LETRA)+ '"'
+	'"' (LETRA) '"'
 ;
 
 terminal STRING_I:
-	(LETRA)+
+	(LETRA)
 ;
 
 terminal LETRA:
-	"a".."z" | "A" .."Z"
+	"A" .."Z" ("a" .. "z" | "A".."Z")+
 ;
 	
 Greeting:
@@ -67,13 +75,17 @@ Nome:
 	nome = STRING_LIT
 ;
 
+Nome_Atributo:
+	nome = STRING_LIST_LOW
+;
+
 Atributos:
 	atributo = Atributo ("," atributoMais += Atributo)*
 ;
 
 Atributo:
 	'{' 
-		'"nome-atributo"' ':' nomeAtributo = Nome ','
+		'"nome-atributo"' ':' nomeAtributo = Nome_Atributo ','
 		'"tipo-atributo"' ':' atributoTipo = AtributoTipo ','
 		'"associação/relacionamento"' ':' associacao = (Associacao) ','
 		'"operação em cascata"' ':' '[' operacao = (Operacao)? ']'

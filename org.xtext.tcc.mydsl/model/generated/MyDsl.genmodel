@@ -30,6 +30,9 @@
     <genClasses ecoreClass="MyDsl.ecore#//Nome">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Nome/nome"/>
     </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Nome_Atributo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Nome_Atributo/nome"/>
+    </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Atributos">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributos/atributo"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Atributos/atributoMais"/>

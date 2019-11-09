@@ -1,34 +1,32 @@
-package com.example.demo.model;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+package model;
+import javax.persistence.*;
+import java.sql.*;
+import java.sql.Date;
+import java.util.*;
 
 @Entity
 public class Telefone {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
 	private String numero;
-
+	
 	public Long getId() {
 		return id;
 	}
-
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getNumero() {
+	
+	public String getNumero(){
 		return numero;
 	}
-
-	public void setNumero(String numero) {
+	
+	public void setNumero(String numero){
 		this.numero = numero;
 	}
-	
-	
 
 }

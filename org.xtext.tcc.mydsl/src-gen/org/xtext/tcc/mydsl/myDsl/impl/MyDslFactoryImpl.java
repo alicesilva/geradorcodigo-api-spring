@@ -72,6 +72,7 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.ENTIDADES: return createEntidades();
       case MyDslPackage.ENTIDADE: return createEntidade();
       case MyDslPackage.NOME: return createNome();
+      case MyDslPackage.NOME_ATRIBUTO: return createNome_Atributo();
       case MyDslPackage.ATRIBUTOS: return createAtributos();
       case MyDslPackage.ATRIBUTO: return createAtributo();
       case MyDslPackage.OPERACAO: return createOperacao();
@@ -165,6 +166,18 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     NomeImpl nome = new NomeImpl();
     return nome;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Nome_Atributo createNome_Atributo()
+  {
+    Nome_AtributoImpl nome_Atributo = new Nome_AtributoImpl();
+    return nome_Atributo;
   }
 
   /**

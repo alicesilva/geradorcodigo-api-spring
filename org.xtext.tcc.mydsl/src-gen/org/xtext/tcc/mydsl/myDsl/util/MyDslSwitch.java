@@ -122,6 +122,13 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MyDslPackage.NOME_ATRIBUTO:
+      {
+        Nome_Atributo nome_Atributo = (Nome_Atributo)theEObject;
+        T result = caseNome_Atributo(nome_Atributo);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MyDslPackage.ATRIBUTOS:
       {
         Atributos atributos = (Atributos)theEObject;
@@ -276,6 +283,22 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNome(Nome object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Nome Atributo</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Nome Atributo</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNome_Atributo(Nome_Atributo object)
   {
     return null;
   }

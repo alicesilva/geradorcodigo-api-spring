@@ -26,6 +26,7 @@ import org.xtext.tcc.mydsl.myDsl.Greeting;
 import org.xtext.tcc.mydsl.myDsl.Model;
 import org.xtext.tcc.mydsl.myDsl.MyDslPackage;
 import org.xtext.tcc.mydsl.myDsl.Nome;
+import org.xtext.tcc.mydsl.myDsl.Nome_Atributo;
 import org.xtext.tcc.mydsl.myDsl.Operacao;
 import org.xtext.tcc.mydsl.myDsl.OperacaoCascada;
 import org.xtext.tcc.mydsl.services.MyDslGrammarAccess;
@@ -76,6 +77,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case MyDslPackage.NOME:
 				sequence_Nome(context, (Nome) semanticObject); 
+				return; 
+			case MyDslPackage.NOME_ATRIBUTO:
+				sequence_Nome_Atributo(context, (Nome_Atributo) semanticObject); 
 				return; 
 			case MyDslPackage.OPERACAO:
 				sequence_Operacao(context, (Operacao) semanticObject); 
@@ -162,7 +166,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Atributo returns Atributo
 	 *
 	 * Constraint:
-	 *     (nomeAtributo=Nome atributoTipo=AtributoTipo associacao=Associacao operacao=Operacao?)
+	 *     (nomeAtributo=Nome_Atributo atributoTipo=AtributoTipo associacao=Associacao operacao=Operacao?)
 	 */
 	protected void sequence_Atributo(ISerializationContext context, Atributo semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -241,6 +245,24 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Nome_Atributo returns Nome_Atributo
+	 *
+	 * Constraint:
+	 *     nome=STRING_LIST_LOW
+	 */
+	protected void sequence_Nome_Atributo(ISerializationContext context, Nome_Atributo semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.NOME_ATRIBUTO__NOME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.NOME_ATRIBUTO__NOME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNome_AtributoAccess().getNomeSTRING_LIST_LOWTerminalRuleCall_0(), semanticObject.getNome());
+		feeder.finish();
 	}
 	
 	

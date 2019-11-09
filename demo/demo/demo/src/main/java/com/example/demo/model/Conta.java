@@ -1,8 +1,9 @@
 package com.example.demo.model;
 
-import javax.persistence.Entity;
-
 import javax.persistence.*;
+import java.sql.*;
+import java.sql.Date;
+import java.util.*;
 
 @Entity
 public class Conta {
@@ -39,4 +40,3 @@ public class Conta {
 		this.tipo = tipo;
 	}
 }
-

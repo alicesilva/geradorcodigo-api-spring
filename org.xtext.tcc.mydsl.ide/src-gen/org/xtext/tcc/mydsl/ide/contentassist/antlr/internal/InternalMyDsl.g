@@ -224,6 +224,31 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleNome_Atributo
+entryRuleNome_Atributo
+:
+{ before(grammarAccess.getNome_AtributoRule()); }
+	 ruleNome_Atributo
+{ after(grammarAccess.getNome_AtributoRule()); } 
+	 EOF 
+;
+
+// Rule Nome_Atributo
+ruleNome_Atributo 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getNome_AtributoAccess().getNomeAssignment()); }
+		(rule__Nome_Atributo__NomeAssignment)
+		{ after(grammarAccess.getNome_AtributoAccess().getNomeAssignment()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Entry rule entryRuleAtributos
 entryRuleAtributos
 :
@@ -2009,6 +2034,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__Nome_Atributo__NomeAssignment
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getNome_AtributoAccess().getNomeSTRING_LIST_LOWTerminalRuleCall_0()); }
+		RULE_STRING_LIST_LOW
+		{ after(grammarAccess.getNome_AtributoAccess().getNomeSTRING_LIST_LOWTerminalRuleCall_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__Atributos__AtributoAssignment_0
 	@init {
 		int stackSize = keepStackSize();
@@ -2045,9 +2085,9 @@ rule__Atributo__NomeAtributoAssignment_3
 	}
 :
 	(
-		{ before(grammarAccess.getAtributoAccess().getNomeAtributoNomeParserRuleCall_3_0()); }
-		ruleNome
-		{ after(grammarAccess.getAtributoAccess().getNomeAtributoNomeParserRuleCall_3_0()); }
+		{ before(grammarAccess.getAtributoAccess().getNomeAtributoNome_AtributoParserRuleCall_3_0()); }
+		ruleNome_Atributo
+		{ after(grammarAccess.getAtributoAccess().getNomeAtributoNome_AtributoParserRuleCall_3_0()); }
 	)
 ;
 finally {
@@ -2212,11 +2252,15 @@ RULE_TIPO_PRIMITIVO : '"' ('Boolean'|'Integer'|'Long'|'String'|'Float'|'Double'|
 
 RULE_TIPO_COLECAO : '"' ('List<' RULE_STRING_I '>'|'Set<' RULE_STRING_I '>'|'ArrayList<' RULE_STRING_I '>'|'HashSet<' RULE_STRING_I '>') '"';
 
-RULE_STRING_LIT : '"' RULE_LETRA+ '"';
+RULE_STRING_LIST_LOW : '"' RULE_LETRA_I+ '"';
 
-fragment RULE_STRING_I : RULE_LETRA+;
+fragment RULE_LETRA_I : 'a'..'z' ('a'..'z'|'A'..'Z')+;
 
-fragment RULE_LETRA : ('a'..'z'|'A'..'Z');
+RULE_STRING_LIT : '"' RULE_LETRA '"';
+
+fragment RULE_STRING_I : RULE_LETRA;
+
+fragment RULE_LETRA : 'A'..'Z' ('a'..'z'|'A'..'Z')+;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
