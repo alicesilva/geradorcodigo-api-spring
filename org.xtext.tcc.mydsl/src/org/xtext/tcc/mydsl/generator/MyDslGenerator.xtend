@@ -278,11 +278,11 @@ class MyDslGenerator extends AbstractGenerator {
 		public class HomeController {
 			
 			@Autowired
-			«api.entidades.entidade.nomeEntidade.nome.toFirstUpper»Service «api.entidades.entidade.nomeEntidade.nome.toFirstUpper»Service;
+			«api.entidades.entidade.nomeEntidade.nome.toFirstUpper»Service «api.entidades.entidade.nomeEntidade.nome.toFirstLower»Service;
 			
 			«FOR entidade: api.entidades.entidadeMais»
 			@Autowired
-			«entidade.nomeEntidade.nome.toFirstUpper»Service «entidade.nomeEntidade.nome»Service;
+			«entidade.nomeEntidade.nome.toFirstUpper»Service «entidade.nomeEntidade.nome.toFirstLower»Service;
 			
 			«ENDFOR»
 			
@@ -296,55 +296,55 @@ class MyDslGenerator extends AbstractGenerator {
 	'''
 	
 	def compileMetodosController(Entidade entidade) '''
-		@PostMapping(value = "/«entidade.nomeEntidade.nome»s", consumes = MediaType.APPLICATION_JSON_VALUE)
-		public ResponseEntity<Pessoa> save«entidade.nomeEntidade.nome.toFirstUpper»(@RequestBody «entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome») {
-			if («entidade.nomeEntidade.nome» == null || «entidade.nomeEntidade.nome»Service.exists«entidade.nomeEntidade.nome.toFirstUpper»ById(«entidade.nomeEntidade.nome».getId())) {
+		@PostMapping(value = "/«entidade.nomeEntidade.nome.toFirstLower»s", consumes = MediaType.APPLICATION_JSON_VALUE)
+		public ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»> save«entidade.nomeEntidade.nome.toFirstUpper»(@RequestBody «entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome.toFirstLower») {
+			if («entidade.nomeEntidade.nome.toFirstLower» == null || «entidade.nomeEntidade.nome.toFirstLower»Service.exists«entidade.nomeEntidade.nome.toFirstUpper»ById(«entidade.nomeEntidade.nome.toFirstLower».getId())) {
 				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 			}
 		
-			this.«entidade.nomeEntidade.nome»Service.save(«entidade.nomeEntidade.nome»);
+			this.«entidade.nomeEntidade.nome.toFirstLower»Service.save(«entidade.nomeEntidade.nome.toFirstLower»);
 		
-			return new ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»>(«entidade.nomeEntidade.nome», HttpStatus.CREATED);
+			return new ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»>(«entidade.nomeEntidade.nome.toFirstLower», HttpStatus.CREATED);
 		}
 			
-		@GetMapping(value = "/«entidade.nomeEntidade.nome»s", produces = MediaType.APPLICATION_JSON_VALUE)
+		@GetMapping(value = "/«entidade.nomeEntidade.nome.toFirstLower»s", produces = MediaType.APPLICATION_JSON_VALUE)
 		public ResponseEntity<List<«entidade.nomeEntidade.nome.toFirstUpper»>> get«entidade.nomeEntidade.nome.toFirstUpper»s() {
-			List<«entidade.nomeEntidade.nome.toFirstUpper»> «entidade.nomeEntidade.nome»s = this.«entidade.nomeEntidade.nome»Service.get«entidade.nomeEntidade.nome.toFirstUpper»s();
-			return new ResponseEntity<List<«entidade.nomeEntidade.nome.toFirstUpper»>>(«entidade.nomeEntidade.nome»s, HttpStatus.OK);
+			List<«entidade.nomeEntidade.nome.toFirstUpper»> «entidade.nomeEntidade.nome.toFirstLower»s = this.«entidade.nomeEntidade.nome.toFirstLower»Service.get«entidade.nomeEntidade.nome.toFirstUpper»s();
+			return new ResponseEntity<List<«entidade.nomeEntidade.nome.toFirstUpper»>>(«entidade.nomeEntidade.nome.toFirstLower»s, HttpStatus.OK);
 		}
 		
-		@GetMapping(value = "/«entidade.nomeEntidade.nome»s/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+		@GetMapping(value = "/«entidade.nomeEntidade.nome.toFirstLower»s/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 		public ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»> get«entidade.nomeEntidade.nome.toFirstUpper»(@PathVariable("id") Long id) {
 			if (id == null) {
 				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 			}
 				
-			if(!«entidade.nomeEntidade.nome»Service.exists«entidade.nomeEntidade.nome.toFirstUpper»ById(id)) {
+			if(!«entidade.nomeEntidade.nome.toFirstLower»Service.exists«entidade.nomeEntidade.nome.toFirstUpper»ById(id)) {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}
 				
-			«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome» = «entidade.nomeEntidade.nome»Service.get«entidade.nomeEntidade.nome.toFirstUpper»ById(id);
+			«entidade.nomeEntidade.nome.toFirstUpper» «entidade.nomeEntidade.nome.toFirstLower» = «entidade.nomeEntidade.nome.toFirstLower»Service.get«entidade.nomeEntidade.nome.toFirstUpper»ById(id);
 		
-			return new ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»>(«entidade.nomeEntidade.nome», HttpStatus.OK);
+			return new ResponseEntity<«entidade.nomeEntidade.nome.toFirstUpper»>(«entidade.nomeEntidade.nome.toFirstLower», HttpStatus.OK);
 		}
 		
-		@DeleteMapping(value = "/«entidade.nomeEntidade.nome»s")
+		@DeleteMapping(value = "/«entidade.nomeEntidade.nome.toFirstLower»s")
 		public ResponseEntity<String> deleteAll«entidade.nomeEntidade.nome.toFirstUpper»() {
-			«entidade.nomeEntidade.nome»Service.deleteAll«entidade.nomeEntidade.nome.toFirstUpper»();
+			«entidade.nomeEntidade.nome.toFirstLower»Service.deleteAll«entidade.nomeEntidade.nome.toFirstUpper»();
 			return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper»s removidos com sucesso.", HttpStatus.OK);
 		}
 		
-		@DeleteMapping(value = "/«entidade.nomeEntidade.nome»s/{id}")
+		@DeleteMapping(value = "/«entidade.nomeEntidade.nome.toFirstLower»s/{id}")
 		public ResponseEntity<String> delete«entidade.nomeEntidade.nome.toFirstUpper»(@PathVariable("id") Long id) {
 			if (id == null) {
 				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 			}
 				
-			if(!«entidade.nomeEntidade.nome»Service.exists«entidade.nomeEntidade.nome.toFirstUpper»yId(id)) {
+			if(!«entidade.nomeEntidade.nome.toFirstLower»Service.exists«entidade.nomeEntidade.nome.toFirstUpper»yId(id)) {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}
 				
-			«entidade.nomeEntidade.nome»Service.delete«entidade.nomeEntidade.nome.toFirstUpper»(id);
+			«entidade.nomeEntidade.nome.toFirstLower»Service.delete«entidade.nomeEntidade.nome.toFirstUpper»(id);
 		
 			return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper» removido com sucesso.", HttpStatus.OK);
 		}
@@ -361,35 +361,35 @@ class MyDslGenerator extends AbstractGenerator {
 	
 	def compileAssociacao(Atributo atributo, String nomeEntidade) '''
 		«IF atributo.associacao.associacao.equals("OneToOne") || atributo.associacao.associacao.equals("ManyToOne")»
-		@PutMapping(value = "/«nomeEntidade»s-«atributo.atributoTipo.tipoObjeto»/{«nomeEntidade»Id}/{«atributo.atributoTipo.tipoObjeto»Id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-		public ResponseEntity associa«atributo.atributoTipo.tipoObjeto.toFirstUpper»To«nomeEntidade.toFirstUpper»(@PathVariable("«nomeEntidade»Id") Long «nomeEntidade»Id,
-			@PathVariable("«atributo.atributoTipo.tipoObjeto»Id") Long «atributo.atributoTipo.tipoObjeto»Id) {
-			if (!«nomeEntidade»Service.exists«nomeEntidade.toFirstUpper»yId(«nomeEntidade»Id)) {
+		@PutMapping(value = "/«nomeEntidade.toFirstLower»s-«atributo.atributoTipo.tipoObjeto»/{«nomeEntidade.toFirstLower»Id}/{«atributo.atributoTipo.tipoObjeto.toFirstLower»Id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+		public ResponseEntity associa«atributo.atributoTipo.tipoObjeto.toFirstUpper»To«nomeEntidade.toFirstUpper»(@PathVariable("«nomeEntidade.toFirstLower»Id") Long «nomeEntidade.toFirstLower»Id,
+			@PathVariable("«atributo.atributoTipo.tipoObjeto.toFirstLower»Id") Long «atributo.atributoTipo.tipoObjeto.toFirstLower»Id) {
+			if (!«nomeEntidade.toFirstLower»Service.exists«nomeEntidade.toFirstUpper»yId(«nomeEntidade.toFirstLower»Id)) {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}
-			if (!«atributo.atributoTipo.tipoObjeto»Service.exists«atributo.atributoTipo.tipoObjeto.toFirstUpper»ById(«atributo.atributoTipo.tipoObjeto»Id)) {
+			if (!«atributo.atributoTipo.tipoObjeto.toFirstLower»Service.exists«atributo.atributoTipo.tipoObjeto.toFirstUpper»ById(«atributo.atributoTipo.tipoObjeto.toFirstLower»Id)) {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}
 							
-			«atributo.atributoTipo.tipoObjeto.toFirstUpper» «atributo.atributoTipo.tipoObjeto» = «atributo.atributoTipo.tipoObjeto»Service.get«atributo.atributoTipo.tipoObjeto.toFirstUpper»ById(«atributo.atributoTipo.tipoObjeto»Id);
-			this.«nomeEntidade»Service.update(«nomeEntidade»Id, «atributo.atributoTipo.tipoObjeto»);
+			«atributo.atributoTipo.tipoObjeto.toFirstUpper» «atributo.atributoTipo.tipoObjeto.toFirstLower» = «atributo.atributoTipo.tipoObjeto.toFirstLower»Service.get«atributo.atributoTipo.tipoObjeto.toFirstUpper»ById(«atributo.atributoTipo.tipoObjeto.toFirstLower»Id);
+			this.«nomeEntidade.toFirstLower»Service.update(«nomeEntidade.toFirstLower»Id, «atributo.atributoTipo.tipoObjeto.toFirstLower»);
 							
 			return new ResponseEntity("Ok.", HttpStatus.OK);
 		}
 		«ELSEIF atributo.associacao.associacao.equals("OneToMany") || atributo.associacao.associacao.equals("ManyToMany")»
 		«var String nome = getNomeTipoColecao(atributo.atributoTipo.tipoColecao)»
-		@PutMapping(value = "/«nomeEntidade»s-«nome»/{pessoaId}/{«nome»Id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-		public ResponseEntity add«nome.toFirstUpper»To«nomeEntidade.toFirstUpper»(@PathVariable("«nomeEntidade»Id") Long «nomeEntidade»Id,
-			@PathVariable("«nome»Id") Long «nome»Id) {			
-			if (!«nomeEntidade»Service.exists«nomeEntidade.toFirstUpper»ById(«nomeEntidade»Id)) {
+		@PutMapping(value = "/«nomeEntidade.toFirstLower»s-«nome.toFirstLower»/{pessoaId}/{«nome.toFirstLower»Id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+		public ResponseEntity add«nome.toFirstUpper»To«nomeEntidade.toFirstUpper»(@PathVariable("«nomeEntidade.toFirstLower»Id") Long «nomeEntidade.toFirstLower»Id,
+			@PathVariable("«nome.toFirstLower»Id") Long «nome.toFirstLower»Id) {			
+			if (!«nomeEntidade.toFirstLower»Service.exists«nomeEntidade.toFirstUpper»ById(«nomeEntidade.toFirstLower»Id)) {
 				return new ResponseEntity(HttpStatus.NOT_FOUND);
 			}
-			if (!«nome»Service.exists«nome.toFirstUpper»ById(«nome»d)) {
+			if (!«nome.toFirstLower»Service.exists«nome.toFirstUpper»ById(«nome.toFirstLower»d)) {
 				return new ResponseEntity(HttpStatus.NOT_FOUND);
 			}
 							
-			«nome.toFirstUpper» «nome» = «nome»Service.get«nome.toFirstUpper»ById(«nome»Id);
-			«nomeEntidade»Service.update(«nomeEntidade»Id, «nome»);
+			«nome.toFirstUpper» «nome.toFirstLower» = «nome.toFirstLower»Service.get«nome.toFirstUpper»ById(«nome.toFirstLower»Id);
+			«nomeEntidade.toFirstLower»Service.update(«nomeEntidade.toFirstLower»Id, «nome.toFirstLower»);
 							
 			return new ResponseEntity(HttpStatus.OK);
 		}
