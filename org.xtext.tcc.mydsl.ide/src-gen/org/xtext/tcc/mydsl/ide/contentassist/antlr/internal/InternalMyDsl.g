@@ -5,6 +5,7 @@ grammar InternalMyDsl;
 
 options {
 	superClass=AbstractInternalContentAssistParser;
+	backtrack=true;
 }
 
 @lexer::header {
@@ -140,9 +141,9 @@ ruleApiNome
 	}
 	:
 	(
-		{ before(grammarAccess.getApiNomeAccess().getNomeAssignment()); }
-		(rule__ApiNome__NomeAssignment)
-		{ after(grammarAccess.getApiNomeAccess().getNomeAssignment()); }
+		{ before(grammarAccess.getApiNomeAccess().getAlternatives()); }
+		(rule__ApiNome__Alternatives)
+		{ after(grammarAccess.getApiNomeAccess().getAlternatives()); }
 	)
 ;
 finally {
@@ -393,6 +394,27 @@ ruleAtributoTipo
 		{ before(grammarAccess.getAtributoTipoAccess().getAlternatives()); }
 		(rule__AtributoTipo__Alternatives)
 		{ after(grammarAccess.getAtributoTipoAccess().getAlternatives()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ApiNome__Alternatives
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getApiNomeAccess().getNomeAssignment_0()); }
+		(rule__ApiNome__NomeAssignment_0)
+		{ after(grammarAccess.getApiNomeAccess().getNomeAssignment_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getApiNomeAccess().getNomeAssignment_1()); }
+		(rule__ApiNome__NomeAssignment_1)
+		{ after(grammarAccess.getApiNomeAccess().getNomeAssignment_1()); }
 	)
 ;
 finally {
@@ -1944,15 +1966,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ApiNome__NomeAssignment
+rule__ApiNome__NomeAssignment_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getApiNomeAccess().getNomeSTRING_LITTerminalRuleCall_0()); }
+		{ before(grammarAccess.getApiNomeAccess().getNomeSTRING_LIST_LOWTerminalRuleCall_0_0()); }
+		RULE_STRING_LIST_LOW
+		{ after(grammarAccess.getApiNomeAccess().getNomeSTRING_LIST_LOWTerminalRuleCall_0_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ApiNome__NomeAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getApiNomeAccess().getNomeSTRING_LITTerminalRuleCall_1_0()); }
 		RULE_STRING_LIT
-		{ after(grammarAccess.getApiNomeAccess().getNomeSTRING_LITTerminalRuleCall_0()); }
+		{ after(grammarAccess.getApiNomeAccess().getNomeSTRING_LITTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
@@ -2256,11 +2293,9 @@ RULE_STRING_LIST_LOW : '"' RULE_LETRA_I+ '"';
 
 fragment RULE_LETRA_I : 'a'..'z' ('a'..'z'|'A'..'Z')+;
 
-RULE_STRING_LIT : '"' RULE_LETRA '"';
+RULE_STRING_LIT : '"' RULE_STRING_I '"';
 
-fragment RULE_STRING_I : RULE_LETRA;
-
-fragment RULE_LETRA : 'A'..'Z' ('a'..'z'|'A'..'Z')+;
+fragment RULE_STRING_I : 'A'..'Z' ('a'..'z'|'A'..'Z')+;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

@@ -97,16 +97,10 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     ApiNome returns ApiNome
 	 *
 	 * Constraint:
-	 *     nome=STRING_LIT
+	 *     (nome=STRING_LIST_LOW | nome=STRING_LIT)
 	 */
 	protected void sequence_ApiNome(ISerializationContext context, ApiNome semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.API_NOME__NOME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.API_NOME__NOME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getApiNomeAccess().getNomeSTRING_LITTerminalRuleCall_0(), semanticObject.getNome());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

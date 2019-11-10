@@ -1,16 +1,17 @@
-package service;
+package com.example.demo.service;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import model.Pessoa;
-import repository.PessoaRepository;
+import com.example.demo.model.Pessoa;
+import com.example.demo.repository.PessoaRepository;
 
-import model.Conta
-import model.Livro
-import model.Universidade
-import model.Telefone
+import com.example.demo.model.Conta;
+import com.example.demo.model.Livro;
+import com.example.demo.model.Universidade;
+import com.example.demo.model.Telefone;
 
 @Service
 public class PessoaService {
@@ -43,24 +44,24 @@ public class PessoaService {
 	}
 	
 
-	public void update(Long id, Conta conta){
+	public void update(Long id, Conta Conta){
 		Pessoa pessoa = getPessoaById(id);
-		pessoa.setConta(conta);
+		pessoa.setConta(Conta);
 		pessoaRepository.save(pessoa);
 	}
-	public void update(Long id, Livro livro) {
+	public void update(Long id, Livro Livro) {
 		Pessoa pessoa = getPessoaById(id);
-		pessoa.getLivros().add(livro);
+		pessoa.getLivros().add(Livro);
 		pessoaRepository.save(pessoa);
 	}
-	public void update(Long id, Universidade universidade){
+	public void update(Long id, Universidade Universidade){
 		Pessoa pessoa = getPessoaById(id);
-		pessoa.setUniversidade(universidade);
+		pessoa.setUniversidade(Universidade);
 		pessoaRepository.save(pessoa);
 	}
-	public void update(Long id, Telefone telefone) {
+	public void update(Long id, Telefone Telefone) {
 		Pessoa pessoa = getPessoaById(id);
-		pessoa.getTelefones().add(telefone);
+		pessoa.getTelefones().add(Telefone);
 		pessoaRepository.save(pessoa);
 	}
 }

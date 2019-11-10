@@ -1,5 +1,4 @@
 package com.example.demo.model;
-
 import javax.persistence.*;
 import java.sql.*;
 import java.sql.Date;
@@ -9,24 +8,21 @@ import java.util.*;
 public class Pessoa {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
 	private String nome;
-	
-	private String tipo;
 	
 	@OneToOne(cascade = {javax.persistence.CascadeType.ALL})
 	private Conta conta;
 	
 	@OneToMany(cascade = {javax.persistence.CascadeType.ALL})
-	private List<livro> livros;
+	private List<Livro> livros;
 	
 	@ManyToOne(cascade = {javax.persistence.CascadeType.ALL})
 	private Universidade universidade;
 	
 	@ManyToMany(cascade = {javax.persistence.CascadeType.ALL})
-	private List<telefone> telefones;
+	private List<Telefone> telefones;
 	
 	public Long getId() {
 		return id;
@@ -43,40 +39,33 @@ public class Pessoa {
 	public void setNome(String nome){
 		this.nome = nome;
 	}
-
-	public String getTipo(){
-		return tipo;
-	}
 	
-	public void setTipo(String tipo){
-		this.tipo = tipo;
-	}
 	public Conta getConta(){
 		return conta;
 	}
 					
-	public void setConta(conta conta){
+	public void setConta(Conta conta){
 		this.conta = conta;
 	}
-	public List<livro> getLivros(){
+	public List<Livro> getLivros(){
 		return livros;
 	}
 	
-	public void setLivros(List<livro> livros){
+	public void setLivros(List<Livro> livros){
 		this.livros = livros;
 	}
 	public Universidade getUniversidade(){
 		return universidade;
 	}
 					
-	public void setUniversidade(universidade universidade){
+	public void setUniversidade(Universidade universidade){
 		this.universidade = universidade;
 	}
-	public List<telefone> getTelefones(){
+	public List<Telefone> getTelefones(){
 		return telefones;
 	}
 	
-	public void setTelefones(List<telefone> telefones){
+	public void setTelefones(List<Telefone> telefones){
 		this.telefones = telefones;
 	}
 }

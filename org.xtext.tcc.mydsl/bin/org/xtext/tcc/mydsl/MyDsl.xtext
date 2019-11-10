@@ -27,7 +27,6 @@ terminal TIPO_COLECAO:
 		| "HashSet<"(STRING_I) ">") '"'
 ;
 
-
 terminal STRING_LIST_LOW:
 	'"' (LETRA_I)+ '"'
 ;
@@ -36,14 +35,10 @@ terminal LETRA_I:
 	"a" .. "z"  ("a" .. "z" | "A".."Z")+
 ;
 terminal STRING_LIT:
-	'"' (LETRA) '"'
+	'"' (STRING_I) '"'
 ;
 
 terminal STRING_I:
-	(LETRA)
-;
-
-terminal LETRA:
 	"A" .."Z" ("a" .. "z" | "A".."Z")+
 ;
 	
@@ -56,7 +51,7 @@ Api:
 ;
 
 ApiNome:
-	nome = STRING_LIT
+	nome = STRING_LIST_LOW | nome = STRING_LIT
 ;
 
 Entidades:

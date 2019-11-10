@@ -122,18 +122,30 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class ApiNomeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.ApiNome");
-		private final Assignment cNomeAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNomeSTRING_LITTerminalRuleCall_0 = (RuleCall)cNomeAssignment.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cNomeAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cNomeSTRING_LIST_LOWTerminalRuleCall_0_0 = (RuleCall)cNomeAssignment_0.eContents().get(0);
+		private final Assignment cNomeAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cNomeSTRING_LITTerminalRuleCall_1_0 = (RuleCall)cNomeAssignment_1.eContents().get(0);
 		
 		//ApiNome:
-		//	nome=STRING_LIT;
+		//	nome=STRING_LIST_LOW | nome=STRING_LIT;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//nome=STRING_LIST_LOW | nome=STRING_LIT
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//nome=STRING_LIST_LOW
+		public Assignment getNomeAssignment_0() { return cNomeAssignment_0; }
+		
+		//STRING_LIST_LOW
+		public RuleCall getNomeSTRING_LIST_LOWTerminalRuleCall_0_0() { return cNomeSTRING_LIST_LOWTerminalRuleCall_0_0; }
+		
 		//nome=STRING_LIT
-		public Assignment getNomeAssignment() { return cNomeAssignment; }
+		public Assignment getNomeAssignment_1() { return cNomeAssignment_1; }
 		
 		//STRING_LIT
-		public RuleCall getNomeSTRING_LITTerminalRuleCall_0() { return cNomeSTRING_LITTerminalRuleCall_0; }
+		public RuleCall getNomeSTRING_LITTerminalRuleCall_1_0() { return cNomeSTRING_LITTerminalRuleCall_1_0; }
 	}
 	public class EntidadesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.Entidades");
@@ -524,7 +536,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tLETRA_I;
 	private final TerminalRule tSTRING_LIT;
 	private final TerminalRule tSTRING_I;
-	private final TerminalRule tLETRA;
 	private final GreetingElements pGreeting;
 	private final ApiElements pApi;
 	private final ApiNomeElements pApiNome;
@@ -557,7 +568,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.tLETRA_I = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.LETRA_I");
 		this.tSTRING_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.STRING_LIT");
 		this.tSTRING_I = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.STRING_I");
-		this.tLETRA = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.tcc.mydsl.MyDsl.LETRA");
 		this.pGreeting = new GreetingElements();
 		this.pApi = new ApiElements();
 		this.pApiNome = new ApiNomeElements();
@@ -651,21 +661,15 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal STRING_LIT:
-	//	'"' LETRA '"';
+	//	'"' STRING_I '"';
 	public TerminalRule getSTRING_LITRule() {
 		return tSTRING_LIT;
 	}
 	
 	//terminal STRING_I:
-	//	LETRA;
+	//	"A".."Z" ("a".."z" | "A".."Z")+;
 	public TerminalRule getSTRING_IRule() {
 		return tSTRING_I;
-	}
-	
-	//terminal LETRA:
-	//	"A".."Z" ("a".."z" | "A".."Z")+;
-	public TerminalRule getLETRARule() {
-		return tLETRA;
 	}
 	
 	//Greeting:
@@ -690,7 +694,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ApiNome:
-	//	nome=STRING_LIT;
+	//	nome=STRING_LIST_LOW | nome=STRING_LIT;
 	public ApiNomeElements getApiNomeAccess() {
 		return pApiNome;
 	}

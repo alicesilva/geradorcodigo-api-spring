@@ -1,18 +1,19 @@
-package controller;
+package com.example.demo.controller;
 import java.util.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
-import model.*;
-import service.*;
+import com.example.demo.model.*;
+import com.example.demo.service.*;
 
 @RestController
 @RequestMapping("/banco-api")
 public class HomeController {
 	
 	@Autowired
-	ContaService ContaService;
+	ContaService contaService;
 	
 	@Autowired
 	PessoaService pessoaService;
@@ -28,7 +29,7 @@ public class HomeController {
 	
 	
 	@PostMapping(value = "/contas", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Pessoa> saveConta(@RequestBody Conta conta) {
+	public ResponseEntity<Conta> saveConta(@RequestBody Conta conta) {
 		if (conta == null || contaService.existsContaById(conta.getId())) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
@@ -60,28 +61,26 @@ public class HomeController {
 	}
 	
 	@DeleteMapping(value = "/contas")
-	public ResponseEntity<String> deleteAllConta() {
+	public ResponseEntity deleteAllConta() {
 		contaService.deleteAllConta();
-		return new ResponseEntity<String>("Contas removidos com sucesso.", HttpStatus.OK);
+		return new ResponseEntity(HttpStatus.OK);
 	}
 	
 	@DeleteMapping(value = "/contas/{id}")
-	public ResponseEntity<String> deleteConta(@PathVariable("id") Long id) {
+	public ResponseEntity deleteConta(@PathVariable("id") Long id) {
 		if (id == null) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+			return new ResponseEntity(HttpStatus.BAD_REQUEST);
 		}
 			
-		if(!contaService.existsContayId(id)) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		if(!contaService.existsContaById(id)) {
+			return new ResponseEntity(HttpStatus.NOT_FOUND);
 		}
 			
 		contaService.deleteConta(id);
 	
-		return new ResponseEntity<String>("Conta removido com sucesso.", HttpStatus.OK);
+		return new ResponseEntity(HttpStatus.OK);
 	}
 	
-	
-	 
 	
 	@PostMapping(value = "/pessoas", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Pessoa> savePessoa(@RequestBody Pessoa pessoa) {
@@ -127,7 +126,7 @@ public class HomeController {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 			
-		if(!pessoaService.existsPessoayId(id)) {
+		if(!pessoaService.existsPessoaById(id)) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 			
@@ -137,10 +136,10 @@ public class HomeController {
 	}
 	
 	
-	@PutMapping(value = "/pessoas-conta/{pessoaId}/{contaId}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value = "/pessoas-Conta/{pessoaId}/{contaId}", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity associaContaToPessoa(@PathVariable("pessoaId") Long pessoaId,
 		@PathVariable("contaId") Long contaId) {
-		if (!pessoaService.existsPessoayId(pessoaId)) {
+		if (!pessoaService.existsPessoaById(pessoaId)) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 		if (!contaService.existsContaById(contaId)) {
@@ -150,7 +149,7 @@ public class HomeController {
 		Conta conta = contaService.getContaById(contaId);
 		this.pessoaService.update(pessoaId, conta);
 						
-		return new ResponseEntity("Ok.", HttpStatus.OK);
+		return new ResponseEntity(HttpStatus.OK);
 	}
 	@PutMapping(value = "/pessoas-livro/{pessoaId}/{livroId}", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity addLivroToPessoa(@PathVariable("pessoaId") Long pessoaId,
@@ -158,7 +157,7 @@ public class HomeController {
 		if (!pessoaService.existsPessoaById(pessoaId)) {
 			return new ResponseEntity(HttpStatus.NOT_FOUND);
 		}
-		if (!livroService.existsLivroById(livrod)) {
+		if (!livroService.existsLivroById(livroId)) {
 			return new ResponseEntity(HttpStatus.NOT_FOUND);
 		}
 						
@@ -167,10 +166,10 @@ public class HomeController {
 						
 		return new ResponseEntity(HttpStatus.OK);
 	}
-	@PutMapping(value = "/pessoas-universidade/{pessoaId}/{universidadeId}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value = "/pessoas-Universidade/{pessoaId}/{universidadeId}", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity associaUniversidadeToPessoa(@PathVariable("pessoaId") Long pessoaId,
 		@PathVariable("universidadeId") Long universidadeId) {
-		if (!pessoaService.existsPessoayId(pessoaId)) {
+		if (!pessoaService.existsPessoaById(pessoaId)) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 		if (!universidadeService.existsUniversidadeById(universidadeId)) {
@@ -180,7 +179,7 @@ public class HomeController {
 		Universidade universidade = universidadeService.getUniversidadeById(universidadeId);
 		this.pessoaService.update(pessoaId, universidade);
 						
-		return new ResponseEntity("Ok.", HttpStatus.OK);
+		return new ResponseEntity(HttpStatus.OK);
 	}
 	@PutMapping(value = "/pessoas-telefone/{pessoaId}/{telefoneId}", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity addTelefoneToPessoa(@PathVariable("pessoaId") Long pessoaId,
@@ -188,7 +187,7 @@ public class HomeController {
 		if (!pessoaService.existsPessoaById(pessoaId)) {
 			return new ResponseEntity(HttpStatus.NOT_FOUND);
 		}
-		if (!telefoneService.existsTelefoneById(telefoned)) {
+		if (!telefoneService.existsTelefoneById(telefoneId)) {
 			return new ResponseEntity(HttpStatus.NOT_FOUND);
 		}
 						
@@ -199,7 +198,7 @@ public class HomeController {
 	}
 	 
 	@PostMapping(value = "/livros", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Pessoa> saveLivro(@RequestBody Livro livro) {
+	public ResponseEntity<Livro> saveLivro(@RequestBody Livro livro) {
 		if (livro == null || livroService.existsLivroById(livro.getId())) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
@@ -242,7 +241,7 @@ public class HomeController {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 			
-		if(!livroService.existsLivroyId(id)) {
+		if(!livroService.existsLivroById(id)) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 			
@@ -254,7 +253,7 @@ public class HomeController {
 	
 	 
 	@PostMapping(value = "/telefones", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Pessoa> saveTelefone(@RequestBody Telefone telefone) {
+	public ResponseEntity<Telefone> saveTelefone(@RequestBody Telefone telefone) {
 		if (telefone == null || telefoneService.existsTelefoneById(telefone.getId())) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
@@ -297,7 +296,7 @@ public class HomeController {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 			
-		if(!telefoneService.existsTelefoneyId(id)) {
+		if(!telefoneService.existsTelefoneById(id)) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 			
@@ -309,7 +308,7 @@ public class HomeController {
 	
 	 
 	@PostMapping(value = "/universidades", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Pessoa> saveUniversidade(@RequestBody Universidade universidade) {
+	public ResponseEntity<Universidade> saveUniversidade(@RequestBody Universidade universidade) {
 		if (universidade == null || universidadeService.existsUniversidadeById(universidade.getId())) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
@@ -352,7 +351,7 @@ public class HomeController {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 			
-		if(!universidadeService.existsUniversidadeyId(id)) {
+		if(!universidadeService.existsUniversidadeById(id)) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 			

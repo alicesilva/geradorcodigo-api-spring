@@ -1,11 +1,12 @@
-package service;
+package com.example.demo.service;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import model.Conta;
-import repository.ContaRepository;
+import com.example.demo.model.Conta;
+import com.example.demo.repository.ContaRepository;
 
 
 @Service

@@ -39,7 +39,7 @@ class MyDslGenerator extends AbstractGenerator {
 			}
 		}
 		for (a : resource.allContents.toIterable.filter(Api)) {
-			fsa.generateFile( "Controller.java", compileController(a));
+			fsa.generateFile( "HomeController.java", compileController(a));
 		}
 	}
 
@@ -54,7 +54,6 @@ class MyDslGenerator extends AbstractGenerator {
 		public class «entidade.nomeEntidade.nome.toFirstUpper» {
 			
 			@Id
-			@GeneratedValue(strategy=GenerationType.IDENTITY)
 			private Long id;
 			
 			«compileAtributos(entidade.atributos.atributo)»
@@ -148,7 +147,7 @@ class MyDslGenerator extends AbstractGenerator {
 		import repository.«entidade.nomeEntidade.nome.toFirstUpper»Repository;
 		
 		«FOR ent: getTipoAtributos(entidade)»
-			import model.«ent.toFirstUpper»
+			import model.«ent.toFirstUpper»;
 		«ENDFOR»
 		
 		@Service
@@ -329,24 +328,24 @@ class MyDslGenerator extends AbstractGenerator {
 		}
 		
 		@DeleteMapping(value = "/«entidade.nomeEntidade.nome.toFirstLower»s")
-		public ResponseEntity<String> deleteAll«entidade.nomeEntidade.nome.toFirstUpper»() {
+		public ResponseEntity deleteAll«entidade.nomeEntidade.nome.toFirstUpper»() {
 			«entidade.nomeEntidade.nome.toFirstLower»Service.deleteAll«entidade.nomeEntidade.nome.toFirstUpper»();
-			return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper»s removidos com sucesso.", HttpStatus.OK);
+			return new ResponseEntity(HttpStatus.OK);
 		}
 		
 		@DeleteMapping(value = "/«entidade.nomeEntidade.nome.toFirstLower»s/{id}")
-		public ResponseEntity<String> delete«entidade.nomeEntidade.nome.toFirstUpper»(@PathVariable("id") Long id) {
+		public ResponseEntity delete«entidade.nomeEntidade.nome.toFirstUpper»(@PathVariable("id") Long id) {
 			if (id == null) {
-				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+				return new ResponseEntity(HttpStatus.BAD_REQUEST);
 			}
 				
-			if(!«entidade.nomeEntidade.nome.toFirstLower»Service.exists«entidade.nomeEntidade.nome.toFirstUpper»yId(id)) {
-				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			if(!«entidade.nomeEntidade.nome.toFirstLower»Service.exists«entidade.nomeEntidade.nome.toFirstUpper»ById(id)) {
+				return new ResponseEntity(HttpStatus.NOT_FOUND);
 			}
 				
 			«entidade.nomeEntidade.nome.toFirstLower»Service.delete«entidade.nomeEntidade.nome.toFirstUpper»(id);
 		
-			return new ResponseEntity<String>("«entidade.nomeEntidade.nome.toFirstUpper» removido com sucesso.", HttpStatus.OK);
+			return new ResponseEntity(HttpStatus.OK);
 		}
 		
 		«IF entidade.atributos.atributo.associacao !== null»
@@ -361,10 +360,10 @@ class MyDslGenerator extends AbstractGenerator {
 	
 	def compileAssociacao(Atributo atributo, String nomeEntidade) '''
 		«IF atributo.associacao.associacao.equals("OneToOne") || atributo.associacao.associacao.equals("ManyToOne")»
-		@PutMapping(value = "/«nomeEntidade.toFirstLower»s-«atributo.atributoTipo.tipoObjeto»/{«nomeEntidade.toFirstLower»Id}/{«atributo.atributoTipo.tipoObjeto.toFirstLower»Id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+		@PutMapping(value = "/«nomeEntidade.toFirstLower»s-«atributo.atributoTipo.tipoObjeto.toFirstLower»/{«nomeEntidade.toFirstLower»Id}/{«atributo.atributoTipo.tipoObjeto.toFirstLower»Id}", consumes = MediaType.APPLICATION_JSON_VALUE)
 		public ResponseEntity associa«atributo.atributoTipo.tipoObjeto.toFirstUpper»To«nomeEntidade.toFirstUpper»(@PathVariable("«nomeEntidade.toFirstLower»Id") Long «nomeEntidade.toFirstLower»Id,
 			@PathVariable("«atributo.atributoTipo.tipoObjeto.toFirstLower»Id") Long «atributo.atributoTipo.tipoObjeto.toFirstLower»Id) {
-			if (!«nomeEntidade.toFirstLower»Service.exists«nomeEntidade.toFirstUpper»yId(«nomeEntidade.toFirstLower»Id)) {
+			if (!«nomeEntidade.toFirstLower»Service.exists«nomeEntidade.toFirstUpper»ById(«nomeEntidade.toFirstLower»Id)) {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}
 			if (!«atributo.atributoTipo.tipoObjeto.toFirstLower»Service.exists«atributo.atributoTipo.tipoObjeto.toFirstUpper»ById(«atributo.atributoTipo.tipoObjeto.toFirstLower»Id)) {
@@ -374,7 +373,7 @@ class MyDslGenerator extends AbstractGenerator {
 			«atributo.atributoTipo.tipoObjeto.toFirstUpper» «atributo.atributoTipo.tipoObjeto.toFirstLower» = «atributo.atributoTipo.tipoObjeto.toFirstLower»Service.get«atributo.atributoTipo.tipoObjeto.toFirstUpper»ById(«atributo.atributoTipo.tipoObjeto.toFirstLower»Id);
 			this.«nomeEntidade.toFirstLower»Service.update(«nomeEntidade.toFirstLower»Id, «atributo.atributoTipo.tipoObjeto.toFirstLower»);
 							
-			return new ResponseEntity("Ok.", HttpStatus.OK);
+			return new ResponseEntity(HttpStatus.OK);
 		}
 		«ELSEIF atributo.associacao.associacao.equals("OneToMany") || atributo.associacao.associacao.equals("ManyToMany")»
 		«var String nome = getNomeTipoColecao(atributo.atributoTipo.tipoColecao)»
@@ -384,7 +383,7 @@ class MyDslGenerator extends AbstractGenerator {
 			if (!«nomeEntidade.toFirstLower»Service.exists«nomeEntidade.toFirstUpper»ById(«nomeEntidade.toFirstLower»Id)) {
 				return new ResponseEntity(HttpStatus.NOT_FOUND);
 			}
-			if (!«nome.toFirstLower»Service.exists«nome.toFirstUpper»ById(«nome.toFirstLower»d)) {
+			if (!«nome.toFirstLower»Service.exists«nome.toFirstUpper»ById(«nome.toFirstLower»Id)) {
 				return new ResponseEntity(HttpStatus.NOT_FOUND);
 			}
 							

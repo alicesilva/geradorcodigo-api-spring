@@ -1,5 +1,6 @@
-package model;
+package com.example.demo.model;
 import javax.persistence.*;
+
 import java.sql.*;
 import java.sql.Date;
 import java.util.*;
@@ -8,7 +9,6 @@ import java.util.*;
 public class Universidade {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
 	private String nome;

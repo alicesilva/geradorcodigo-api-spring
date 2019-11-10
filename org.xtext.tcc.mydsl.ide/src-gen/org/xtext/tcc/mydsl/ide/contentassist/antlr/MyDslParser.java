@@ -31,6 +31,7 @@ public class MyDslParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, MyDslGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getApiNomeAccess().getAlternatives(), "rule__ApiNome__Alternatives");
 			builder.put(grammarAccess.getAtributoTipoAccess().getAlternatives(), "rule__AtributoTipo__Alternatives");
 			builder.put(grammarAccess.getGreetingAccess().getGroup(), "rule__Greeting__Group__0");
 			builder.put(grammarAccess.getApiAccess().getGroup(), "rule__Api__Group__0");
@@ -46,7 +47,8 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGreetingAccess().getApiAssignment_1(), "rule__Greeting__ApiAssignment_1");
 			builder.put(grammarAccess.getApiAccess().getNomeApiAssignment_2(), "rule__Api__NomeApiAssignment_2");
 			builder.put(grammarAccess.getApiAccess().getEntidadesAssignment_7(), "rule__Api__EntidadesAssignment_7");
-			builder.put(grammarAccess.getApiNomeAccess().getNomeAssignment(), "rule__ApiNome__NomeAssignment");
+			builder.put(grammarAccess.getApiNomeAccess().getNomeAssignment_0(), "rule__ApiNome__NomeAssignment_0");
+			builder.put(grammarAccess.getApiNomeAccess().getNomeAssignment_1(), "rule__ApiNome__NomeAssignment_1");
 			builder.put(grammarAccess.getEntidadesAccess().getEntidadeAssignment_0(), "rule__Entidades__EntidadeAssignment_0");
 			builder.put(grammarAccess.getEntidadesAccess().getEntidadeMaisAssignment_1_1(), "rule__Entidades__EntidadeMaisAssignment_1_1");
 			builder.put(grammarAccess.getEntidadeAccess().getNomeEntidadeAssignment_3(), "rule__Entidade__NomeEntidadeAssignment_3");

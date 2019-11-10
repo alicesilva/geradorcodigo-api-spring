@@ -1,11 +1,12 @@
-package service;
+package com.example.demo.service;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import model.Livro;
-import repository.LivroRepository;
+import com.example.demo.model.Livro;
+import com.example.demo.repository.LivroRepository;
 
 
 @Service

@@ -5,6 +5,7 @@ grammar InternalMyDsl;
 
 options {
 	superClass=AbstractInternalAntlrParser;
+	backtrack=true;
 }
 
 @lexer::header {
@@ -32,6 +33,11 @@ import org.xtext.tcc.mydsl.services.MyDslGrammarAccess;
 }
 
 @parser::members {
+
+/*
+  This grammar contains a lot of empty actions to work around a bug in ANTLR.
+  Otherwise the ANTLR tool will create synpreds that cannot be compiled in some rare cases.
+*/
 
  	private MyDslGrammarAccess grammarAccess;
 
@@ -244,20 +250,41 @@ ruleApiNome returns [EObject current=null]
 }:
 	(
 		(
-			lv_nome_0_0=RULE_STRING_LIT
-			{
-				newLeafNode(lv_nome_0_0, grammarAccess.getApiNomeAccess().getNomeSTRING_LITTerminalRuleCall_0());
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getApiNomeRule());
+			(
+				lv_nome_0_0=RULE_STRING_LIST_LOW
+				{
+					newLeafNode(lv_nome_0_0, grammarAccess.getApiNomeAccess().getNomeSTRING_LIST_LOWTerminalRuleCall_0_0());
 				}
-				setWithLastConsumed(
-					$current,
-					"nome",
-					lv_nome_0_0,
-					"org.xtext.tcc.mydsl.MyDsl.STRING_LIT");
-			}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getApiNomeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"nome",
+						lv_nome_0_0,
+						"org.xtext.tcc.mydsl.MyDsl.STRING_LIST_LOW");
+				}
+			)
+		)
+		    |
+		(
+			(
+				lv_nome_1_0=RULE_STRING_LIT
+				{
+					newLeafNode(lv_nome_1_0, grammarAccess.getApiNomeAccess().getNomeSTRING_LITTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getApiNomeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"nome",
+						lv_nome_1_0,
+						"org.xtext.tcc.mydsl.MyDsl.STRING_LIT");
+				}
+			)
 		)
 	)
 ;
@@ -926,11 +953,9 @@ RULE_STRING_LIST_LOW : '"' RULE_LETRA_I+ '"';
 
 fragment RULE_LETRA_I : 'a'..'z' ('a'..'z'|'A'..'Z')+;
 
-RULE_STRING_LIT : '"' RULE_LETRA '"';
+RULE_STRING_LIT : '"' RULE_STRING_I '"';
 
-fragment RULE_STRING_I : RULE_LETRA;
-
-fragment RULE_LETRA : 'A'..'Z' ('a'..'z'|'A'..'Z')+;
+fragment RULE_STRING_I : 'A'..'Z' ('a'..'z'|'A'..'Z')+;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
