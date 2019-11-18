@@ -9,355 +9,211 @@ import com.example.demo.model.*;
 import com.example.demo.service.*;
 
 @RestController
-@RequestMapping("/banco-api")
+@RequestMapping("/sistemadereservas-api")
 public class HomeController {
 	
 	@Autowired
-	ContaService contaService;
+	UsuarioService usuarioService;
 	
 	@Autowired
-	PessoaService pessoaService;
+	ReservaService reservaService;
 	
 	@Autowired
-	LivroService livroService;
-	
-	@Autowired
-	TelefoneService telefoneService;
-	
-	@Autowired
-	UniversidadeService universidadeService;
+	RecursoService recursoService;
 	
 	
-	@PostMapping(value = "/contas", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Conta> saveConta(@RequestBody Conta conta) {
-		if (conta == null || contaService.existsContaById(conta.getId())) {
+	@PostMapping(value = "/usuarios", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Usuario> saveUsuario(@RequestBody Usuario usuario) {
+		if (usuario == null || usuarioService.existsUsuarioById(usuario.getId())) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 	
-		this.contaService.save(conta);
+		this.usuarioService.save(usuario);
 	
-		return new ResponseEntity<Conta>(conta, HttpStatus.CREATED);
+		return new ResponseEntity<Usuario>(usuario, HttpStatus.CREATED);
 	}
 		
-	@GetMapping(value = "/contas", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Conta>> getContas() {
-		List<Conta> contas = this.contaService.getContas();
-		return new ResponseEntity<List<Conta>>(contas, HttpStatus.OK);
+	@GetMapping(value = "/usuarios", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<Usuario>> getUsuarios() {
+		List<Usuario> usuarios = this.usuarioService.getUsuarios();
+		return new ResponseEntity<List<Usuario>>(usuarios, HttpStatus.OK);
 	}
 	
-	@GetMapping(value = "/contas/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Conta> getConta(@PathVariable("id") Long id) {
+	@GetMapping(value = "/usuarios/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Usuario> getUsuario(@PathVariable("id") Long id) {
 		if (id == null) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 			
-		if(!contaService.existsContaById(id)) {
+		if(!usuarioService.existsUsuarioById(id)) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 			
-		Conta conta = contaService.getContaById(id);
+		Usuario usuario = usuarioService.getUsuarioById(id);
 	
-		return new ResponseEntity<Conta>(conta, HttpStatus.OK);
+		return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
 	}
 	
-	@DeleteMapping(value = "/contas")
-	public ResponseEntity deleteAllConta() {
-		contaService.deleteAllConta();
+	@DeleteMapping(value = "/usuarios")
+	public ResponseEntity deleteAllUsuario() {
+		usuarioService.deleteAllUsuario();
 		return new ResponseEntity(HttpStatus.OK);
 	}
 	
-	@DeleteMapping(value = "/contas/{id}")
-	public ResponseEntity deleteConta(@PathVariable("id") Long id) {
+	@DeleteMapping(value = "/usuarios/{id}")
+	public ResponseEntity deleteUsuario(@PathVariable("id") Long id) {
 		if (id == null) {
 			return new ResponseEntity(HttpStatus.BAD_REQUEST);
 		}
 			
-		if(!contaService.existsContaById(id)) {
+		if(!usuarioService.existsUsuarioById(id)) {
 			return new ResponseEntity(HttpStatus.NOT_FOUND);
 		}
 			
-		contaService.deleteConta(id);
+		usuarioService.deleteUsuario(id);
 	
 		return new ResponseEntity(HttpStatus.OK);
 	}
 	
 	
-	@PostMapping(value = "/pessoas", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Pessoa> savePessoa(@RequestBody Pessoa pessoa) {
-		if (pessoa == null || pessoaService.existsPessoaById(pessoa.getId())) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
-	
-		this.pessoaService.save(pessoa);
-	
-		return new ResponseEntity<Pessoa>(pessoa, HttpStatus.CREATED);
-	}
-		
-	@GetMapping(value = "/pessoas", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Pessoa>> getPessoas() {
-		List<Pessoa> pessoas = this.pessoaService.getPessoas();
-		return new ResponseEntity<List<Pessoa>>(pessoas, HttpStatus.OK);
-	}
-	
-	@GetMapping(value = "/pessoas/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Pessoa> getPessoa(@PathVariable("id") Long id) {
-		if (id == null) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
-			
-		if(!pessoaService.existsPessoaById(id)) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-			
-		Pessoa pessoa = pessoaService.getPessoaById(id);
-	
-		return new ResponseEntity<Pessoa>(pessoa, HttpStatus.OK);
-	}
-	
-	@DeleteMapping(value = "/pessoas")
-	public ResponseEntity<String> deleteAllPessoa() {
-		pessoaService.deleteAllPessoa();
-		return new ResponseEntity<String>("Pessoas removidos com sucesso.", HttpStatus.OK);
-	}
-	
-	@DeleteMapping(value = "/pessoas/{id}")
-	public ResponseEntity<String> deletePessoa(@PathVariable("id") Long id) {
-		if (id == null) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
-			
-		if(!pessoaService.existsPessoaById(id)) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-			
-		pessoaService.deletePessoa(id);
-	
-		return new ResponseEntity<String>("Pessoa removido com sucesso.", HttpStatus.OK);
-	}
-	
-	
-	@PutMapping(value = "/pessoas-Conta/{pessoaId}/{contaId}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity associaContaToPessoa(@PathVariable("pessoaId") Long pessoaId,
-		@PathVariable("contaId") Long contaId) {
-		if (!pessoaService.existsPessoaById(pessoaId)) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-		if (!contaService.existsContaById(contaId)) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-						
-		Conta conta = contaService.getContaById(contaId);
-		this.pessoaService.update(pessoaId, conta);
-						
-		return new ResponseEntity(HttpStatus.OK);
-	}
-	@PutMapping(value = "/pessoas-livro/{pessoaId}/{livroId}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity addLivroToPessoa(@PathVariable("pessoaId") Long pessoaId,
-		@PathVariable("livroId") Long livroId) {			
-		if (!pessoaService.existsPessoaById(pessoaId)) {
+	@PutMapping(value = "/usuarios-reserva/{pessoaId}/{reservaId}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity addReservaToUsuario(@PathVariable("usuarioId") Long usuarioId,
+		@PathVariable("reservaId") Long reservaId) {			
+		if (!usuarioService.existsUsuarioById(usuarioId)) {
 			return new ResponseEntity(HttpStatus.NOT_FOUND);
 		}
-		if (!livroService.existsLivroById(livroId)) {
+		if (!reservaService.existsReservaById(reservaId)) {
 			return new ResponseEntity(HttpStatus.NOT_FOUND);
 		}
 						
-		Livro livro = livroService.getLivroById(livroId);
-		pessoaService.update(pessoaId, livro);
-						
-		return new ResponseEntity(HttpStatus.OK);
-	}
-	@PutMapping(value = "/pessoas-Universidade/{pessoaId}/{universidadeId}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity associaUniversidadeToPessoa(@PathVariable("pessoaId") Long pessoaId,
-		@PathVariable("universidadeId") Long universidadeId) {
-		if (!pessoaService.existsPessoaById(pessoaId)) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-		if (!universidadeService.existsUniversidadeById(universidadeId)) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-						
-		Universidade universidade = universidadeService.getUniversidadeById(universidadeId);
-		this.pessoaService.update(pessoaId, universidade);
-						
-		return new ResponseEntity(HttpStatus.OK);
-	}
-	@PutMapping(value = "/pessoas-telefone/{pessoaId}/{telefoneId}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity addTelefoneToPessoa(@PathVariable("pessoaId") Long pessoaId,
-		@PathVariable("telefoneId") Long telefoneId) {			
-		if (!pessoaService.existsPessoaById(pessoaId)) {
-			return new ResponseEntity(HttpStatus.NOT_FOUND);
-		}
-		if (!telefoneService.existsTelefoneById(telefoneId)) {
-			return new ResponseEntity(HttpStatus.NOT_FOUND);
-		}
-						
-		Telefone telefone = telefoneService.getTelefoneById(telefoneId);
-		pessoaService.update(pessoaId, telefone);
+		Reserva reserva = reservaService.getReservaById(reservaId);
+		usuarioService.update(usuarioId, reserva);
 						
 		return new ResponseEntity(HttpStatus.OK);
 	}
 	 
-	@PostMapping(value = "/livros", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Livro> saveLivro(@RequestBody Livro livro) {
-		if (livro == null || livroService.existsLivroById(livro.getId())) {
+	
+	@PostMapping(value = "/reservas", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Reserva> saveReserva(@RequestBody Reserva reserva) {
+		if (reserva == null || reservaService.existsReservaById(reserva.getId())) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 	
-		this.livroService.save(livro);
+		this.reservaService.save(reserva);
 	
-		return new ResponseEntity<Livro>(livro, HttpStatus.CREATED);
+		return new ResponseEntity<Reserva>(reserva, HttpStatus.CREATED);
 	}
 		
-	@GetMapping(value = "/livros", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Livro>> getLivros() {
-		List<Livro> livros = this.livroService.getLivros();
-		return new ResponseEntity<List<Livro>>(livros, HttpStatus.OK);
+	@GetMapping(value = "/reservas", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<Reserva>> getReservas() {
+		List<Reserva> reservas = this.reservaService.getReservas();
+		return new ResponseEntity<List<Reserva>>(reservas, HttpStatus.OK);
 	}
 	
-	@GetMapping(value = "/livros/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Livro> getLivro(@PathVariable("id") Long id) {
+	@GetMapping(value = "/reservas/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Reserva> getReserva(@PathVariable("id") Long id) {
 		if (id == null) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 			
-		if(!livroService.existsLivroById(id)) {
+		if(!reservaService.existsReservaById(id)) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 			
-		Livro livro = livroService.getLivroById(id);
+		Reserva reserva = reservaService.getReservaById(id);
 	
-		return new ResponseEntity<Livro>(livro, HttpStatus.OK);
+		return new ResponseEntity<Reserva>(reserva, HttpStatus.OK);
 	}
 	
-	@DeleteMapping(value = "/livros")
-	public ResponseEntity<String> deleteAllLivro() {
-		livroService.deleteAllLivro();
-		return new ResponseEntity<String>("Livros removidos com sucesso.", HttpStatus.OK);
+	@DeleteMapping(value = "/reservas")
+	public ResponseEntity deleteAllReserva() {
+		reservaService.deleteAllReserva();
+		return new ResponseEntity(HttpStatus.OK);
 	}
 	
-	@DeleteMapping(value = "/livros/{id}")
-	public ResponseEntity<String> deleteLivro(@PathVariable("id") Long id) {
+	@DeleteMapping(value = "/reservas/{id}")
+	public ResponseEntity deleteReserva(@PathVariable("id") Long id) {
 		if (id == null) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+			return new ResponseEntity(HttpStatus.BAD_REQUEST);
 		}
 			
-		if(!livroService.existsLivroById(id)) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		if(!reservaService.existsReservaById(id)) {
+			return new ResponseEntity(HttpStatus.NOT_FOUND);
 		}
 			
-		livroService.deleteLivro(id);
+		reservaService.deleteReserva(id);
 	
-		return new ResponseEntity<String>("Livro removido com sucesso.", HttpStatus.OK);
+		return new ResponseEntity(HttpStatus.OK);
 	}
 	
 	
+	@PutMapping(value = "/reservas-recurso/{pessoaId}/{recursoId}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity addRecursoToReserva(@PathVariable("reservaId") Long reservaId,
+		@PathVariable("recursoId") Long recursoId) {			
+		if (!reservaService.existsReservaById(reservaId)) {
+			return new ResponseEntity(HttpStatus.NOT_FOUND);
+		}
+		if (!recursoService.existsRecursoById(recursoId)) {
+			return new ResponseEntity(HttpStatus.NOT_FOUND);
+		}
+						
+		Recurso recurso = recursoService.getRecursoById(recursoId);
+		reservaService.update(reservaId, recurso);
+						
+		return new ResponseEntity(HttpStatus.OK);
+	}
 	 
-	@PostMapping(value = "/telefones", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Telefone> saveTelefone(@RequestBody Telefone telefone) {
-		if (telefone == null || telefoneService.existsTelefoneById(telefone.getId())) {
+	@PostMapping(value = "/recursos", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Recurso> saveRecurso(@RequestBody Recurso recurso) {
+		if (recurso == null || recursoService.existsRecursoById(recurso.getId())) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 	
-		this.telefoneService.save(telefone);
+		this.recursoService.save(recurso);
 	
-		return new ResponseEntity<Telefone>(telefone, HttpStatus.CREATED);
+		return new ResponseEntity<Recurso>(recurso, HttpStatus.CREATED);
 	}
 		
-	@GetMapping(value = "/telefones", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Telefone>> getTelefones() {
-		List<Telefone> telefones = this.telefoneService.getTelefones();
-		return new ResponseEntity<List<Telefone>>(telefones, HttpStatus.OK);
+	@GetMapping(value = "/recursos", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<Recurso>> getRecursos() {
+		List<Recurso> recursos = this.recursoService.getRecursos();
+		return new ResponseEntity<List<Recurso>>(recursos, HttpStatus.OK);
 	}
 	
-	@GetMapping(value = "/telefones/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Telefone> getTelefone(@PathVariable("id") Long id) {
+	@GetMapping(value = "/recursos/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Recurso> getRecurso(@PathVariable("id") Long id) {
 		if (id == null) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 			
-		if(!telefoneService.existsTelefoneById(id)) {
+		if(!recursoService.existsRecursoById(id)) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 			
-		Telefone telefone = telefoneService.getTelefoneById(id);
+		Recurso recurso = recursoService.getRecursoById(id);
 	
-		return new ResponseEntity<Telefone>(telefone, HttpStatus.OK);
+		return new ResponseEntity<Recurso>(recurso, HttpStatus.OK);
 	}
 	
-	@DeleteMapping(value = "/telefones")
-	public ResponseEntity<String> deleteAllTelefone() {
-		telefoneService.deleteAllTelefone();
-		return new ResponseEntity<String>("Telefones removidos com sucesso.", HttpStatus.OK);
+	@DeleteMapping(value = "/recursos")
+	public ResponseEntity deleteAllRecurso() {
+		recursoService.deleteAllRecurso();
+		return new ResponseEntity(HttpStatus.OK);
 	}
 	
-	@DeleteMapping(value = "/telefones/{id}")
-	public ResponseEntity<String> deleteTelefone(@PathVariable("id") Long id) {
+	@DeleteMapping(value = "/recursos/{id}")
+	public ResponseEntity deleteRecurso(@PathVariable("id") Long id) {
 		if (id == null) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+			return new ResponseEntity(HttpStatus.BAD_REQUEST);
 		}
 			
-		if(!telefoneService.existsTelefoneById(id)) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		if(!recursoService.existsRecursoById(id)) {
+			return new ResponseEntity(HttpStatus.NOT_FOUND);
 		}
 			
-		telefoneService.deleteTelefone(id);
+		recursoService.deleteRecurso(id);
 	
-		return new ResponseEntity<String>("Telefone removido com sucesso.", HttpStatus.OK);
-	}
-	
-	
-	 
-	@PostMapping(value = "/universidades", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Universidade> saveUniversidade(@RequestBody Universidade universidade) {
-		if (universidade == null || universidadeService.existsUniversidadeById(universidade.getId())) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
-	
-		this.universidadeService.save(universidade);
-	
-		return new ResponseEntity<Universidade>(universidade, HttpStatus.CREATED);
-	}
-		
-	@GetMapping(value = "/universidades", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Universidade>> getUniversidades() {
-		List<Universidade> universidades = this.universidadeService.getUniversidades();
-		return new ResponseEntity<List<Universidade>>(universidades, HttpStatus.OK);
-	}
-	
-	@GetMapping(value = "/universidades/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Universidade> getUniversidade(@PathVariable("id") Long id) {
-		if (id == null) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
-			
-		if(!universidadeService.existsUniversidadeById(id)) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-			
-		Universidade universidade = universidadeService.getUniversidadeById(id);
-	
-		return new ResponseEntity<Universidade>(universidade, HttpStatus.OK);
-	}
-	
-	@DeleteMapping(value = "/universidades")
-	public ResponseEntity<String> deleteAllUniversidade() {
-		universidadeService.deleteAllUniversidade();
-		return new ResponseEntity<String>("Universidades removidos com sucesso.", HttpStatus.OK);
-	}
-	
-	@DeleteMapping(value = "/universidades/{id}")
-	public ResponseEntity<String> deleteUniversidade(@PathVariable("id") Long id) {
-		if (id == null) {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
-			
-		if(!universidadeService.existsUniversidadeById(id)) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-			
-		universidadeService.deleteUniversidade(id);
-	
-		return new ResponseEntity<String>("Universidade removido com sucesso.", HttpStatus.OK);
+		return new ResponseEntity(HttpStatus.OK);
 	}
 	
 	

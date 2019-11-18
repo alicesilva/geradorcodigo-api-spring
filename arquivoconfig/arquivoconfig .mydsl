@@ -1,0 +1,18 @@
+{ 
+	"Nome da Api": "<inserir nome da api>",
+	"Entidades": [ 
+		{ 
+			"Nome": "<inserir nome da entidade>",
+			"Atributos": [ 
+				{ "nome-atributo": "<inserir nome do atributo>",
+				   "tipo-atributo": "<inserir tipo do atributo>",
+				   "associação/relacionamento": "<inserir nome do relacionamento 
+                                          entre este atributo e a entidade>",
+				   "operação em cascata": ["<inserir nome da operacao>", 
+                                    "<inserir nome da operacao>", ...]
+          
+			]
+		}
+	]
+}
+
