@@ -1,3 +1,0 @@
-#olhar o tipo dos atributos
-#olhar chave primaria
-#olhar igualdade entre o nomes das entidades

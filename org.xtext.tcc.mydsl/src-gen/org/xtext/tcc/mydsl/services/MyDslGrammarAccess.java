@@ -203,12 +203,10 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	'{'
 		//	'"Nome"' ':' nomeEntidade=Nome ','
 		//	'"Atributos"' ':' '[' atributos=Atributos ']'
-		//	//'"Nome do pacote"' ':' package = Nome
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'{' '"Nome"' ':' nomeEntidade=Nome ',' '"Atributos"' ':' '[' atributos=Atributos ']' //'"Nome do pacote"' ':' package = Nome
-		//'}'
+		//'{' '"Nome"' ':' nomeEntidade=Nome ',' '"Atributos"' ':' '[' atributos=Atributos ']' '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'{'
@@ -247,7 +245,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//']'
 		public Keyword getRightSquareBracketKeyword_9() { return cRightSquareBracketKeyword_9; }
 		
-		////'"Nome do pacote"' ':' package = Nome
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
@@ -717,7 +714,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'{'
 	//	'"Nome"' ':' nomeEntidade=Nome ','
 	//	'"Atributos"' ':' '[' atributos=Atributos ']'
-	//	//'"Nome do pacote"' ':' package = Nome
 	//	'}';
 	public EntidadeElements getEntidadeAccess() {
 		return pEntidade;
