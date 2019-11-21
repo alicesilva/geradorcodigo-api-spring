@@ -37,3 +37,6 @@ Para obter os arquivos gerados é necessário inserir na pasta src um arquivo .m
 </ul>
 
 ![](https://github.com/alicesilva/geradorcodigo-api-spring/blob/master/img/Captura%20de%20tela%20de%202019-11-20%2020-36-12.png?raw=true)
+
+
+Os arquivos resultantes são gerados na pasta src-gen.
