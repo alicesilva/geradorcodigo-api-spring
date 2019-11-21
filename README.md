@@ -4,7 +4,7 @@ Repositório para o gerador de código para uma API REST baseada no framework Sp
 
 ## Plugin do gerador de código para IDE Eclipse
 
-Link para download: [Plugin](https://github.com/alicesilva/geradorcodigo-api-spring/blob/master/plugin/org.xtext.tcc.mydsl.feature_1.0.0.201911140943.jar)
+Link para download: [Plugin](https://github.com/alicesilva/geradorcodigo-api-spring/tree/master/plugin)
 
 ## Instalação do plugin na IDE Eclipse
 
