@@ -1,6 +1,6 @@
 # Gerador de código para uma API REST baseada no framework Spring Boot
 
-Repositório para o gerador de código para uma API REST baseada no framework Spring Boot com o objetivo de minimizar a programaço repetitiva e oferecer um sistema CRUD para o desenvolvimento de back-end em Spring Boot.
+Repositório para o gerador de código para uma API REST baseada no framework Spring Boot, com o objetivo de minimizar a programaço repetitiva e oferecer um sistema CRUD para o desenvolvimento de back-end em Spring Boot.
 
 ## Plugin do gerador de código para IDE Eclipse
 
